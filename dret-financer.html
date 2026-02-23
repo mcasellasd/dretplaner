@@ -78,6 +78,32 @@
         .delay-400 {
             animation-delay: 400ms;
         }
+
+        .video-card {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            /* blue-500 */
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+        }
+
+        .video-card:hover .play-button {
+            transform: scale(1.1);
+            background-color: #3b82f6;
+            color: white;
+            border-color: transparent;
+        }
+
+        .play-button {
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #1e293b;
+        }
     </style>
 </head>
 
@@ -138,6 +164,183 @@
                     <div class="text-sm font-bold text-slate-400 uppercase tracking-widest leading-tight">
                         Conceptes<br>Clau</div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Contingut Audiovisual -->
+        <div class="mb-20 reveal delay-200">
+            <div class="flex items-center gap-4 mb-8">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                </div>
+                <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Contingut Audiovisual</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Video 1 -->
+                <a href="https://www.youtube.com/watch?v=maXSuuyM4KQ" target="_blank" class="block group">
+                    <div class="video-card rounded-3xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-100 rounded-2xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/maXSuuyM4KQ/hqdefault.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="Anatomia">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 backdrop-blur-md rounded-full flex items-center justify-center border border-slate-200 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 border border-blue-200 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1 line-clamp-2">L’anatomia del tribut</h3>
+                    </div>
+                </a>
+
+                <!-- Video 2 -->
+                <a href="https://www.youtube.com/watch?v=oXZzklxVXJg" target="_blank" class="block group">
+                    <div class="video-card rounded-3xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-100 rounded-2xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/oXZzklxVXJg/hqdefault.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="Cicle Impostos">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 backdrop-blur-md rounded-full flex items-center justify-center border border-slate-200 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 border border-blue-200 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1 line-clamp-2">El cicle dels impostos</h3>
+                    </div>
+                </a>
+
+                <!-- Video 3 -->
+                <a href="https://www.youtube.com/watch?v=Q5cNaFtBiAo" target="_blank" class="block group">
+                    <div class="video-card rounded-3xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-100 rounded-2xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/Q5cNaFtBiAo/hqdefault.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="Cicle Vida Tributaria">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 backdrop-blur-md rounded-full flex items-center justify-center border border-slate-200 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 border border-blue-200 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1 line-clamp-2">El Cicle de Vida de l’Obligació
+                            Tributària</h3>
+                    </div>
+                </a>
+
+                <!-- Video 4 -->
+                <a href="https://www.youtube.com/watch?v=BZyFnk3rPfE" target="_blank" class="block group">
+                    <div class="video-card rounded-3xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-100 rounded-2xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/BZyFnk3rPfE/hqdefault.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="Espanya Tribunal">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 backdrop-blur-md rounded-full flex items-center justify-center border border-slate-200 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 border border-blue-200 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1 line-clamp-2">Fonaments del Dret Tributari a
+                            Espanya</h3>
+                    </div>
+                </a>
+
+                <!-- Video 5 -->
+                <a href="https://www.youtube.com/watch?v=3lwK9zPz30Q" target="_blank" class="block group">
+                    <div class="video-card rounded-3xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-100 rounded-2xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/3lwK9zPz30Q/hqdefault.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="Simulacio">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 backdrop-blur-md rounded-full flex items-center justify-center border border-slate-200 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 border border-blue-200 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1 line-clamp-2">Conflicte vs Simulació –
+                            Diferències</h3>
+                    </div>
+                </a>
+
+                <!-- Video 6 -->
+                <a href="https://www.youtube.com/watch?v=vIp4puth6kk" target="_blank" class="block group">
+                    <div class="video-card rounded-3xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-100 rounded-2xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/vIp4puth6kk/hqdefault.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="Intro Impostos">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 backdrop-blur-md rounded-full flex items-center justify-center border border-slate-200 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 border border-blue-200 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1 line-clamp-2">Introducció als Impostos</h3>
+                    </div>
+                </a>
+
             </div>
         </div>
 
@@ -482,6 +685,74 @@
                 d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
         </svg>
     </button>
+    <!-- Video Modal -->
+    <div id="videoModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="relative w-full max-w-5xl aspect-video mx-4">
+            <button onclick="closeVideo()"
+                class="absolute -top-12 right-0 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+            </button>
+            <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
+                <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("videoModal");
+        const player = document.getElementById("youtubePlayer");
+
+        document.querySelectorAll("a[href*='youtube.com/watch'], a[href*='youtube.com/shorts']").forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                let url = this.getAttribute("href");
+                let videoId = "";
+
+                if (url.includes("watch?v=")) {
+                    videoId = new URL(url).searchParams.get("v");
+                } else if (url.includes("/shorts/")) {
+                    videoId = url.split("/shorts/")[1].split("?")[0];
+                }
+
+                if (videoId) {
+                    player.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+                    modal.classList.remove("hidden");
+                    setTimeout(() => {
+                        modal.classList.remove("opacity-0");
+                        modal.classList.add("flex");
+                    }, 10);
+                }
+            });
+        });
+
+        function closeVideo() {
+            modal.classList.add("opacity-0");
+            setTimeout(() => {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+                player.src = "";
+            }, 300);
+        }
+
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                closeVideo();
+            }
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+                closeVideo();
+            }
+        });
+    </script>
 </body>
 
 </html>
