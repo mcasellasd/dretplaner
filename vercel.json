@@ -12,6 +12,10 @@
         {
             "src": "assets/**/*",
             "use": "@vercel/static"
+        },
+        {
+            "src": "data/**/*",
+            "use": "@vercel/static"
         }
     ],
     "rewrites": [
