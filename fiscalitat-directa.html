@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Interactiu: Fiscalitat Directa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .tax-card {
+            transition: all 0.3s ease;
+        }
+
+        .tax-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .active-tab {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 min-h-screen relative">
+
+    <!-- Navbar tornar enrere -->
+    <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20 max-w-6xl mx-auto left-0 right-0">
+        <a href="dret-financer.html"
+            class="flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-all hover:bg-white bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-200/60 shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+            Tornar a Dret Financer
+        </a>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 pt-32 pb-12">
+        <!-- Capçalera -->
+        <header class="mb-12 text-center">
+            <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Sistema Tributari Espanyol</span>
+            <h1
+                class="text-4xl md:text-5xl font-extrabold mt-2 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
+                La Fiscalitat Directa
+            </h1>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg mb-6">
+                Exploració dels impostos que recauen sobre la capacitat econòmica directa (renda i patrimoni) dels
+                contribuents.
+            </p>
+            <a href="impostos-directes.html"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full font-bold shadow-lg hover:bg-slate-800 hover:shadow-xl transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 3v18h18" />
+                    <path d="m19 9-5 5-4-4-3 3" />
+                </svg>
+                Veure Taula de Gravàmens 2024
+            </a>
+        </header>
+
+        <!-- Navegació de Impostos -->
+        <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-slate-200" id="tabs">
+            <button onclick="showTax('irpf')" id="btn-irpf" class="px-6 py-3 text-sm active-tab">IRPF</button>
+            <button onclick="showTax('is')" id="btn-is" class="px-6 py-3 text-sm text-slate-500 hover:text-blue-600">IS
+                (Societats)</button>
+            <button onclick="showTax('ip')" id="btn-ip"
+                class="px-6 py-3 text-sm text-slate-500 hover:text-blue-600">Patrimoni</button>
+            <button onclick="showTax('isd')" id="btn-isd"
+                class="px-6 py-3 text-sm text-slate-500 hover:text-blue-600">ISD (Successions)</button>
+            <button onclick="showTax('irnr')" id="btn-irnr"
+                class="px-6 py-3 text-sm text-slate-500 hover:text-blue-600">No Residents</button>
+            <button onclick="showCalc()" id="btn-calc"
+                class="px-6 py-3 text-sm text-slate-500 hover:text-blue-600">Calculadora</button>
+        </div>
+
+        <!-- Contingut Dinàmic -->
+        <div id="content-area" class="grid md:grid-cols-3 gap-8">
+            <!-- Es carregarà mitjançant JS -->
+        </div>
+
+        <!-- Peu de pàgina informatiu -->
+        <div class="mt-16 p-8 bg-white rounded-3xl border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-xl mb-4 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Conceptes Generals del Manual
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6 text-sm text-slate-600">
+                <div class="space-y-3">
+                    <p><strong>Fet Imposable:</strong> És la circumstància que origina l'obligació de pagar l'impost
+                        (obtenir renda, posseir béns, etc.).</p>
+                    <p><strong>Subjecte Passiu:</strong> La persona (física o jurídica) obligada al compliment de les
+                        prestacions tributàries.</p>
+                </div>
+                <div class="space-y-3">
+                    <p><strong>Base Imposable:</strong> Magnificació dinerària del fet imposable.</p>
+                    <p><strong>Tipus Impositiu:</strong> El percentatge o tarifa que s'aplica sobre la base per obtenir
+                        la quota.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taula Comparativa (Aprofitada del nou manual) -->
+        <div class="mt-12 bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-8 border-b border-slate-100 bg-slate-50">
+                <h3 class="font-bold text-xl flex items-center gap-2 text-slate-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Resum Global de la Fiscalitat Directa
+                </h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-900 text-white">
+                        <tr>
+                            <th class="p-4 text-xs font-bold uppercase tracking-wider">Impost</th>
+                            <th class="p-4 text-xs font-bold uppercase tracking-wider">Subjecte Passiu</th>
+                            <th class="p-4 text-xs font-bold uppercase tracking-wider">Objecte Imposable</th>
+                            <th class="p-4 text-xs font-bold uppercase tracking-wider">Gestió / Recaptació</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-800">IRPF</td>
+                            <td class="p-4 text-sm text-slate-600">Persones Físiques Residents</td>
+                            <td class="p-4 text-sm text-slate-600">Renda Global</td>
+                            <td class="p-4 text-sm text-slate-600"><span
+                                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Estat i CCAA
+                                    (50%)</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-800">Societats (IS)</td>
+                            <td class="p-4 text-sm text-slate-600">Persones Jurídiques</td>
+                            <td class="p-4 text-sm text-slate-600">Benefici Net Comptable</td>
+                            <td class="p-4 text-sm text-slate-600"><span
+                                    class="bg-slate-200 text-slate-800 text-xs px-2 py-1 rounded">Estat</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-800">Patrimoni (IP)</td>
+                            <td class="p-4 text-sm text-slate-600">Persones Físiques</td>
+                            <td class="p-4 text-sm text-slate-600">Patrimoni Net (>700.000€)</td>
+                            <td class="p-4 text-sm text-slate-600"><span
+                                    class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Cedit 100%
+                                    CCAA</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-800">Grans Fortunes</td>
+                            <td class="p-4 text-sm text-slate-600">Persones Físiques</td>
+                            <td class="p-4 text-sm text-slate-600">Patrimoni Net (>3M€)</td>
+                            <td class="p-4 text-sm text-slate-600"><span
+                                    class="bg-slate-200 text-slate-800 text-xs px-2 py-1 rounded">Estat</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-800">Successions (ISD)</td>
+                            <td class="p-4 text-sm text-slate-600">Persones Físiques Adquirents</td>
+                            <td class="p-4 text-sm text-slate-600">Herències i Donacions</td>
+                            <td class="p-4 text-sm text-slate-600"><span
+                                    class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Cedit 100%
+                                    CCAA</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-800">No Residents (IRNR)</td>
+                            <td class="p-4 text-sm text-slate-600">No Residents</td>
+                            <td class="p-4 text-sm text-slate-600">Renda obtinguda a Espanya</td>
+                            <td class="p-4 text-sm text-slate-600"><span
+                                    class="bg-slate-200 text-slate-800 text-xs px-2 py-1 rounded">Estat</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const taxes = {
+            irpf: {
+                title: "Impost Renda Persones Físiques",
+                law: "Llei 35/2006",
+                description: "Grava la renda mundial de les persones físiques amb residència a Espanya, sota els principis de progressivitat i capacitat econòmica <span class='font-mono text-[10px] text-blue-600 font-bold ml-1'>(Art. 1-5 LIRPF)</span>.",
+                sections: [
+                    { label: "Residència Fiscal <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 8-10</span>", text: "Es considera resident qui romangui >183 dies a Espanya <strong class='text-blue-600 font-mono text-[10px]'>(Art. 9.1.a)</strong> o tingui aquí el nucli principal d'interessos econòmics <strong class='text-blue-600 font-mono text-[10px]'>(Art. 9.1.b)</strong>." },
+                    { label: "Rendes Exemptes <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 7</span>", text: "Indemnitzacions per acomiadament (amb límit), beques públiques, prestacions per incapacitat permanent absoluta, etc." },
+                    { label: "Components de la Renda <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 44-46</span>", text: "Rendiments de treball <strong class='text-blue-600 font-mono text-[10px]'>(Art. 17)</strong>, capital <strong class='text-blue-600 font-mono text-[10px]'>(Art. 22, 25)</strong>, activitats <strong class='text-blue-600 font-mono text-[10px]'>(Art. 27)</strong> i guanys <strong class='text-blue-600 font-mono text-[10px]'>(Art. 33)</strong>." },
+                    { label: "Base Imposable General <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 45</span>", text: "Inclou treball, capital immobiliari i activitats econòmiques. Tributa a l'escala progressiva." },
+                    { label: "Base Imposable Estalvi <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 46</span>", text: "Inclou dividends, interessos i guanys patrimonials per transmissions. Escala estalvi 19-28% <strong class='text-blue-600 font-mono text-[10px]'>(Art. 66 i 76)</strong>." },
+                    { label: "Mínim Personal i Familiar <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 56-61</span>", text: "Contribuent <strong class='text-blue-600 font-mono text-[10px]'>(Art. 57)</strong>, Descendents <strong class='text-blue-600 font-mono text-[10px]'>(Art. 58)</strong>, Ascendents <strong class='text-blue-600 font-mono text-[10px]'>(Art. 59)</strong>." },
+                    { label: "Esquema de Liquidació", text: "1. Renda Bruta &rarr; 2. Base Liquidable &rarr; 3. Quota Íntegra &rarr; 4. Quota Líquida &rarr; 5. Resultat de la Declaració." }
+                ],
+                color: "blue",
+                image: "data/irpf.png",
+                pdf: "data/IRPF_Visual_Guide.pdf"
+            },
+            is: {
+                title: "Impost sobre Societats",
+                law: "Llei 27/2014",
+                description: "Grava la renda de les persones jurídiques i altres entitats amb personalitat pròpia.",
+                sections: [
+                    { label: "Base Imposable <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 10 LIS</span>", text: "Es calcula a partir del resultat comptable, aplicant ajustos extracontables fiscals <strong class='text-indigo-600 font-mono text-[10px]'>(Art. 11 i ss)</strong> i l'amortització <strong class='text-indigo-600 font-mono text-[10px]'>(Art. 12)</strong>." },
+                    { label: "Tipus General <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 29 LIS</span>", text: "Generalment el 25%. Existeixen tipus reduïts per entitats de nova creació (15%) i cooperatives (20%)." },
+                    { label: "Període", text: "Coincideix amb l'exercici econòmic de l'entitat (màxim 12 mesos)." }
+                ],
+                color: "indigo",
+                image: "data/is.png"
+            },
+            ip: {
+                title: "Impost sobre el Patrimoni",
+                description: "Grava la titularitat de la riquesa neta de les persones físiques a data 31 de desembre.",
+                sections: [
+                    { label: "Objectiu", text: "Caràcter censal i de control. Grava el 'tenir' més que el 'generar'." },
+                    { label: "Exempcions", text: "Habitatge habitual (fins a 300.000€) i béns de l'aixovar domèstic." },
+                    { label: "Solidaritat Grans Fortunes", text: "Impost estatal temporal per a patrimonis nets >3M€. La quota de l'IP ja pagada és deduïble." }
+                ],
+                color: "emerald"
+            },
+            isd: {
+                title: "Successions i Donacions",
+                law: "Llei 29/1987",
+                description: "Grava les adquisicions gratuïtes (herències, llegats i donacions entre vius).",
+                link: { url: "isd.html", label: "Estudi Aprofundit de l'ISD" },
+                sections: [
+                    { label: "Fet Imposable <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 3 LISD</span>", text: "Adquisició mortis causa (successions), inter-vivos (donacions) o quantitats rebudes com a beneficiari d'assegurances de vida." },
+                    { label: "Reduccions Clau <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 20 LISD</span>", text: "Principalment per Parentiu, per adquisició d'Habitatge Habitual <strong class='text-rose-600 font-mono text-[10px]'>(Art. 20.2.c)</strong>, i per Empresa Familiar." },
+                    { label: "Gestió", text: "Impost cedit totalment a les Comunitats Autònomes, que regulen reduccions i tarifes pròpies." }
+                ],
+                color: "rose"
+            },
+            irnr: {
+                title: "Renda de No Residents",
+                description: "Grava la renda obtinguda en territori espanyol per persones que no hi resideixen.",
+                sections: [
+                    { label: "Criteri", text: "Criteri de territorialitat (font de la renda) en lloc de residència personal." },
+                    { label: "Sense Establiment Permanent", text: "Tributen per cada operació de forma separada (sovint mitjançant retenció directa del pagador)." },
+                    { label: "Amb Establiment Permanent", text: "L'entitat tributa de forma similar a l'Impost sobre Societats per totes les rendes imputables a l'establiment." }
+                ],
+                color: "amber"
+            }
+        };
+
+        // --- CALCULADORA PIONERA LÒGICA (VANILLA JS) ---
+        let calcState = {
+            activeTab: 'irpf',
+            irpf: { ingressos: 30000, despeses: 2000, minimPersonal: 5550 },
+            is: { resultatComptable: 50000, ajustaments: 0, tipusGral: 25 },
+            ip: { valorBens: 1500000, deutes: 100000, minimExempt: 700000 }
+        };
+
+        const formatEuro = (val) => new Intl.NumberFormat('ca-ES', { style: 'currency', currency: 'EUR' }).format(val);
+
+        function updateCalcData(field, value, type) {
+            calcState[type][field] = Number(value) || 0;
+            // renderCalcForms(); is removed to prevent losing focus
+            renderCalcResults();
+        }
+
+        function calcTab(tab) {
+            calcState.activeTab = tab;
+            ['irpf', 'is', 'ip'].forEach(t => {
+                const btn = document.getElementById(`calc-tab-${t}`);
+                if (t === tab) {
+                    btn.classList.add('bg-blue-600', 'text-white', 'shadow-md', 'hover:scale-[1.02]');
+                    btn.classList.remove('hover:bg-white', 'text-slate-500', 'hover:border-slate-200');
+                } else {
+                    btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md', 'hover:scale-[1.02]');
+                    btn.classList.add('hover:bg-white', 'text-slate-500', 'hover:border-slate-200');
+                }
+            });
+            renderCalcForms();
+            renderCalcResults();
+        }
+
+        function renderCalcForms() {
+            const container = document.getElementById('calc-forms');
+            const tab = calcState.activeTab;
+
+            let html = `<h3 class="text-xl font-bold mb-6 flex items-center gap-2 border-b border-slate-200 pb-4 text-slate-800">Introducció Dades</h3><div class="space-y-5">`;
+
+            if (tab === 'irpf') {
+                html += `
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Ingressos Bruts <span class="text-xs font-normal text-slate-400">(Tots els rendiments)</span> (€)</label>
+                        <input type="number" oninput="updateCalcData('ingressos', this.value, 'irpf')" value="${calcState.irpf.ingressos}" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-semibold text-slate-800"/>
+                        <p class="text-[11px] text-slate-500 mt-2 flex items-start gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Suma d'ingressos del treball, activitats econòmiques i rendiments de capital.</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Despeses i Reduccions Ordinàries (€)</label>
+                        <input type="number" oninput="updateCalcData('despeses', this.value, 'irpf')" value="${calcState.irpf.despeses}" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-semibold text-slate-800"/>
+                        <p class="text-[11px] text-slate-500 mt-2 flex items-start gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Cotitzacions a Seguretat Social, quotes sindicals, plans pensionals i altres deduccions formals.</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Mínim Personal i Familiar d'Exempció (€)</label>
+                        <input type="number" oninput="updateCalcData('minimPersonal', this.value, 'irpf')" value="${calcState.irpf.minimPersonal}" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-semibold text-slate-800"/>
+                    </div>
+                `;
+            } else if (tab === 'is') {
+                html += `
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Resultat Comptable (EBITDA Tècnic) (€)</label>
+                        <input type="number" oninput="updateCalcData('resultatComptable', this.value, 'is')" value="${calcState.is.resultatComptable}" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-semibold text-slate-800"/>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Ajustaments Extracomptables (+ O -) (€)</label>
+                        <input type="number" oninput="updateCalcData('ajustaments', this.value, 'is')" value="${calcState.is.ajustaments}" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-semibold text-slate-800"/>
+                        <p class="text-[11px] text-slate-500 mt-2 flex items-start gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Diferències temporànies o permanents d'acord amb la Llei de l'IS (multes, amortització).</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Tipus de Gravamen Aplicable (%)</label>
+                        <select onchange="updateCalcData('tipusGral', this.value, 'is')" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-bold text-slate-800 cursor-pointer">
+                            <option value="25" ${calcState.is.tipusGral === 25 ? 'selected' : ''}>25% - General i per Defecte</option>
+                            <option value="15" ${calcState.is.tipusGral === 15 ? 'selected' : ''}>15% - Entitats de Nova Creació</option>
+                            <option value="23" ${calcState.is.tipusGral === 23 ? 'selected' : ''}>23% - Pimes i entitats < 1M€ xifra negocis</option>
+                        </select>
+                    </div>
+                `;
+            } else if (tab === 'ip') {
+                html += `
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Valor Total del Cabal i Béns (€)</label>
+                        <input type="number" oninput="updateCalcData('valorBens', this.value, 'ip')" value="${calcState.ip.valorBens}" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-semibold text-slate-800"/>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Deutes i Càrregues Deduïbles (€)</label>
+                        <input type="number" oninput="updateCalcData('deutes', this.value, 'ip')" value="${calcState.ip.deutes}" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-semibold text-slate-800"/>
+                        <p class="text-[11px] text-slate-500 mt-2 flex items-start gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Hipoteques i obligacions patrimonials consolidades.</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Llindar de Mínim Exempt Vigent (€)</label>
+                        <input type="number" oninput="updateCalcData('minimExempt', this.value, 'ip')" value="${calcState.ip.minimExempt}" class="w-full p-3.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-semibold text-slate-800"/>
+                        <p class="text-[11px] text-red-500 mt-2 font-medium">L'estatal per defecte és de 700.000 €. Canvia segons comunitat autònoma.</p>
+                    </div>
+                `;
+            }
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        function calculateResults() {
+            const tab = calcState.activeTab;
+            if (tab === 'irpf') {
+                const d = calcState.irpf;
+                const baseImposable = Math.max(0, d.ingressos - d.despeses);
+                const baseLiquidrable = Math.max(0, baseImposable - d.minimPersonal);
+
+                const trams = [
+                    { fins: 12450, tipus: 0.19 },
+                    { fins: 20200, tipus: 0.24 },
+                    { fins: 35200, tipus: 0.30 },
+                    { fins: 60000, tipus: 0.37 },
+                    { fins: 300000, tipus: 0.45 },
+                    { fins: Infinity, tipus: 0.47 },
+                ];
+
+                let quota = 0;
+                let restant = baseLiquidrable;
+                let anterior = 0;
+
+                for (const tram of trams) {
+                    const ample = tram.fins - anterior;
+                    const taxable = Math.min(restant, ample);
+                    if (taxable <= 0) break;
+                    quota += taxable * tram.tipus;
+                    restant -= taxable;
+                    anterior = tram.fins;
+                }
+
+                const tipusMitja = baseLiquidrable > 0 ? (quota / baseLiquidrable) * 100 : 0;
+                return { baseImposable, baseLiquidrable, quota, tipusMitja };
+            } else if (tab === 'is') {
+                const d = calcState.is;
+                const baseImposable = Math.max(0, d.resultatComptable + d.ajustaments);
+                const quotaIntegra = baseImposable * (d.tipusGral / 100);
+                return { baseImposable, quotaIntegra };
+            } else if (tab === 'ip') {
+                const d = calcState.ip;
+                const patrimoniNet = Math.max(0, d.valorBens - d.deutes);
+                const baseImposable = Math.max(0, patrimoniNet - d.minimExempt);
+
+                const tramsIP = [
+                    { fins: 167129, tipus: 0.002 },
+                    { fins: 334252, tipus: 0.003 },
+                    { fins: 668499, tipus: 0.005 },
+                    { fins: 1336999, tipus: 0.009 },
+                    { fins: 2673999, tipus: 0.013 },
+                    { fins: 5347998, tipus: 0.017 },
+                    { fins: 10695996, tipus: 0.021 },
+                    { fins: Infinity, tipus: 0.035 },
+                ];
+
+                let quota = 0;
+                let restant = baseImposable;
+                let anterior = 0;
+
+                for (const tram of tramsIP) {
+                    const ample = tram.fins - anterior;
+                    const taxable = Math.min(restant, ample);
+                    if (taxable <= 0) break;
+                    quota += taxable * tram.tipus;
+                    restant -= taxable;
+                    anterior = tram.fins;
+                }
+                return { patrimoniNet, baseImposable, quota };
+            }
+        }
+
+        function renderCalcResults() {
+            const container = document.getElementById('calc-results');
+            const tab = calcState.activeTab;
+            const res = calculateResults();
+
+            let html = `<h3 class="text-xl font-bold mb-6 flex items-center gap-3 border-b border-slate-700 pb-5 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                Devolució Tècnica
+            </h3>
+            <div class="space-y-6">`;
+
+            if (tab === 'irpf') {
+                html += `
+                    <div class="flex justify-between items-center text-slate-300 group">
+                        <span class="text-sm font-medium">Base Liquidable Final</span>
+                        <span class="font-bold text-xl text-slate-100 group-hover:scale-105 transition-transform">${formatEuro(res.baseLiquidrable)}</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-4 border-t border-slate-800 text-slate-300">
+                        <span class="text-sm font-semibold text-blue-400 uppercase tracking-wider">Quota a Pagar (Aprox)</span>
+                        <span class="font-black text-4xl text-white tracking-tighter drop-shadow-md">${formatEuro(res.quota)}</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-slate-800/50 rounded-xl border border-slate-700 mt-4 shadow-inner">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Càrrega Tipus Mitjà</span>
+                        <span class="text-2xl font-bold text-emerald-400 drop-shadow">${res.tipusMitja.toFixed(2)}%</span>
+                    </div>
+                `;
+            } else if (tab === 'is') {
+                html += `
+                    <div class="flex justify-between items-center text-slate-300 group">
+                        <span class="text-sm font-medium">Base Imposable Final</span>
+                        <span class="font-bold text-xl text-slate-100 group-hover:scale-105 transition-transform">${formatEuro(res.baseImposable)}</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-4 border-t border-slate-800 text-slate-300">
+                        <span class="text-sm font-semibold text-blue-400 uppercase tracking-wider">Quota Íntegra Societària</span>
+                        <span class="font-black text-4xl text-white tracking-tighter drop-shadow-md">${formatEuro(res.quotaIntegra)}</span>
+                    </div>
+                `;
+            } else if (tab === 'ip') {
+                html += `
+                    <div class="flex justify-between items-center text-slate-300 group gap-4">
+                        <span class="text-sm font-medium">Subtotal Patrimoni Net</span>
+                        <span class="font-bold text-lg text-slate-300 truncate">${formatEuro(res.patrimoniNet)}</span>
+                    </div>
+                    <div class="flex justify-between items-center text-slate-300 mt-1 pb-4 group gap-4">
+                        <span class="text-sm font-medium text-slate-400">Base Liquidable Restant</span>
+                        <span class="font-bold text-xl text-slate-100 transition-transform group-hover:scale-105 truncate">${formatEuro(res.baseImposable)}</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-2 pt-4 border-t border-slate-800 text-slate-300">
+                        <span class="text-sm font-semibold text-blue-400 uppercase tracking-wider">Quota Exigible Resultant</span>
+                        <span class="font-black text-4xl text-white tracking-tighter drop-shadow-md">${formatEuro(res.quota)}</span>
+                    </div>
+                `;
+            }
+
+            html += `</div>
+            <div class="mt-8 p-5 bg-blue-900/20 rounded-xl border border-blue-500/20 text-xs text-slate-400 flex gap-3 items-start leading-relaxed shadow-inner">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-blue-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Aquest resultat prové de l'escalafó de tipus impositius globals de l'Estat reflectit tècnicament al projecte base amb objectius acadèmics.
+            </div>`;
+            container.innerHTML = html;
+        }
+        // --- END CALCULADORA PIONERA LÒGICA ---
+
+        function showCalc() {
+            const area = document.getElementById('content-area');
+            area.className = "grid md:grid-cols-3 gap-8";
+
+            // Actualitzar pestanyes
+            document.querySelectorAll('#tabs button').forEach(btn => {
+                btn.classList.remove('active-tab');
+                btn.classList.add('text-slate-500');
+            });
+            const btnCalc = document.getElementById('btn-calc');
+            if (btnCalc) {
+                btnCalc.classList.add('active-tab');
+                btnCalc.classList.remove('text-slate-500');
+            }
+
+            area.className = "w-full";
+
+            area.innerHTML = `
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-200 mt-0 w-full animate-fade-in" id="calculadora-section">
+                <!-- Capçalera calculador -->
+                <header class="mb-8 text-center">
+                    <h2 class="text-3xl font-extrabold text-slate-800 mb-2 flex items-center justify-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <rect width="16" height="20" x="4" y="2" rx="2" />
+                            <line x1="8" x2="16" y1="6" y2="6" />
+                            <line x1="16" x2="16" y1="14" y2="18" />
+                            <path d="M16 10h.01" />
+                            <path d="M12 10h.01" />
+                            <path d="M8 10h.01" />
+                            <path d="M12 14h.01" />
+                            <path d="M8 14h.01" />
+                            <path d="M12 18h.01" />
+                            <path d="M8 18h.01" />
+                        </svg>
+                        Simulador Pràctic
+                    </h2>
+                    <p class="text-slate-500 text-sm">Calcula la quota tributària seguint les taules de l'Estat</p>
+                </header>
+                
+                <!-- Tabs de Calculadora -->
+                <div class="flex flex-wrap gap-2 mb-8 bg-slate-50 p-2 rounded-xl shadow-inner border border-slate-200">
+                    <button onclick="calcTab('irpf')" id="calc-tab-irpf" class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg transition-all duration-300 bg-blue-600 text-white shadow-md font-semibold text-sm hover:scale-[1.02]">
+                        IRPF
+                    </button>
+                    <button onclick="calcTab('is')" id="calc-tab-is" class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg transition-all duration-300 hover:bg-white border border-transparent hover:border-slate-200 text-slate-500 font-semibold text-sm">
+                        IS (Societats)
+                    </button>
+                    <button onclick="calcTab('ip')" id="calc-tab-ip" class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg transition-all duration-300 hover:bg-white border border-transparent hover:border-slate-200 text-slate-500 font-semibold text-sm">
+                        IP (Patrimoni)
+                    </button>
+                </div>
+                
+                <main class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <div class="md:col-span-2 bg-slate-50 p-6 rounded-2xl border border-slate-200" id="calc-forms"></div>
+                    <div class="bg-indigo-900 border border-slate-800 text-white p-6 rounded-2xl shadow-2xl flex flex-col h-fit sticky top-24" id="calc-results"></div>
+                </main>
+            </div>`;
+
+            calcTab('irpf');
+        }
+
+        function showTax(key) {
+            const tax = taxes[key];
+            const area = document.getElementById('content-area');
+
+            // Actualitzar pestanyes
+            document.querySelectorAll('#tabs button').forEach(btn => {
+                btn.classList.remove('active-tab');
+                btn.classList.add('text-slate-500');
+            });
+            document.getElementById(`btn-${key}`).classList.add('active-tab');
+            document.getElementById(`btn-${key}`).classList.remove('text-slate-500');
+
+            // Generar HTML
+            area.innerHTML = `
+                <div class="md:col-span-1 space-y-4">
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-${tax.color}-100 text-${tax.color}-600 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-1 flex flex-wrap items-center gap-2">
+                            ${tax.title}
+                        </h2>
+                        ${tax.law ? `<div class="mb-3"><span class="text-[10px] bg-slate-100 border border-slate-200 text-slate-600 px-2 py-0.5 rounded-full font-mono uppercase tracking-wider">${tax.law}</span></div>` : ''}
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">${tax.description}</p>
+                        ${tax.link ? `<a href="${tax.link.url}" class="inline-block px-4 py-2 mt-2 bg-${tax.color}-600 text-white rounded-lg text-sm font-bold shadow-md hover:bg-${tax.color}-700 transition">${tax.link.label}</a>` : ''}
+                    </div>
+                </div>
+                <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
+                    ${tax.sections.map(s => `
+                        <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm tax-card">
+                            <h4 class="text-xs font-bold text-${tax.color}-600 uppercase tracking-tighter mb-2">${s.label}</h4>
+                            <p class="text-sm text-slate-700 leading-relaxed">${s.text}</p>
+                        </div>
+                    `).join('')}
+                    ${tax.image ? `
+                        <div class="sm:col-span-2 mt-4 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm tax-card flex flex-col items-center">
+                            <h4 class="text-xs font-bold text-${tax.color}-600 uppercase tracking-tighter mb-6 w-full text-left">Resum Gràfic</h4>
+                            <img src="${tax.image}" alt="Resum Gràfic ${tax.title}" class="w-full max-w-2xl rounded-xl border border-slate-200 shadow-sm hover:scale-[1.01] transition-transform cursor-zoom-in" onclick="window.open('${tax.image}', '_blank')">
+                            ${tax.pdf ? `<a href="${tax.pdf}" target="_blank" rel="noopener noreferrer" class="mt-8 flex items-center gap-2 px-6 py-3 bg-${tax.color}-600 text-white rounded-full font-bold shadow-md hover:bg-${tax.color}-700 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                Descarregar Guia Visual Completa (PDF)
+                            </a>` : ''}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        // Inicialitzar amb IRPF
+        window.onload = () => showTax('irpf');
+    </script>
+    <script>
+        function toggleChat() {
+            const chatbot = document.getElementById('chatbot');
+            if (chatbot.classList.contains('translate-y-[120%]')) {
+                chatbot.classList.remove('translate-y-[120%]', 'opacity-0', 'pointer-events-none');
+                chatbot.classList.add('translate-y-0', 'opacity-100');
+            } else {
+                chatbot.classList.add('translate-y-[120%]', 'opacity-0', 'pointer-events-none');
+                chatbot.classList.remove('translate-y-0', 'opacity-100');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('chat-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const input = document.getElementById('chat-input');
+                const message = input.value.trim();
+                if (!message) return;
+
+                const messagesDiv = document.getElementById('chat-messages');
+
+                messagesDiv.innerHTML += `
+            <div class="flex justify-end mb-4">
+                <div class="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-sm w-[85%] text-sm">
+                    <p>${message}</p>
+                </div>
+            </div>`;
+                input.value = '';
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+                const loadingId = 'loading-' + Date.now();
+                messagesDiv.innerHTML += `
+            <div id="${loadingId}" class="flex justify-start mb-4">
+                <div class="bg-slate-700 text-slate-400 p-3 rounded-2xl rounded-tl-sm text-sm border border-slate-600 flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce"></div>
+                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                </div>
+            </div>`;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+                try {
+                    const response = await fetch('/api/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message })
+                    });
+
+                    const data = await response.json();
+                    document.getElementById(loadingId).remove();
+
+                    const formattedReply = data.reply.replace(/\n/g, '<br/>');
+                    let sourceHTML = '';
+                    if (data.sources && data.sources.length > 0) {
+                        sourceHTML = `
+                    <div class="mt-3 text-xs text-slate-400 border-t border-slate-600 pt-2 flex items-center gap-1">
+                        <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Font: ${data.sources.join(', ')}
+                    </div>`;
+                    }
+
+                    messagesDiv.innerHTML += `
+                <div class="flex justify-start mb-4">
+                    <div class="bg-slate-700 text-slate-200 p-3 rounded-2xl rounded-tl-sm w-[90%] text-sm border border-slate-600">
+                        <div class="prose prose-invert prose-sm">${formattedReply}</div>
+                        ${sourceHTML}
+                    </div>
+                </div>`;
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                } catch (e) {
+                    if (document.getElementById(loadingId)) {
+                        document.getElementById(loadingId).remove();
+                    }
+                    messagesDiv.innerHTML += `
+                <div class="flex justify-start mb-4">
+                    <div class="bg-red-900/50 text-red-200 p-3 rounded-2xl rounded-tl-sm w-[85%] text-sm border border-red-700/50">
+                        <p>Error connectant amb l'assistent. Assegura't que el servidor local està executant-se correctament.</p>
+                    </div>
+                </div>`;
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }
+            });
+        });
+    </script>
+
+    <!-- Chatbot Widget UI -->
+    <div id="chatbot"
+        class="fixed bottom-6 right-6 z-50 transition-all duration-300 transform translate-y-[120%] opacity-0 pointer-events-none">
+        <div class="glass-card w-80 md:w-96 rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-700/50 bg-slate-900/95"
+            style="height: 500px;">
+            <div
+                class="px-5 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 flex justify-between items-center text-white">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    <h3 class="font-bold flex-1">Prof. Fiscalitat Directa</h3>
+                </div>
+                <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm bg-slate-800/80">
+                <div class="flex justify-start mb-4">
+                    <div
+                        class="bg-slate-700 text-slate-200 p-3 rounded-2xl rounded-tl-sm w-[85%] border border-slate-600">
+                        <p>Benvingut/da al mòdul de Fiscalitat Directa. Puc citar qualsevol article de la Llei de
+                            Sucesions, l'IRPF o l'Impost de Societats per a resoldre els teus dubtes. Endavant!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-slate-800 border-t border-slate-700">
+                <form id="chat-form" class="flex gap-2">
+                    <input type="text" id="chat-input"
+                        class="flex-1 bg-slate-900 text-white rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 border border-slate-700"
+                        placeholder="Què diu la Llei sobre..." autocomplete="off">
+                    <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-500 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path
+                                d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toggle Butó -->
+    <button onclick="toggleChat()" id="chat-toggle-btn"
+        class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full p-4 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+    </button>
+</body>
+
+</html>

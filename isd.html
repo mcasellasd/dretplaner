@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudi Profund de l'ISD | Visual Law</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .tax-card {
+            transition: all 0.3s ease;
+        }
+
+        .tax-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen relative">
+
+    <!-- Navbar tornar enrere -->
+    <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20 max-w-5xl mx-auto left-0 right-0">
+        <a href="fiscalitat-directa.html"
+            class="flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-all hover:bg-white bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-200/60 shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+            Tornar a Fiscalitat Directa
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 pt-32">
+
+        <!-- Header -->
+        <header class="mb-12 text-center">
+            <span class="text-pink-600 font-bold tracking-widest uppercase text-xs italic">Estudi Aprofundit</span>
+            <h1
+                class="text-4xl md:text-5xl font-extrabold mt-2 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-700 to-rose-500">
+                Impost sobre Successions i Donacions (ISD)
+            </h1>
+            <p class="text-slate-500 max-w-2xl mx-auto text-base">
+                Desenvolupament exhaustiu per a l'estudi acadèmic de l'impost que grava les adquisicions lucratives
+                mortis causa i inter vivos.
+            </p>
+        </header>
+
+        <!-- Naturalesa i Fet Imposable -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold mb-6 text-pink-700 flex items-center gap-2">
+                    <i class="fas fa-clipboard-list"></i> 1. Característiques Fonamentals <span
+                        class="bg-pink-100 text-pink-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2">Art.
+                        1-2 LISD</span>
+                </h3>
+                <ul class="space-y-4 text-slate-600 text-sm">
+                    <li class="flex items-start gap-3">
+                        <div class="mt-0.5 text-pink-500"><i class="fas fa-check-circle"></i></div>
+                        <span><strong>Directe i Personal:</strong> Grava un increment patrimonial en una persona física
+                            concreta.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-0.5 text-pink-500"><i class="fas fa-check-circle"></i></div>
+                        <span><strong>Subjectiu:</strong> El càlcul final depèn totalment de la relació de parentiu amb
+                            el transmitent.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-0.5 text-pink-500"><i class="fas fa-check-circle"></i></div>
+                        <span><strong>Cedit a les CCAA:</strong> Les comunitats autònomes tenen competències sobre
+                            reduccions, tarifes i deduccions.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold mb-6 text-pink-700 flex items-center gap-2">
+                    <i class="fas fa-sitemap"></i> 2. Fet Imposable (Modalitats) <span
+                        class="bg-pink-100 text-pink-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2">Art.
+                        3 LISD</span>
+                </h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-pink-50 rounded-xl border border-pink-100">
+                        <span class="font-bold text-pink-900 block mb-1">A) Successions (Mortis Causa):</span>
+                        <span class="text-sm text-pink-800">Adquisició per herència, llegat o qualsevol títol
+                            successori.</span>
+                    </div>
+                    <div class="p-4 bg-pink-50 rounded-xl border border-pink-100">
+                        <span class="font-bold text-pink-900 block mb-1">B) Donacions (Inter Vivos):</span>
+                        <span class="text-sm text-pink-800">Adquisició de béns i drets per donació o altres negocis
+                            gratuïts entre vius.</span>
+                    </div>
+                    <div class="p-4 bg-pink-50 rounded-xl border border-pink-100">
+                        <span class="font-bold text-pink-900 block mb-1">C) Assegurances de Vida:</span>
+                        <span class="text-sm text-pink-800">Quantitats rebudes pels beneficiaris quan el contractant és
+                            diferent.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Esquema de Liquidació Pedagògic -->
+        <div class="bg-slate-900 text-white p-8 md:p-12 rounded-[2.5rem] shadow-xl mb-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-pink-600/20 rounded-full blur-3xl"></div>
+            <h3
+                class="text-2xl font-bold mb-10 text-center text-pink-400 relative z-10 flex justify-center items-center gap-3">
+                Esquema de Càlcul de l'ISD <span
+                    class="bg-slate-700 text-slate-300 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider">Llei
+                    29/1987</span>
+            </h3>
+
+            <div class="max-w-3xl mx-auto space-y-3 relative z-10 text-sm">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400">Valor Real dels Béns</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 font-medium">Massa
+                        Hereditària Bruta</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-pink-400 hidden md:block">(-)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-pink-400 font-mono mr-2">(-)</span> Càrregues, deutes i despeses
+                        deduïbles</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div class="flex-1 bg-pink-900/40 p-4 rounded-xl border border-pink-500/30 font-bold text-pink-50">
+                        <span class="md:hidden text-slate-400 font-mono mr-2">(=)</span> Base Imposable (Cabal Relicte)
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-pink-400 hidden md:block">(-)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-pink-400 font-mono mr-2">(-)</span> Reduccions (Parentiu,
+                        Discapacitat, Empresa...)</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div class="flex-1 bg-pink-900/40 p-4 rounded-xl border border-pink-500/30 font-bold text-pink-50">
+                        <span class="md:hidden text-slate-400 font-mono mr-2">(=)</span> Base Liquidable
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-pink-400 hidden md:block">(x)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-pink-400 font-mono mr-2">(x)</span> Tarifa (Escala progressiva 7,65% -
+                        34%)</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div
+                        class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 font-medium text-slate-200">
+                        <span class="md:hidden text-slate-400 font-mono mr-2">(=)</span> Quota Íntegra
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-pink-400 hidden md:block">(x)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300 italic">
+                        <span class="md:hidden text-pink-400 font-mono mr-2">(x)</span> Coeficients Multiplicadors
+                        (Parentiu i Patrimoni Previ)
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 pt-2">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div
+                        class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 p-5 rounded-xl shadow-lg font-bold text-center text-lg text-white">
+                        <span class="md:hidden text-white font-mono mr-2">(=)</span> Quota Tributària (A pagar)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Els Grups de Parentiu -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                <i class="fas fa-users text-pink-600"></i> Els 4 Grups de Parentiu <span
+                    class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2">Art.
+                    20.2.a LISD</span>
+            </h3>
+            <p class="mb-8 text-slate-500 max-w-3xl">L'element més important de l'ISD és saber a quin grup pertany el
+                contribuent, ja que d'això depenen les reduccions i el coeficient multiplicador aplicable a la quota.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-emerald-400">
+                    <span
+                        class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Grup
+                        I</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Descendents < 21 anys</h4>
+                            <p class="text-xs text-slate-500 mt-3 leading-relaxed">Fills i néts menors d'edat. Tenen les
+                                reduccions més altes i bonificacions autonòmiques generalitzades.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-blue-400">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Grup
+                        II</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Adults, Cònjuges, Ascendants</h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Fills a partir de 21 anys, pares, avis i
+                        marit/muller. Molt bonificats en gairebé totes les CCAA.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-amber-400">
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Grup
+                        III</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Col·laterals 2n i 3r grau</h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Germans, oncles, nebots, sogres,
+                        gendres/nores. Menys reduccions i coeficients més elevats.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-rose-500">
+                    <span class="bg-rose-100 text-rose-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Grup
+                        IV</span>
+                    <h4 class="font-bold text-slate-800 mt-2">4t grau i Estranys</h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Cosins, amics o persones sense cap vincle
+                        familiar rellevant. Cap reducció per parentiu i el multiplicador màxim.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reduccions Específiques -->
+        <div class="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm mb-12">
+            <h3 class="text-2xl font-bold mb-8 text-slate-800 flex items-center flex-wrap gap-2">
+                <i class="fas fa-percentage text-pink-600"></i> Principals Reduccions Estats i Autonòmiques <span
+                    class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2 mt-1 md:mt-0">Art.
+                    20 LISD</span>
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Habitatge Habitual -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-lg flex justify-center items-center mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Habitatge Habitual <span
+                            class="text-pink-600 font-mono text-[10px] ml-1">(Art. 20.2.c)</span></h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Reducció del 95% del valor de l'habitatge (amb
+                        límit per hereu) si s'adquireix per herència i es manté al patrimoni generalment entre 5 i 10
+                        anys (segons la CCAA).</p>
+                </div>
+                <!-- Empresa Familiar -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-lg flex justify-center items-center mb-4">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Empresa Familiar <span
+                            class="text-pink-600 font-mono text-[10px] ml-1">(Art. 20.2.c)</span></h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Reducció del 95% del valor de l'empresa si es
+                        compleixen requisits estrictes d'exercici d'activitat i manteniment de la plantilla i
+                        titularitat (normalment 5-10 anys).</p>
+                </div>
+                <!-- Discapacitat -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-lg flex justify-center items-center mb-4">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Per Discapacitat <span
+                            class="text-pink-600 font-mono text-[10px] ml-1">(Art. 20.2.a)</span></h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Reduccions addicionals molt significatives si
+                        l'adquirent té un grau de discapacitat reconegut superior al 33% o al 65%.</p>
+                </div>
+                <!-- Nota Donacions -->
+                <div class="p-6 bg-rose-50 rounded-2xl border border-rose-200">
+                    <div class="w-10 h-10 bg-rose-200 text-rose-700 rounded-lg flex justify-center items-center mb-4">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h4 class="font-bold text-rose-900 mb-2">Nota sobre Donacions</h4>
+                    <p class="text-sm text-rose-800 leading-relaxed">En operacions <em>inter-vivos</em> (donacions),
+                        generalment <strong>no hi ha reduccions estatals per parentiu</strong>, però moltes CCAA han
+                        bonificat al 95-99% les quotes per a descendents i cònjuges mitjançant regulació pròpia.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conceptes Clau -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-slate-800">Altres Conceptes Clau de l'ISD</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-indigo-500">
+                    <h5 class="font-bold text-slate-800 mb-2">L'Aixovar Domèstic <span
+                            class="text-pink-600 font-mono text-[10px] ml-1">(Art. 15 LISD)</span></h5>
+                    <p class="text-sm text-slate-600">S'estima per llei en el <strong>3% del cabal relicte</strong>
+                        brut, tret que es pugui provar un valor inferior. Sovint és motiu de controvèrsia en l'exclusió
+                        de certs actius financers.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-emerald-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Principi de Territorialitat</h5>
+                    <p class="text-sm text-slate-600">L'impost es paga a la CCAA on el causant (defunt) tenia la seva
+                        <strong>residència habitual</strong> (on ha residit més temps durant els últims 5 anys anteriors
+                        a la mort).
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-amber-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Autoliquidació i Terminis</h5>
+                    <p class="text-sm text-slate-600">Es disposa d'un termini de <strong>6 mesos</strong> (prorrogables
+                        per 6 més) per a la mortis causa, i de només <strong>30 dies</strong> hàbils per a les donacions
+                        inter-vivos.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 py-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+        <p>Font: Manual de Fiscalitat Directa i Llei de l'ISD 29/1987.</p>
+        <p class="mt-2">Aquest document pertany a la línia d'Estudis Aprofundits de Visual Law.</p>
+    </footer>
+
+</body>
+
+</html>

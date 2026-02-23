@@ -1,0 +1,12 @@
+{
+  "source_pdf": "BOE-A-2014-12328-consolidado.pdf",
+  "pages": 169,
+  "last_modified": "04 de febrero de 2026",
+  "output_txt": "impost_societats_clean.txt",
+  "output_jsonl": "impost_societats_chunks.jsonl",
+  "chunking": {
+    "max_chars": 2000,
+    "overlap_chars": 300,
+    "chunks": 540
+  }
+}

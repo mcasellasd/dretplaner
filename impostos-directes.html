@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Tipus i Gravàmens: Fiscalitat Directa 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .tax-row {
+            transition: all 0.2s ease;
+        }
+
+        .tax-row:hover {
+            background-color: #f8fafc;
+        }
+
+        .active-tab {
+            border-bottom: 3px solid #1e293b;
+            color: #1e293b;
+            font-weight: 800;
+        }
+
+        .detail-card {
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 min-h-screen relative">
+
+    <!-- Navbar tornar enrere -->
+    <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20 max-w-6xl mx-auto left-0 right-0">
+        <a href="fiscalitat-directa.html"
+            class="flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-all hover:bg-white bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-200/60 shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+            Tornar a Fiscalitat Directa
+        </a>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 py-12 pt-24">
+        <!-- Capçalera -->
+        <header class="mb-12 text-center">
+            <span class="text-blue-600 font-bold tracking-widest uppercase text-xs italic">Document de Consulta
+                Tècnica</span>
+            <h1
+                class="text-4xl md:text-5xl font-extrabold mt-2 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
+                Guia de Gravàmens de la Fiscalitat Directa
+            </h1>
+            <p class="text-slate-500 max-w-2xl mx-auto text-base">
+                Anàlisi detallada de les escales de gravamen, bases imposables i observacions normatives segons la Llei
+                de l'IRPF, l'Impost de Societats i els Impostos sobre el Patrimoni i Successions.
+            </p>
+        </header>
+
+        <!-- Navegació Principal -->
+        <div class="flex flex-wrap justify-center gap-2 md:gap-8 mb-8 border-b border-slate-200" id="tabs">
+            <button onclick="showCategory('irpf')" id="btn-irpf" class="px-6 py-4 text-sm active-tab">IRPF: Renda
+                Personal</button>
+            <button onclick="showCategory('is')" id="btn-is"
+                class="px-6 py-4 text-sm text-slate-500 hover:text-blue-600">IS: Rendes Societàries</button>
+            <button onclick="showCategory('riquesa')" id="btn-riquesa"
+                class="px-6 py-4 text-sm text-slate-500 hover:text-blue-600">Riquesa i Patrimoni</button>
+        </div>
+
+        <!-- Taula de Tipus -->
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden mb-12">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-900 text-white">
+                        <tr>
+                            <th class="p-5 text-xs font-bold uppercase tracking-wider">Tipus de Renda / Concepte</th>
+                            <th class="p-5 text-xs font-bold uppercase tracking-wider">Impost</th>
+                            <th class="p-5 text-xs font-bold uppercase tracking-wider">Gravamen (%)</th>
+                            <th class="p-5 text-xs font-bold uppercase tracking-wider">Base Aplicable</th>
+                            <th class="p-5 text-xs font-bold uppercase tracking-wider">Observacions o Reduccions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Contingut dinàmic de la taula -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Secció de Desenvolupament Ampliat -->
+        <div id="extended-content" class="space-y-8">
+            <!-- Es carregarà contingut detallat aquí -->
+        </div>
+
+        <!-- Targetes d'Incentius i Mínims -->
+        <div class="grid md:grid-cols-3 gap-6 mt-16">
+            <div class="p-8 bg-blue-50 rounded-3xl border border-blue-100 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                        1</div>
+                    <h3 class="text-blue-900 font-bold uppercase text-sm">Escala General IRPF</h3>
+                </div>
+                <p class="text-sm text-blue-800 leading-relaxed italic">
+                    La quota final és la suma de la quota estatal i l'autonòmica. A Catalunya, els tipus marginals són
+                    dels més alts de l'Estat.
+                </p>
+            </div>
+            <div class="p-8 bg-indigo-50 rounded-3xl border border-indigo-100 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                        2</div>
+                    <h3 class="text-indigo-900 font-bold uppercase text-sm">Empreses Emergents</h3>
+                </div>
+                <p class="text-sm text-indigo-800 leading-relaxed italic">
+                    Reducció al 15% durant els 4 primers anys amb beneficis. Requereix certificació d'ENISA com a
+                    empresa innovadora.
+                </p>
+            </div>
+            <div class="p-8 bg-emerald-50 rounded-3xl border border-emerald-100 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">
+                        3</div>
+                    <h3 class="text-emerald-900 font-bold uppercase text-sm">Solidaritat Fortunes</h3>
+                </div>
+                <p class="text-sm text-emerald-800 leading-relaxed italic">
+                    Impost estatal que actua com a xarxa per evitar la bonificació total del Patrimoni en certes CCAA.
+                </p>
+            </div>
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-xs">
+            <p>Font: Manual de Fiscalitat Directa (UOC) i Llei de l'Impost sobre la Renda de les Persones Físiques.</p>
+            <p class="mt-2">Nota: Aquest document reflecteix la normativa vigent per a l'exercici 2024 amb referències a
+
+                Catalunya.</p>
+        </footer>
+    </div>
+
+    <script>
+        const data = {
+            irpf: {
+                table: [
+                    { concept: "Rendiments del treball, capital immobiliari i activitats econòmiques (Renda General)", tax: "IRPF (Escala General Estatal)", rate: "9,50% al 24,50%", base: "Base liquidable general (part estatal)", obs: "S'aplica sobre la base que excedeix el mínim personal i familiar." },
+                    { concept: "Rendiments del treball, capital immobiliari i activitats econòmiques (Renda General) a Catalunya", tax: "IRPF (Escala Autonòmica Catalunya 2022-2023)", rate: "10,50% al 25,50%", base: "Base liquidable general (part autonòmica)", obs: "Correspon al tram autonòmic cedit a les CCAA." },
+                    { concept: "Rendiments del capital mobiliari i guanys patrimonials de transmissions (Renda de l'Estalvi)", tax: "IRPF (Escala de l'Estalvi Estatal)", rate: "9,50% (fins a 6.000€) al 14,00% (més de 300.000€)", base: "Base liquidable de l'estalvi (part estatal)", obs: "S'aplica sobre la base que no es correspon amb el mínim personal i familiar." },
+                    { concept: "Renda de l'Estalvi (Tram Autonòmic)", tax: "IRPF (Escala de l'Estalvi Autonòmica)", rate: "9,50% (fins a 6.000€) al 14,00% (més de 300.000€)", base: "Base liquidable de l'estalvi (part autonòmica)", obs: "Tipus aplicable generalment si no hi ha regulació específica autonòmica." }
+                ],
+                details: `
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 text-blue-700">Dualitat de la Renda</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                L'IRPF espanyol és un impost dual. Això significa que separa la renda en dues grans cistelles:
+                            </p>
+                            <ul class="text-sm space-y-3 text-slate-700">
+                                <li><strong>Base General:</strong> Sotmesa a gravamen progressiu (fins al 50% marginal a Catalunya). Inclou sous, pensions i rendiments de lloguers.</li>
+                                <li><strong>Base de l'Estalvi:</strong> Sotmesa a tipus quasi-fixos (19% fins a 6.000€, 21% fins a 50.000€, 23% fins a 200.000€, 27% fins a 300.000€ i 28% per a la resta).</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 text-blue-700">Mínim Personal i Familiar</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                És la part de la base liquidable que es grava a tipus zero perquè es destina a les necessitats bàsiques del contribuent. El mínim general estatal és de <strong>5.550 €</strong>, però s'incrementa segons l'edat (>65 o >75 anys) i el nombre de descendents o ascendents a càrrec.
+                            </p>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 flex items-center text-blue-700">
+                                Rendes Exemptes <span class="bg-blue-100 text-blue-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2 mt-0.5">Art. 7 LIRPF</span>
+                            </h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                La normativa (Llei 35/2006) eximeix de tributar certes rendes, com ara:
+                            </p>
+                            <ul class="text-sm space-y-3 text-slate-700">
+                                <li>✔ Indemnitzacions per acomiadament fins als límits estatutaris procedents (màx. 180.000€).</li>
+                                <li>✔ Prestacions públiques per maternitat/paternitat, naixement i anualitats d'aliments de pares a fills per decisió judicial.</li>
+                                <li>✔ Beques públiques i prestacions vinculades a la dependència o al servei i cures familiars.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            is: {
+                table: [
+                    { concept: "Rendes societàries (General)", tax: "Impost sobre Societats (IS)", rate: "25%", base: "Base imposable (Resultat comptable ajustat)", obs: "Tipus de gravamen general." },
+                    { concept: "Rendes de microempreses (xifra negocis < 1M€)", tax: "Impost sobre Societats (IS)", rate: "23%", base: "Base imposable", obs: "Per a entitats amb import net de xifra de negocis inferior a 1 milió d'euros." },
+                    { concept: "Rendes d'entitats de nova creació", tax: "Impost sobre Societats (IS)", rate: "15%", base: "Base imposable", obs: "Aplicable el primer període amb base positiva i el següent (exclou patrimonials)." },
+                    { concept: "Rendes d'empreses emergents", tax: "Impost sobre Societats (IS)", rate: "15%", base: "Base imposable", obs: "Primer període amb base positiva i els tres següents." }
+                ],
+                details: `
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 text-indigo-700">Càlcul de la Base Imposable</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                A diferència de l'IRPF, l'IS parteix del <strong>resultat comptable</strong> (Ingressos - Despeses segons el PGC).
+                            </p>
+                            <p class="text-sm text-slate-700">
+                                S'apliquen els <strong>ajustos extracontables</strong> per diferències entre normativa comptable i la Llei de l'Impost de Societats (LIS) (ex: provisions no deduïbles).
+                            </p>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 text-indigo-700">Incentius i Reserves</h3>
+                            <ul class="text-sm space-y-3 text-slate-700">
+                                <li><strong>Reserva de Capitalització:</strong> Permet reduir la base imposable en un 10% de l'increment dels fons propis.</li>
+                                <li><strong>Reserva de Nivellament (PIMES):</strong> Permet anticipar la compensació de pèrdues reduint la base fins a un 10%.</li>
+                                <li><strong>Bases Negatives:</strong> Es poden compensar amb beneficis futurs sense límit temporal, però amb límits del 70% o menys segons facturació.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 flex items-center text-indigo-700">
+                                Exempcions i Reduccions <span class="bg-indigo-100 text-indigo-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2 mt-0.5">LIS</span>
+                            </h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                La normativa vigent incorpora avantatges per evitar distorsions internacionals i fomentar la innovació:
+                            </p>
+                            <ul class="text-sm space-y-3 text-slate-700">
+                                <li>✔ Exempció (fins al 95%) sobre dividends i plusvàlues per a evitar doble imposició societarària.</li>
+                                <li>✔ Consideració destacada de deduccions per projectes viables d'I+D empresarial i innovació (I+D+i).</li>
+                                <li>✔ Reducció al 15% del tipus per a empreses emergents (certificades) en els primers exercicis amb benefici.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            riquesa: {
+                table: [
+                    { concept: "Adquisicions per causa de mort (Successions) - Escala Estatal", tax: "Impost sobre Successions i Donacions (ISD)", rate: "7,65% al 34,00%", base: "Base liquidable", obs: "S'aplica si la CCAA no ha aprovat tarifa pròpia. Després s'aplica el coeficient multiplicador segons patrimoni preexistent." },
+                    { concept: "Patrimoni net de persones físiques - Escala Estatal", tax: "Impost sobre el Patrimoni (IP)", rate: "0,20% al 3,50%", base: "Base liquidable", obs: "S'aplica si la CCAA no té tarifa pròpia. Mínim exempt de 700.000€ per defecte." },
+                    { concept: "Grans fortunes (> 3 milions €)", tax: "Impost Temporal de Solidaritat de les Grans Fortunes (ITSGF)", rate: "1,70% al 3,50%", base: "Base liquidable (> 3.700.000€ considerant mínim exempt)", obs: "Complementari de l'IP. Es dedueix la quota de l'IP realment satisfeta." }
+                ],
+                details: `
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 text-emerald-700">L'Impost sobre el Patrimoni a Catalunya</h3>
+                            <p class="text-sm text-slate-600 mb-4">
+                                Catalunya té la seva pròpia escala i un mínim exempt de <strong>500.000 €</strong> (inferior al estatal de 700.000€).
+                            </p>
+                            <p class="text-sm text-slate-700">
+                                <strong>Límit Quota IP/IRPF:</strong> La suma de les quotes d'ambdós impostos no pot superar el 60% de la base imposable de l'IRPF (amb certes limitacions).
+                            </p>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 text-emerald-700">Successions i Donacions (ISD)</h3>
+                            <p class="text-sm text-slate-600 mb-4">
+                                És un impost subjectiu i progressiu que depèn del parentiu:
+                            </p>
+                            <ul class="text-sm space-y-2 text-slate-700">
+                                <li><strong>Grup I i II:</strong> Descendents, cònjuges i ascendents (tenen bonificacions molt altes a Catalunya).</li>
+                                <li><strong>Grup III i IV:</strong> Germans, nebots, oncles i estranys (paguen tipus molt més elevats).</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-slate-200 detail-card shadow-sm">
+                            <h3 class="text-xl font-bold mb-4 flex items-center text-emerald-700">
+                                Base i Aforament <span class="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2 mt-0.5">Llei 29/1987</span>
+                            </h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Normes clau per la quantificació de l'ISD:
+                            </p>
+                            <ul class="text-sm space-y-3 text-slate-700">
+                                <li>✔ <strong>Aixovar domèstic:</strong> Es calcula legalment com el 3% del cabal relicte (Art. 15), excepte prova fefaent.</li>
+                                <li>✔ Aixecament de béns: Acumulació de donacions prèvies en els últims 3 anys per al còmput progressiu (Art. 30).</li>
+                                <li>✔ En les assegurances de vida, depèn d'entitats liquidadores i la meritació succeeix amb la mort del causant (Art. 24).</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        function showCategory(key) {
+            const categoryData = data[key];
+            const tableBody = document.getElementById('table-body');
+            const extendedContent = document.getElementById('extended-content');
+
+            // Actualitzar estils de les pestanyes
+            document.querySelectorAll('#tabs button').forEach(btn => {
+                btn.classList.remove('active-tab');
+                btn.classList.add('text-slate-500');
+            });
+            document.getElementById(`btn-${key}`).classList.add('active-tab');
+            document.getElementById(`btn-${key}`).classList.remove('text-slate-500');
+
+            // Generar files de la taula
+            tableBody.innerHTML = categoryData.table.map(row => `
+                <tr class="tax-row border-b border-slate-100">
+                    <td class="p-5 text-sm font-semibold text-slate-800">${row.concept}</td>
+                    <td class="p-5 text-xs font-bold"><span class="bg-slate-100 px-3 py-1 rounded-full text-slate-600">${row.tax}</span></td>
+                    <td class="p-5 text-sm font-extrabold text-blue-600">${row.rate}</td>
+                    <td class="p-5 text-xs text-slate-500">${row.base}</td>
+                    <td class="p-5 text-xs text-slate-500 italic md:max-w-xs">${row.obs || ''}</td>
+                </tr>
+            `).join('');
+
+            // Generar contingut detallat
+            extendedContent.innerHTML = categoryData.details;
+        }
+
+        // Inicialitzar
+        window.onload = () => {
+            showCategory('irpf');
+
+        };
+
+
+
+        function toggleChat() {
+            const chatbot = document.getElementById('chatbot');
+            if (chatbot.classList.contains('translate-y-[120%]')) {
+                chatbot.classList.remove('translate-y-[120%]', 'opacity-0', 'pointer-events-none');
+                chatbot.classList.add('translate-y-0', 'opacity-100');
+            } else {
+                chatbot.classList.add('translate-y-[120%]', 'opacity-0', 'pointer-events-none');
+                chatbot.classList.remove('translate-y-0', 'opacity-100');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('chat-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const input = document.getElementById('chat-input');
+                const message = input.value.trim();
+                if (!message) return;
+
+                const messagesDiv = document.getElementById('chat-messages');
+
+                messagesDiv.innerHTML += `
+            <div class="flex justify-end mb-4">
+                <div class="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-sm w-[85%] text-sm">
+                    <p>${message}</p>
+                </div>
+            </div>`;
+                input.value = '';
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+                const loadingId = 'loading-' + Date.now();
+                messagesDiv.innerHTML += `
+            <div id="${loadingId}" class="flex justify-start mb-4">
+                <div class="bg-slate-700 text-slate-400 p-3 rounded-2xl rounded-tl-sm text-sm border border-slate-600 flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce"></div>
+                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                </div>
+            </div>`;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+                try {
+                    const response = await fetch('/api/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message })
+                    });
+
+                    const data = await response.json();
+                    document.getElementById(loadingId).remove();
+
+                    const formattedReply = data.reply.replace(/\n/g, '<br/>');
+                    let sourceHTML = '';
+                    if (data.sources && data.sources.length > 0) {
+                        sourceHTML = `
+                    <div class="mt-3 text-xs text-slate-400 border-t border-slate-600 pt-2 flex items-center gap-1">
+                        <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Font: ${data.sources.join(', ')}
+                    </div>`;
+                    }
+
+                    messagesDiv.innerHTML += `
+                <div class="flex justify-start mb-4">
+                    <div class="bg-slate-700 text-slate-200 p-3 rounded-2xl rounded-tl-sm w-[90%] text-sm border border-slate-600">
+                        <div class="prose prose-invert prose-sm">${formattedReply}</div>
+                        ${sourceHTML}
+                    </div>
+                </div>`;
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                } catch (e) {
+                    if (document.getElementById(loadingId)) {
+                        document.getElementById(loadingId).remove();
+                    }
+                    messagesDiv.innerHTML += `
+                <div class="flex justify-start mb-4">
+                    <div class="bg-red-900/50 text-red-200 p-3 rounded-2xl rounded-tl-sm w-[85%] text-sm border border-red-700/50">
+                        <p>Error connectant amb l'assistent. Assegura't que el servidor local està executant-se correctament.</p>
+                    </div>
+                </div>`;
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }
+            });
+        });
+    </script>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot"
+        class="fixed bottom-6 right-6 z-50 transition-all duration-300 transform translate-y-[120%] opacity-0 pointer-events-none">
+        <div class="glass-card w-80 md:w-96 rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-700/50 bg-slate-900/95"
+            style="height: 500px;">
+            <div
+                class="px-5 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 flex justify-between items-center text-white">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    <h3 class="font-bold flex-1">Prof. Visual Law (AI)</h3>
+                </div>
+                <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm bg-slate-800/80">
+                <div class="flex justify-start mb-4">
+                    <div
+                        class="bg-slate-700 text-slate-200 p-3 rounded-2xl rounded-tl-sm w-[85%] border border-slate-600">
+                        <p>Hola! Sóc l'assistent docent virtual. Tinc accés al temari complet (més de 116 fragments
+                            sobre Fiscalitat Directa). Què vols repassar avui?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-slate-800 border-t border-slate-700">
+                <form id="chat-form" class="flex gap-2">
+                    <input type="text" id="chat-input"
+                        class="flex-1 bg-slate-900 text-white rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 border border-slate-700"
+                        placeholder="Escriu la teva pregunta..." autocomplete="off">
+                    <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-500 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path
+                                d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toggle Butó -->
+    <button onclick="toggleChat()" id="chat-toggle-btn"
+        class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full p-4 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+    </button>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "source_pdf": "PID_00302181.pdf",
+  "pages": 66,
+  "chars_extracted": 173922,
+  "chunks": 92,
+  "chunk_size_chars": 2200,
+  "overlap_chars": 300,
+  "notes": [
+    "Text extret amb PyMuPDF",
+    "Guionets de final de línia reenganxats",
+    "Capçaleres/peus repetits i números de pàgina eliminats heurísticament",
+    "Marcador intern [[PAGE N]] utilitzat per calcular page_start/page_end; eliminat del text final"
+  ]
+}

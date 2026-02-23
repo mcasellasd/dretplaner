@@ -1,0 +1,11 @@
+{
+  "doc": {
+    "source_pdf": "BOE-A-2006-20764-consolidado.pdf",
+    "boe_ref": "BOE-A-2006-20764",
+    "title": "Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta de las Personas Físicas",
+    "last_modified": "04 de febrero de 2026"
+  },
+  "num_chunks": 373,
+  "chunk_size_chars": 2200,
+  "overlap_chars": 300
+}

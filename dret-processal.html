@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Interactiu: Dret Processal | Visual Law</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .topic-card {
+            transition: all 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .active-tab {
+            border-bottom: 3px solid #4f46e5;
+            color: #4f46e5;
+            font-weight: 700;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 min-h-screen relative">
+
+    <!-- Navbar global -->
+    <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20 max-w-6xl mx-auto left-0 right-0">
+        <a href="index.html"
+            class="flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-all hover:bg-white bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-200/60 shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+            Tornar a l'inici
+        </a>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 py-16 mt-8">
+        <!-- Capçalera -->
+        <header class="mb-12 text-center">
+            <span
+                class="text-indigo-600 font-bold tracking-widest uppercase text-sm bg-indigo-100 px-3 py-1 rounded-full">Fonaments
+                Jurídics</span>
+            <h1
+                class="text-4xl md:text-5xl font-extrabold mt-4 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-indigo-600">
+                Introducció al Dret Processal</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg">Resum interactiu dels conceptes bàsics, la potestad
+                jurisdiccional, subjectes i el sistema de fonts processals.</p>
+        </header>
+
+        <!-- Navegació de Conceptes -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10 border-b border-slate-200 pb-2" id="tabs">
+            <button onclick="showTopic('conceptes')" id="btn-conceptes" class="px-4 py-2 text-sm active-tab">El Dret
+                Processal</button>
+            <button onclick="showTopic('jurisdiccio')" id="btn-jurisdiccio"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Jurisdicció</button>
+            <button onclick="showTopic('accio')" id="btn-accio"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Acció i Tutela</button>
+            <button onclick="showTopic('proces')" id="btn-proces"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">El Procés</button>
+            <button onclick="showTopic('fonts')" id="btn-fonts"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Fonts</button>
+            <button onclick="showTopic('organization')" id="btn-organization"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Organització</button>
+            <button onclick="showTopic('subjects')" id="btn-subjects"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Subjectes</button>
+            <button onclick="showTopic('phases')" id="btn-phases"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Fases</button>
+            <button onclick="showTopic('quiz')" id="btn-quiz"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition font-bold bg-indigo-50 rounded border border-indigo-100 uppercase tracking-wider">Quiz</button>
+        </div>
+
+        <!-- Contingut Dinàmic -->
+        <div id="content-area" class="grid md:grid-cols-3 gap-8 min-h-[400px]">
+            <!-- Es carregarà mitjançant JS -->
+        </div>
+
+        <!-- Peu de pàgina informatiu -->
+        <div
+            class="mt-16 p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row gap-8 items-start">
+            <div class="flex-1">
+                <h3 class="font-bold text-xl mb-4 flex items-center gap-2 text-indigo-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    Glossari Processal de Base
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6 text-sm text-slate-600">
+                    <div class="space-y-3">
+                        <p><strong>Dret Processal:</strong> Conjunt de normes que regulen l'activitat jurisdiccional de
+                            l'Estat per a l'aplicació del dret.</p>
+                        <p><strong>Poder Judicial:</strong> Conjunt d'òrgans (jutjats i tribunals) que tenen atribuïda
+                            la potestat jurisdiccional exclusivament.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <p><strong>Principi de Legalitat:</strong> Sotmetiment de jutges i magistrats a la Constitució i
+                            a la resta de l'ordenament jurídic.</p>
+                        <p><strong>Procediment:</strong> Successió d'actes processals vinculats per un nexe temporal i
+                            formal dins de les lleis procesals (LEC, LECrim).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Càrrega Dinàmica -->
+    <script>
+        const ICONS = {
+            blueDoc: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
+            book: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>`,
+            shield: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
+            landmark: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>`,
+            briefcase: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
+            gitcommit: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="3"/><line x1="3" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="21" y2="12"/></svg>`,
+            help: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`
+        };
+
+        const topics = {
+            conceptes: {
+                title: "Concepte i Diferències",
+                icon: ICONS.blueDoc,
+                description: "Imagina que el Dret Civil o Penal són les 'regles del joc' (què es pot fer i què no). El <strong>Dret Processal</strong> és el 'manual d'instruccions' de l'àrbitre: ens diu com hem d'actuar quan algú incompleix.",
+                sections: [
+                    { label: "Dret Públic", text: "Les seves normes són d'ordre públic i irrenunciables; no poden ser substituïdes ni saltades deliberadament per la voluntat privades de les parts." },
+                    { label: "Caràcter Instrumental", text: "No és un fi en si mateix, sinó l'eina utilitzada col·lectivament per fer valer de veritat els drets i obligacions del dret substantiu (civil, penal, laboral)." },
+                    { label: "Resolució de Conflictes", text: "Històricament ha permès passar de l'Autotutela (prohibida) a l'Autocomposició pacífica i finalment a l'Heterocomposició institucional obligatòria." }
+                ],
+                color: "indigo"
+            },
+            jurisdiccio: {
+                title: "Potestat Jurisdiccional",
+                icon: ICONS.landmark,
+                description: "L'Estat monopolitza la justícia per evitar l'autotutela (pendre's la justícia per la mà) segons estableix l'Article 117 de la Constitució.",
+                sections: [
+                    { label: "Unitat Jurisdiccional", text: "La jurisdicció és única en tot l'Estat. Existeix un sol cos nacional unificat de jutges i magistrats, no divisions autònomes." },
+                    { label: "Exclusivitat", text: "Monopoli estatal absolut: Només els jutges i tribunals establerts poden materialment avaluar, jutjar i ordenar fer executar de debò el jutjat." },
+                    { label: "Jutge Predeterminat", text: "Garantia màxima del dret a ser jutjat per un jutge designat prèviament per llei (absoluta prohibició dels tribunals d'excepció ad-hoc)." }
+                ],
+                color: "slate"
+            },
+            accio: {
+                title: "L'Acció i la Tutela",
+                icon: ICONS.shield,
+                description: "El pilar constitucional del dret subjectiu inalienable que vincula qualsevol ciutadà directament amb l'administració de justícia de l'Estat.",
+                sections: [
+                    { label: "Tutela Judicial (Art. 24 CE)", text: "Dret sagrat i efectiu d'accés absolut als tribunals. Dóna dret innegable a obtenir una resolució tècnica fundada en dret (condemna o absolució) i a rebre protecció." },
+                    { label: "Indefensió Prohibida", text: "Mai es podrà privar a una part de l'exercici natural de defensa pròpia o de l'aportació de mitjans de prova considerats vàlids i necessaris." },
+                    { label: "Justícia Gratuïta", text: "Garantia col·lectiva que adverteix que cap individu quedi fora de cobertura tècnica del sistema per falta de líquid o motius purament econòmics." }
+                ],
+                color: "blue"
+            },
+            proces: {
+                title: "El Procés Com a Garantia",
+                icon: ICONS.gitcommit,
+                description: "El mètode tècnic; la successió d'actes ordenats i transparents mitjançant els quals s'exercita directament la potestat jurisdiccional de l'Estat.",
+                sections: [
+                    { label: "Dualitat de Parts", text: "Cal indefectiblement la presència d'un actor (qui ataca o demana) i un demandat enfrontat davant d'un tercer subjecte totalment imparcial." },
+                    { label: "Contradicció", text: "Materialització del Principi d'Audiència civil: absolutament ningú pot ser desposseït o condemnat sense ser prèviament escoltat o citat legalment." },
+                    { label: "Igualtat de Parts", text: "El procés blindarà que les dues parts adquireixin temporalment els mateixos i idèntics mitjans procedimentals d'atac i de defensa tècnica." }
+                ],
+                color: "emerald"
+            },
+            fonts: {
+                title: "Les Fonts Normatives",
+                icon: ICONS.book,
+                description: "On resideix el naixement i origen de les normes sagrades que acaben regulant les estructures dels debats i crims a Espanya.",
+                customHtml: `
+                    <div class="bg-gray-50/80 p-6 rounded-xl border border-dashed border-gray-300">
+                        <ul class="space-y-4 text-sm text-slate-700">
+                            <li class="flex items-start gap-3">
+                                <div class="text-blue-500 mt-1 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                <div><span class="font-bold text-slate-900">La Constitució (1978):</span> Estructura suprema d'ordre; L'importantíssim Article 24 configura les garanties essencials absolutes sobre què és i què prohibeix la justícia.</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="text-blue-500 mt-1 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                <div><span class="font-bold text-slate-900">La Llei (Només Estatal):</span> Regnant sota el Principi de legalitat, exclusivament i per mandat les Corts Generals estatals poden legislar ordenaments processals (com la LOPJ o la LECrim penal).</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="text-blue-500 mt-1 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                <div><span class="font-bold text-slate-900">La Jurisprudència:</span> Tot i tècnicament no exercir com a font formal per crear llei pròpiament com dictamina el Codi Civil, l'assentament de decisions fixes del Tribunal Suprem unifiquen les divisions.</div>
+                            </li>
+                            <li class="flex items-start gap-3 mt-4 pt-4 border-t border-slate-200">
+                                <div class="text-red-500 mt-1 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+                                <div class="text-red-800"><span class="font-bold italic">Atenció Examen:</span> El costum territorial ciutadà o els hàbits adquirits <strong>NO SÓN FONT acceptada</strong> a nivell processal donada l'extrema duresa requerida d'ordre i precisió formalista centralitzada.</div>
+                            </li>
+                        </ul>
+                    </div>
+                `,
+                color: "amber"
+            },
+            organization: {
+                title: "Organització Jurisdiccional",
+                icon: ICONS.landmark,
+                description: "La teranyina estatal organitzada i jerarquitzada sobre com s'escalen les decisions i recursos dins del terreny del Regne d'Espanya.",
+                customHtml: `
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
+                            <div class="bg-indigo-900 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">1</div>
+                            <div><h3 class="font-bold text-slate-800 text-sm">Tribunal Suprem (TS)</h3><p class="text-xs text-gray-500 mt-0.5">Òrgan superior nacional per sobre de qualsevol decisió civil o penal; posa fi definitiva a recursos (Excepte garanties d'empara via TC).</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
+                            <div class="bg-indigo-800 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">2</div>
+                            <div><h3 class="font-bold text-slate-800 text-sm">Audiència Nacional (AN)</h3><p class="text-xs text-gray-500 mt-0.5">Disposa de jurisdicció nacional de punta a punta de l'Estat però de forma exclusiva i dedicada per lluitar contra crims concrets com terrorisme o màfies.</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
+                            <div class="bg-indigo-700 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">3</div>
+                            <div><h3 class="font-bold text-slate-800 text-sm">Tribunals Superiors de Justícia (TSJ)</h3><p class="text-xs text-gray-500 mt-0.5">Òrgans geogràfics vitals que representen i acullen l'esglaó suprem i extrem jurisdiccional confinat exclusivament dins l'àmbit propi d'una Comunitat Autònoma.</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
+                            <div class="bg-indigo-600 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">4</div>
+                            <div><h3 class="font-bold text-slate-800 text-sm">Audiències Provincials (AP)</h3><p class="text-xs text-gray-500 mt-0.5">Agrupaments col·legiats situats arreu centrats sobre l'àmbit estricte d'una sola província. Atorguen cobertura de cassos penalment rellevants o acullen recursos propis.</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
+                            <div class="bg-indigo-500 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">5</div>
+                            <div><h3 class="font-bold text-slate-800 text-sm">Jutjats Unipersonals (1a Inst., Instrucció...)</h3><p class="text-xs text-gray-500 mt-0.5">Cimenten l'àmplia base piramidal primària de Justícia; formen innegablement la famosa i necessària primera porta habitual del gruix general de demandes de la societat.</p></div>
+                        </div>
+                    </div>
+                `,
+                color: "indigo"
+            },
+            subjects: {
+                title: "Subjectes del Procés",
+                icon: ICONS.briefcase,
+                description: "Mapatge organitzatiu dels grups d'individus cabdals que formen i permeten moure tècnicament la robusta maquinària que anomenem procés judicial.",
+                sections: [
+                    { label: "Jutges i Magistrats", text: "Al vèrtex representacional; encarnen i utilitzen directament el poder atorgat sota l'escut indispensable d'una gran inamovibilitat i independència decisòria." },
+                    { label: "Lletrat Administració de Justícia", text: "Els grans eixos centrals: s'ocupen oficialment d'aportar i donar total fe documental als fets formals per escrit, com a directors actius de l'oficina." },
+                    { label: "Ministeri Fiscal", text: "Branca pública institucional obligada a defendre proactivament i cega a la societat i supervisar que tota aplicació natural s'adeqüi als barems i normatives establertes." },
+                    { label: "Advocats i Procuradors", text: "Els col·laboradors de camp en l'arena: Mentres l'Advocat desenvolupa amb èmfasi l'estratègia o defensa, el Procurador suporta la representació civil pura actuant com altaveu i rebedor notificacional de l'usuari final per terminis." }
+                ],
+                color: "slate"
+            },
+            phases: {
+                title: "La Línia de Fases",
+                icon: ICONS.gitcommit,
+                description: "Una ullada ràpida a la representació de la trajectòria cronològica lògica que viu típicament una disputa o assumpció civil simple fins el tancament.",
+                customHtml: `
+                    <div class="relative border-l-2 border-slate-200 ml-4 lg:ml-8 space-y-6 pb-2 pt-2">
+                        <div class="relative pl-6">
+                            <div class="absolute w-4 h-4 bg-slate-400 rounded-full -left-[9px] top-1 border-2 border-white"></div>
+                            <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">1. Demanda inicial i Contestació</h3>
+                            <p class="text-sm text-gray-500 leading-relaxed mt-1">S'aixeca el teló; interposició formal o requeriment de "Demanda" per la unitat actora exposant peticions i dades, que derivarà tard o d'hora amb la coneguda i oposada "Contestació".</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="absolute w-4 h-4 bg-slate-400 rounded-full -left-[9px] top-1 border-2 border-white"></div>
+                            <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">2. L'Audiència Prèvia preparatòria</h3>
+                            <p class="text-sm text-gray-500 leading-relaxed mt-1">Una interacció tècnica dissenyada per explorar un potencial empat d'arreglos formals però destinada habitualment a cribar les contradiccions evidents per demanar i acceptar els pèrits a dur.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-2 border-white shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
+                            <h3 class="font-bold text-blue-700 text-sm uppercase tracking-wide">3. Judici i Pràctica de la Trama</h3>
+                            <p class="text-sm text-gray-500 leading-relaxed mt-1">La fase principal. Oportunitat on la part es llança a l'arena per desplegar l'interrogatori de parts rellevants, experts testifiquen oralment i les dades recollides surten a la llum pública per la decisió.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="absolute w-4 h-4 bg-slate-400 rounded-full -left-[9px] top-1 border-2 border-white"></div>
+                            <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">4. Conclusions Jurídiques Finals</h3>
+                            <p class="text-sm text-gray-500 leading-relaxed mt-1">Una avaluació analítica resumida del què s'ha mostrat que prenen el protagonisme final els lletrats intentant lligar exclusivament les respostes dels minuts anteriors directament amb els fets jurídics requerits abans de concloure vist per a sentència.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] top-1 border-2 border-white shadow-[0_0_10px_rgba(34,197,94,0.6)]"></div>
+                            <h3 class="font-bold text-green-700 text-sm uppercase tracking-wide">5. Dictat Formal Tècnic de Sentència</h3>
+                            <p class="text-sm text-gray-500 leading-relaxed mt-1">Desplegament i redacció per on el jutjador dona el seu parer validant els criteris legals aportant les al·legacions on pot optar sense interrupció a una estimació o la desestimació segons fets de l'apartat 3.</p>
+                        </div>
+                    </div>
+                `,
+                color: "emerald"
+            },
+            quiz: {
+                title: "Avaluació Integrada",
+                icon: ICONS.help,
+                description: "Comprova l'assoliment ràpid de les bases fonamentals de les lectures anteriors sobre estructures civils i de fons.",
+                customHtml: `
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                            <h4 class="font-bold mb-4 text-slate-800 flex items-center gap-2"><div class="w-6 h-6 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-xs">1</div>Pot el costum civil d'un indret ser una font directa al processal penal on dictar normes per on el jutge s'haurà d'inclinar per evitar ser errat?</h4>
+                            <div class="space-y-2" id="quiz-1-options">
+                                <button onclick="checkAnswer(1, 'A')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">A) Sí, per no perdre en arrelament les dinàmiques sociològiques del context local es considera subsidiàriament la part fonamental.</button>
+                                <button onclick="checkAnswer(1, 'B')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">B) No. Atesa la serietat pública monopolitzadora que suposa el procés, es limita de facto qualsevol presència local per aplicar únicament fites establertes directament sota Llei.</button>
+                            </div>
+                            <div id="quiz-1-result" class="mt-4 hidden p-4 rounded-xl font-medium text-sm border"></div>
+                        </div>
+
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                            <h4 class="font-bold mb-4 text-slate-800 flex items-center gap-2"><div class="w-6 h-6 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-xs">2</div>Indica el nom del tribunal col·legiat que actua limitat dintre del cercle purament marcat limitat de la seva pròpia de la Comunitat Autònoma i tanca recursos sota eixe mateix ens:</h4>
+                            <div class="space-y-2" id="quiz-2-options">
+                                <button onclick="checkAnswer(2, 'A')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">A) L'òrgan intermedi i limitat sota l'àrea circumscrita es coneix habitualment com la pròpia Audiència de circumscripció Provincial (AP).</button>
+                                <button onclick="checkAnswer(2, 'B')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">B) L'organisme que culmina de ple tot l'establiment jeràrquic intern dintre del perímetre geogràfic civil d'aquesta autonomia és el previst Tribunal Superior de Justícia (TSJ).</button>
+                            </div>
+                            <div id="quiz-2-result" class="mt-4 hidden p-4 rounded-xl font-medium text-sm border"></div>
+                        </div>
+                    </div>
+                `,
+                color: "indigo"
+            }
+        };
+
+        const quizData = {
+            1: { correct: 'B', msgCorrect: 'Perfecte! L\'exigència d\'una llei estatal és inexcusable sota l\'ordre. Es prioritza l\'imperi igualitari garantit que un text únic pot proveir.', msgWrong: 'Compte amb el parany! Per seguretat ciutadana, no es tolera invenció o variabilitat com a font vàlida; ha d\'estar tot legislat estatalment prèviament als procediments.' },
+            2: { correct: 'B', msgCorrect: 'Exactament! Com el nom mateix dicta directament, esgota o culmina sota els reglaments estatutaris de via estricta i sense excedir territori les gestions.', msgWrong: 'Atenció... L\'AP funciona en demarcacions clarament per sota territorialment com són internament comarques o estensions purament provincials inferiors al concepte d\'autonomia superior global del TSJ.' }
+        };
+
+        function showTopic(key) {
+            const topic = topics[key];
+            const area = document.getElementById('content-area');
+
+            // Actualitzar estils pestanyes
+            document.querySelectorAll('#tabs button').forEach(btn => {
+                btn.classList.remove('active-tab', 'text-indigo-600', 'font-bold');
+                btn.classList.add('text-slate-500');
+            });
+            const activeBtn = document.getElementById(`btn-${key}`);
+            activeBtn.classList.add('active-tab', 'text-indigo-600');
+            if(key === 'quiz') activeBtn.classList.add('font-bold');
+            activeBtn.classList.remove('text-slate-500');
+
+            // Renderitzar
+            area.innerHTML = `
+                <div class="md:col-span-1 space-y-4 fade-in">
+                    <div class="p-6 bg-white rounded-3xl border border-slate-200 shadow-sm sticky top-24">
+                        <div class="w-14 h-14 rounded-2xl bg-${topic.color}-100 text-${topic.color}-600 flex items-center justify-center mb-5">
+                            ${topic.icon}
+                        </div>
+                        <h2 class="text-2xl font-bold mb-3 text-slate-800 tracking-tight">${topic.title}</h2>
+                        <p class="text-slate-600 text-sm leading-relaxed">${topic.description}</p>
+                    </div>
+                </div>
+                <div class="${topic.customHtml ? 'md:col-span-2 space-y-4 fade-in' : 'md:col-span-2 grid sm:grid-cols-2 gap-5 fade-in content-start'}">
+                    ${topic.customHtml ? topic.customHtml : topic.sections.map(s => `
+                        <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm topic-card">
+                            <h4 class="text-xs font-bold text-${topic.color}-600 uppercase tracking-wider mb-2">${s.label}</h4>
+                            <p class="text-sm text-slate-700 leading-relaxed">${s.text}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function checkAnswer(questionId, selectedId) {
+            const buttons = document.querySelectorAll(`#quiz-${questionId}-options button`);
+            const resultDiv = document.getElementById(`quiz-${questionId}-result`);
+            const correctOption = quizData[questionId].correct;
+            const isCorrect = (selectedId === correctOption);
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-red-50', 'bg-green-50', 'border-red-300', 'border-green-300', 'text-red-900', 'text-green-900', 'font-semibold');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+
+            const currentBtn = event.currentTarget;
+            currentBtn.classList.remove('bg-white', 'text-slate-600');
+
+            if (isCorrect) {
+                currentBtn.classList.add('bg-green-50', 'border-green-300', 'text-green-900', 'font-semibold');
+                resultDiv.className = 'mt-5 p-4 rounded-xl font-medium text-sm border flex items-start gap-3 text-green-700 bg-green-50 border-green-200 fade-in';
+                resultDiv.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> <span>${quizData[questionId].msgCorrect}</span>`;
+            } else {
+                currentBtn.classList.add('bg-red-50', 'border-red-300', 'text-red-900', 'font-semibold');
+                resultDiv.className = 'mt-5 p-4 rounded-xl font-medium text-sm border flex items-start gap-3 text-red-700 bg-red-50 border-red-200 fade-in';
+                resultDiv.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> <span>${quizData[questionId].msgWrong}</span>`;
+            }
+            resultDiv.classList.remove('hidden');
+        }
+
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            showTopic('conceptes');
+        });
+    </script>
+</body>
+
+</html>
