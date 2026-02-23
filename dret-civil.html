@@ -38,7 +38,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Efecte de fons progressiu per les seccions */
         .section-header {
             position: relative;
             padding-left: 1rem;
@@ -46,7 +45,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Scroll personalitzat */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -68,7 +66,6 @@
 
 <body class="min-h-screen relative overflow-x-hidden">
 
-    <!-- Navbar tornar enrere -->
     <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20 max-w-[1400px] mx-auto left-0 right-0">
         <a href="index.html"
             class="flex items-center gap-2 text-slate-400 hover:text-white font-semibold transition-all bg-slate-800/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-700 hover:border-slate-500">
@@ -80,14 +77,12 @@
         </a>
     </nav>
 
-    <!-- Fons decoratiu superior -->
     <div
         class="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-purple-600/10 rounded-full blur-[120px] z-0 pointer-events-none">
     </div>
 
     <div class="max-w-[1400px] mx-auto px-6 pt-32 pb-24 relative z-10">
 
-        <!-- Capçalera d'Assignatura -->
         <header class="mb-20">
             <div
                 class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-500/20 text-purple-400 text-sm font-bold tracking-widest uppercase mb-6 border border-purple-500/20">
@@ -113,101 +108,430 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="text-slate-400">
-                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                        <line x1="16" x2="16" y1="2" y2="6" />
-                        <line x1="8" x2="8" y1="2" y2="6" />
-                        <line x1="3" x2="21" y1="10" y2="10" />
-                        <path d="m9 16 2 2 4-4" />
-                    </svg>
-                    Anotacions visuals
-                </div>
-                <div
-                    class="flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full text-slate-300 text-sm border border-slate-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="text-slate-400">
                         <polygon points="5 3 19 12 5 21 5 3" />
                     </svg>
-                    22 Lliçons interactives
+                    14 Vídeos Clau
                 </div>
             </div>
         </header>
 
+        <!-- Bloc: Fonaments -->
+        <div class="mb-16">
+            <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Fonaments i Conceptes Generals
+            </h2>
 
-        <!-- Bloc 1: Drets Reals i Propietat -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Video 1 -->
+                <a href="https://www.youtube.com/watch?v=UDRFAdTs6VU" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/UDRFAdTs6VU/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Dret Públic vs Privat">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Introducció</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Dret Públic vs Dret Privat</h3>
+                    </div>
+                </a>
+
+                <!-- Video 2 -->
+                <a href="https://www.youtube.com/watch?v=o9dmq9UHmvM" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/o9dmq9UHmvM/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="El negoci jurídic">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Conceptes</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Dret Civil: El negoci jurídic</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bloc 2: Drets Reals i Propietat -->
         <div class="mb-16">
             <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Drets Reals i Propietat
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <!-- Video 1 -->
-                <div class="video-card rounded-2xl p-4 cursor-pointer group">
-                    <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600&h=338"
-                            class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                            alt="Intro">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                <a href="https://www.youtube.com/watch?v=9dcKzcXwDYc" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/9dcKzcXwDYc/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Drets reals garantia">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
                         </div>
-                        <div
-                            class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <polygon points="5 3 19 12 5 21 5 3" />
-                            </svg>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
                         </div>
-                        <span
-                            class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-semibold px-2 py-1 rounded">6:31</span>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Els drets reals de garantia</h3>
                     </div>
-                    <div class="flex gap-2 mb-2">
-                        <span
-                            class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Lliçó</span>
-                        <span
-                            class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Conceptes
-                            bàsics</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Introducció als Drets Reals</h3>
-                </div>
+                </a>
 
                 <!-- Video 2 -->
-                <div class="video-card rounded-2xl p-4 cursor-pointer group">
-                    <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                        <div class="w-full h-full bg-slate-700/50 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" class="text-slate-600">
-                                <rect width="18" height="18" x="3" y="4" rx="2" />
-                            </svg>
+                <a href="https://www.youtube.com/watch?v=6MG_o_8DFl8" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/6MG_o_8DFl8/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Registre">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
                         </div>
-                        <div
-                            class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <polygon points="5 3 19 12 5 21 5 3" />
-                            </svg>
-                        </div>
-                        <span
-                            class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-semibold px-2 py-1 rounded">6:53</span>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">El Registre de la Propietat</h3>
                     </div>
-                    <div class="flex gap-2 mb-2">
-                        <span
-                            class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Lliçó</span>
-                        <span
-                            class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Codi
-                            Civil</span>
+                </a>
+
+                <!-- Video 3 -->
+                <a href="https://www.youtube.com/watch?v=QXrkNn7MGMY" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/QXrkNn7MGMY/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Adquisició prefrent">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Dret d'adquisició preferent</h3>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">El Registre de la Propietat</h3>
-                </div>
+                </a>
+
+                <!-- Video 4 -->
+                <a href="https://www.youtube.com/watch?v=VF6f-I0oekw" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/VF6f-I0oekw/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Gaudi i Càrregues">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Drets Reals: Gaudi i Càrregues</h3>
+                    </div>
+                </a>
+
+                <!-- Video 5 -->
+                <a href="https://www.youtube.com/watch?v=c3dvcCCnEvo" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/c3dvcCCnEvo/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Horitzontal">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">La Propietat Horitzontal</h3>
+                    </div>
+                </a>
+
+                <!-- Video 6 -->
+                <a href="https://www.youtube.com/watch?v=y9CnaVhOyHM" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/y9CnaVhOyHM/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Adquicisió propietat">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Dret
+                                Català</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">L'adquisició de la propietat a
+                            Catalunya</h3>
+                    </div>
+                </a>
+
+                <!-- Video 7 -->
+                <a href="https://www.youtube.com/watch?v=cn_otkfcNqA" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/cn_otkfcNqA/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Defensa possessesiu">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Dret
+                                Català</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">La defensa de la possessió</h3>
+                    </div>
+                </a>
+
+                <!-- Video 8 -->
+                <a href="https://www.youtube.com/watch?v=QYzy2YEZIcQ" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/QYzy2YEZIcQ/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Immissions">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Les immissions</h3>
+                    </div>
+                </a>
+
+                <!-- Video 9 -->
+                <a href="https://www.youtube.com/watch?v=KImCmJ9IoOc" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/KImCmJ9IoOc/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Béns mobles">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Propietat dels béns mobles al s. XXI
+                        </h3>
+                    </div>
+                </a>
+
             </div>
         </div>
 
-        <!-- Bloc 2: Dret de Família i Successions -->
+        <!-- Bloc 3: Obligacions i Contractes -->
+        <div class="mb-16">
+            <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Obligacions i Contractes
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Video 1 -->
+                <a href="https://www.youtube.com/watch?v=BACnb9ZHQJ8" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/BACnb9ZHQJ8/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Lloguer a Catalunya">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Lloguer</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">La llei del lloguer a Catalunya</h3>
+                    </div>
+                </a>
+
+                <!-- Video 2 -->
+                <a href="https://www.youtube.com/watch?v=sJeuLl3MFW0" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/sJeuLl3MFW0/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Assegurança vehicles">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Responsabilitat
+                                civil</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Llei 5/2025 de l'assegurança a motor
+                        </h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bloc 4: Dret de Família i Successions -->
         <div class="mb-16">
             <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Dret de Família i Successions
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8 mt-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8 mt-6">
+                <!-- Video -->
+                <a href="https://www.youtube.com/watch?v=QMOvEYQuIcQ" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/QMOvEYQuIcQ/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Matrimoni">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Família</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">El matrimoni a Catalunya</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 mb-8 mt-6">
                 <!-- Secció Successions Mortis Causa -->
                 <a href="#" class="block group relative">
                     <div
@@ -265,48 +589,24 @@
                             </svg>
                         </div>
 
-                        <h3 class="text-3xl font-extrabold text-white mb-3 text-center">Dret de Família</h3>
+                        <h3 class="text-3xl font-extrabold text-white mb-3 text-center">Interacció Dret de Família</h3>
                         <p class="text-slate-400 text-center font-light mb-6">Evolució del Dret de Família, matrimoni,
                             règims economico-matrimonials i relacions paternofilials.</p>
 
                         <div
                             class="inline-flex items-center text-emerald-400 font-semibold group-hover:text-emerald-300">
-                            Entrar al mòdul
+                            Pròximament
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform">
-                                <path d="m9 18 6-6-6-6" />
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                                <line x1="16" x2="16" y1="2" y2="6" />
+                                <line x1="8" x2="8" y1="2" y2="6" />
+                                <line x1="3" x2="21" y1="10" y2="10" />
                             </svg>
                         </div>
                     </div>
                 </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-                <div class="video-card rounded-2xl p-4 cursor-pointer group">
-                    <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                        </div>
-                        <div
-                            class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <polygon points="5 3 19 12 5 21 5 3" />
-                            </svg>
-                        </div>
-                        <span
-                            class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-semibold px-2 py-1 rounded">5:47</span>
-                    </div>
-                    <div class="flex gap-2 mb-2">
-                        <span
-                            class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Lliçó</span>
-                        <span
-                            class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Família</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">L'evolució del Dret de Família</h3>
-                </div>
-
             </div>
         </div>
 
