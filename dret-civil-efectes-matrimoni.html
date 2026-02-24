@@ -40,9 +40,13 @@
             z-index: 50;
         }
 
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
+        .badge-penalty {
+            background-color: #fee2e2;
+            color: #991b1b;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -82,7 +86,8 @@
                     <li><a href="#objectius" class="sidebar-link block p-2 rounded">Objectius</a></li>
                     <li><a href="#relacions-personals" class="sidebar-link block p-2 rounded">1. Relacions Personals</a>
                     </li>
-                    <li><a href="#drets-deures" class="sidebar-link block p-2 rounded">2. Drets i Deures</a></li>
+                    <li><a href="#drets-deures" class="sidebar-link block p-2 rounded font-semibold text-blue-700">2.
+                            Drets i Deures</a></li>
                     <li><a href="#regim-primari" class="sidebar-link block p-2 rounded">3. Règim Primari</a></li>
                     <li><a href="#capitols" class="sidebar-link block p-2 rounded">4. Capítols Matrimonials</a></li>
                     <li><a href="#pacte-supervivencia" class="sidebar-link block p-2 rounded">5. Pacte de
@@ -121,20 +126,62 @@
                 </div>
             </section>
 
-            <!-- 1 & 2 Relacions Personals -->
+            <!-- 1. Relacions Personals -->
             <section id="relacions-personals" class="scroll-mt-20">
-                <h2 class="text-2xl font-bold uoc-blue mb-4">1. Relacions Personals i Drets/Deures</h2>
+                <h2 class="text-2xl font-bold uoc-blue mb-4">1. Les relacions personals entre els cònjuges</h2>
                 <div class="card p-6 space-y-4">
-                    <p>El matrimoni es basa en el <strong>principi d'igualtat</strong> (Art. 32 CE, Art. 66 CC, Art.
-                        231-2 CCCat). No hi ha representació forçosa d'un cònjuge per l'altre.</p>
-                    <div class="bg-gray-50 p-4 rounded border">
-                        <h3 class="font-bold mb-2">Deures segons l'Art. 231-2 CCCat:</h3>
-                        <ul class="list-disc list-inside space-y-1 ml-2">
-                            <li>Respecte i actuació en interès de la família.</li>
-                            <li>Lleialtat, ajuda i socors mutu.</li>
-                            <li>Cura i atenció dels membres a càrrec.</li>
-                            <li>Compartir responsabilitats domèstiques.</li>
-                        </ul>
+                    <p>El matrimoni crea una relació jurídica sota el <strong>principi d'igualtat</strong> (Art. 32 CE).
+                        L'Art. 71 CC estableix que no hi ha representació forçosa d'un cònjuge per part de l'altre.</p>
+                    <p class="text-sm text-gray-600">Els deures personals constitueixen el contingut del matrimoni i
+                        <strong>no admeten cap pacte</strong>. Qualsevol acord que els alteri és nul.</p>
+                </div>
+            </section>
+
+            <!-- 2. Drets i Deures (NOU/AMPLIAT) -->
+            <section id="drets-deures" class="scroll-mt-20">
+                <h2 class="text-2xl font-bold uoc-blue mb-4">2. Els drets i deures dels cònjuges</h2>
+                <div class="card p-6 space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg mb-2 text-blue-800 border-b">Contingut Ètic i Personal</h3>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Respecte:</strong> Actuar sempre en interès de la família.</li>
+                                <li><strong>Lleialtat:</strong> Guardar-se fidelitat i suport moral.</li>
+                                <li><strong>Ajuda i socors mutu:</strong> Prestar-se assistència en qualsevol situació.
+                                </li>
+                                <li><strong>Responsabilitat domèstica:</strong> Compartir les tasques i la cura de
+                                    membres al seu càrrec.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg mb-2 text-blue-800">Trascendència Econòmica</h3>
+                            <p class="text-sm">El deure d'ajut i socors mutu es tradueix en l'<strong>obligació de
+                                    prestar-se aliments</strong> (Art. 237-4 CCCat) quan un d'ells es trobi en estat de
+                                necessitat.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h3 class="font-bold text-lg mb-3 text-red-800">Conseqüències de l'incompliment</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-3 bg-white border rounded shadow-sm">
+                                <span class="badge-penalty">Civil</span>
+                                <p class="text-sm">Generalment <strong>no comporta sancions econòmiques</strong>. Des de
+                                    la Llei 15/2005, ja no cal al·legar l'incompliment d'aquests deures com a causa de
+                                    separació o divorci.</p>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-white border rounded shadow-sm">
+                                <span class="badge-penalty">Penal</span>
+                                <p class="text-sm">L'incompliment del manteniment legal (aliments) està tipificat com a
+                                    <strong>delicte d'abandonament de família</strong> (Art. 226.1 CP).</p>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-white border rounded shadow-sm">
+                                <span class="badge-penalty">Jurisprudència</span>
+                                <p class="text-sm italic">La <strong>STS de 13 de novembre de 2018</strong> tanca la
+                                    porta a indemnitzacions per danys morals en casos d'ocultació de la paternitat
+                                    biològica d'un fill matrimonial.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -142,33 +189,25 @@
             <!-- 3. Règim Primari -->
             <section id="regim-primari" class="scroll-mt-20">
                 <h2 class="text-2xl font-bold uoc-blue mb-4">3. El Règim Primari</h2>
-                <p class="mb-4">Normes aplicables independentment del règim econòmic triat.</p>
-
                 <div class="space-y-6">
                     <div class="card p-6">
                         <h3 class="font-bold text-lg mb-3">3.2.1. Despeses Familiars</h3>
-                        <p class="text-sm mb-3">Inclou aliments, salut, manteniment de l'habitatge i previsió mèdica.
-                            S'exclouen despeses de béns privatius o ús exclusiu.</p>
-                        <div class="bg-blue-50 p-4 rounded-md italic text-sm">
-                            "A Catalunya, el pagament de les quotes de la hipoteca NO es considera despesa familiar
-                            ordinària, sinó deute de capital (Art. 233-23)."
+                        <p class="text-sm mb-3">L'element clau és el <strong>sosteniment de la família</strong>. Els
+                            fills i parents que hi convisquin també han de contribuir proporcionalment.</p>
+                        <div class="bg-yellow-50 p-4 border-l-4 border-yellow-400 text-sm">
+                            <strong>Atenció:</strong> S'exclouen les despeses derivades de la gestió de béns privatius
+                            d'un dels cònjuges que no beneficiïn la família.
                         </div>
                     </div>
 
                     <div class="card p-6">
-                        <h3 class="font-bold text-lg mb-3">3.2.3. L'Habitatge Familiar</h3>
-                        <p class="mb-3">Protecció especial (Art. 231-9 CCCat): Es requereix el <strong>consentiment de
-                                tots dos cònjuges</strong> per a disposar-ne (vendre, hipotecar), encara que pertanyi a
-                            un de sol.</p>
-                        <ul class="text-sm space-y-2">
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500 font-bold">!</span>
-                                <span>Acte onerós sense consentiment: <strong>Anul·lable</strong> (4 anys).</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500 font-bold">!</span>
-                                <span>Acte gratuït sense consentiment: <strong>Nul</strong>.</span>
-                            </li>
+                        <h3 class="font-bold text-lg mb-3">3.2.3. El Domicili Familiar</h3>
+                        <p class="mb-3 text-sm">Gaudeix de protecció especial per garantir un habitatge digne (Art. 47
+                            CE). Independentment de qui en sigui el propietari:</p>
+                        <ul class="text-sm space-y-2 list-disc list-inside ml-2">
+                            <li>Cal <strong>consentiment mutu</strong> per alienar o hipotecar.</li>
+                            <li>La manifestació errònia sobre el caràcter no familiar no afecta tercers de <strong>bona
+                                    fe</strong>.</li>
                         </ul>
                     </div>
                 </div>
@@ -177,33 +216,15 @@
             <!-- 6. Règims Econòmics -->
             <section id="regims-economics" class="scroll-mt-20">
                 <h2 class="text-2xl font-bold uoc-blue mb-4">6. Els Règims Econòmics Matrimonials</h2>
-
                 <div class="space-y-8">
-                    <!-- Separació de béns -->
                     <div class="card p-6 border-t-4 border-blue-900">
-                        <h3 class="text-xl font-bold mb-4">Règim de Separació de Béns (Legal a Catalunya)</h3>
-                        <p class="mb-4">Els patrimonis són autònoms. Béns propis els d'abans i els d'adquirit durant el
-                            matrimoni.</p>
-
-                        <div class="bg-gray-100 p-4 rounded mb-4">
-                            <h4 class="font-bold text-blue-800">Compensació econòmica per raó de treball (Art. 232-5)
-                            </h4>
-                            <p class="text-sm mt-2">Dret del cònjuge que ha treballat per a la casa o per a l'altre
-                                sense retribució suficient. Límit: <strong>quarta part</strong> de la diferència dels
-                                increments patrimonials.</p>
-                        </div>
-                    </div>
-
-                    <!-- Guanys -->
-                    <div class="card p-6 border-t-4 border-yellow-600">
-                        <h3 class="text-xl font-bold mb-4">Societat de Guanys (CC Espanyol)</h3>
-                        <p class="mb-4">Es fan comuns els guanys o beneficis obtinguts indistintament per qualsevol
-                            d'ells.</p>
-                        <div class="grid md:grid-cols-2 gap-4 text-xs">
-                            <div class="p-2 bg-green-50 rounded"><strong>Béns Privatius:</strong> Anteriors al règim,
-                                adquirits a títol gratuït (herències), roba personal, eines de professió.</div>
-                            <div class="p-2 bg-yellow-50 rounded"><strong>Béns de Guanys:</strong> Treball/indústria,
-                                fruits dels béns (també els privatius), empreses fundades amb fons comuns.</div>
+                        <h3 class="text-xl font-bold mb-2">Separació de Béns (Catalunya)</h3>
+                        <p class="text-sm mb-4">Règim supletori a Catalunya (Art. 231-10 CCCat). Hi ha autonomia total
+                            de patrimonis.</p>
+                        <div class="bg-gray-100 p-4 rounded">
+                            <h4 class="font-bold text-blue-800">Compensació per raó de treball</h4>
+                            <p class="text-xs mt-2 italic">A diferència de la pensió compensatòria, aquesta busca
+                                equilibrar el patrimoni del cònjuge que s'ha dedicat a la casa sense retribució.</p>
                         </div>
                     </div>
                 </div>
@@ -211,11 +232,9 @@
 
             <!-- Autoavaluació -->
             <section id="autoavaluacio" class="scroll-mt-20">
-                <h2 class="text-2xl font-bold uoc-blue mb-6">Exercicis d'Autoavaluació</h2>
+                <h2 class="text-2xl font-bold uoc-blue mb-6">Autoavaluació Interactiva</h2>
                 <div id="quiz-container" class="card p-8 bg-white border-2 border-blue-100">
-                    <div id="question-area">
-                        <!-- JS injectarà aquí les preguntes -->
-                    </div>
+                    <div id="question-area"></div>
                     <div id="result-area" class="hidden mt-6 p-4 rounded bg-gray-50 font-bold text-center"></div>
                 </div>
             </section>
@@ -225,47 +244,32 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-300 py-12 px-6 mt-12">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-white font-bold mb-4">Sobre el recurs</h3>
-                <p class="text-sm">Adaptació digital del mòdul PID_00285312 de la UOC sobre dret de família català i
-                    espanyol.</p>
-            </div>
-            <div>
-                <h3 class="text-white font-bold mb-4">Glossari ràpid</h3>
-                <ul class="text-xs space-y-2">
-                    <li><strong>Capítols:</strong> Escriptura pública per pactar el règim.</li>
-                    <li><strong>Pacte de supervivència:</strong> El supervivent esdevé titular únic.</li>
-                    <li><strong>Any de viduïtat:</strong> Dret a habitar l'habitatge i ser alimentat durant 1 any.</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-white font-bold mb-4">Contacte Acadèmic</h3>
-                <p class="text-sm">Revisió: Esther Farnós Amorós, Aura Esther Vilalta Nicuesa.</p>
-            </div>
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-sm">Adaptació educativa del Llibre Segon del Codi Civil de Catalunya.</p>
+            <p class="text-xs mt-2">© FUOC PID_00285312</p>
         </div>
     </footer>
 
     <script>
         const questions = [
             {
-                q: "Els actes de disposició a títol gratuït sobre béns comuns fets sense el consentiment de l'altre són...",
-                options: ["Anul·lables", "Rescindibles", "Nuls", "Revocables"],
-                correct: 2
-            },
-            {
-                q: "Si l'habitatge familiar és d'un cònjuge i l'hipoteca sense el consentiment de l'altre, el contracte és...",
-                options: ["Nul", "Anul·lable", "Rescindible", "Vàlid"],
+                q: "Segons l'Art. 231-2 CCCat, quins són els deures dels cònjuges?",
+                options: ["Fidelitat absoluta i obediència", "Respecte, lleialtat, ajuda i socors mutu", "Representació forçosa legal", "Sancions econòmiques automàtiques"],
                 correct: 1
             },
             {
-                q: "Quan mor un dels cònjuges, l'altre rep el parament de la llar sense computar-se en l'herència?",
-                options: ["Cert", "Fals"],
+                q: "L'incompliment de l'assistència per al manteniment del cònjuge pot ser delicte?",
+                options: ["No, és només una infracció civil", "Sí, és un delicte d'abandonament (Art. 226 CP)", "Només si hi ha violència física", "Només en règim de guanys"],
+                correct: 1
+            },
+            {
+                q: "L'ajut i socors mutu implica l'obligació de prestar aliments?",
+                options: ["Cert, segons l'Art. 237-4 CCCat", "Fals, són conceptes diferents", "Només respecte als fills", "Només si es pacta en capítols"],
                 correct: 0
             },
             {
-                q: "Quin és el termini de vigència d'uns capítols matrimonials atorgats abans del matrimoni si aquest no se celebra?",
-                options: ["1 mes", "6 mesos", "1 any", "Indefinit"],
+                q: "L'acte de disposició gratuït de l'habitatge familiar sense consentiment de l'altre és...",
+                options: ["Anul·lable en 4 anys", "Sempre vàlid si el titular és un sol", "Nul de ple dret", "Rescindible per lesió"],
                 correct: 2
             }
         ];
@@ -276,41 +280,27 @@
         function loadQuestion() {
             const area = document.getElementById('question-area');
             const q = questions[currentQuestion];
-
-            let html = `<p class="text-lg font-semibold mb-6">${currentQuestion + 1}. ${q.q}</p>`;
-            html += `<div class="space-y-3">`;
+            let html = `<p class="text-lg font-semibold mb-6">${currentQuestion + 1}. ${q.q}</p><div class="space-y-3">`;
             q.options.forEach((opt, idx) => {
-                html += `
-                    <button onclick="checkAnswer(${idx})" class="w-full text-left p-4 rounded border border-gray-200 hover:bg-blue-50 hover:border-blue-300 transition-colors">
-                        ${opt}
-                    </button>
-                `;
+                html += `<button onclick="checkAnswer(${idx})" class="w-full text-left p-4 rounded border border-gray-200 hover:bg-blue-50 transition-colors">${opt}</button>`;
             });
             html += `</div>`;
             area.innerHTML = html;
         }
 
         function checkAnswer(idx) {
-            if (idx === questions[currentQuestion].correct) {
-                score++;
-            }
-
+            if (idx === questions[currentQuestion].correct) score++;
             currentQuestion++;
-
-            if (currentQuestion < questions.length) {
-                loadQuestion();
-            } else {
-                showResults();
-            }
+            if (currentQuestion < questions.length) loadQuestion();
+            else showResults();
         }
 
         function showResults() {
-            const area = document.getElementById('question-area');
-            const resultArea = document.getElementById('result-area');
-            area.innerHTML = `<h3 class="text-2xl font-bold text-center">Has acabat!</h3>`;
-            resultArea.classList.remove('hidden');
-            resultArea.innerHTML = `Puntuació: ${score} de ${questions.length}`;
-            resultArea.classList.add(score > questions.length / 2 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800');
+            document.getElementById('question-area').innerHTML = `<h3 class="text-2xl font-bold text-center text-blue-900">Resultat Final</h3>`;
+            const res = document.getElementById('result-area');
+            res.classList.remove('hidden');
+            res.innerHTML = `Puntuació: ${score} / ${questions.length}`;
+            res.className = score >= questions.length / 2 ? "p-4 mt-6 rounded bg-green-100 text-green-800 text-center font-bold" : "p-4 mt-6 rounded bg-red-100 text-red-800 text-center font-bold";
         }
 
         window.onload = loadQuestion;
