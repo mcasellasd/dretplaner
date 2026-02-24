@@ -12,7 +12,7 @@ const distRegex = /<!-- Títol de Secció -->([\s\S]*?)<!-- Script per a funcion
 contentV = contentV.replace(distRegex, '<!-- Script per a funcionalitat del Chatbot RAG -->');
 
 // Also update the title to "Vídeos Dret Financer"
-contentV = contentV.replace('<title>Dret Financer i Tributari | Dret Planer</title>', '<title>Vídeos - Dret Financer | Dret Planer</title>');
+contentV = contentV.replace('<title>Dret Financer i Tributari | Dret Català Visual</title>', '<title>Vídeos - Dret Financer | Dret Català Visual</title>');
 
 // For texts: keep Distribuïdor, REMOVE Audiovisual
 // Audiovisual starts with <!-- Contingut Audiovisual --> and ends just before the next <!-- Títol de Secció --> (the Distribuïdor one)
