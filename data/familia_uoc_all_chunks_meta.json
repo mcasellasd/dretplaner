@@ -1,0 +1,31 @@
+{
+  "docs": [
+    {
+      "doc_id": "PID_00285315",
+      "source_pdf": "PID_00285315.pdf",
+      "num_pages": 30,
+      "num_chunks": 24,
+      "chunk_size_chars": 2200,
+      "overlap_chars": 300
+    },
+    {
+      "doc_id": "PID_00285312",
+      "source_pdf": "PID_00285312.pdf",
+      "num_pages": 46,
+      "num_chunks": 55,
+      "chunk_size_chars": 2200,
+      "overlap_chars": 300
+    },
+    {
+      "doc_id": "PID_00285319",
+      "source_pdf": "PID_00285319.pdf",
+      "num_pages": 32,
+      "num_chunks": 34,
+      "chunk_size_chars": 2200,
+      "overlap_chars": 300
+    }
+  ],
+  "total_chunks": 113,
+  "chunk_size_chars": 2200,
+  "overlap_chars": 300
+}
