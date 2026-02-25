@@ -7,13 +7,21 @@
     <title>Fonaments del Dret Administratiu Modern</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
         body {
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
         }
     </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 leading-relaxed font-sans relative">
+<body class="bg-slate-50 text-slate-900 leading-relaxed relative">
 
     <!-- Botó per tornar enrere -->
     <a href="index.html"
@@ -27,12 +35,12 @@
 
     <!-- Header / Nav -->
     <header class="bg-indigo-900 text-white py-12 px-6 shadow-lg sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center sm:pl-16 md:pl-0">
-            <div class="mt-8 md:mt-0 text-center md:text-left">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center pl-16 md:pl-0">
+            <div>
                 <h1 class="text-3xl font-bold tracking-tight">Dret Administratiu I</h1>
                 <p class="text-indigo-200 mt-2 italic">Desenvolupament conceptual del mapa mental</p>
             </div>
-            <nav class="mt-6 md:mt-0 flex gap-4 text-sm font-semibold flex-wrap justify-center">
+            <nav class="mt-6 md:mt-0 flex gap-4 text-sm font-semibold">
                 <a href="#admin" class="hover:text-indigo-300 transition">L'Administració</a>
                 <a href="#fonts" class="hover:text-indigo-300 transition">Fonts</a>
                 <a href="#constitucio" class="hover:text-indigo-300 transition">Constitució</a>
@@ -48,8 +56,7 @@
             <h2 class="text-2xl font-bold text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">1. Aproximació a
                 l'Administració Pública</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div
-                    class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:-translate-y-0.5 transition-transform duration-300">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 concept-card">
                     <h3 class="text-lg font-semibold text-indigo-700 mb-3 flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -62,8 +69,7 @@
                         sinó una <strong>persona jurídica</strong>. És un subjecte de dret que actua amb personalitat
                         jurídica única per al compliment dels seus fins.</p>
                 </div>
-                <div
-                    class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:-translate-y-0.5 transition-transform duration-300">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 concept-card">
                     <h3 class="text-lg font-semibold text-indigo-700 mb-3 flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -85,9 +91,9 @@
                 Administratiu i les seves Fonts</h2>
             <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
                 <div class="mb-6">
-                    <p class="text-slate-700 mb-4 italic text-lg">&quot;El Dret Administratiu és el dret comú i general
-                        de les Administracions Públiques, que regula la seva organització, el seu funcionament i les
-                        seves relacions amb els ciutadans.&quot;</p>
+                    <p class="text-slate-700 mb-4 italic text-lg">"El Dret Administratiu és el dret comú i general de
+                        les Administracions Públiques, que regula la seva organització, el seu funcionament i les seves
+                        relacions amb els ciutadans."</p>
                 </div>
                 <div class="space-y-6">
                     <div class="flex gap-4">
@@ -125,8 +131,8 @@
             <h2 class="text-2xl font-bold text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">3. Bases
                 Constitucionals (Art. 103 CE)</h2>
             <div class="bg-indigo-50 border-l-4 border-indigo-600 p-8 rounded-r-xl">
-                <h3 class="text-xl font-bold text-indigo-900 mb-4 italic">&quot;L'Administració Pública serveix amb
-                    objectivitat els interessos generals...&quot;</h3>
+                <h3 class="text-xl font-bold text-indigo-900 mb-4 italic">"L'Administració Pública serveix amb
+                    objectivitat els interessos generals..."</h3>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="bg-white p-4 rounded shadow-sm">
                         <span
@@ -249,8 +255,8 @@
                     <h4 class="text-indigo-400 font-bold mb-2 uppercase text-xs tracking-widest">Burocràcia i Gestió
                     </h4>
                     <p class="text-slate-300 text-sm italic">De l'Administració weberiana (jerarquia, normes rígides)
-                        hem passat a models de &quot;Nova Gestió Pública&quot; que busquen resultats i eficiència, tot i
-                        mantenir les garanties jurídiques.</p>
+                        hem passat a models de "Nova Gestió Pública" que busquen resultats i eficiència, tot i mantenir
+                        les garanties jurídiques.</p>
                 </div>
             </div>
         </section>
@@ -261,7 +267,7 @@
         <div class="max-w-5xl mx-auto text-center text-slate-500 text-sm">
             <p>&copy; 2026 - Resum Acadèmic Dret Administratiu I</p>
             <p class="mt-2 italic">Basat en els continguts de la lliçó de Francisco Velasco Caballero i els mòduls de la
-                PAC.</p>
+                PAC 1.</p>
         </div>
     </footer>
 
