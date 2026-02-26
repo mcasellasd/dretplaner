@@ -4,24 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fonaments del Dret Administratiu Modern</title>
+    <title>Univers interactiu de Dret Administratiu - Edició PAC 2</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
             scroll-behavior: smooth;
+            background: #f1f5f9;
         }
 
-        .concept-card:hover {
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .step-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .active-tab {
+            border-bottom: 4px solid #6366f1;
+            color: #4338ca;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .bg-gradient-mesh {
+            background-color: #4338ca;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+        }
+
+        .law-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            color: #475569;
         }
     </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 leading-relaxed relative">
+<body class="text-slate-800 relative">
 
     <!-- Botó per tornar enrere -->
     <a href="index.html"
@@ -33,243 +86,928 @@
         <span class="hidden md:inline">Tornar a l'Inici</span>
     </a>
 
-    <!-- Header / Nav -->
-    <header class="bg-indigo-900 text-white py-12 px-6 shadow-lg sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center pl-16 md:pl-0">
-            <div>
-                <h1 class="text-3xl font-bold tracking-tight">Dret Administratiu I</h1>
-                <p class="text-indigo-200 mt-2 italic">Desenvolupament conceptual del mapa mental</p>
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-mesh text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 py-20 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 pl-16 md:pl-0">
+                <div class="md:w-2/3 text-left">
+                    <span
+                        class="inline-block px-4 py-1 mb-4 bg-indigo-500/30 rounded-full text-xs font-bold tracking-widest uppercase border border-indigo-400/50">Actualitzat
+                        PAC 2: Fonts i Reglaments</span>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Dret <span
+                            class="text-indigo-400">Administratiu</span> I</h1>
+                    <p class="text-xl text-indigo-100/80 max-w-2xl mb-8 font-light">De l'ordenament jurídic a l'acció de
+                        l'Estat: una guia visual per dominar el sistema de fonts i la potestat reglamentària.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#fonts" onclick="showModule('tema-fonts')"
+                            class="bg-white text-indigo-900 px-8 py-4 rounded-2xl font-bold hover:bg-indigo-50 transition shadow-xl">Explorar
+                            Fonts</a>
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-10 h-10 rounded-full border-2 border-indigo-900 bg-indigo-500 flex items-center justify-center text-xs">
+                                UE</div>
+                            <div
+                                class="w-10 h-10 rounded-full border-2 border-indigo-900 bg-emerald-500 flex items-center justify-center text-xs">
+                                CE</div>
+                            <div
+                                class="w-10 h-10 rounded-full border-2 border-indigo-900 bg-amber-500 flex items-center justify-center text-xs">
+                                LPAC</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3 hidden md:block float-animation">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-2xl">
+                        <i class="fas fa-balance-scale text-8xl text-indigo-300 mb-6"></i>
+                        <h3 class="text-2xl font-bold italic">Lex Superior</h3>
+                        <p class="text-indigo-200 text-sm mt-2">La jerarquia és la brúixola de l'Estat de Dret.</p>
+                    </div>
+                </div>
             </div>
-            <nav class="mt-6 md:mt-0 flex gap-4 text-sm font-semibold">
-                <a href="#admin" class="hover:text-indigo-300 transition">L'Administració</a>
-                <a href="#fonts" class="hover:text-indigo-300 transition">Fonts</a>
-                <a href="#constitucio" class="hover:text-indigo-300 transition">Constitució</a>
-                <a href="#activitat" class="hover:text-indigo-300 transition">Activitat</a>
-            </nav>
         </div>
-    </header>
+    </div>
 
-    <main class="max-w-5xl mx-auto py-12 px-6">
+    <!-- Main Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl shadow-lg border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex space-x-2 md:space-x-6 overflow-x-auto whitespace-nowrap scrollbar-hide w-full">
+                    <button onclick="showModule('tema-admin')" id="btn-tema-admin"
+                        class="nav-btn h-20 flex items-center px-4 font-bold transition">1. Administració</button>
+                    <button onclick="showModule('tema-fonts')" id="btn-tema-fonts"
+                        class="nav-btn h-20 flex items-center px-4 font-bold transition active-tab text-indigo-700">2.
+                        Les Fonts</button>
+                    <button onclick="showModule('tema-reglaments')" id="btn-tema-reglaments"
+                        class="nav-btn h-20 flex items-center px-4 font-bold transition text-slate-500">3. El
+                        Reglament</button>
+                    <button onclick="showModule('tema-actes')" id="btn-tema-actes"
+                        class="nav-btn h-20 flex items-center px-4 font-bold transition text-slate-500">4. L'Acte i
+                        Acció</button>
+                    <button onclick="showModule('tema-control')" id="btn-tema-control"
+                        class="nav-btn h-20 flex items-center px-4 font-bold transition text-slate-500">5. El
+                        Control</button>
+                    <button onclick="showModule('tema-hisenda')" id="btn-tema-hisenda"
+                        class="nav-btn h-20 flex items-center px-4 font-bold transition text-slate-500">6.
+                        Hisenda</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-        <!-- Intro Section -->
-        <section id="admin" class="mb-16 scroll-mt-24">
-            <h2 class="text-2xl font-bold text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">1. Aproximació a
-                l'Administració Pública</h2>
+    <main class="max-w-6xl mx-auto px-6 py-12">
+
+        <!-- MÒDUL 1: ADMINISTRACIÓ (REVISAT + PAC1) -->
+        <section id="tema-admin" class="module-content hidden">
+            <div class="grid lg:grid-cols-12 gap-12 items-start mb-12">
+                <div class="lg:col-span-4 sticky top-24">
+                    <h2 class="text-3xl font-bold text-indigo-950 mb-4">L'Administració Pública</h2>
+                    <p class="text-slate-600 mb-6">Més que una organització, és una <strong>Persona Jurídica</strong>
+                        que serveix amb objectivitat els interessos generals.</p>
+                    <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100">
+                        <h4 class="font-bold text-indigo-900 mb-2">Punt Clau: Art. 103 CE</h4>
+                        <p class="text-sm text-indigo-800/80 italic">"L'Administració Pública serveix amb objectivitat
+                            els interessos generals i actua d'acord amb els principis d'eficàcia, jerarquia,
+                            descentralització, desconcentració i coordinació."</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 step-card">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 flex-shrink-0">
+                                <i class="fas fa-id-card text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Personalitat Jurídica Única</h3>
+                                <p class="text-slate-600">L'Administració és un subjecte de dret. Això li permet ser
+                                    titular de drets i obligacions, signar contractes i ser demandada davant els
+                                    tribunals.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 step-card">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 flex-shrink-0">
+                                <i class="fas fa-sitemap text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Pluralitat d'Administracions</h3>
+                                <p class="text-slate-600 mb-4">No hi ha "una" sola Administració. L'Estat autonòmic
+                                    genera un ecosistema complex:</p>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold">Territorials (Estat,
+                                        CCAA, Locals)</div>
+                                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold">Institucionals
+                                        (Organismes Autònoms)</div>
+                                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold">Corporatives
+                                        (Col·legis professionals)</div>
+                                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold">Independents (Banc
+                                        d'Espanya)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 concept-card">
-                    <h3 class="text-lg font-semibold text-indigo-700 mb-3 flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                            </path>
-                        </svg>
-                        Definició i Naturalesa
-                    </h3>
-                    <p class="text-slate-600">L'Administració Pública no és només un conjunt d'edificis o funcionaris,
-                        sinó una <strong>persona jurídica</strong>. És un subjecte de dret que actua amb personalitat
-                        jurídica única per al compliment dels seus fins.</p>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <h3 class="text-xl font-bold text-indigo-700 mb-4">Govern vs Administració</h3>
+                    <p class="text-slate-600 mb-4">El <strong>Govern</strong> dirigeix la política i l'Administració
+                        (funció política). L'<strong>Administració</strong> executa i gestiona amb neutralitat (funció
+                        administrativa).</p>
+                    <div class="p-4 bg-slate-50 rounded-xl text-xs font-mono text-slate-500">L'Administració és un
+                        aparell burocràtic neutral sota la dependència del primer.</div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 concept-card">
-                    <h3 class="text-lg font-semibold text-indigo-700 mb-3 flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                            </path>
-                        </svg>
-                        Pluralitat d'Administracions
-                    </h3>
-                    <p class="text-slate-600">No existeix una sola Administració, sinó una <strong>pluralitat</strong>:
-                        Administració General de l'Estat, de les Comunitats Autònomes, Ens Locals (Ajuntaments,
-                        Diputacions) i l'Administració Institucional.</p>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <h3 class="text-xl font-bold text-emerald-700 mb-4">Interès General, Burocràcia i Gestió</h3>
+                    <p class="text-slate-600 mb-4">Interès general és el concepte jurídic indeterminat motor de
+                        l'existència de l'Administració. Model Weberià (jerarquia, neutralitat, oposicions) vs New
+                        Public Management (eficiència, objectius, gestió empresarial).</p>
+                    <div class="p-4 bg-slate-50 rounded-xl text-xs font-mono text-slate-500">Exemple: Protecció del medi
+                        ambient vs. llicència industrial.</div>
                 </div>
+            </div>
+
+            <div class="mt-8 bg-indigo-50 border-l-4 border-indigo-600 p-8 rounded-r-xl">
+                <h4 class="font-bold text-indigo-900 mb-2">Equilibri entre Potestats i Garanties</h4>
+                <p class="text-slate-600 text-sm">L'Administració gaudeix de <strong>potestats exorbitants</strong> (com
+                    la d'imperi o sancionadora) per poder protegir l'interès general, però aquestes estan limitades per
+                    un sistema de <strong>garanties</strong> (recursos, control judicial per l'Art. 106 CE, procediment
+                    administratiu).</p>
             </div>
         </section>
 
-        <!-- Section 2: Fonts -->
-        <section id="fonts" class="mb-16 scroll-mt-24">
-            <h2 class="text-2xl font-bold text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">2. El Dret
-                Administratiu i les seves Fonts</h2>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
-                <div class="mb-6">
-                    <p class="text-slate-700 mb-4 italic text-lg">"El Dret Administratiu és el dret comú i general de
-                        les Administracions Públiques, que regula la seva organització, el seu funcionament i les seves
-                        relacions amb els ciutadans."</p>
-                </div>
-                <div class="space-y-6">
-                    <div class="flex gap-4">
-                        <div class="font-bold text-indigo-600 text-xl">01.</div>
-                        <div>
-                            <h4 class="font-bold">La Llei i el Reglament</h4>
-                            <p class="text-slate-600">La relació entre la Llei i el Reglament es regeix per la
-                                <strong>jerarquia normativa</strong> i la <strong>reserva de llei</strong>. El reglament
-                                és una norma subordinada a la llei.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="font-bold text-indigo-600 text-xl">02.</div>
-                        <div>
-                            <h4 class="font-bold">Potestat Reglamentària</h4>
-                            <p class="text-slate-600">Capacitat de l'Administració per dictar normes jurídiques de rang
-                                inferior a la llei. S'exerceix d'acord amb els principis de bona regulació: necessitat,
-                                eficàcia i proporcionalitat.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="font-bold text-indigo-600 text-xl">03.</div>
-                        <div>
-                            <h4 class="font-bold">Principis Generals del Dret</h4>
-                            <p class="text-slate-600">Informen tot l'ordenament: principi de legalitat, seguretat
-                                jurídica, responsabilitat i interdicció de l'arbitrarietat dels poders públics.</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- MÒDUL 2: LES FONTS (NOU PAC 2) -->
+        <section id="tema-fonts" class="module-content">
+            <div class="mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">El Sistema de Fonts</h2>
+                <p class="text-lg text-slate-600">L'Administració no només aplica el dret, sinó que és l'únic poder que
+                    també en crea (Reglaments).</p>
             </div>
-        </section>
 
-        <!-- Section 3: Constitucio -->
-        <section id="constitucio" class="mb-16 scroll-mt-24">
-            <h2 class="text-2xl font-bold text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">3. Bases
-                Constitucionals (Art. 103 CE)</h2>
-            <div class="bg-indigo-50 border-l-4 border-indigo-600 p-8 rounded-r-xl">
-                <h3 class="text-xl font-bold text-indigo-900 mb-4 italic">"L'Administració Pública serveix amb
-                    objectivitat els interessos generals..."</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white p-4 rounded shadow-sm">
-                        <span
-                            class="block text-xs font-bold text-indigo-500 uppercase tracking-widest mb-1">Finalitat</span>
-                        <p class="text-sm text-slate-700"><strong>Interès General:</strong> És el motor i la
-                            justificació de l'existència de l'Administració.</p>
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Piràmide Kelseniana Interactiva -->
+                <div class="lg:col-span-1 bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-xl mb-6">Jerarquia Normativa</h3>
+                    <div class="space-y-2">
+                        <div class="p-4 bg-indigo-900 text-white rounded-t-xl text-center font-bold text-sm shadow-md">
+                            Dret UE (Primacy)</div>
+                        <div class="p-4 bg-indigo-700 text-white text-center font-bold text-sm shadow-md">Constitució
+                            Espanyola</div>
+                        <div class="p-4 bg-indigo-500 text-white text-center font-bold text-sm shadow-md">Lleis
+                            (Orgàniques / Ordinàries)</div>
+                        <div class="p-4 bg-indigo-300 text-indigo-900 text-center font-bold text-sm shadow-md">
+                            Reglaments (Reials Decrets)</div>
+                        <div
+                            class="p-4 bg-indigo-100 text-indigo-900 rounded-b-xl text-center font-bold text-sm shadow-md">
+                            Ordenances / Instruccions</div>
                     </div>
-                    <div class="bg-white p-4 rounded shadow-sm">
-                        <span
-                            class="block text-xs font-bold text-indigo-500 uppercase tracking-widest mb-1">Actuació</span>
-                        <p class="text-sm text-slate-700"><strong>Eficàcia i Eficiència:</strong> L'obligació d'actuar
-                            optimitzant recursos per obtenir resultats.</p>
-                    </div>
-                    <div class="bg-white p-4 rounded shadow-sm">
-                        <span
-                            class="block text-xs font-bold text-indigo-500 uppercase tracking-widest mb-1">Control</span>
-                        <p class="text-sm text-slate-700"><strong>Sotmetiment ple:</strong> Tant a la Llei com a la
-                            resta de l'Ordenament Jurídic (Dret).</p>
-                    </div>
+                    <p class="mt-6 text-xs text-slate-400 italic font-medium uppercase tracking-tighter text-center">
+                        Art. 9.3 CE: Seguretat Jurídica i Jerarquia</p>
                 </div>
-                <div class="mt-8">
-                    <h4 class="font-bold text-indigo-900 mb-2">Equilibri entre Potestats i Garanties</h4>
-                    <p class="text-slate-600 text-sm">L'Administració gaudeix de <strong>potestats exorbitants</strong>
-                        (com la d'imperi o sancionadora) per poder protegir l'interès general, però aquestes estan
-                        limitades per un sistema de <strong>garanties</strong> (recursos, control judicial per l'Art.
-                        106 CE, procediment administratiu).</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Section 4: Activitat -->
-        <section id="activitat" class="mb-16 scroll-mt-24">
-            <h2 class="text-2xl font-bold text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">4. Tipus d'Activitat
-                Administrativa</h2>
-            <p class="text-slate-600 mb-8">Segons la doctrina clàssica de Jordana de Pozas, l'activitat es divideix en:
-            </p>
-
-            <div class="space-y-4">
-                <!-- Policia -->
-                <details class="bg-white rounded-lg border border-slate-200 overflow-hidden group">
-                    <summary class="p-4 cursor-pointer font-bold flex justify-between items-center hover:bg-slate-50">
-                        Activitat de Limitació (o Policia)
-                        <svg class="w-5 h-5 group-open:rotate-180 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="p-4 border-t border-slate-100 text-slate-600">
-                        <p>Consisteix a limitar l'esfera jurídica dels particulars (llibertats o drets) per motius de
-                            seguretat o interès general. Exemples: llicències, autoritzacions, ordres d'aturada d'obres.
+                <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+                    <div class="bg-indigo-50 p-6 rounded-3xl border border-indigo-100 step-card">
+                        <div
+                            class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Principi de Primacia</h4>
+                        <p class="text-sm text-slate-600">El Dret de la Unió Europea preval sobre el dret intern dels
+                            estats membres. Si hi ha conflicte, el jutge ha d'inaplicar la norma nacional (Principi
+                            d'Eficàcia Directa).</p>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-3xl border border-emerald-100 step-card">
+                        <div
+                            class="w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Reserva de Llei</h4>
+                        <p class="text-sm text-slate-600">Determinades matèries (Drets Fonamentals, Sancions, Tributs)
+                            només poden ser regulades per Llei. El reglament només pot ser "executiu" (ajudar a la
+                            llei), mai independent.</p>
+                    </div>
+                    <div class="bg-amber-50 p-6 rounded-3xl border border-amber-100 step-card">
+                        <div
+                            class="w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Congelació de Rang</h4>
+                        <p class="text-sm text-slate-600">Quan una llei regula una matèria que no era reserva de llei,
+                            aquesta matèria queda "congelada" i només podra ser modificada per una altra llei posterior.
                         </p>
                     </div>
-                </details>
-
-                <!-- Foment -->
-                <details class="bg-white rounded-lg border border-slate-200 overflow-hidden group">
-                    <summary class="p-4 cursor-pointer font-bold flex justify-between items-center hover:bg-slate-50">
-                        Activitat de Foment
-                        <svg class="w-5 h-5 group-open:rotate-180 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="p-4 border-t border-slate-100 text-slate-600">
-                        <p>Acció administrativa dirigida a estimular aquelles activitats dels particulars que satisfan
-                            necessitats públiques sense utilitzar la coacció. L'instrument principal és la
-                            <strong>subvenció</strong>.</p>
+                    <div class="bg-slate-800 p-6 rounded-3xl text-white step-card">
+                        <div
+                            class="w-10 h-10 bg-slate-100 text-slate-900 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-scale-balanced"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Principis Generals</h4>
+                        <p class="text-sm text-slate-400">No són només idees, són fonts supletòries (Legalitat,
+                            Confiança Legítima, Bona Fe, Proporcionalitat).</p>
                     </div>
-                </details>
-
-                <!-- Servei Públic -->
-                <details class="bg-white rounded-lg border border-slate-200 overflow-hidden group">
-                    <summary class="p-4 cursor-pointer font-bold flex justify-between items-center hover:bg-slate-50">
-                        Activitat de Servei Públic (Prestacional)
-                        <svg class="w-5 h-5 group-open:rotate-180 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="p-4 border-t border-slate-100 text-slate-600">
-                        <p>L'Administració assumeix la titularitat d'una activitat per prestar-la directament o
-                            indirectament als ciutadans. Exemples: transport públic, recollida de residus, educació,
-                            salut.</p>
-                    </div>
-                </details>
-
-                <!-- Sancionadora -->
-                <details class="bg-white rounded-lg border border-slate-200 overflow-hidden group">
-                    <summary class="p-4 cursor-pointer font-bold flex justify-between items-center hover:bg-slate-50">
-                        Activitat Sancionadora
-                        <svg class="w-5 h-5 group-open:rotate-180 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="p-4 border-t border-slate-100 text-slate-600">
-                        <p>Capacitat de castigar les infraccions de l'ordenament administratiu comeses pels particulars
-                            o funcionaris. Ha de respectar estrictament els principis de legalitat i tipicitat.</p>
-                    </div>
-                </details>
+                </div>
             </div>
         </section>
 
-        <!-- Final Summary -->
-        <section class="bg-slate-900 text-white p-10 rounded-2xl shadow-2xl">
-            <h2 class="text-2xl font-bold mb-6">Síntesi Conceptual</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div>
-                    <h4 class="text-indigo-400 font-bold mb-2 uppercase text-xs tracking-widest">Govern vs Administració
-                    </h4>
-                    <p class="text-slate-300 text-sm italic">Mentre que el Govern té una dimensió política (direcció),
-                        l'Administració és un aparell burocràtic neutral i professional sota la dependència del primer.
+        <!-- MÒDUL 3: EL REGLAMENT (DETALL PAC 2) -->
+        <section id="tema-reglaments" class="module-content hidden">
+            <div class="mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">La Potestat Reglamentària</h2>
+                <p class="text-lg text-slate-600">El reglament és la norma pròpia de l'Administració. Cal distingir-lo
+                    bé de l'acte administratiu.</p>
+            </div>
+
+            <!-- VS Section -->
+            <div class="grid md:grid-cols-2 gap-0 mb-16 rounded-3xl overflow-hidden shadow-xl border border-slate-200">
+                <div class="bg-white p-8 border-r border-slate-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-3 h-3 bg-indigo-500 rounded-full"></span>
+                        <h3 class="text-2xl font-bold">Reglament</h3>
+                        <span
+                            class="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold uppercase">Norma</span>
+                    </div>
+                    <ul class="space-y-4 text-slate-600 italic">
+                        <li class="flex gap-3"><i class="fas fa-users text-indigo-400 mt-1"></i>
+                            <strong>Generalitat:</strong> Destinatari abstracte (col·lectivitat).
+                        </li>
+                        <li class="flex gap-3"><i class="fas fa-redo text-indigo-400 mt-1"></i> <strong>Vocació de
+                                permanència:</strong> No s'esgota amb el seu ús, s'integra a l'ordenament.</li>
+                        <li class="flex gap-3"><i class="fas fa-shield-alt text-indigo-400 mt-1"></i>
+                            <strong>Inderogabilitat:</strong> No es pot derogar per a un cas concret (Art. 37 LPAC).
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-8">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-3 h-3 bg-emerald-500 rounded-full"></span>
+                        <h3 class="text-2xl font-bold text-slate-700">Acte Administratiu</h3>
+                        <span
+                            class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded font-bold uppercase">Aplicació</span>
+                    </div>
+                    <ul class="space-y-4 text-slate-500 italic">
+                        <li class="flex gap-3"><i class="fas fa-user text-emerald-400 mt-1"></i>
+                            <strong>Concreció:</strong> Destinatari identificat o grup tancat.
+                        </li>
+                        <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i>
+                            <strong>Consumpció:</strong> S'esgota un cop s'executa (ex: una multa).
+                        </li>
+                        <li class="flex gap-3"><i class="fas fa-gavel text-emerald-400 mt-1"></i>
+                            <strong>Impugnació:</strong> Diferent règim de recursos.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Types of Regulations -->
+            <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                <i class="fas fa-layer-group text-indigo-600"></i> Tipologia de Reglaments
+            </h3>
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <div class="bg-white p-6 rounded-2xl border-t-4 border-indigo-500 shadow-sm">
+                    <h4 class="font-bold text-indigo-900 mb-2">Executius (Secundum Legem)</h4>
+                    <p class="text-sm text-slate-600">Desenvolupen una llei prèvia. Requereixen dictamen preceptiu del
+                        Consell d'Estat o òrgan consultiu.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-t-4 border-emerald-500 shadow-sm">
+                    <h4 class="font-bold text-emerald-900 mb-2">Independents (Praeter Legem)</h4>
+                    <p class="text-sm text-slate-600">Regulen matèries que NO són reserva de llei. Solen referir-se a
+                        l'organització interna de l'Administració.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-t-4 border-red-500 shadow-sm">
+                    <h4 class="font-bold text-red-900 mb-2">De Necessitat (Contra Legem)</h4>
+                    <p class="text-sm text-slate-600 italic">Excepcionals. Poden suspendre vigència de lleis en
+                        situacions d'emergència (ex: Catàstrofes, Epidèmies).</p>
+                </div>
+            </div>
+
+            <!-- Soft Law Section -->
+            <div class="bg-indigo-900 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-white/5 rounded-full"></div>
+                <h3 class="text-2xl font-bold mb-4">El "Soft Law": Instruccions i Circulars (Art. 6 LRJSP)</h3>
+                <p class="text-indigo-200 mb-6">No són reglaments perquè no innoven l'ordenament jurídic extern. Són
+                    ordres dels superiors als subordinats per unificar criteris.</p>
+                <div class="flex items-center gap-4 p-4 bg-white/10 rounded-xl border border-white/20">
+                    <i class="fas fa-exclamation-circle text-amber-400 text-2xl"></i>
+                    <p class="text-sm font-medium">Atenció: L'incompliment d'una instrucció no invalida l'acte per si
+                        mateix, però genera responsabilitat disciplinària del funcionari.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÒDUL 4: ACTES I ACCIÓ ADMINISTRATIVA -->
+        <section id="tema-actes" class="module-content hidden">
+
+            <!-- Tipus d'activitat de la PAC 1 que faltaven -->
+            <h2 class="text-3xl font-bold text-center mb-12">Tipus d'Activitat Administrativa</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Policia -->
+                <div
+                    class="group bg-white p-6 rounded-3xl border border-slate-200 hover:border-indigo-500 transition-all cursor-help relative overflow-hidden">
+                    <div
+                        class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 mb-4 group-hover:bg-indigo-600 group-hover:text-white transition">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Limitació / Policia</h3>
+                    <p class="text-sm text-slate-500">Restringeix l'esfera jurídica (llibertats o drets) per motius de
+                        seguretat o interès general. <br><br><strong>Exemple:</strong> Llicències o autoritzacions.</p>
+                </div>
+
+                <!-- Foment -->
+                <div
+                    class="group bg-white p-6 rounded-3xl border border-slate-200 hover:border-emerald-500 transition-all cursor-help relative overflow-hidden">
+                    <div
+                        class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 mb-4 group-hover:bg-emerald-600 group-hover:text-white transition">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Foment</h3>
+                    <p class="text-sm text-slate-500">Estimula aquelles activitats dels particulars que satisfan
+                        necessitats públiques sense utilitzar coacció. <br><br><strong>Exemple:</strong> Subvencions.
                     </p>
                 </div>
-                <div>
-                    <h4 class="text-indigo-400 font-bold mb-2 uppercase text-xs tracking-widest">Burocràcia i Gestió
+
+                <!-- Servei Públic -->
+                <div
+                    class="group bg-white p-6 rounded-3xl border border-slate-200 hover:border-blue-500 transition-all cursor-help relative overflow-hidden">
+                    <div
+                        class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Servei Públic (Prestacional)</h3>
+                    <p class="text-sm text-slate-500">Assumeix la titularitat d'una activitat per prestar-la directa o
+                        indirectament als ciutadans. <br><br><strong>Exemple:</strong> Salut o educació.</p>
+                </div>
+
+                <!-- Arbitratge / Sancionadora -->
+                <div
+                    class="group bg-white p-6 rounded-3xl border border-slate-200 hover:border-amber-500 transition-all cursor-help relative overflow-hidden">
+                    <div
+                        class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-600 mb-4 group-hover:bg-amber-600 group-hover:text-white transition">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Sancionadora</h3>
+                    <p class="text-sm text-slate-500">Capacitat de castigar les infraccions de l'ordenament. Ha de
+                        respectar els principis de legalitat i tipicitat. <br><br><strong>Clau:</strong> Principi de
+                        Tipicitat.</p>
+                </div>
+            </div>
+
+            <!-- Acte Administratiu (Eficàcia, Motivació, Validesa) -->
+            <h2 class="text-3xl font-bold mb-12 text-center border-t border-slate-200 pt-16">L'Acte Administratiu</h2>
+
+            <div class="mb-12 text-center text-slate-600 max-w-3xl mx-auto">
+                <p>Segons l'article 34 de la Llei 39/2015, és tota declaració de voluntat, judici, coneixement o desig
+                    realitzada per una Administració en exercici d'una potestat administrativa.</p>
+            </div>
+
+            <!-- Anatomia de l'Acte -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-indigo-900 text-white p-8 rounded-3xl relative overflow-hidden">
+                    <div class="absolute -right-4 -bottom-4 opacity-10 text-8xl"><i class="fas fa-dna"></i></div>
+                    <h4 class="text-indigo-300 font-bold uppercase text-xs tracking-widest mb-4">Anatomia de l'Acte</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-400"></i>
+                            Subjectius (Òrgan competent)</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-400"></i>
+                            Objectius (Contingut lícit)</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-indigo-400"></i> Formals
+                            (Procediment i forma)</li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-2 bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <h4 class="font-bold text-xl mb-6 flex items-center gap-2">
+                        <i class="fas fa-bolt text-amber-500"></i> Eficàcia i Presumpció
                     </h4>
-                    <p class="text-slate-300 text-sm italic">De l'Administració weberiana (jerarquia, normes rígides)
-                        hem passat a models de "Nova Gestió Pública" que busquen resultats i eficiència, tot i mantenir
-                        les garanties jurídiques.</p>
+                    <p class="text-slate-600 mb-6">L'acte existeix des que es dicta, però la seva
+                        <strong>eficàcia</strong> sol quedar demorada fins que es produeix la
+                        <strong>notificació</strong> o publicació (Sense notificació, l'acte és vàlid però no produeix
+                        efectes, Art. 40 LPAC).
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 flex-wrap">
+                        <div class="flex-1 p-4 bg-slate-50 rounded-xl border-l-4 border-indigo-500 min-w-[200px]">
+                            <span class="block font-bold text-sm mb-1">Presumpció de Legimitat</span>
+                            <p class="text-xs text-slate-500">Es presumeixen vàlids i produeixen efectes des que es
+                                dicten.</p>
+                        </div>
+                        <div class="flex-1 p-4 bg-slate-50 rounded-xl border-l-4 border-emerald-500 min-w-[200px]">
+                            <span class="block font-bold text-sm mb-1">Executivitat</span>
+                            <p class="text-xs text-slate-500">L'Administració pot obligar al seu compliment sense anar
+                                al jutge.</p>
+                        </div>
+                        <div class="flex-1 p-4 bg-slate-50 rounded-xl border-l-4 border-teal-500 min-w-[200px]">
+                            <span class="block font-bold text-sm mb-1">Motivació</span>
+                            <p class="text-xs text-slate-500">Deure d'explicar les raons de fet i de dret de la decisió
+                                (Art. 35 LPAC).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation/Invalidity Visual -->
+            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                <h3 class="text-center font-bold text-2xl mb-8">El Semàfor de la Validesa</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-red-50 border border-red-100 p-6 rounded-2xl">
+                        <h4 class="text-red-700 font-bold mb-2 flex items-center gap-2">
+                            <i class="fas fa-skull-crossbones"></i> Nul·litat de ple dret (Art. 47)
+                        </h4>
+                        <p class="text-sm text-red-600/80 mb-4">Vicis gravíssims. No es poden esmenar. Efectes "Ex Tunc"
+                            (des de l'inici).</p>
+                        <ul class="text-xs space-y-2 text-red-800/70">
+                            <li>• Lesionen drets fonamentals.</li>
+                            <li>• Dictats per òrgan manifestament incompetent.</li>
+                            <li>• Contingut impossible o il·lícit.</li>
+                            <li class="font-bold border-t border-red-200 pt-2 mt-2">I per als Reglaments: qualsevol que
+                                vulneri la Constitució, lleis o reglaments superiors (Art 47.2 LPAC).</li>
+                        </ul>
+                    </div>
+                    <div class="bg-orange-50 border border-orange-100 p-6 rounded-2xl">
+                        <h4 class="text-orange-700 font-bold mb-2 flex items-center gap-2">
+                            <i class="fas fa-exclamation-triangle"></i> Anul·labilitat (Art. 48)
+                        </h4>
+                        <p class="text-sm text-orange-600/80 mb-4">Qualsevol altra infracció de l'ordenament. Es poden
+                            convalidar. Efectes "Ex Nunc".</p>
+                        <ul class="text-xs space-y-2 text-orange-800/70">
+                            <li>• Defecte de forma que produeixi indefensió.</li>
+                            <li>• Actuacions fora de termini si la naturalesa del termini és essencial.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MÒDUL 5: CONTROL (PAC 2 + CONTINGUT REVISAT) -->
+        <section id="tema-control" class="module-content hidden">
+            <div class="mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Control i Revisió</h2>
+                <p class="text-lg text-slate-600">Com es controla l'Administració? Revisió dels seus actes i impugnació
+                    de reglaments.</p>
+            </div>
+
+            <!-- Accordion for Revisió Comuna -->
+            <h3 class="text-2xl font-bold mb-6 text-slate-800 border-b pb-2"><i
+                    class="fas fa-toolbox text-indigo-500 mr-2"></i> Revisió d'Actes EN Via Administrativa</h3>
+            <div class="space-y-4 mb-16">
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc1')"
+                        class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-lg">1. Revisió d'Ofici (Art. 106)</span>
+                        <i id="icon-acc1" class="fas fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="acc1" class="hidden p-6 pt-0 border-t border-slate-100 bg-slate-50/50">
+                        <p class="text-slate-600 text-sm mb-4">L'Administració elimina els seus propis actes sense
+                            necessitat que ningú ho demani si són <strong>Nuls de ple dret</strong>. Requereix dictamen
+                            favorable de l'òrgan consultiu (Consell d'Estat).</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc2')"
+                        class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-lg">2. Revocació (Art. 109)</span>
+                        <i id="icon-acc2" class="fas fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="acc2" class="hidden p-6 pt-0 border-t border-slate-100 bg-slate-50/50">
+                        <p class="text-slate-600 text-sm">L'Administració pot revocar actes de gravamen o desfavorables
+                            (com una sanció) sempre que no sigui contrari a l'interès general o al principi d'igualtat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleAccordion('acc3')"
+                        class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-lg">3. Recursos Administratius (Alçada i Reposició)</span>
+                        <i id="icon-acc3" class="fas fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="acc3" class="hidden p-6 pt-0 border-t border-slate-100 bg-slate-50/50">
+                        <div class="grid sm:grid-cols-2 gap-4 mt-2">
+                            <div class="p-4 bg-indigo-50 rounded-xl">
+                                <h5 class="font-bold text-indigo-900 mb-1">Recurs d'Alçada</h5>
+                                <p class="text-xs text-indigo-800">S'interposa davant l'òrgan superior jeràrquic. Obre
+                                    la via judicial.</p>
+                            </div>
+                            <div class="p-4 bg-emerald-50 rounded-xl">
+                                <h5 class="font-bold text-emerald-900 mb-1">Recurs de Reposició</h5>
+                                <p class="text-xs text-emerald-800">Potestatiu. Davant el mateix òrgan que va dictar
+                                    l'acte.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAC 2: Reglament -->
+            <h3 class="text-2xl font-bold mb-6 text-indigo-900"><i class="fas fa-shield text-indigo-600 mr-2"></i>
+                Control de Reglaments (i Vies Judicials)</h3>
+            <div
+                class="p-4 bg-red-50 text-red-900 border border-red-200 rounded-xl font-medium mb-6 flex items-center gap-3 shadow-sm">
+                <i class="fas fa-ban text-2xl text-red-600"></i> No hi ha recursos administratius (ex. Alçada) contra
+                reglaments. (Art. 112.3 LPAC)
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-indigo-600">
+                    <h3 class="text-xl font-bold mb-4">Impugnació de Reglaments (Via Judicial)</h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li><strong>Directa:</strong> Atacar el reglament sencer davant la Jurisdicció
+                            Contenciosa-Administrativa.</li>
+                        <li><strong>Indirecta:</strong> Atacar un acte concret que aplica un reglament il·legal. Si
+                            l'acte cau perquè el reglament és nul, el jutge pot plantejar la "Qüestió d'il·legalitat"
+                            per esborrar també el reglament per complet de l'ordenament.</li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-indigo-950 text-white p-8 rounded-3xl relative overflow-hidden flex flex-col justify-center">
+                    <div class="absolute top-0 right-0 p-8 opacity-10"><i class="fas fa-landmark text-8xl"></i></div>
+                    <h3 class="text-xl font-bold mb-4 relative z-10">Control Judicial Genèric (Art. 106 CE)</h3>
+                    <p class="text-indigo-200 mb-4 relative z-10 text-sm">Els Tribunals (Jurisdicció
+                        contenciosa-administrativa) controlen la potestat reglamentària i la legalitat de l'actuació
+                        administrativa, així com el seu sotmetiment a les finalitats que la justifiquen.</p>
+                    <div class="relative z-10 mt-auto bg-white/10 px-4 py-2 rounded-lg text-xs font-semibold">
+                        Això és un pilar innegociable de l'Estat de Dret vigent.
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white p-8 rounded-3xl shadow-sm border-l-8 border-amber-500">
+                <h3 class="text-xl font-bold mb-4">Control de Consultius Previ (Reglaments)</h3>
+                <p class="text-slate-600 mb-4">Els reglaments executius (que desenvolupen o expliquen lleis prèvies
+                    sense contradir-les) han de passar preceptivament pel Consell d'Estat o equivalents autonòmics abans
+                    d'aprovar-se. Aquest dictamen vigila prèviament que l'Administració no s'extralimiti del que diu la
+                    Llei Parlamentària superior.</p>
+            </div>
+        </section>
+
+        <!-- MÒDUL 6: HISENDA -->
+        <section id="tema-hisenda" class="module-content hidden">
+            <!-- Header -->
+            <header class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Estructura de la Hisenda Pública
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Una anàlisi detallada dels ingressos, despeses i el marc normatiu que regula l'activitat financera
+                    de l'Estat i les Administracions.
+                </p>
+            </header>
+
+            <!-- Secció 1: Marc Normatiu -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-600 text-white p-2 rounded-lg mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">1. Marc Normatiu Fonamental</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <span class="law-tag mb-2 inline-block">Constitució Espanyola</span>
+                        <h4 class="font-bold text-lg mb-2">Principis Constitucionals</h4>
+                        <ul class="text-slate-600 text-sm space-y-2">
+                            <li><strong>Art. 31:</strong> Contribució segons capacitat econòmica, progressivitat i
+                                igualtat.</li>
+                            <li><strong>Art. 133:</strong> Potestat tributària de l'Estat i les CCAA.</li>
+                            <li><strong>Art. 156 i 157:</strong> Autonomia financera de les Comunitats Autònomes.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <span class="law-tag mb-2 inline-block">Lleis de Desenvolupament</span>
+                        <h4 class="font-bold text-lg mb-2">Normativa de Referència</h4>
+                        <ul class="text-slate-600 text-sm space-y-2">
+                            <li><strong>LOFCA (LO 8/1980):</strong> Regula el finançament autonòmic.</li>
+                            <li><strong>Llei 47/2003 (LGP):</strong> Llei General Pressupostària (Gestió de despesa).
+                            </li>
+                            <li><strong>Llei 8/1989:</strong> Taxes i Preus Públics.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secció 2: Els Ingressos Públics -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-emerald-600 text-white p-2 rounded-lg mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">2. Ingressos Públics</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Tributs -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-emerald-500 concept-card">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4">Ingressos Tributaris</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="font-semibold text-emerald-700">Impostos</p>
+                                <p class="text-xs text-slate-500 italic">No hi ha contraprestació directa.</p>
+                                <ul class="text-sm text-slate-600 list-disc ml-4 mt-1">
+                                    <li><strong>Directes:</strong> IRPF, Societats (graven la renda/patrimoni).</li>
+                                    <li><strong>Indirectes:</strong> IVA, ITP (graven el consum/transaccions).</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-emerald-700">Taxes</p>
+                                <p class="text-xs text-slate-500 italic">Servei obligatori o monopoli.</p>
+                                <p class="text-sm text-slate-600">Exemple: Taxa d'escombraries, renovació DNI.</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-emerald-700">Contribucions Especials</p>
+                                <p class="text-sm text-slate-600">Benefici derivat d'una obra pública (ex: pavimentació
+                                    d'un carrer).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No Tributaris -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-amber-500 concept-card">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4">Ingressos No Tributaris</h4>
+                        <div class="space-y-4 text-sm text-slate-600">
+                            <div>
+                                <p class="font-semibold text-amber-700">Preus Públics</p>
+                                <p class="text-xs text-slate-500 italic">Voluntari i en competència privada.</p>
+                                <p>Exemple: Entrada a un poliesportiu municipal o a un museu.</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-amber-700">Deute Públic</p>
+                                <p>Préstecs que l'Estat rep (Lletres del Tresor, Bons) i que ha de retornar amb
+                                    interessos.</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-amber-700">Patrimonials</p>
+                                <p>Rendes derivades dels béns propietat de l'Estat (dividends d'empreses públiques,
+                                    lloguers).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CCAA i Locals -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-purple-500 concept-card">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4">Finançament Territorial</h4>
+                        <div class="space-y-4 text-sm text-slate-600">
+                            <div>
+                                <p class="font-semibold text-purple-700 italic">Règim Comú vs. Foral</p>
+                                <p>El finançament de les CCAA depèn de tributs cedits, propis i transferències de
+                                    l'Estat (Fons de Garantia).</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-purple-700">Transferències</p>
+                                <p>Aportacions del pressupost de l'Estat cap a CCAA o Ens Locals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secció 3: La Despesa Pública -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-red-600 text-white p-2 rounded-lg mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">3. La Despesa Pública</h3>
+                    <span class="ml-4 text-xs font-medium text-slate-400">Classificació segons la LGP</span>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div
+                                class="bg-red-50 text-red-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                                O</div>
+                            <h4 class="font-bold mb-2">Orgànica</h4>
+                            <p class="text-sm text-slate-500 italic">"Qui gasta?"</p>
+                            <p class="text-sm text-slate-600 mt-2">Divideix la despesa per ministeris, òrgans
+                                constitucionals o ens públics.</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="bg-red-50 text-red-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                                F</div>
+                            <h4 class="font-bold mb-2">Funcional / Programes</h4>
+                            <p class="text-sm text-slate-500 italic">"Per a què es gasta?"</p>
+                            <p class="text-sm text-slate-600 mt-2">Agrupa les despeses segons l'objectiu: Sanitat,
+                                Educació, Defensa, Justícia.</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="bg-red-50 text-red-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                                E</div>
+                            <h4 class="font-bold mb-2">Econòmica</h4>
+                            <p class="text-sm text-slate-500 italic">"En què es gasta?"</p>
+                            <p class="text-sm text-slate-600 mt-2">Diferencia entre despesa corrent (sous),
+                                transferències o inversions reals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secció 4: El Pressupost General de l'Estat (PGE) -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-600 text-white p-2 rounded-lg mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">4. El Cicle Pressupostari</h3>
+                </div>
+
+                <div class="relative">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
+                                1</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Elaboració (Govern)</h4>
+                                <p class="text-sm text-slate-600">El Ministeri d'Hisenda recull les necessitats i el
+                                    Consell de Ministres aprova el projecte de llei abans de l'1 d'octubre.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
+                                2</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Aprovació (Corts Generals)</h4>
+                                <p class="text-sm text-slate-600">Debat d'esmenes a la totalitat i aprovació definitiva
+                                    al Congrés i Senat.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
+                                3</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Execució</h4>
+                                <p class="text-sm text-slate-600">L'administració gestiona els crèdits aprovats. Fases:
+                                    Autorització, Disposició, Reconeixement de l'obligació i Pagament.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
+                                4</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Control</h4>
+                                <p class="text-sm text-slate-600">Verificació de la legalitat i l'eficiència a càrrec de
+                                    la IGAE (Intern) i del Tribunal de Comptes (Extern).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
+                <p>Aquesta guia resumeix els punts clau de l'estructura hisendística. Consulteu la normativa consolidada
+                    per a detalls tècnics.</p>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <span class="law-tag">Llei 22/2009 (Sistema Finançament)</span>
+                    <span class="law-tag">RD Legislatiu 2/2004 (Hisendes Locals)</span>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-slate-100 py-12 px-6 border-t border-slate-200 mt-20">
-        <div class="max-w-5xl mx-auto text-center text-slate-500 text-sm">
-            <p>&copy; 2026 - Resum Acadèmic Dret Administratiu I</p>
-            <p class="mt-2 italic">Basat en els continguts de la lliçó de Francisco Velasco Caballero i els mòduls de la
-                PAC 1.</p>
+    <!-- Interactive Tools Bar -->
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+        <button onclick="showGlossary()"
+            class="bg-slate-900 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition">
+            <i class="fas fa-book text-lg"></i>
+        </button>
+        <button onclick="showQuiz()"
+            class="bg-indigo-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition animate-bounce">
+            <i class="fas fa-question text-lg"></i>
+        </button>
+    </div>
+
+    <!-- Modals (Glossary & Quiz) -->
+    <div id="modal-container"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-[100] hidden flex items-center justify-center p-6 pb-20 md:pb-6">
+        <!-- Content injected by JS -->
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-20 mt-20">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-indigo-900 font-bold text-2xl mb-4 italic">Dret Administratiu I</h2>
+            <p class="text-slate-400 text-sm max-w-md mx-auto">Desenvolupat per a l'estudi profund de les fonts i la
+                potestat administrativa segons els materials docents de la PAC 1 i PAC 2.</p>
+            <div class="flex justify-center flex-wrap gap-4 mt-8 text-slate-300">
+                <i class="fas fa-university text-xl"></i>
+                <i class="fas fa-balance-scale text-xl"></i>
+                <i class="fas fa-gavel text-xl"></i>
+                <i class="fas fa-book text-xl"></i>
+            </div>
         </div>
     </footer>
+
+    <script>
+        function showModule(moduleId) {
+            document.querySelectorAll('.module-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(moduleId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active-tab', 'text-indigo-700');
+                btn.classList.add('text-slate-500');
+            });
+            const activeBtn = document.getElementById('btn-' + moduleId);
+            activeBtn.classList.add('active-tab', 'text-indigo-700');
+            activeBtn.classList.remove('text-slate-500');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                el.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        const modal = document.getElementById('modal-container');
+
+        function showGlossary() {
+            modal.innerHTML = `
+                <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden max-h-[80vh] flex flex-col">
+                    <div class="p-6 bg-slate-900 text-white flex justify-between items-center">
+                        <h3 class="font-bold text-xl">Glossari de Conceptes Clau</h3>
+                        <button onclick="closeModal()" class="hover:text-red-400"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="p-8 overflow-y-auto">
+                        <div class="space-y-6">
+                            <div><strong class="text-indigo-600 block mb-1 uppercase text-xs">Inderogabilitat Singular</strong>L'Administració no pot dictar un acte que contradigui un reglament vigent, encara que provingui del mateix òrgan o d'un de superior.</div>
+                            <div><strong class="text-indigo-600 block mb-1 uppercase text-xs">Potestat Reglamentària</strong>Facultat d'atribució constitucional que permet al Govern i l'Administració crear normes.</div>
+                            <div><strong class="text-indigo-600 block mb-1 uppercase text-xs">Qüestió d'il·legalitat</strong>Mecanisme pel qual un jutge, en resoldre un recurs contra un acte, demana al tribunal competent que anulli el reglament en què es basa l'acte per treure'l de l'ordenament general.</div>
+                             <div><strong class="text-indigo-600 block mb-1 uppercase text-xs">Interès General</strong>Motor últim i objectiu que justifica l'existència de l'Administració Pública (Fixat en Art 103 CE).</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function showQuiz() {
+            modal.innerHTML = `
+                <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
+                    <div class="p-6 bg-indigo-600 text-white flex justify-between items-center flex-shrink-0">
+                        <h3 class="font-bold text-xl">Quiz PAC 2: Fonts</h3>
+                        <button onclick="closeModal()" class="hover:text-indigo-200"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="p-8 overflow-y-auto" id="quiz-body">
+                        <p class="text-lg font-bold mb-6 italic">Es pot interposar un recurs d'alçada directament contra un reglament general vigent i publicat?</p>
+                        <div class="space-y-3">
+                            <button onclick="quizAnswer(false)" class="w-full p-4 text-left border rounded-xl hover:bg-slate-50 transition quiz-ans-btn">A) Sí, sempre davant el superior jeràrquic de qui el dicta.</button>
+                            <button onclick="quizAnswer(true)" class="w-full p-4 text-left border rounded-xl hover:bg-slate-50 transition quiz-ans-btn">B) No, contra disposicions de caràcter general NO cap recurs administratiu com a regla general.</button>
+                            <button onclick="quizAnswer(false)" class="w-full p-4 text-left border rounded-xl hover:bg-slate-50 transition quiz-ans-btn">C) Només si és un reglament d'un òrgan exclusivament local o provincial i sempre que ho autoritzin abans.</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function quizAnswer(correct) {
+            const body = document.getElementById('quiz-body');
+            document.querySelectorAll('.quiz-ans-btn').forEach(b => b.classList.add('opacity-50', 'pointer-events-none'));
+
+            if (correct) {
+                body.innerHTML = `<div class="text-center py-6 animate-pulse-soft"><i class="fas fa-check-circle text-6xl text-emerald-500 mb-4 shadow-sm bg-white rounded-full"></i><h4 class="text-2xl font-bold text-slate-800">Perfecte!</h4><p class="text-slate-600 mt-4 leading-relaxed">Exacte. Segons l'Art. 112.3 de la LPAC, contra les disposicions de caràcter general <strong>no</strong> es poden interposar recursos en via purament administrativa. Serà necessari anar a la via judicial i posar un Contenciós directament.</p><button onclick="closeModal()" class="mt-6 font-bold text-indigo-600 bg-indigo-50 px-6 py-2 rounded-full border border-indigo-200 hover:bg-indigo-100 transition">Tancar avaluació</button></div>`;
+            } else {
+                body.innerHTML = `<div class="text-center py-6"><i class="fas fa-times-circle text-6xl text-red-500 mb-4 bg-white rounded-full"></i><h4 class="text-2xl font-bold text-slate-800">No és correcte...</h4><p class="text-slate-600 mt-4 leading-relaxed">Compte amb les regles generals per a disposicions d'índole general. Contra normes, la LPAC (Art. 112.3) ho denega i s'ha d'activar sempre de forma innegociable el control judicial de la via Contenciosa.</p><button onclick="closeModal()" class="mt-6 font-bold text-indigo-600 bg-indigo-50 px-6 py-2 rounded-full border border-indigo-200 hover:bg-indigo-100 transition">Entès i Tancar</button></div>`;
+            }
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+    </script>
 
 </body>
 

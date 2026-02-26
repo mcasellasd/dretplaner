@@ -77,19 +77,16 @@
             <button onclick="showTopic('conceptes')" id="btn-conceptes" class="px-4 py-2 text-sm active-tab">El Dret
                 Processal</button>
             <button onclick="showTopic('jurisdiccio')" id="btn-jurisdiccio"
-                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Jurisdicció</button>
-            <button onclick="showTopic('accio')" id="btn-accio"
-                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Acció i Tutela</button>
-            <button onclick="showTopic('proces')" id="btn-proces"
-                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">El Procés</button>
-            <button onclick="showTopic('fonts')" id="btn-fonts"
-                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Fonts</button>
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Constitució i
+                Institucions</button>
+            <button onclick="showTopic('principis')" id="btn-principis"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Principis dels Jutges</button>
             <button onclick="showTopic('organization')" id="btn-organization"
-                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Organització</button>
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Organització i Ordres</button>
             <button onclick="showTopic('subjects')" id="btn-subjects"
                 class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Subjectes</button>
-            <button onclick="showTopic('phases')" id="btn-phases"
-                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">Fases</button>
+            <button onclick="showTopic('accio')" id="btn-accio"
+                class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition">L'Acció</button>
             <button onclick="showTopic('quiz')" id="btn-quiz"
                 class="px-4 py-2 text-sm text-slate-500 hover:text-indigo-600 transition font-bold bg-indigo-50 rounded border border-indigo-100 uppercase tracking-wider">Quiz</button>
         </div>
@@ -143,174 +140,108 @@
 
         const topics = {
             conceptes: {
-                title: "Concepte i Diferències",
+                title: "Concepte i Antecedents",
                 icon: ICONS.blueDoc,
-                description: "Imagina que el Dret Civil o Penal són les 'regles del joc' (què es pot fer i què no). El <strong>Dret Processal</strong> és el 'manual d'instruccions' de l'àrbitre: ens diu com hem d'actuar quan algú incompleix.",
+                description: "La realització de la justícia ha evolucionat històricament, prohibint l'ús de la força privada i derivant en institucions pacífiques per administrar el dret objectiu.",
                 sections: [
-                    { label: "Dret Públic", text: "Les seves normes són d'ordre públic i irrenunciables; no poden ser substituïdes ni saltades deliberadament per la voluntat privades de les parts." },
-                    { label: "Caràcter Instrumental", text: "No és un fi en si mateix, sinó l'eina utilitzada col·lectivament per fer valer de veritat els drets i obligacions del dret substantiu (civil, penal, laboral)." },
-                    { label: "Resolució de Conflictes", text: "Històricament ha permès passar de l'Autotutela (prohibida) a l'Autocomposició pacífica i finalment a l'Heterocomposició institucional obligatòria." }
+                    { label: "Autotutela (Prohibida)", text: "Basada en la llei del més fort on el subjecte es pren la justícia per la seva pròpia mà. Actualment erradicada com a norma, degut als perills de proporció i manca d'imparcialitat." },
+                    { label: "Autocomposició", text: "Fórmula de solució mitjançat l'acord de voluntats (com la mediació). El tercer és neutral i només apropa o ajuda a les parts sense imposar directament una decisió per la força." },
+                    { label: "Heterocomposició (Jurisdicció)", text: "Resolució definitiva que es deriva a un tercer que actua 'supra partes' sota imparcialitat i independència. En el cas del procés judicial, el jutge aplica rígidament l'ordenament jurídic." }
                 ],
                 color: "indigo"
             },
             jurisdiccio: {
-                title: "Potestat Jurisdiccional",
+                title: "Principis Constitucionals",
                 icon: ICONS.landmark,
-                description: "L'Estat monopolitza la justícia per evitar l'autotutela (pendre's la justícia per la mà) segons estableix l'Article 117 de la Constitució.",
+                description: "La Constitució espanyola (Art. 117) conforma la jurisdicció com el Poder Judicial (Potestat de jutjar i fer executar el jutjat), separant-la rigorosament d'administració i del legislatiu.",
                 sections: [
-                    { label: "Unitat Jurisdiccional", text: "La jurisdicció és única en tot l'Estat. Existeix un sol cos nacional unificat de jutges i magistrats, no divisions autònomes." },
-                    { label: "Exclusivitat", text: "Monopoli estatal absolut: Només els jutges i tribunals establerts poden materialment avaluar, jutjar i ordenar fer executar de debò el jutjat." },
-                    { label: "Jutge Predeterminat", text: "Garantia màxima del dret a ser jutjat per un jutge designat prèviament per llei (absoluta prohibició dels tribunals d'excepció ad-hoc)." }
+                    { label: "Monopoli i Exclusivitat", text: "Només l'Estat manté la jurisdicció front els particulars (impossibilitat de jurisdiccions privades) i només els òrgans previstos a la LOPJ tenen aquesta potestat excepte casos del Tribunal Constitucional o Tribunals internacionals." },
+                    { label: "Unitat Jurisdiccional", text: "Prohibició de tribunals excepcionals o tribunals integrats per jutges que no formin part de la jurisdicció ordinària, unificant tot sota un règim jurídic exclusiu amb la LOPJ (117.5 CE)." },
+                    { label: "Govern Autònom: CGPJ", text: "El Consell General del Poder Judicial lidera la jurisdicció sense que el Poder Executiu i Ministeri de Justícia intervingui sobre els jutges, vetllant per l'estatut, formació i el sistema d'elecció (20 membres)." }
                 ],
                 color: "slate"
             },
-            accio: {
-                title: "L'Acció i la Tutela",
+            principis: {
+                title: "Principis dels Òrgans",
                 icon: ICONS.shield,
-                description: "El pilar constitucional del dret subjectiu inalienable que vincula qualsevol ciutadà directament amb l'administració de justícia de l'Estat.",
+                description: "El text de la LOPJ protegeix i exigeix als titulars de l'òrgan estrictes requisits formals per protegir el veredicte final i separar qualsevol decisió de l'arbitrarietat personal.",
                 sections: [
-                    { label: "Tutela Judicial (Art. 24 CE)", text: "Dret sagrat i efectiu d'accés absolut als tribunals. Dóna dret innegable a obtenir una resolució tècnica fundada en dret (condemna o absolució) i a rebre protecció." },
-                    { label: "Indefensió Prohibida", text: "Mai es podrà privar a una part de l'exercici natural de defensa pròpia o de l'aportació de mitjans de prova considerats vàlids i necessaris." },
-                    { label: "Justícia Gratuïta", text: "Garantia col·lectiva que adverteix que cap individu quedi fora de cobertura tècnica del sistema per falta de líquid o motius purament econòmics." }
+                    { label: "Independència, Submissió i Inamovibilitat", text: "Són independents perquè estan exclusivament sotmesos només a la Llei (no pas submissió a altres entitats). A més, cap jutge pot ser separat, suspès, obligat o jubilat sense causa i aforament legal previst." },
+                    { label: "Imparcialitat Objectiva i Subjectiva", text: "El jutge manté una posició purament neutral enfront a parts asimètriques, arbitrant abstencions o recusacions immediates si recau incidència, parentiu, o factors alterats." },
+                    { label: "Responsabilitat Total", text: "Costat oposat i raó directe de la Independència; pot reclamar-se Responsabilitat Disciplinària per errada greu davant el CGPJ, i evidentment Penal o Civil via tribunals pel seu propi exèrcici operatiu." }
                 ],
-                color: "blue"
-            },
-            proces: {
-                title: "El Procés Com a Garantia",
-                icon: ICONS.gitcommit,
-                description: "El mètode tècnic; la successió d'actes ordenats i transparents mitjançant els quals s'exercita directament la potestat jurisdiccional de l'Estat.",
-                sections: [
-                    { label: "Dualitat de Parts", text: "Cal indefectiblement la presència d'un actor (qui ataca o demana) i un demandat enfrontat davant d'un tercer subjecte totalment imparcial." },
-                    { label: "Contradicció", text: "Materialització del Principi d'Audiència civil: absolutament ningú pot ser desposseït o condemnat sense ser prèviament escoltat o citat legalment." },
-                    { label: "Igualtat de Parts", text: "El procés blindarà que les dues parts adquireixin temporalment els mateixos i idèntics mitjans procedimentals d'atac i de defensa tècnica." }
-                ],
-                color: "emerald"
-            },
-            fonts: {
-                title: "Les Fonts Normatives",
-                icon: ICONS.book,
-                description: "On resideix el naixement i origen de les normes sagrades que acaben regulant les estructures dels debats i crims a Espanya.",
-                customHtml: `
-                    <div class="bg-gray-50/80 p-6 rounded-xl border border-dashed border-gray-300">
-                        <ul class="space-y-4 text-sm text-slate-700">
-                            <li class="flex items-start gap-3">
-                                <div class="text-blue-500 mt-1 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-                                <div><span class="font-bold text-slate-900">La Constitució (1978):</span> Estructura suprema d'ordre; L'importantíssim Article 24 configura les garanties essencials absolutes sobre què és i què prohibeix la justícia.</div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="text-blue-500 mt-1 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-                                <div><span class="font-bold text-slate-900">La Llei (Només Estatal):</span> Regnant sota el Principi de legalitat, exclusivament i per mandat les Corts Generals estatals poden legislar ordenaments processals (com la LOPJ o la LECrim penal).</div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="text-blue-500 mt-1 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-                                <div><span class="font-bold text-slate-900">La Jurisprudència:</span> Tot i tècnicament no exercir com a font formal per crear llei pròpiament com dictamina el Codi Civil, l'assentament de decisions fixes del Tribunal Suprem unifiquen les divisions.</div>
-                            </li>
-                            <li class="flex items-start gap-3 mt-4 pt-4 border-t border-slate-200">
-                                <div class="text-red-500 mt-1 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-                                <div class="text-red-800"><span class="font-bold italic">Atenció Examen:</span> El costum territorial ciutadà o els hàbits adquirits <strong>NO SÓN FONT acceptada</strong> a nivell processal donada l'extrema duresa requerida d'ordre i precisió formalista centralitzada.</div>
-                            </li>
-                        </ul>
-                    </div>
-                `,
+                pdf: "data/processal civil/Judicial_Independence_Architecture.pdf",
                 color: "amber"
             },
             organization: {
-                title: "Organització Jurisdiccional",
-                icon: ICONS.landmark,
-                description: "La teranyina estatal organitzada i jerarquitzada sobre com s'escalen les decisions i recursos dins del terreny del Regne d'Espanya.",
+                title: "Estructura i 4 Ordres",
+                icon: ICONS.briefcase,
+                description: "Hi ha tribunals col·legiats i unipersonals, distribuïts dintre dels marcats Quatre Ordres Jurisdiccionals que reordenen l'activitat per complexitat temàtica de forma ramificada.",
                 customHtml: `
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
-                            <div class="bg-indigo-900 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">1</div>
-                            <div><h3 class="font-bold text-slate-800 text-sm">Tribunal Suprem (TS)</h3><p class="text-xs text-gray-500 mt-0.5">Òrgan superior nacional per sobre de qualsevol decisió civil o penal; posa fi definitiva a recursos (Excepte garanties d'empara via TC).</p></div>
+                    <div class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-indigo-50/70 p-4 border border-indigo-100 rounded-xl">
+                                <h4 class="font-bold text-sm text-indigo-800 uppercase tracking-widest mb-1">Ordre Civil i Penal</h4>
+                                <p class="text-sm text-slate-700">El Civil atén dret privat i exerceix activitat residual o <em>vis attractiva</em> (Art. 9.2 LOPJ). El Penal domina causes o judicis criminals excloent militars.</p>
+                            </div>
+                            <div class="bg-slate-50/70 p-4 border border-slate-100 rounded-xl">
+                                <h4 class="font-bold text-sm text-slate-800 uppercase tracking-widest mb-1">C. Administratiu i Social</h4>
+                                <p class="text-sm text-slate-700">El C. Administratiu processa accions sobre l'activitat pública governativa; l'Ordre Social regula branques i assumptes materials laborals i drets de la Seguretat Social (Art. 9.5 LOPJ).</p>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
-                            <div class="bg-indigo-800 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">2</div>
-                            <div><h3 class="font-bold text-slate-800 text-sm">Audiència Nacional (AN)</h3><p class="text-xs text-gray-500 mt-0.5">Disposa de jurisdicció nacional de punta a punta de l'Estat però de forma exclusiva i dedicada per lluitar contra crims concrets com terrorisme o màfies.</p></div>
-                        </div>
-                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
-                            <div class="bg-indigo-700 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">3</div>
-                            <div><h3 class="font-bold text-slate-800 text-sm">Tribunals Superiors de Justícia (TSJ)</h3><p class="text-xs text-gray-500 mt-0.5">Òrgans geogràfics vitals que representen i acullen l'esglaó suprem i extrem jurisdiccional confinat exclusivament dins l'àmbit propi d'una Comunitat Autònoma.</p></div>
-                        </div>
-                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
-                            <div class="bg-indigo-600 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">4</div>
-                            <div><h3 class="font-bold text-slate-800 text-sm">Audiències Provincials (AP)</h3><p class="text-xs text-gray-500 mt-0.5">Agrupaments col·legiats situats arreu centrats sobre l'àmbit estricte d'una sola província. Atorguen cobertura de cassos penalment rellevants o acullen recursos propis.</p></div>
-                        </div>
-                        <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 transition">
-                            <div class="bg-indigo-500 text-white font-bold h-8 w-8 flex items-center justify-center rounded-lg shadow-sm shrink-0">5</div>
-                            <div><h3 class="font-bold text-slate-800 text-sm">Jutjats Unipersonals (1a Inst., Instrucció...)</h3><p class="text-xs text-gray-500 mt-0.5">Cimenten l'àmplia base piramidal primària de Justícia; formen innegablement la famosa i necessària primera porta habitual del gruix general de demandes de la societat.</p></div>
-                        </div>
+                        <ul class="text-sm text-slate-600 space-y-2 mt-4 ml-2 border-l-2 border-slate-200 pl-4">
+                            <li><strong>Tribunal Suprem (TS):</strong> Cúspide nacional (casació, unificació jurisprudencial).</li>
+                            <li><strong>Audiència Nacional (AN):</strong> Nacional, delictes molt greus (terrorisme, etc).</li>
+                            <li><strong>Tribunals Superiors (TSJ):</strong> Culminació ordinària exclusivament dins la CA.</li>
+                            <li><strong>Audiències Provincials (AP):</strong> Coneix segona instància dins l'àmbit provincial.</li>
+                            <li><strong>Jutjats Unipersonals:</strong> Exemples com Jutjats de Primera Instància i Instrucció, Els Penals, Contenciosos, Jutjats de Pau, Violència sobre la dona...</li>
+                        </ul>
                     </div>
                 `,
+                pdf: "data/processal civil/L_Arquitectura_de_la_Justícia.pdf",
                 color: "indigo"
             },
             subjects: {
                 title: "Subjectes del Procés",
-                icon: ICONS.briefcase,
-                description: "Mapatge organitzatiu dels grups d'individus cabdals que formen i permeten moure tècnicament la robusta maquinària que anomenem procés judicial.",
-                sections: [
-                    { label: "Jutges i Magistrats", text: "Al vèrtex representacional; encarnen i utilitzen directament el poder atorgat sota l'escut indispensable d'una gran inamovibilitat i independència decisòria." },
-                    { label: "Lletrat Administració de Justícia", text: "Els grans eixos centrals: s'ocupen oficialment d'aportar i donar total fe documental als fets formals per escrit, com a directors actius de l'oficina." },
-                    { label: "Ministeri Fiscal", text: "Branca pública institucional obligada a defendre proactivament i cega a la societat i supervisar que tota aplicació natural s'adeqüi als barems i normatives establertes." },
-                    { label: "Advocats i Procuradors", text: "Els col·laboradors de camp en l'arena: Mentres l'Advocat desenvolupa amb èmfasi l'estratègia o defensa, el Procurador suporta la representació civil pura actuant com altaveu i rebedor notificacional de l'usuari final per terminis." }
-                ],
-                color: "slate"
-            },
-            phases: {
-                title: "La Línia de Fases",
                 icon: ICONS.gitcommit,
-                description: "Una ullada ràpida a la representació de la trajectòria cronològica lògica que viu típicament una disputa o assumpció civil simple fins el tancament.",
-                customHtml: `
-                    <div class="relative border-l-2 border-slate-200 ml-4 lg:ml-8 space-y-6 pb-2 pt-2">
-                        <div class="relative pl-6">
-                            <div class="absolute w-4 h-4 bg-slate-400 rounded-full -left-[9px] top-1 border-2 border-white"></div>
-                            <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">1. Demanda inicial i Contestació</h3>
-                            <p class="text-sm text-gray-500 leading-relaxed mt-1">S'aixeca el teló; interposició formal o requeriment de "Demanda" per la unitat actora exposant peticions i dades, que derivarà tard o d'hora amb la coneguda i oposada "Contestació".</p>
-                        </div>
-                        <div class="relative pl-6">
-                            <div class="absolute w-4 h-4 bg-slate-400 rounded-full -left-[9px] top-1 border-2 border-white"></div>
-                            <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">2. L'Audiència Prèvia preparatòria</h3>
-                            <p class="text-sm text-gray-500 leading-relaxed mt-1">Una interacció tècnica dissenyada per explorar un potencial empat d'arreglos formals però destinada habitualment a cribar les contradiccions evidents per demanar i acceptar els pèrits a dur.</p>
-                        </div>
-                        <div class="relative pl-6">
-                            <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-2 border-white shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
-                            <h3 class="font-bold text-blue-700 text-sm uppercase tracking-wide">3. Judici i Pràctica de la Trama</h3>
-                            <p class="text-sm text-gray-500 leading-relaxed mt-1">La fase principal. Oportunitat on la part es llança a l'arena per desplegar l'interrogatori de parts rellevants, experts testifiquen oralment i les dades recollides surten a la llum pública per la decisió.</p>
-                        </div>
-                        <div class="relative pl-6">
-                            <div class="absolute w-4 h-4 bg-slate-400 rounded-full -left-[9px] top-1 border-2 border-white"></div>
-                            <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">4. Conclusions Jurídiques Finals</h3>
-                            <p class="text-sm text-gray-500 leading-relaxed mt-1">Una avaluació analítica resumida del què s'ha mostrat que prenen el protagonisme final els lletrats intentant lligar exclusivament les respostes dels minuts anteriors directament amb els fets jurídics requerits abans de concloure vist per a sentència.</p>
-                        </div>
-                        <div class="relative pl-6">
-                            <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] top-1 border-2 border-white shadow-[0_0_10px_rgba(34,197,94,0.6)]"></div>
-                            <h3 class="font-bold text-green-700 text-sm uppercase tracking-wide">5. Dictat Formal Tècnic de Sentència</h3>
-                            <p class="text-sm text-gray-500 leading-relaxed mt-1">Desplegament i redacció per on el jutjador dona el seu parer validant els criteris legals aportant les al·legacions on pot optar sense interrupció a una estimació o la desestimació segons fets de l'apartat 3.</p>
-                        </div>
-                    </div>
-                `,
+                description: "Totes aquelles persones físiques que formen l'entramat orgànic col·laborador integrat a les instàncies judicials, classificat pel seu servei públic central o auxiliar i funcional.",
+                sections: [
+                    { label: "Personal Jurisdiccional (El jutge)", text: "Aquell qui utilitza potestat: jutges ordinaris, magistrats amb major experiència situats normalment en Audiències o el Suprem. La pertinença a la carrera confereix protecció màxima en tots ells." },
+                    { label: "Lletrat Administració i Oficina", text: "Al marge del jutge, el LAJ és director tècnic de l'Oficina d'ordre, garant de la fe pública judicial a la sala. L'oficina aporta tot el gruix informàtic, el personal general del cos tramitador i cos auxiliar permanent." },
+                    { label: "Personal Col·laborador (Fiscal/Lletrats)", text: "Ministeri Fiscal defensea legalitat des d'un eix apolític i social; mentres Policia Judicial, Advocat de l'Estat, professionals liberals (Advocats pel Dret a la defensa, o Procuradors pel repte de Termini i Representació física) suporten globalment." }
+                ],
                 color: "emerald"
             },
+            accio: {
+                title: "L'Acció i Tutela Efectiva",
+                icon: ICONS.book,
+                description: "L'Acció i dret constitucional de tota la ciutadania de l'Estat cap als mecanismes d'apelació a justícia garantits.",
+                sections: [
+                    { label: "Dret Procés vs Dret Subjectiu", text: "Mitjançant abstractes (dret mer a intervenir sense condemna garantitzada) i concrets (s'exigeix cert nivell i proves de raó formal abans i durant). Un procés efectiu lliga al ciutadà exigint el veredicte formal objectiu, sigui en la forma que sigui finalment." },
+                    { label: "Tutela Judicial (Art. 24 CE)", text: "Dret fonamental inviolable (emparat en l'Article 24), base que inclou dret d'accés absolut (l'admissió al lloc legal), prohibició taxativa de generar espais d'indefensió (garantides garanties de contradiccions) i el lliurat complet de recurs processal segons l'ordenament en vigor." }
+                ],
+                color: "blue"
+            },
             quiz: {
-                title: "Avaluació Integrada",
+                title: "Avaluació Ràpida",
                 icon: ICONS.help,
-                description: "Comprova l'assoliment ràpid de les bases fonamentals de les lectures anteriors sobre estructures civils i de fons.",
+                description: "Darrera revisió: Prova d'interiorització sobre materials bàsics establerts generalment al temari del recurs d'aprenentatge del mòdul Processal I.",
                 customHtml: `
                     <div class="space-y-6">
                         <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                            <h4 class="font-bold mb-4 text-slate-800 flex items-center gap-2"><div class="w-6 h-6 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-xs">1</div>Pot el costum civil d'un indret ser una font directa al processal penal on dictar normes per on el jutge s'haurà d'inclinar per evitar ser errat?</h4>
+                            <h4 class="font-bold mb-4 text-slate-800 flex items-center gap-2"><div class="w-6 h-6 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-xs">1</div>La jurisdicció entesa com a potestat s'aplica exclusivament mitjançant monopoli per l'Estat. Tanmateix, permet tribunals consuetudinaris tals com el del Jurat i l'existència de Jurisdiccions "Especials" privades externes (excepte si intervenen militarment). És correcte aquesta definició parcial d'unitat?</h4>
                             <div class="space-y-2" id="quiz-1-options">
-                                <button onclick="checkAnswer(1, 'A')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">A) Sí, per no perdre en arrelament les dinàmiques sociològiques del context local es considera subsidiàriament la part fonamental.</button>
-                                <button onclick="checkAnswer(1, 'B')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">B) No. Atesa la serietat pública monopolitzadora que suposa el procés, es limita de facto qualsevol presència local per aplicar únicament fites establertes directament sota Llei.</button>
+                                <button onclick="checkAnswer(1, 'A')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">A) Fals. La jurisdicció espanyola no tolera ni empara pas tribunals internacionals de cap tipologia per exclusivitat absoluta total.</button>
+                                <button onclick="checkAnswer(1, 'B')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">B) Fals. Segons la Constitució i LOPJ, les jurisdiccions purament privades són il·legals i el principi d'unitat dictamina exclusivitat al Poder Judicial formal creat.</button>
                             </div>
                             <div id="quiz-1-result" class="mt-4 hidden p-4 rounded-xl font-medium text-sm border"></div>
                         </div>
 
                         <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                            <h4 class="font-bold mb-4 text-slate-800 flex items-center gap-2"><div class="w-6 h-6 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-xs">2</div>Indica el nom del tribunal col·legiat que actua limitat dintre del cercle purament marcat limitat de la seva pròpia de la Comunitat Autònoma i tanca recursos sota eixe mateix ens:</h4>
+                            <h4 class="font-bold mb-4 text-slate-800 flex items-center gap-2"><div class="w-6 h-6 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-xs">2</div>Pel que respecta al TSJ (Tribunal Superior de Justícia) quina àrea d'actuació principal i àmbit assumeix habitualment per davant de les Audiències Provincials?</h4>
                             <div class="space-y-2" id="quiz-2-options">
-                                <button onclick="checkAnswer(2, 'A')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">A) L'òrgan intermedi i limitat sota l'àrea circumscrita es coneix habitualment com la pròpia Audiència de circumscripció Provincial (AP).</button>
-                                <button onclick="checkAnswer(2, 'B')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">B) L'organisme que culmina de ple tot l'establiment jeràrquic intern dintre del perímetre geogràfic civil d'aquesta autonomia és el previst Tribunal Superior de Justícia (TSJ).</button>
+                                <button onclick="checkAnswer(2, 'A')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">A) Posseeix rang i control màxim exclusiu en qüestions ubicades en una província tancada (exemple AP Girona), només un lloc sense més abast d'Estatut propi.</button>
+                                <button onclick="checkAnswer(2, 'B')" class="w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition quiz-btn shadow-sm text-sm text-slate-600">B) Cobreix l'Esglaó Superior corresponent al conjunt d'aplecs i territori de tota la pròpia Comunitat Autònoma, sobre passant en rang provincial habitualitzant recursos propis com unificació de dret de CA on n'hi hagués.</button>
                             </div>
                             <div id="quiz-2-result" class="mt-4 hidden p-4 rounded-xl font-medium text-sm border"></div>
                         </div>
@@ -321,8 +252,8 @@
         };
 
         const quizData = {
-            1: { correct: 'B', msgCorrect: 'Perfecte! L\'exigència d\'una llei estatal és inexcusable sota l\'ordre. Es prioritza l\'imperi igualitari garantit que un text únic pot proveir.', msgWrong: 'Compte amb el parany! Per seguretat ciutadana, no es tolera invenció o variabilitat com a font vàlida; ha d\'estar tot legislat estatalment prèviament als procediments.' },
-            2: { correct: 'B', msgCorrect: 'Exactament! Com el nom mateix dicta directament, esgota o culmina sota els reglaments estatutaris de via estricta i sense excedir territori les gestions.', msgWrong: 'Atenció... L\'AP funciona en demarcacions clarament per sota territorialment com són internament comarques o estensions purament provincials inferiors al concepte d\'autonomia superior global del TSJ.' }
+            1: { correct: 'B', msgCorrect: 'Correcte! La justícia s\'exerceix sota monopoli legal i estan rotundament prohibides les "jurisdiccions" de caire pur privada entre dos no ratificades; al seu lloc existeixen els mecanismes de conformitat d\'Estat.', msgWrong: 'Vigila la A...! Sí que es permeten alguns tribunals internacionals externs pel principi subrogatòria (ex: Tribunal Europeu Drets Humans / TJUE) ratificats.' },
+            2: { correct: 'B', msgCorrect: 'Totalment exacte! El TSJ esdevé l\'ordre que absorbeix els recursos ordinaris finalitzadors autonòmicament de la jurisdicció abans que intervingui algun eix nacional com Suprem directament (AN, etc)...', msgWrong: 'Errada... les competències únicament provincials recauríen inicialment naturalment cap a les seccions de l\'Audiència Provincial, just per sota d\'un TSJ autonòmic central.' }
         };
 
         function showTopic(key) {
@@ -357,6 +288,13 @@
                             <p class="text-sm text-slate-700 leading-relaxed">${s.text}</p>
                         </div>
                     `).join('')}
+                    ${topic.pdf ? `
+                    <div class="col-span-full mt-6">
+                        <div class="w-full h-[600px] md:h-[700px] rounded-2xl overflow-hidden bg-slate-50 border-4 border-slate-200 shadow-inner">
+                            <iframe src="${topic.pdf}#toolbar=0&view=FitH" class="w-full h-full" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    ` : ''}
                 </div>
             `;
         }
