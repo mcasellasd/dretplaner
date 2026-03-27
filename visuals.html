@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Altres","url":"#"},{"label":"Visuals i Esquemes"}]'>
+    <title>Visuals i Esquemes | Què diu la Llei?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .category-section {
+            scroll-margin-top: 100px;
+        }
+
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* PDF card distinction */
+        .pdf-card {
+            border-color: rgba(251, 191, 36, 0.4) !important;
+            background: rgba(20, 28, 45, 0.65) !important;
+        }
+
+        .pdf-card:hover {
+            border-color: rgba(251, 191, 36, 0.9) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 32px rgba(251, 191, 36, 0.28) !important;
+        }
+
+        .pdf-badge {
+            position: absolute;
+            top: 0.6rem;
+            right: 0.6rem;
+            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+            padding: 0.22rem 0.6rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 10px rgba(239, 68, 68, 0.55);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* Modal PDF Styles */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .pdf-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pdf-modal-content {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 900px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .pdf-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+
+        .pdf-modal-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #1e293b;
+        }
+
+        .pdf-modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            padding: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .pdf-modal-close:hover {
+            background-color: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .pdf-viewer-container {
+            flex: 1;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 1rem;
+            background: #f1f5f9;
+        }
+
+        #pdf-canvas {
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .pdf-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+            flex-wrap: wrap;
+        }
+
+        .pdf-controls button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .pdf-controls button:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+        }
+
+        .pdf-controls button:disabled {
+            background-color: #cbd5e1;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .pdf-download-btn {
+            margin-left: auto;
+        }
+
+        .pdf-page-info {
+            color: #64748b;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pdf-modal-content {
+                width: 95%;
+                height: 90vh;
+            }
+
+            .pdf-modal-header {
+                padding: 1rem;
+            }
+
+            .pdf-modal-header h3 {
+                font-size: 1rem;
+            }
+
+            .pdf-controls {
+                flex-direction: column;
+            }
+
+            .pdf-controls button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative">
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 id="pdfTitle">Visualitzador de PDF</h3>
+                <button class="pdf-modal-close" onclick="closePdfModal()">✕</button>
+            </div>
+            <div class="pdf-viewer-container">
+                <canvas id="pdf-canvas"></canvas>
+            </div>
+            <div class="pdf-controls">
+                <button onclick="previousPage()" id="prevBtn">← Anterior</button>
+                <span class="pdf-page-info">Pàgina <span id="pageNum">1</span> de <span id="pageCount">0</span></span>
+                <button onclick="nextPage()" id="nextBtn">Següent →</button>
+                <button onclick="downloadPdf()" class="pdf-download-btn">⬇ Descarregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar-container"></div>
+    <div id="breadcrumb-container" class="max-w-7xl mx-auto px-6 pt-24"></div>
+
+    <!-- Decorative blobs -->
+    <div class="blob bg-blue-600/30 w-96 h-96 rounded-full top-[-100px] left-[-100px]"></div>
+    <div class="blob bg-purple-600/20 w-[500px] h-[500px] rounded-full bottom-[-100px] right-[-100px]"></div>
+
+    <!-- Banner Catalunya Legal -->
+    <div class="relative z-15 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 text-center">
+        <a href="https://catalunyalegal.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10M17 7L7 17" />
+            </svg>
+            Explora més recursos a Catalunya Legal
+            <span class="ml-2">→</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-20 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-slate-300 hover:text-white font-semibold transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+                Tornar
+            </a>
+            <h1 class="text-2xl font-bold text-white">📊 Visuals i Esquemes</h1>
+            <div class="w-18"></div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        <!-- Introducció -->
+        <div class="text-center mb-20">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                Visuals i <span class="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Esquemes</span>
+            </h2>
+            <p class="text-slate-400 text-xl max-w-3xl mx-auto font-light">
+                Col·lecció de diagrames, arquitectures i esquemes visuals organitzats per matèria. Tota la complexitat jurídica explicada de forma visual.
+            </p>
+        </div>
+
+        <!-- Taula de continguts -->
+        <div class="mb-16">
+            <div class="glass-card rounded-2xl p-8 sticky top-24 z-10">
+                <h3 class="font-bold text-white mb-4">Continguts:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <a href="#penal" class="text-red-400 hover:text-red-300 transition-colors flex items-center gap-2">
+                        <span class="text-lg">⚖️</span> Dret Penal
+                    </a>
+                    <a href="#civil" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
+                        <span class="text-lg">👨‍👩‍👧‍👦</span> Dret Civil
+                    </a>
+                    <a href="#financer" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2">
+                        <span class="text-lg">💰</span> Dret Financer
+                    </a>
+                    <a href="#mercantil" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-2">
+                        <span class="text-lg">🏢</span> Dret Mercantil
+                    </a>
+                    <a href="#constitucional" class="text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-2">
+                        <span class="text-lg">🏛️</span> Dret Constitucional
+                    </a>
+                    <a href="#processal" class="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-2">
+                        <span class="text-lg">⚖️</span> Dret Processal
+                    </a>
+                    <a href="#administratiu" class="text-teal-400 hover:text-teal-300 transition-colors flex items-center gap-2">
+                        <span class="text-lg">🏛️</span> Dret Administratiu
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓ: DRET PENAL -->
+        <section id="penal" class="category-section mb-24">
+            <div class="mb-8">
+                <h3 class="text-4xl font-bold text-red-400 mb-2 flex items-center gap-3">
+                    <span class="text-5xl">⚖️</span> Dret Penal
+                </h3>
+                <p class="text-slate-400 font-light">Esquemes de teoria del delicte, tipologies i responsabilitat penal</p>
+            </div>
+
+            <div class="visual-grid">
+                <!-- Visual 1: Estructura de la Imputació -->
+                <a onclick="openPdf('data/penal 2/estruc impu.png', 'Estructura de la Imputació')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/penal 2/estruc impu.png" 
+                            alt="Estructura de la Imputació" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Estructura de la Imputació</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema visual dels elements de la imputació objectiva i subjectiva en dret penal econòmic.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Imputació</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 2: Penalitat Individual -->
+                <a onclick="openPdf('data/penal 2/penalitat individual.png', 'Penes Per a Persones Físiques')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/penal 2/penalitat individual.png" 
+                            alt="Penalitat Individual" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Penes Per a Persones Físiques</h4>
+                            <p class="text-xs text-slate-400 flex-1">Classificació del sistema de penes aplicables a persones físiques en delictes de dret penal econòmic.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Penes</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 3: Responsabilitat de la Persona Jurídica -->
+                <a onclick="openPdf('data/penal 2/respo pax jur.png', 'Responsabilitat de la Persona Jurídica')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/penal 2/respo pax jur.png" 
+                            alt="Responsabilitat Persona Jurídica" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Responsabilitat de la Persona Jurídica</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema de la responsabilitat penal de les entitats jurídiques (Art. 31 bis CP), via A i via B.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">RPPJ</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 4: Art 31 bis CP -->
+                <a onclick="openPdf('data/penal 2/art 31bis.png', 'Article 31 bis CP')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/penal 2/art 31bis.png" 
+                            alt="Article 31 bis CP" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Article 31 bis CP</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema de l'article 31 bis del Codi Penal sobre la responsabilitat penal de persones jurídiques.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Art 31 bis</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓ: DRET CIVIL -->
+        <section id="civil" class="category-section mb-24">
+            <div class="mb-8">
+                <h3 class="text-4xl font-bold text-blue-400 mb-2 flex items-center gap-3">
+                    <span class="text-5xl">👨‍👩‍👧‍👦</span> Dret Civil
+                </h3>
+                <p class="text-slate-400 font-light">Esquemes del dret de família, règims economico-matrimonials i successió</p>
+            </div>
+
+            <div class="visual-grid">
+                <!-- Visual 1: Capítols Matrimonials -->
+                <a onclick="openPdf('data/video RA1 CVIL IV/capitols matrimonials.png', 'Capítols Matrimonials')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/video RA1 CVIL IV/capitols matrimonials.png" 
+                            alt="Capítols Matrimonials" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Capítols Matrimonials</h4>
+                            <p class="text-xs text-slate-400 flex-1">Regulació dels règims economico-matrimonials a Catalunya. Pactes entre cònjuges i les seves implicacions legals.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Família</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 2: Separació Béns i Guanys -->
+                <a onclick="openPdf('data/video RA1 CVIL IV/sep bens i guanys.png', 'Separació: Béns vs Guanys')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/video RA1 CVIL IV/sep bens i guanys.png" 
+                            alt="Separació de Béns i Guanys" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Separació: Béns vs Guanys</h4>
+                            <p class="text-xs text-slate-400 flex-1">Comparativa dels dos règims de béns matrimonials més comuns: separació completa i societat de guanys.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Patrimoni</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 3: Aliments -->
+                <a onclick="openPdf('data/video RA1 CVIL IV/aliments.png', 'Obligació d\'Aliments')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/video RA1 CVIL IV/aliments.png" 
+                            alt="Obligació d'Aliments" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Obligació d'Aliments</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema de l'obligació legal d'aliments entre parents i cònjuges: titulars, contingut i extinció.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Família</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 4: Parelles de Fet a Catalunya -->
+                <a onclick="openPdf('data/video RA1 CVIL IV/parelles cat.png', 'Parelles de Fet a Catalunya')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/video RA1 CVIL IV/parelles cat.png" 
+                            alt="Parelles de Fet a Catalunya" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Parelles de Fet a Catalunya</h4>
+                            <p class="text-xs text-slate-400 flex-1">Regulació de les unions estables de parella al dret català: constitució, efectes i extinció.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Família</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 5: Les Vies del Matrimoni - matri esp.png -->
+                <a onclick="openPdf('data/video RA1 CVIL IV/matri esp.png', 'Les Vies del Matrimoni: Un Sistema Únic a Espanya')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/video RA1 CVIL IV/matri esp.png" 
+                            alt="Les Vies del Matrimoni a Espanya" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Les Vies del Matrimoni a Espanya</h4>
+                            <p class="text-xs text-slate-400 flex-1">Forma civil i religiosa, l'expedient matrimonial, modalitats especials i efectes jurídics del matrimoni a Espanya.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Matrimoni</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 6: Spanish Marriage Law Essentials -->
+                <a onclick="openPdf('data/video RA1 CVIL IV/Spanish_Marriage_Law_Essentials.pdf_compressed.pdf', 'Essentials del Dret Matrimonial Espanyol')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <div class="w-full h-48 bg-blue-900/40 flex items-center justify-center group-hover:bg-blue-900/60 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Essentials del Dret Matrimonial Espanyol</h4>
+                            <p class="text-xs text-slate-400 flex-1">PDF amb els punts clau del dret matrimonial a Espanya: règims, efectes i dissolució del matrimoni.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Matrimoni</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓ: DRET FINANCER -->
+        <section id="financer" class="category-section mb-24">
+            <div class="mb-8">
+                <h3 class="text-4xl font-bold text-emerald-400 mb-2 flex items-center gap-3">
+                    <span class="text-5xl">💰</span> Dret Financer i Tributari
+                </h3>
+                <p class="text-slate-400 font-light">Esquemes d'impostos, sistema tributari i pressupostos públics</p>
+            </div>
+
+            <div class="visual-grid">
+                <a onclick="openPdf('data/tribu 2 pac 1/impostos directes/IRPF_Visual_Guide.pdf', 'Guia Visual IRPF')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=200&fit=crop" 
+                            alt="Guia Visual IRPF" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-50">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Guia Visual IRPF</h4>
+                            <p class="text-xs text-slate-400 flex-1">Estructura i càlcul de l'Impost sobre la Renda de les Persones Físiques.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Tributari</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="impostos-directes.html" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="data/tribu 2 pac 1/impostos directes/irpf.png"
+                            alt="Infografia Impostos Directes"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-80">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Infografia Impostos Directes</h4>
+                            <p class="text-xs text-slate-400 flex-1">Resum visual d'IRPF, Impost sobre Societats i Impost sobre el Patrimoni en una sola vista.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Impostos Directes</span>
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a onclick="openPdf('data/tribu 2 pac 1/impostos directes/is.png', 'Impost sobre Societats - Resum Visual')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="data/tribu 2 pac 1/impostos directes/is.png"
+                            alt="Impost sobre Societats"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-85">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Impost sobre Societats</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema visual dels conceptes clau de l'IS: base imposable, tipus i estructura de càlcul.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">IS</span>
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a onclick="openPdf('data/tribu 2 pac 1/impostos directes/succ i don cat.pdf', 'Estratègia Successions i Donacions Catalunya 2025-2026')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="data/tribu 2 pac 1/impostos directes/succ cat.png"
+                            alt="Estratègia Successions i Donacions Catalunya 2025-2026"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-70">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Estratègia Successions i Donacions 2025-2026</h4>
+                            <p class="text-xs text-slate-400 flex-1">Document ampliat amb enfocament estratègic per a planificació successòria i donacions a Catalunya.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Planificació</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a onclick="openPdf('data/tribu 2 pac 1/impostos directes/impost patrimoini.png', 'Impost sobre el Patrimoni - Resum Visual')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="data/tribu 2 pac 1/impostos directes/impost patrimoini.png"
+                            alt="Impost sobre el Patrimoni"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-85">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Impost sobre el Patrimoni</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema visual dels elements principals de l'IP: base imposable, exempcions i límit de tributació conjunta.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">IP</span>
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a onclick="openPdf('data/tribu 2 pac 1/impostos directes/impostos cat.png', 'Impostos a Catalunya - Resum Visual')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="data/tribu 2 pac 1/impostos directes/impostos cat.png"
+                            alt="Impostos a Catalunya"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-85">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Impostos a Catalunya</h4>
+                            <p class="text-xs text-slate-400 flex-1">Panoràmica visual del sistema impositiu a Catalunya: impostos cedits, propis i la seva distribució.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Catalunya</span>
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a onclick="openPdf('data/tribu 2 pac 1/impostos directes/succ cat.png', 'Successions a Catalunya - Resum Visual')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="data/tribu 2 pac 1/impostos directes/succ cat.png"
+                            alt="Successions a Catalunya"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-85">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Successions a Catalunya</h4>
+                            <p class="text-xs text-slate-400 flex-1">Resum visual de l'ISD amb les particularitats autonòmiques de Catalunya: reduccions i bonificacions pròpies.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">ISD</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Catalunya</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a onclick="openPdf('data/tribu 2 pac 1/impostos directes/Wealth_Architecture_compressed.pdf', 'Arquitectura Patrimonial')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop"
+                            alt="Arquitectura Patrimonial"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-50">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Arquitectura Patrimonial</h4>
+                            <p class="text-xs text-slate-400 flex-1">Guia d'estructures patrimonials i instruments de planificació fiscal per a grans patrimonis.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Patrimoni</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a onclick="openPdf('data/tribu 2 pac 1/impostos indirectes/impostos indirectes.pdf', 'Impostos Indirectes - Guia Visual')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-orange-900/20">
+                        <div class="w-full h-48 bg-orange-900/40 flex items-center justify-center group-hover:bg-orange-900/60 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-orange-300">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <line x1="10" y1="9" x2="8" y2="9"/>
+                            </svg>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">Impostos Indirectes - Guia Visual</h4>
+                            <p class="text-xs text-slate-400 flex-1">PDF amb l'estructura essencial dels impostos indirectes i el seu encaix al sistema tributari.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded">Indirectes</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓ: DRET MERCANTIL -->
+        <section id="mercantil" class="category-section mb-24">
+            <div class="mb-8">
+                <h3 class="text-4xl font-bold text-amber-400 mb-2 flex items-center gap-3">
+                    <span class="text-5xl">🏢</span> Dret Mercantil
+                </h3>
+                <p class="text-slate-400 font-light">Esquemes de propietat industrial, societats i títols valor</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-12 text-center border-dashed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mx-auto mb-4 text-slate-600">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                <h4 class="text-xl font-bold text-slate-400 mb-2">Visuals en preparació</h4>
+                <p class="text-slate-500 text-sm">Els esquemes visuals de Dret Mercantil s'afegiran properament</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓ: DRET CONSTITUCIONAL -->
+        <section id="constitucional" class="category-section mb-24">
+            <div class="mb-8">
+                <h3 class="text-4xl font-bold text-indigo-400 mb-2 flex items-center gap-3">
+                    <span class="text-5xl">🏛️</span> Dret Constitucional
+                </h3>
+                <p class="text-slate-400 font-light">Arquitectura constitucional espanyola, UE i sistema de drets fonamentals</p>
+            </div>
+
+            <div class="visual-grid">
+                <!-- Visual 1: UE Architecture -->
+                <a onclick="openPdf('data/constitut/European_Union_Architecture.pdf', 'Arquitectura de la UE')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-blue-900/20">
+                        <div class="w-full h-48 bg-blue-950/60 flex items-center justify-center group-hover:bg-blue-900/60 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">Arquitectura de la UE</h4>
+                            <p class="text-xs text-slate-400 flex-1">Sistema supranacional de la Unió Europea: òrgans, competències i dret comunitari.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">UE</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 2: Spanish State Architecture -->
+                <a onclick="openPdf('data/constitut/Spanish_State_Architecture.pdf', 'Arquitectura de l\'Estat')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-red-900/20">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=400&h=200&fit=crop" 
+                            alt="Estat Espanyol" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-50">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Arquitectura de l'Estat</h4>
+                            <p class="text-xs text-slate-400 flex-1">Structure constitucional del Regne d'Espanya: Corona, Corts, Govern i Poder Judicial.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Estat</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 3: Constitutional Rights -->
+                <a onclick="openPdf('data/constitut/Constitutional_Rights_Architecture.pdf', 'Drets Fonamentals')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <div class="w-full h-48 bg-emerald-950/60 flex items-center justify-center group-hover:bg-emerald-900/60 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Drets Fonamentals</h4>
+                            <p class="text-xs text-slate-400 flex-1">Sistema de drets i llibertats fonamentals: generacions, garanties i protecció constitucional.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Drets</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 4: Autonomic Architecture -->
+                <a onclick="openPdf('data/constitut/Spanish_Autonomic_Architecture.pdf', 'Estat de les Autonomies')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-purple-900/20">
+                        <div class="w-full h-48 bg-purple-950/60 flex items-center justify-center group-hover:bg-purple-900/60 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Estat de les Autonomies</h4>
+                            <p class="text-xs text-slate-400 flex-1">Model d'ordenació territorial: comunitats autònomes, estatuts i distribució de competències.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Autonomies</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓ: DRET PROCESSAL -->
+        <section id="processal" class="category-section mb-24">
+            <div class="mb-8">
+                <h3 class="text-4xl font-bold text-emerald-400 mb-2 flex items-center gap-3">
+                    <span class="text-5xl">⚖️</span> Dret Processal
+                </h3>
+                <p class="text-slate-400 font-light">Arquitectura del sistema de justícia i procediments judicials</p>
+            </div>
+
+            <div class="visual-grid">
+                <!-- Visual 1: Judicial Independence -->
+                <a onclick="openPdf('data/processal civil/Judicial_Independence_Architecture.pdf', 'Independència Judicial')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-teal-900/20">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop" 
+                            alt="Independència Judicial" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-50">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">Independència Judicial</h4>
+                            <p class="text-xs text-slate-400 flex-1">Sistema de garanties per a la independència i imparcialitat del Poder Judicial.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-teal-500/20 text-teal-400 px-2 py-1 rounded">Justícia</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 2: Arquitectura de la Justícia -->
+                <a onclick="openPdf('data/processal civil/L_Arquitectura_de_la_Justícia.pdf', 'Arquitectura de la Justícia')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-cyan-900/20">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=200&fit=crop" 
+                            alt="Arquitectura Justícia" 
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300 opacity-50">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Arquitectura de la Justícia</h4>
+                            <p class="text-xs text-slate-400 flex-1">Structure i organització del sistema judicial: jutjats, audiències i tribunal. </p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded">Processal</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/acumulació%20accions.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-emerald-900/20">
+                        <img src="data/processal civil/jurisdiccio/acumulació%20accions.png"
+                            alt="Acumulació d'accions"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Acumulació d'Accions</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema visual de l'acumulació d'accions i de les seves condicions processals.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Jurisdicció</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/anato%20defensa.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-cyan-900/20">
+                        <img src="data/processal civil/jurisdiccio/anato%20defensa.png"
+                            alt="Anatomia de la defensa"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Anatomia de la Defensa</h4>
+                            <p class="text-xs text-slate-400 flex-1">Visió estructurada dels instruments de defensa de les parts en el procés civil.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded">Defensa</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/comparativa%20processps.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-blue-900/20">
+                        <img src="data/processal civil/jurisdiccio/comparativa%20processps.png"
+                            alt="Comparativa de processos"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Comparativa de Processos</h4>
+                            <p class="text-xs text-slate-400 flex-1">Comparació visual dels principals tipus de procés i les seves diferències operatives.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Tipus</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/embut%20competencia.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-teal-900/20">
+                        <img src="data/processal civil/jurisdiccio/embut%20competencia.png"
+                            alt="Embut de competència"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">Embut de Competència</h4>
+                            <p class="text-xs text-slate-400 flex-1">Guia visual per determinar la competència judicial segons matèria i criteris processals.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-teal-500/20 text-teal-400 px-2 py-1 rounded">Competència</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/guia%20proces.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-lime-900/20">
+                        <img src="data/processal civil/jurisdiccio/guia%20proces.png"
+                            alt="Guia del procés"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-lime-300 transition-colors">Guia del Procés</h4>
+                            <p class="text-xs text-slate-400 flex-1">Recorregut visual de les fases essencials del procediment civil.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-lime-500/20 text-lime-400 px-2 py-1 rounded">Fases</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/mapa%20visual%20termi.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-fuchsia-900/20">
+                        <img src="data/processal civil/jurisdiccio/mapa%20visual%20termi.png"
+                            alt="Mapa visual de terminologia"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-fuchsia-300 transition-colors">Mapa Visual de Terminologia</h4>
+                            <p class="text-xs text-slate-400 flex-1">Glossari gràfic dels termes clau de jurisdicció i procés civil.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-fuchsia-500/20 text-fuchsia-400 px-2 py-1 rounded">Terminologia</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/oportunitat.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-yellow-900/20">
+                        <img src="data/processal civil/jurisdiccio/oportunitat.png"
+                            alt="Principi d'oportunitat"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">Principi d'Oportunitat</h4>
+                            <p class="text-xs text-slate-400 flex-1">Representació dels espais de decisió i oportunitat dins l'estratègia processal.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded">Estratègia</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/ppis%20proc%20judi.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-sky-900/20">
+                        <img src="data/processal civil/jurisdiccio/ppis%20proc%20judi.png"
+                            alt="Principis del procés judicial"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">Principis del Procés Judicial</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema sintètic dels principis rectors de l'activitat jurisdiccional civil.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-sky-500/20 text-sky-400 px-2 py-1 rounded">Principis</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/proc%20ciu%20i%20jus.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-red-900/20">
+                        <img src="data/processal civil/jurisdiccio/proc%20ciu%20i%20jus.png"
+                            alt="Procés civil i jurisdicció"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Procés Civil i Jurisdicció</h4>
+                            <p class="text-xs text-slate-400 flex-1">Relació entre l'acció civil, l'òrgan jurisdiccional i la resolució judicial.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Relació</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="data/processal civil/jurisdiccio/radio%20parts%20civils.png" target="_blank" rel="noopener noreferrer" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-violet-900/20">
+                        <img src="data/processal civil/jurisdiccio/radio%20parts%20civils.png"
+                            alt="Radiografia de parts civils"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-violet-300 transition-colors">Radiografia de les Parts Civils</h4>
+                            <p class="text-xs text-slate-400 flex-1">Visualització dels rols i de les interaccions processals entre les parts del litigi.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-violet-500/20 text-violet-400 px-2 py-1 rounded">Parts</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓ: DRET ADMINISTRATIU -->
+        <section id="administratiu" class="category-section mb-24">
+            <div class="mb-8">
+                <h3 class="text-4xl font-bold text-teal-400 mb-2 flex items-center gap-3">
+                    <span class="text-5xl">🏛️</span> Dret Administratiu
+                </h3>
+                <p class="text-slate-400 font-light">Esquemes d'organització administrativa i procediments</p>
+            </div>
+
+            <div class="visual-grid">
+                <a onclick="openPdf('data/admin 2/guia procediment contencions admin.png', 'Guia del procediment contenciós administratiu')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-teal-900/20">
+                        <img src="data/admin 2/guia procediment contencions admin.png"
+                            alt="Guia del procediment contenciós administratiu"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">Guia del procediment contenciós administratiu</h4>
+                            <p class="text-xs text-slate-400 flex-1">Mapa visual del flux del recurs contenciós administratiu, fases i punts clau del procediment.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-teal-500/20 text-teal-400 px-2 py-1 rounded">Contenciós</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a onclick="openPdf('data/admin 2/recrusos CA.png', 'Recursos contenciosos administratius')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-cyan-900/20">
+                        <img src="data/admin 2/recrusos CA.png"
+                            alt="Recursos en l'ordre contenciós administratiu"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Recursos contenciosos administratius</h4>
+                            <p class="text-xs text-slate-400 flex-1">Visió comparada dels principals recursos de la jurisdicció contenciosa administrativa i el seu encaix processal.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded">Recursos</span>
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="glass-card rounded-3xl p-12 text-center mt-24 mb-12">
+            <h3 class="text-3xl font-bold text-white mb-4">Més recursos per dominar el dret</h3>
+            <p class="text-slate-400 font-light mb-8">Accedeix a vídeos, mòduls interactius i materials d'estudi complets</p>
+            <a href="index.html" class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-blue-500/30">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 6-6 6 6 6" />
+                    <path d="M15 12H3.5" />
+                </svg>
+                Tornar a l'inici
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-slate-900/50 border-t border-slate-700/50 mt-24 py-12">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-white mb-4">Què diu la Llei?</h3>
+                    <p class="text-slate-400 text-sm">Plataforma digital per dominar el dret de manera eficient.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Assignatures</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="dret-penal.html" class="hover:text-white transition-colors">Dret Penal</a></li>
+                        <li><a href="dret-civil.html" class="hover:text-white transition-colors">Dret Civil</a></li>
+                        <li><a href="dret-mercantil.html" class="hover:text-white transition-colors">Dret Mercantil</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Recursos</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="visuals.html" class="hover:text-white transition-colors">Visuals i Esquemes</a></li>
+                        <li><a href="https://catalunyalegal.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Catalunya Legal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Contacte</h4>
+                    <p class="text-slate-400 text-sm">Per més informació, visita<br><a href="https://catalunyalegal.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">catalunyalegal.vercel.app</a></p>
+                </div>
+            </div>
+            <div class="border-t border-slate-700/50 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2026 Què diu la Llei?. Tots els drets reservats.</p>
+                <p>Plataforma educativa de dret</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // PDF Viewer Modal Configuration
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        let currentPdfUrl = null;
+        let currentPdfDoc = null;
+        let currentPage = 1;
+
+        function openPdf(url, title) {
+            const modal = document.getElementById('pdfModal');
+            const header = modal.querySelector('.pdf-modal-header h3');
+            header.textContent = title || 'PDF Viewer';
+            currentPdfUrl = url;
+            currentPage = 1;
+            modal.style.display = 'flex';
+            
+            // Load PDF document
+            pdfjsLib.getDocument(currentPdfUrl).promise.then(pdf => {
+                currentPdfDoc = pdf;
+                renderPage(currentPage);
+                updateNavigation();
+            }).catch(error => {
+                console.error('Error loading PDF:', error);
+                alert('No es pot carregar el PDF. Intenta de nou més tard.');
+            });
+        }
+
+        function closePdfModal() {
+            const modal = document.getElementById('pdfModal');
+            modal.style.display = 'none';
+            currentPdfDoc = null;
+            currentPage = 1;
+        }
+
+        function renderPage(pageNum) {
+            if (!currentPdfDoc || pageNum < 1 || pageNum > currentPdfDoc.numPages) return;
+            
+            currentPdfDoc.getPage(pageNum).then(page => {
+                const canvas = document.getElementById('pdf-canvas');
+                const context = canvas.getContext('2d');
+                
+                // Set canvas dimensions
+                const desiredWidth = canvas.parentElement.clientWidth;
+                const viewport = page.getViewport({ scale: desiredWidth / page.getViewport({ scale: 1 }).width });
+                
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                
+                page.render(renderContext).promise.then(() => {
+                    document.getElementById('pdf-page-info').textContent = `Pàgina ${pageNum} de ${currentPdfDoc.numPages}`;
+                });
+            });
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage(currentPage);
+                updateNavigation();
+            }
+        }
+
+        function nextPage() {
+            if (currentPdfDoc && currentPage < currentPdfDoc.numPages) {
+                currentPage++;
+                renderPage(currentPage);
+                updateNavigation();
+            }
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.querySelector('.pdf-controls button:nth-child(1)');
+            const nextBtn = document.querySelector('.pdf-controls button:nth-child(2)');
+            
+            if (prevBtn) prevBtn.disabled = currentPage <= 1;
+            if (nextBtn) nextBtn.disabled = currentPdfDoc && currentPage >= currentPdfDoc.numPages;
+        }
+
+        function downloadPdf() {
+            if (currentPdfUrl) {
+                const link = document.createElement('a');
+                link.href = currentPdfUrl;
+                link.download = currentPdfUrl.split('/').pop();
+                link.click();
+            }
+        }
+
+        // Event Listeners
+        document.getElementById('pdfModal').addEventListener('click', (e) => {
+            if (e.target.id === 'pdfModal') closePdfModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (currentPdfDoc && document.getElementById('pdfModal').style.display === 'flex') {
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') previousPage();
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextPage();
+                if (e.key === 'Escape') closePdfModal();
+            }
+        });
+
+        // Close button
+        const closeBtn = document.querySelector('.pdf-modal-close');
+        if (closeBtn) closeBtn.addEventListener('click', closePdfModal);
+
+        // Auto-style PDF cards
+        document.querySelectorAll('a[onclick]').forEach(link => {
+            const attr = link.getAttribute('onclick') || '';
+            if (!/openPdf\(['"'][^'"]+\.pdf/i.test(attr)) return;
+            const card = link.querySelector('.glass-card');
+            if (!card) return;
+            card.classList.add('pdf-card');
+            const firstChild = card.firstElementChild;
+            if (!firstChild) return;
+            if (firstChild.tagName === 'IMG') {
+                const wrapper = document.createElement('div');
+                wrapper.style.position = 'relative';
+                wrapper.className = firstChild.className.match(/w-full h-\d+/) ? 'w-full' : 'w-full';
+                firstChild.parentNode.insertBefore(wrapper, firstChild);
+                wrapper.appendChild(firstChild);
+                firstChild.className = firstChild.className;
+                const badge = document.createElement('span');
+                badge.className = 'pdf-badge';
+                badge.textContent = 'PDF';
+                wrapper.appendChild(badge);
+            } else {
+                firstChild.style.position = 'relative';
+                const badge = document.createElement('span');
+                badge.className = 'pdf-badge';
+                badge.textContent = 'PDF';
+                firstChild.appendChild(badge);
+            }
+        });
+    </script>
+
+    <script src="navbar-helper.js"></script>
+</body>
+
+</html>

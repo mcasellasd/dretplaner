@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Fiscalitat","url":"#"},{"label":"Fiscalitat Directa"}]'>
     <title>Manual Interactiu: Fiscalitat Directa</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
 
@@ -31,19 +33,13 @@
 
 <body class="bg-slate-50 text-slate-900 min-h-screen relative">
 
-    <!-- Navbar tornar enrere -->
-    <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20 max-w-6xl mx-auto left-0 right-0">
-        <a href="dret-financer.html"
-            class="flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-all hover:bg-white bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-200/60 shadow-sm hover:shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m15 18-6-6 6-6" />
-            </svg>
-            Tornar a Dret Financer
-        </a>
-    </nav>
+    <!-- Global Navbar Container -->
+    <div id="navbar-container"></div>
 
-    <div class="max-w-6xl mx-auto px-4 pt-32 pb-12">
+    <!-- Breadcrumb Container -->
+    <div id="breadcrumb-container" class="max-w-6xl mx-auto px-4 pt-24 pb-4"></div>
+
+    <div class="max-w-6xl mx-auto px-4 pb-12">
         <!-- Capçalera -->
         <header class="mb-12 text-center">
             <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Sistema Tributari Espanyol</span>
@@ -79,6 +75,8 @@
                 class="px-6 py-3 text-sm text-slate-500 hover:text-blue-600">No Residents</button>
             <button onclick="showCalc()" id="btn-calc"
                 class="px-6 py-3 text-sm text-slate-500 hover:text-blue-600">Calculadora</button>
+            <a href="irpf-calculator.html"
+                class="px-6 py-3 text-sm text-slate-500 hover:text-blue-600 font-semibold">Simulador IRPF</a>
         </div>
 
         <!-- Contingut Dinàmic -->
@@ -191,6 +189,7 @@
                 title: "Impost Renda Persones Físiques",
                 law: "Llei 35/2006",
                 description: "Grava la renda mundial de les persones físiques amb residència a Espanya, sota els principis de progressivitat i capacitat econòmica <span class='font-mono text-[10px] text-blue-600 font-bold ml-1'>(Art. 1-5 LIRPF)</span>.",
+                link: { url: "irpf.html", label: "Estudi Aprofundit de l'IRPF" },
                 sections: [
                     { label: "Residència Fiscal <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 8-10</span>", text: "Es considera resident qui romangui >183 dies a Espanya <strong class='text-blue-600 font-mono text-[10px]'>(Art. 9.1.a)</strong> o tingui aquí el nucli principal d'interessos econòmics <strong class='text-blue-600 font-mono text-[10px]'>(Art. 9.1.b)</strong>." },
                     { label: "Rendes Exemptes <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 7</span>", text: "Indemnitzacions per acomiadament (amb límit), beques públiques, prestacions per incapacitat permanent absoluta, etc." },
@@ -208,6 +207,7 @@
                 title: "Impost sobre Societats",
                 law: "Llei 27/2014",
                 description: "Grava la renda de les persones jurídiques i altres entitats amb personalitat pròpia.",
+                link: { url: "impost-societats.html", label: "Estudi Aprofundit de l'IS" },
                 sections: [
                     { label: "Base Imposable <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 10 LIS</span>", text: "Es calcula a partir del resultat comptable, aplicant ajustos extracontables fiscals <strong class='text-indigo-600 font-mono text-[10px]'>(Art. 11 i ss)</strong> i l'amortització <strong class='text-indigo-600 font-mono text-[10px]'>(Art. 12)</strong>." },
                     { label: "Tipus General <span class='text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal'>Art. 29 LIS</span>", text: "Generalment el 25%. Existeixen tipus reduïts per entitats de nova creació (15%) i cooperatives (20%)." },
@@ -219,6 +219,7 @@
             ip: {
                 title: "Impost sobre el Patrimoni",
                 description: "Grava la titularitat de la riquesa neta de les persones físiques a data 31 de desembre.",
+                link: { url: "impost-patrimoni.html", label: "Estudi Aprofundit de l'IP" },
                 sections: [
                     { label: "Objectiu", text: "Caràcter censal i de control. Grava el 'tenir' més que el 'generar'." },
                     { label: "Exempcions", text: "Habitatge habitual (fins a 300.000€) i béns de l'aixovar domèstic." },
@@ -738,6 +739,9 @@
                 d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
         </svg>
     </button>
+
+    <!-- Global Navigation Helper -->
+    <script src="navbar-helper.js"></script>
 </body>
 
 </html>

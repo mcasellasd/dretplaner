@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="breadcrumbs"
+    content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Administratiu II"}]'>
+  <title>Dret Administratiu II | Garanties jurisdiccionals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="navbar.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #dbe4f0;
+      --card: #ffffff;
+      --brand: #0f766e;
+      --brand-soft: #ccfbf1;
+      --brand-dark: #134e4a;
+      --hero-a: #ecfeff;
+      --hero-b: #f0fdfa;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background:
+        radial-gradient(900px 500px at 5% -10%, rgba(34, 211, 238, 0.2), transparent 60%),
+        radial-gradient(700px 420px at 95% 8%, rgba(20, 184, 166, 0.2), transparent 55%),
+        linear-gradient(180deg, var(--hero-a), var(--hero-b) 40%, #f8fafc 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      box-shadow: 0 12px 32px -20px rgba(15, 23, 42, 0.35);
+    }
+
+    .section-card {
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      background: #fff;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .section-card:hover {
+      border-color: #a5f3fc;
+      box-shadow: 0 14px 30px -22px rgba(14, 116, 144, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+      gap: 0.65rem;
+      border-radius: 0.65rem 0.65rem 0 0;
+      border: 1px solid transparent;
+      border-bottom: 3px solid transparent;
+      padding: 0.7rem 0.95rem 0.62rem;
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: #64748b;
+      background: transparent;
+      text-align: left;
+      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      background: #f0fdfa;
+      color: #0f766e;
+    }
+
+    .nav-btn.active {
+      background: #ecfeff;
+      border-color: #99f6e4;
+      border-bottom-color: #0d9488;
+      color: #115e59;
+      font-weight: 700;
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.3s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-radius: 999px;
+      border: 1px solid #99f6e4;
+      background: #f0fdfa;
+      color: #0f766e;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 0.25rem 0.62rem;
+    }
+
+    .content h4 {
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 0.95rem;
+      margin-bottom: 0.65rem;
+      font-size: 1.06rem;
+      line-height: 1.35;
+    }
+
+    .content p {
+      color: #1e293b;
+      line-height: 1.72;
+      margin-bottom: 0.82rem;
+      font-size: 0.98rem;
+    }
+
+    .content ul {
+      margin: 0 0 0.85rem 1.2rem;
+      color: #1e293b;
+      font-size: 0.97rem;
+      line-height: 1.68;
+    }
+
+    .content li {
+      margin: 0.42rem 0;
+    }
+
+    .content {
+      max-width: 88ch;
+    }
+
+    /* Keep text readable inside highlighted cards that define their own color palette. */
+    .content .section-card h4,
+    .content .section-card p,
+    .content .section-card ul,
+    .content .section-card li,
+    .content .section-card .small-note {
+      color: inherit;
+    }
+
+    .content .section-card p,
+    .content .section-card ul {
+      opacity: 0.96;
+    }
+
+    .small-note {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    .glossary-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      background: #ffffff;
+    }
+
+    .glossary-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1080px;
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .glossary-table th,
+    .glossary-table td {
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0.72rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .glossary-table th {
+      background: #f0fdfa;
+      color: #115e59;
+      font-size: 0.77rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .glossary-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .top-nav-wrap::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .top-nav-wrap::-webkit-scrollbar-track {
+      background: #f8fafc;
+      border-radius: 999px;
+    }
+
+    .top-nav-wrap::-webkit-scrollbar-thumb {
+      background: #99f6e4;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-btn {
+        font-size: 0.8rem;
+        padding: 0.65rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+  <div id="navbar-container"></div>
+  <div id="breadcrumb-container" class="max-w-[1400px] mx-auto px-6 pt-24"></div>
+
+  <header class="max-w-[1280px] mx-auto px-6 pt-8 pb-6">
+    <div class="panel p-6 md:p-8 bg-white/85 backdrop-blur-sm">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <div class="chip mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+            M03.526 · GES 1
+          </div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Dret Administratiu II</h1>
+          <p class="mt-2 text-slate-600 font-medium">Guia visual de garanties jurisdiccionals (LJCA)</p>
+        </div>
+
+        <div class="relative w-full md:w-[320px]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-teal-500"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input id="searchInput" type="text" placeholder="Cerca conceptes, lleis o articles..."
+            class="w-full rounded-full border border-teal-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-[1280px] mx-auto px-6 pb-16 space-y-6">
+    <nav class="panel p-3 sticky top-24 z-30 bg-white/95 backdrop-blur-sm">
+      <p class="text-xs uppercase tracking-wider font-bold text-slate-400 px-2 mb-2">Navegacio de contingut</p>
+      <div id="navButtons" class="top-nav-wrap flex items-end gap-1 overflow-x-auto pb-1 border-b border-slate-200"></div>
+    </nav>
+
+    <div class="rounded-xl border border-teal-100 bg-teal-50 p-4">
+      <h3 class="text-xs uppercase tracking-wide font-bold text-teal-800 mb-2">Tip d'estudi</h3>
+      <p class="text-xs text-teal-700 leading-relaxed">L'objecte del recurs no es l'acte en si, sino la
+        <strong>pretensio</strong> que formula la part.</p>
+    </div>
+
+    <section id="main-content" class="space-y-6">
+      <article id="contentCard" class="panel p-6 md:p-9 animate-in">
+        <div class="flex items-center justify-between gap-4 mb-5">
+          <h2 id="sectionTitle" class="text-2xl font-extrabold text-slate-900"></h2>
+          <span id="sectionTag" class="text-xs font-semibold text-teal-700 bg-teal-50 border border-teal-200 rounded-full px-3 py-1"></span>
+        </div>
+        <div id="sectionContent" class="content"></div>
+      </article>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="section-card p-4 text-center">
+          <div class="text-teal-700 font-extrabold text-2xl">1845</div>
+          <div class="text-[11px] uppercase font-semibold text-slate-400">Primeres lleis</div>
+        </div>
+        <div class="section-card p-4 text-center">
+          <div class="text-teal-700 font-extrabold text-2xl">1998</div>
+          <div class="text-[11px] uppercase font-semibold text-slate-400">LJCA actual</div>
+        </div>
+        <div class="section-card p-4 text-center">
+          <div class="text-teal-700 font-extrabold text-2xl">2015</div>
+          <div class="text-[11px] uppercase font-semibold text-slate-400">Reforma cassacio</div>
+        </div>
+        <div class="section-card p-4 text-center">
+          <div class="text-teal-700 font-extrabold text-2xl">2023</div>
+          <div class="text-[11px] uppercase font-semibold text-slate-400">Plet testimoni</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-10 border-t border-slate-200 bg-white/60 backdrop-blur-sm">
+    <div class="max-w-[1280px] mx-auto px-6 py-8 text-center">
+      <p class="text-sm text-slate-600">2026 · Guia d'estudi dinamica per a Dret Administratiu II</p>
+      <p class="text-xs text-slate-400 mt-1 italic">Basat en el modul 1 de garanties jurisdiccionals</p>
+    </div>
+  </footer>
+
+  <script>
+    const sections = [
+      {
+        id: "intro",
+        title: "Presentacio i context",
+        tag: "Base constitucional",
+        searchableText: "control judicial administracio art 106 ce art 24 ce llei 29 1998 reforma 2015",
+        content: `
+          <p>El control judicial de l'Administracio es una peca fonamental de l'Estat de Dret: assegura la submissio de l'Administracio a la llei i protegeix drets i interessos legitims.</p>
+          <div class="grid md:grid-cols-2 gap-3 mb-4">
+            <div class="section-card p-4 bg-cyan-50 border-cyan-200">
+              <h4>Vessant objectiva</h4>
+              <p>Control de la potestat reglamentaria i de la legalitat de l'activitat administrativa (art. 106.1 CE).</p>
+            </div>
+            <div class="section-card p-4 bg-teal-50 border-teal-200">
+              <h4>Vessant subjectiva</h4>
+              <p>Garantia de tutela judicial efectiva dels particulars (art. 24 CE).</p>
+            </div>
+          </div>
+          <h4>Evolucio legislativa</h4>
+          <ul>
+            <li><strong>1956:</strong> Llei de bases del control contencios modern.</li>
+            <li><strong>1998:</strong> Llei 29/1998 (LJCA), marc adaptat a la Constitucio.</li>
+            <li><strong>2015:</strong> Reforma profunda del recurs de cassacio.</li>
+          </ul>
+        `
+      },
+      {
+        id: "ambit",
+        title: "Ambit de la jurisdiccio",
+        tag: "Qui i que",
+        searchableText: "ambit subjectiu objectiu administracions reglament inactivitat via de fet decrets legislatius",
+        content: `
+          <h4>Ambit subjectiu (qui?)</h4>
+          <p>LJCA, arts. 1.2 i 1.3: delimita els ens sotmesos al control contencios-administratiu.</p>
+          <ul>
+            <li>Administracio General de l'Estat.</li>
+            <li>Administracions de les comunitats autonomes.</li>
+            <li>Entitats de l'Administracio local.</li>
+            <li>Entitats de dret public vinculades o dependents.</li>
+            <li>Activitat administrativa d'organs constitucionals quan pertoqui.</li>
+          </ul>
+          <h4>Ambit objectiu (que?)</h4>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="section-card p-3"><strong>Actes administratius</strong><p class="small-note">Expressos o presumptes que posen fi a via administrativa.</p></div>
+            <div class="section-card p-3"><strong>Inactivitat</strong><p class="small-note">Absencia de prestacions o inexecucio d'actes ferms (art. 29 LJCA).</p></div>
+            <div class="section-card p-3"><strong>Reglaments</strong><p class="small-note">Disposicions generals inferiors a la llei.</p></div>
+            <div class="section-card p-3"><strong>Decrets legislatius</strong><p class="small-note">Quan excedeixen els limits de la delegacio.</p></div>
+          </div>
+        `
+      },
+      {
+        id: "parts",
+        title: "Les parts del proces",
+        tag: "Legitimacio",
+        searchableText: "legitimacio activa accio popular postulacio advocat procurador funcionaris art 23.3",
+        content: `
+          <h4>Legitimacio activa</h4>
+          <ul>
+            <li><strong>Dret o interes legitim:</strong> vincle directe amb l'objecte processal.</li>
+            <li><strong>Accio popular:</strong> nomes quan la llei ho prevegi expressament.</li>
+            <li><strong>Legitimacio corporativa o veinal:</strong> associacions, sindicats o veins en suposts legals.</li>
+          </ul>
+          <div class="section-card p-4 bg-amber-50 border-amber-200">
+            <h4>Postulacio processal</h4>
+            <p>Regla general: advocat i procurador. Amb la Llei 42/2015, determinats funcionaris publics poden litigar per si mateixos en alguns casos (art. 23.3 LJCA).</p>
+          </div>
+        `
+      },
+      {
+        id: "pretensions",
+        title: "Pretensions i objecte",
+        tag: "Art. 31 i 32 LJCA",
+        searchableText: "pretensio anul lacio plena jurisdiccio inactivitat via de fet art 31 32",
+        content: `
+          <p class="small-note">L'objecte del recurs no es l'acte administratiu en si, sino la pretensio formulada per la part.</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="section-card p-4"><strong>Art. 31.1 · Anullacio</strong><p>Declarar l'acte no conforme a dret i anullar-lo.</p></div>
+            <div class="section-card p-4"><strong>Art. 31.2 · Plena jurisdiccio</strong><p>Reconeixement d'una situacio juridica individualitzada i mesures de restabliment.</p></div>
+            <div class="section-card p-4"><strong>Art. 32.1 · Inactivitat</strong><p>Condemna a l'Administracio al compliment de les seves obligacions.</p></div>
+            <div class="section-card p-4"><strong>Art. 32.2 · Via de fet</strong><p>Declaracio de contrarietat a dret i ordre de cessament d'actuacio material.</p></div>
+          </div>
+        `
+      },
+      {
+        id: "procediments",
+        title: "Procediments i recursos",
+        tag: "Vies processals",
+        searchableText: "ordinari abreujat especials reposicio apel lacio cassacio interes cassacional 2015",
+        content: `
+          <div class="grid md:grid-cols-3 gap-3 mb-4">
+            <div class="section-card p-4 bg-emerald-50 border-emerald-200"><strong>Ordinari</strong><p class="small-note">Via general (arts. 43-77 LJCA).</p></div>
+            <div class="section-card p-4 bg-sky-50 border-sky-200"><strong>Abreujat</strong><p class="small-note">Tramitacio agil i concentrada (art. 78 LJCA).</p></div>
+            <div class="section-card p-4 bg-cyan-50 border-cyan-200"><strong>Especials</strong><p class="small-note">Drets fonamentals, unitat de mercat, questio d'il legalitat...</p></div>
+          </div>
+          <h4>Recursos contra resolucions judicials</h4>
+          <ul>
+            <li><strong>Reposicio:</strong> contra providencies i interlocutories no apel lables.</li>
+            <li><strong>Apel lacio:</strong> contra sentencies de jutjats unipersonals, revisio de fets i dret.</li>
+            <li><strong>Cassacio (reforma 2015):</strong> admissio per interes cassacional objectiu i analisi nomes de questions de dret.</li>
+          </ul>
+        `
+      },
+      {
+        id: "cautelars",
+        title: "Mesures cautelars i execucio",
+        tag: "Efectivitat",
+        searchableText: "mesures cautelars periculum in mora suspensio cautelarissimes art 135 execucio sentencia art 117 118 ce",
+        content: `
+          <div class="section-card p-5 bg-teal-900 border-teal-800 text-white">
+            <h4 class="text-teal-50">Mesures cautelars</h4>
+            <p class="text-teal-100">Finalitat: evitar que el pas del temps frustri l'efectivitat de la sentencia (periculum in mora).</p>
+            <ul class="text-teal-100">
+              <li><strong>Suspensio:</strong> paralitza l'execucio de l'acte.</li>
+              <li><strong>Positives:</strong> ordre d'actuacio administrativa per preservar interessos.</li>
+              <li><strong>Cautelarissimes:</strong> adoptades inaudita parte en urgencia especial (art. 135 LJCA).</li>
+            </ul>
+          </div>
+          <div class="section-card p-4 mt-4 border-dashed">
+            <h4>Execucio de sentencia</h4>
+            <p>La potestat d'execucio es exclusivament judicial (art. 117.3 CE), amb deure de collaboracio de l'Administracio (art. 118 CE).</p>
+            <p class="small-note">Principis destacats: intangibilitat, execucio sense dilacions i limits d'embargament sobre bens de domini public.</p>
+          </div>
+        `
+      },
+      {
+        id: "reformes",
+        title: "Actualitzacions i reformes",
+        tag: "Jurisprudencia",
+        searchableText: "covid stc 70 2022 taxes judicials stc 140 2016 saquetti iglesias 2020 plet testimoni 2023",
+        content: `
+          <div class="space-y-3">
+            <div class="section-card p-4 border-l-4 border-red-500 bg-red-50"><strong>Mesures sanitaries (COVID-19)</strong><p class="small-note">STC 70/2022: inconstitucionalitat del sistema d'autoritzacio judicial de mesures reglamentaries sanitaries.</p></div>
+            <div class="section-card p-4 border-l-4 border-blue-500 bg-blue-50"><strong>Taxes judicials</strong><p class="small-note">STC 140/2016: nul litat de taxes per a persones fisiques per desproporcio.</p></div>
+            <div class="section-card p-4 border-l-4 border-emerald-500 bg-emerald-50"><strong>Doble instancia sancionadora</strong><p class="small-note">Debat obert arran de STEDH Saquetti Iglesias c. Espanya (2020).</p></div>
+            <div class="section-card p-4 border-l-4 border-amber-500 bg-amber-50"><strong>Plet testimoni (2023)</strong><p class="small-note">RD-L 5/2023: mesures de descarrega judicial en litigis amb objecte identic.</p></div>
+          </div>
+        `
+      },
+      {
+        id: "glossari",
+        title: "Glossari processal",
+        tag: "Civil i contencios",
+        searchableText: "judici ordinari verbal monitori declinatoria audiencia previa diligencies finals execucio provisional abstencio recusacio jurisdiccio contenciosa actes impugnables inactivitat via de fet procediment abreujat questio ilegalitat mesures cautelars recurs cassacio legitimacio activa lletrat administracio justicia",
+        content: `
+          <p>Glossari transversal amb definicions i parametres practics de dret processal civil i contencios administratiu.</p>
+          <div class="glossary-wrap">
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Terme</th>
+                  <th>Definicio o descripcio</th>
+                  <th>Ambit jurisdiccional</th>
+                  <th>Base legal (article)</th>
+                  <th>Subjectes implicats</th>
+                  <th>Terminis associats (inferit)</th>
+                  <th>Origen del concepte (inferit)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Judici ordinari</strong></td>
+                  <td>Proces declaratiu per a demandes de quantia superior a 15.000 EUR o materies especifiques com drets fonamentals, dret honorific, competencia deslleial i propietat intel lectual.</td>
+                  <td>Civil</td>
+                  <td>Article 249 de la Llei 1/2000 (LEC)</td>
+                  <td>Jutges, magistrats, lletrats de l'Administracio de justicia, advocats, procuradors i Ministeri Fiscal.</td>
+                  <td>20 dies habils per contestar la demanda; 20 dies habils per dictar sentencia despres del judici.</td>
+                  <td>Necessitats d'agilitzacio processal i tradicio juridica per a casos de major complexitat.</td>
+                </tr>
+                <tr>
+                  <td><strong>Judici verbal</strong></td>
+                  <td>Proces declaratiu rapid per a demandes de quantia no superior a 15.000 EUR o materies de caracter sumari com desnonaments, aliments i tutela de la possessio.</td>
+                  <td>Civil i Contencios Administratiu (supletori)</td>
+                  <td>Article 250 de la Llei 1/2000 (LEC)</td>
+                  <td>Jutges, lletrats de l'Administracio de justicia i parts (possible sense advocat si la quantia es inferior a 2.000 EUR).</td>
+                  <td>10 dies habils per contestar la demanda; 10 dies habils per dictar sentencia; 5 dies habils en desnonaments.</td>
+                  <td>Reformes per a l'agilitzacio processal i simplificacio de tramits.</td>
+                </tr>
+                <tr>
+                  <td><strong>Proces monitori</strong></td>
+                  <td>Procediment especial per al cobrament rapid de deutes dineraris liquids, determinats i vencuts que estiguin documentalment acreditats.</td>
+                  <td>Civil</td>
+                  <td>Articles 812 a 818 de la Llei 1/2000 (LEC)</td>
+                  <td>Lletrats de l'Administracio de justicia (requeriment), jutges (en cas d'oposicio), creditor i deutor.</td>
+                  <td>20 dies habils per pagar o oposar-se al requeriment.</td>
+                  <td>Necessitats d'agilitzacio processal per a la proteccio del credit.</td>
+                </tr>
+                <tr>
+                  <td><strong>Declinatoria</strong></td>
+                  <td>Instrument processal unic per denunciar la falta de jurisdiccio o de competencia del tribunal que esta coneixent de l'assumpte.</td>
+                  <td>Civil</td>
+                  <td>Articles 63 a 65 de la Llei 1/2000 (LEC)</td>
+                  <td>Demandat, jutge i lletrats de l'Administracio de justicia.</td>
+                  <td>10 primers dies del termini concedit per contestar la demanda.</td>
+                  <td>Racionalitzacio processal per evitar sentencies absolutories de la instancia.</td>
+                </tr>
+                <tr>
+                  <td><strong>Audiencia previa</strong></td>
+                  <td>Acte processal en el judici ordinari destinat a intentar un acord, sanejar el proces de defectes processals i fixar l'objecte de la prova.</td>
+                  <td>Civil</td>
+                  <td>Articles 414 a 430 de la Llei 1/2000 (LEC)</td>
+                  <td>Jutge (presencia inexcusable), advocats, procuradors i parts.</td>
+                  <td>20 dies habils des de la convocatoria realitzada despres de la contestacio.</td>
+                  <td>Innovacio de la Llei 1/2000 per evitar judicis innecessaris i agilitzar la fase de prova.</td>
+                </tr>
+                <tr>
+                  <td><strong>Diligencies finals</strong></td>
+                  <td>Actuacions de prova de caracter excepcional que es practiquen un cop finalitzat el judici ordinari i abans de dictar sentencia.</td>
+                  <td>Civil</td>
+                  <td>Articles 435 i 436 de la Llei 1/2000 (LEC)</td>
+                  <td>Jutge i parts processals.</td>
+                  <td>20 dies habils per a la seva practica efectiva.</td>
+                  <td>Substitucio de les antigues diligencies per millor proveir per reforcar l'oralitat.</td>
+                </tr>
+                <tr>
+                  <td><strong>Execucio provisional</strong></td>
+                  <td>Execucio de sentencies de condemna que encara no han esdevingut fermes per haver estat objecte de recurs.</td>
+                  <td>Civil</td>
+                  <td>Articles 524 a 537 de la Llei 1/2000 (LEC)</td>
+                  <td>Jutge de primera instancia, part executant i part executada.</td>
+                  <td>Termini d'espera de 20 dies habils des de la notificacio del titol executiu (Art. 548).</td>
+                  <td>Principi de tutela judicial efectiva i confianca en la justicia de primera instancia.</td>
+                </tr>
+                <tr>
+                  <td><strong>Abstencio i recusacio</strong></td>
+                  <td>Mecanismes per garantir la imparcialitat dels jutges i personal judicial davant causes d'interes o parentiu legalment establertes.</td>
+                  <td>Civil, Penal, Laboral i Contencios (supletori)</td>
+                  <td>Articles 99 a 119 de la Llei 1/2000 (LEC)</td>
+                  <td>Jutges, magistrats, lletrats de l'Administracio de justicia, Ministeri Fiscal i parts.</td>
+                  <td>10 dies habils per proposar la recusacio des de la notificacio de la identitat del jutge.</td>
+                  <td>Tradicio juridica i garanties constitucionals d'imparcialitat.</td>
+                </tr>
+                <tr>
+                  <td><strong>Jurisdiccio contenciosa administrativa</strong></td>
+                  <td>Ordre jurisdiccional encarregat del control de la legalitat de l'actuacio de les administracions publiques i de la potestat reglamentaria.</td>
+                  <td>Contencios-Administratiu</td>
+                  <td>Art. 1 de la Llei 29/1998 (LJCA) i Art. 106.1 de la CE</td>
+                  <td>Jutges, tribunals, administracions publiques i particulars amb interes legitim.</td>
+                  <td>2 mesos per interposar recurs ordinari (dies habils per a terminis processals).</td>
+                  <td>Tradicio juridica (model frances) i reformes constitucionals (Art. 106 CE).</td>
+                </tr>
+                <tr>
+                  <td><strong>Actes administratius impugnables</strong></td>
+                  <td>Actes expressos o presumptes que posen fi a la via administrativa, siguin definitius o de tramit si decideixen el fons de l'assumpte.</td>
+                  <td>Contencios-Administratiu</td>
+                  <td>Art. 25.1 de la Llei 29/1998 (LJCA)</td>
+                  <td>Administracio autora de l'acte, destinataris i tercers interessats.</td>
+                  <td>2 mesos (actes expressos) o 6 mesos (actes presumptes).</td>
+                  <td>Tradicio juridica de revisio jurisdiccional de l'acte administratiu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Inactivitat de l'Administracio</strong></td>
+                  <td>Omissio administrativa quan l'Administracio esta obligada per llei a una prestacio concreta o a executar actes ferms.</td>
+                  <td>Contencios-Administratiu</td>
+                  <td>Art. 29 de la Llei 29/1998 (LJCA)</td>
+                  <td>Ciutadans beneficiaris de la prestacio i Administracio deutora.</td>
+                  <td>3 mesos per reclamacio previa; 2 mesos per interposar recurs (dies habils).</td>
+                  <td>Necessitats d'agilitzacio processal i superacio del caracter exclusivament revisor.</td>
+                </tr>
+                <tr>
+                  <td><strong>Via de fet</strong></td>
+                  <td>Actuacio material de l'Administracio realitzada sense la cobertura juridica necessaria o mancada de procediment i competencia.</td>
+                  <td>Contencios-Administratiu</td>
+                  <td>Art. 30 de la Llei 29/1998 (LJCA)</td>
+                  <td>Administracio actuant i particulars afectats en els seus drets.</td>
+                  <td>10 dies des del requeriment de cessament o 20 dies des de l'inici de l'actuacio.</td>
+                  <td>Tradicio juridica per combatre abusos materials de l'administracio.</td>
+                </tr>
+                <tr>
+                  <td><strong>Procediment abreujat</strong></td>
+                  <td>Procediment basat en l'oralitat per a materies de personal, estrangeria o quanties inferiors a 30.000 EUR.</td>
+                  <td>Contencios-Administratiu (Jutjats unipersonals)</td>
+                  <td>Art. 78 de la Llei 29/1998 (LJCA)</td>
+                  <td>Jutge, lletrat de l'Administracio de justicia, advocats i parts.</td>
+                  <td>Sentencia en 10 dies habils despres de la celebracio de la vista.</td>
+                  <td>Necessitats d'agilitzacio processal introduides per la LJCA de 1998.</td>
+                </tr>
+                <tr>
+                  <td><strong>Questio d'il legalitat</strong></td>
+                  <td>Mecanisme on un jutge que considera un reglament il legal planteja la questio al tribunal competent per anul lar-lo amb efectes generals.</td>
+                  <td>Contencios-Administratiu</td>
+                  <td>Arts. 27 i 123-126 de la Llei 29/1998 (LJCA)</td>
+                  <td>Jutge a quo, tribunal ad quem i parts del proces original.</td>
+                  <td>Plantejament en 5 dies habils des de la fermesa de la sentencia.</td>
+                  <td>Necessitats d'agilitzacio i seguretat juridica (inspirat en la questio d'inconstitucionalitat).</td>
+                </tr>
+                <tr>
+                  <td><strong>Mesures cautelars</strong></td>
+                  <td>Instruments per garantir l'eficacia de la sentencia evitant que el pas del temps faci perdre la finalitat del recurs.</td>
+                  <td>Contencios-Administratiu</td>
+                  <td>Arts. 129-136 de la Llei 29/1998 (LJCA)</td>
+                  <td>Jutge, part sollicitant i Administracio demandada.</td>
+                  <td>2 dies habils per a mesures cautelarissimes d'urgencia especial.</td>
+                  <td>Evolucio del dret a la tutela judicial efectiva (justicia cautelar).</td>
+                </tr>
+                <tr>
+                  <td><strong>Recurs de cassacio</strong></td>
+                  <td>Recurs extraordinari davant el Tribunal Suprem o TSJ per a la formacio de jurisprudencia basat en l'interes cassacional objectiu.</td>
+                  <td>Contencios-Administratiu</td>
+                  <td>Art. 86 de la Llei 29/1998 (LJCA)</td>
+                  <td>Tribunal Suprem, seccions de cassacio dels TSJ i parts recurrents.</td>
+                  <td>30 dies habils per a la preparacio del recurs.</td>
+                  <td>Reforma del 2015 per agilitzar i unificar la doctrina judicial.</td>
+                </tr>
+                <tr>
+                  <td><strong>Legitimacio activa</strong></td>
+                  <td>Capacitat per ser part demandant fonamentada en la titularitat d'un dret subjectiu o un interes legitim.</td>
+                  <td>Tots els ordres (esp. Contencios)</td>
+                  <td>Art. 19 de la Llei 29/1998 (LJCA)</td>
+                  <td>Persones fisiques, juridiques, associacions i administracions.</td>
+                  <td>Vinculat al termini de caducitat de l'accio (generalment 2 mesos).</td>
+                  <td>Tradicio juridica i ampliacio constitucional de l'acces a la justicia.</td>
+                </tr>
+                <tr>
+                  <td><strong>Lletrat de l'Administracio de Justicia</strong></td>
+                  <td>Funcionari que exerceix la fe publica judicial i funcions d'ordenacio del procediment (anteriorment denominat Secretari Judicial).</td>
+                  <td>Tots els ordres</td>
+                  <td>DA 1a de la Llei Organica 7/2015 i LJCA</td>
+                  <td>Lletrat de l'AJ i parts processals.</td>
+                  <td>Variable segons el tramit processal especific.</td>
+                  <td>Reforma organica per a la modernitzacio de l'Administracio de Justicia.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small-note mt-3">Nota: els terminis indicats son orientatius i depenen del tipus de procediment i de la normativa aplicable al cas concret.</p>
+        `
+      }
+    ];
+
+    let activeSectionId = sections[0].id;
+
+    function stripAccents(text) {
+      return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    }
+
+    function getFilteredSections(query) {
+      if (!query.trim()) return sections;
+      const q = stripAccents(query);
+      return sections.filter((section) => {
+        return stripAccents(section.title).includes(q) || stripAccents(section.searchableText).includes(q);
+      });
+    }
+
+    function renderContent() {
+      const section = sections.find((s) => s.id === activeSectionId) || sections[0];
+      const contentCard = document.getElementById("contentCard");
+      document.getElementById("sectionTitle").textContent = section.title;
+      document.getElementById("sectionTag").textContent = section.tag;
+      document.getElementById("sectionContent").innerHTML = section.content;
+
+      contentCard.classList.remove("animate-in");
+      void contentCard.offsetWidth;
+      contentCard.classList.add("animate-in");
+    }
+
+    function renderNavButtons(filtered) {
+      const nav = document.getElementById("navButtons");
+      nav.innerHTML = "";
+
+      if (filtered.length === 0) {
+        nav.innerHTML = "<p class='text-xs text-slate-400 px-2'>Sense resultats.</p>";
+        document.getElementById("sectionTitle").textContent = "Sense resultats";
+        document.getElementById("sectionTag").textContent = "Cerca";
+        document.getElementById("sectionContent").innerHTML = "<p>No s'han trobat seccions amb aquesta cerca.</p>";
+        return;
+      }
+
+      if (!filtered.some((s) => s.id === activeSectionId)) {
+        activeSectionId = filtered[0].id;
+      }
+
+      filtered.forEach((section) => {
+        const btn = document.createElement("button");
+        btn.className = "nav-btn" + (section.id === activeSectionId ? " active" : "");
+        btn.type = "button";
+        btn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+          <span>${section.title}</span>
+        `;
+        btn.addEventListener("click", () => {
+          activeSectionId = section.id;
+          renderNavButtons(filtered);
+          renderContent();
+        });
+        nav.appendChild(btn);
+      });
+
+      renderContent();
+    }
+
+    document.getElementById("searchInput").addEventListener("input", (event) => {
+      const filtered = getFilteredSections(event.target.value);
+      renderNavButtons(filtered);
+    });
+
+    renderNavButtons(sections);
+  </script>
+  <script src="navbar-helper.js"></script>
+</body>
+
+</html>

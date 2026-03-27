@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Penal Econòmic","url":"dret-penal-economic.html"},{"label":"Tema 3"}]'>
+    <title>Resum Pedagogic | Responsabilitat individual i cataleg de delictes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .law-card {
+            transition: transform 0.2s;
+        }
+
+        .law-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+
+    <div id="navbar-container"></div>
+    <div id="breadcrumb-container" class="max-w-6xl mx-auto px-6 pt-24"></div>
+
+    <header class="bg-indigo-900 text-white py-12 px-6 shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold mb-4">Tema 3 i Annex: Responsabilitat i Cataleg</h1>
+            <p class="text-indigo-200 text-xl max-w-2xl">Guia interactiva sobre la imputacio individual i el llistat tancat de delictes corporatius.</p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="dret-penal-economic.html" class="inline-flex items-center gap-2 bg-white text-indigo-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-indigo-100 transition">← Tornar al Hub</a>
+                <span class="bg-indigo-700 px-3 py-1 rounded-full text-sm font-semibold tracking-wide uppercase">Art. 31 i 31 bis CP</span>
+                <a href="dret-penal-economic-tema4.html" class="bg-white text-indigo-900 px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase hover:bg-indigo-100 transition">Anar al Tema 4 (RPPJ)</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sticky top-20 bg-white border-b border-slate-200 z-40">
+        <div class="max-w-6xl mx-auto flex overflow-x-auto no-scrollbar" id="tabNav">
+            <button data-tab="introduccio" class="tab-btn px-6 py-4 font-semibold text-indigo-600 border-b-2 border-indigo-600 whitespace-nowrap">Introduccio</button>
+            <button data-tab="art11" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Omissio (Art. 11)</button>
+            <button data-tab="art31" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Representant (Art. 31)</button>
+            <button data-tab="delegacio" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Delegacio</button>
+            <button data-tab="cataleg" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Cataleg de delictes</button>
+            <button data-tab="quiz" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Quiz</button>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-6 my-8">
+
+        <section id="introduccio" class="tab-content active space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-indigo-900 mb-4">Fonament de la responsabilitat individual</h2>
+                <p class="text-lg text-slate-700 mb-6">
+                    L'empresa no es una jungla d'irresponsabilitat. El dret penal persegueix la conducta humana que hi ha al darrere de les decisions corporatives. Segons la doctrina, el repte es determinar qui es l'autor quan les decisions estan fragmentades.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 law-card">
+                        <h3 class="font-bold text-indigo-800 mb-2"><i class="fas fa-users-cog mr-2"></i> L'administrador</h3>
+                        <p class="text-sm">Respon per les seves accions directes i per l'incompliment del seu deure de vigilancia (omissio impropia).</p>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 law-card">
+                        <h3 class="font-bold text-indigo-800 mb-2"><i class="fas fa-user-tie mr-2"></i> El representant</h3>
+                        <p class="text-sm">Gracies a l'art. 31 CP, pot ser castigat en delictes especials encara que personalment no reuneixi la condicio tipica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="art11" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-indigo-900 mb-6 underline decoration-indigo-300">L'omissio impropia (art. 11 CP)</h2>
+                <div class="mb-8 bg-slate-900 text-slate-300 p-6 rounded-lg font-mono text-sm leading-relaxed shadow-inner">
+                    Els delictes que consisteixin en la produccio d'un resultat nomes s'entendran comesos per omissio quan la no evitacio d'aquest, en infringir un especial deure juridic de l'autor, equivalgui, segons el sentit del text de la llei, a la seva causacio.
+                </div>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
+                        <span class="font-bold text-indigo-700 block mb-1">1. Delicte de resultat</span>
+                        <p class="text-xs">Cal una lesio material efectiva (mort, dany patrimonial, etc.).</p>
+                    </div>
+                    <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
+                        <span class="font-bold text-indigo-700 block mb-1">2. Posicio de garant</span>
+                        <p class="text-xs">Deure de proteccio derivat de la llei, contracte o ingerencia.</p>
+                    </div>
+                    <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
+                        <span class="font-bold text-indigo-700 block mb-1">3. Equivalencia</span>
+                        <p class="text-xs">L'omissio ha de tenir el mateix desvalor social que l'accio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cataleg" class="tab-content space-y-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <h2 class="text-2xl font-bold text-indigo-900 mb-4">Cataleg tancat de delictes corporatius</h2>
+                <p class="text-sm text-slate-500 mb-6 italic">Llista de delictes on la persona juridica pot ser responsable penalment (art. 31 bis).</p>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200 border">
+                        <thead class="bg-indigo-900 text-white">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider border-r">Delicte / categoria</th>
+                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider border-r">Art. CP</th>
+                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider border-r">Be juridic protegit</th>
+                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider border-r">Subjecte responsabilitat</th>
+                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider">Conducta tipica</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-slate-200 text-xs">
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Trafic d'organs</td>
+                                <td class="px-4 py-3 border-r">156 bis</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Salut publica / Integritat)</td>
+                                <td class="px-4 py-3 border-r">Representants, admins. o empleats</td>
+                                <td class="px-4 py-3">Promoure o facilitar trasplantaments il legals.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Assetjament laboral</td>
+                                <td class="px-4 py-3 border-r">173.1</td>
+                                <td class="px-4 py-3 border-r">Individual (Integritat moral)</td>
+                                <td class="px-4 py-3 border-r">Representants, admins. o empleats</td>
+                                <td class="px-4 py-3">Actes hostils o humiliants reiterats i greus a la feina.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Tracta d'essers humans</td>
+                                <td class="px-4 py-3 border-r">177 bis</td>
+                                <td class="px-4 py-3 border-r">Dignitat humana / Llibertat</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Captacio o trasllat de persones per a explotacio.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Assetjament sexual</td>
+                                <td class="px-4 py-3 border-r">184.5</td>
+                                <td class="px-4 py-3 border-r">Individual (Llibertat sexual)</td>
+                                <td class="px-4 py-3 border-r">Representants, admins. o empleats</td>
+                                <td class="px-4 py-3">Sol licitud de favors sexuals prevalent-se de superioritat.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Delictes informatics / Intimitat</td>
+                                <td class="px-4 py-3 border-r">197 quinquies</td>
+                                <td class="px-4 py-3 border-r">Individual (Intimitat / Privacitat)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Acces no autoritzat a dades, interceptacio o descobriment de secrets.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Estafes</td>
+                                <td class="px-4 py-3 border-r">251 bis</td>
+                                <td class="px-4 py-3 border-r">Individual (Patrimoni)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Us d'engany bastant per produir un acte de disposicio perjudicial.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Frustracio de l'execucio</td>
+                                <td class="px-4 py-3 border-r">258 ter</td>
+                                <td class="px-4 py-3 border-r">Dret de credit / Patrimoni</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Actes d'alcament de bens per eludir pagaments.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Insolvencies punibles</td>
+                                <td class="px-4 py-3 border-r">261 bis</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Ordre socioeconomic)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Causar o agreujar la insolvencia mitjancant conductes irregulars.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Danys informatics</td>
+                                <td class="px-4 py-3 border-r">264 quater</td>
+                                <td class="px-4 py-3 border-r">Integritat i disponibilitat de dades</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Esborrar, danyar o alterar dades o sistemes aliens.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Propietat int. i industrial</td>
+                                <td class="px-4 py-3 border-r">288</td>
+                                <td class="px-4 py-3 border-r">Drets d'explotacio economica</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Reproduccio, plagi o us de signes distintius sense permis.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Blanqueig de capitals</td>
+                                <td class="px-4 py-3 border-r">302</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Ordre socioeconomic)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Convertir bens coneixent el seu origen delictiu per ocultar-lo.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Financament de partits</td>
+                                <td class="px-4 py-3 border-r">304 bis</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Transparencia democratica)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Lliurar donacions incomplint limits o prohibicions legals.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Delictes fiscals i S.S.</td>
+                                <td class="px-4 py-3 border-r">310 bis</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Patrimoni public)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Defraudar eludint pagament de tributs o quotes.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Medi ambient</td>
+                                <td class="px-4 py-3 border-r">328</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Equilibri natural)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Abocaments o emissions que danyin l'aire, sol o aigues.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Salut publica (drogues)</td>
+                                <td class="px-4 py-3 border-r">369 bis</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Salut publica)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Cultiu, elaboracio o trafic de substancies estupefaents.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Suborn (cohecho)</td>
+                                <td class="px-4 py-3 border-r">427 bis</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Administracio publica)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Oferir dadiva a funcionari per acte contrari als deures.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Terrorisme</td>
+                                <td class="px-4 py-3 border-r">580 bis</td>
+                                <td class="px-4 py-3 border-r">Supraindividual (Seguretat nacional)</td>
+                                <td class="px-4 py-3 border-r">Representants o empleats</td>
+                                <td class="px-4 py-3">Subministrament de fons per a fins terroristes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-indigo-900 mb-6 text-center">Autoavaluacio rapida</h2>
+                <div id="quiz-container" class="max-w-3xl mx-auto space-y-6">
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <p class="font-bold mb-4">1. Quin es l'objectiu de la clausula d'actuar en nom d'altre (art. 31)?</p>
+                        <div class="grid gap-3">
+                            <button onclick="checkAnswer(false, this)" class="text-left p-4 bg-white border rounded-lg hover:border-indigo-500 transition shadow-sm">Atribuir la responsabilitat civil a l'empresa.</button>
+                            <button onclick="checkAnswer(true, this)" class="text-left p-4 bg-white border rounded-lg hover:border-indigo-500 transition shadow-sm">Evitar la impunitat del representant en delictes especials.</button>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <p class="font-bold mb-4">2. Quin es el be juridic protegit en el delicte de blanqueig de capitals?</p>
+                        <div class="grid gap-3">
+                            <button onclick="checkAnswer(true, this)" class="text-left p-4 bg-white border rounded-lg hover:border-indigo-500 transition shadow-sm">L'ordre socioeconomic i la salut publica.</button>
+                            <button onclick="checkAnswer(false, this)" class="text-left p-4 bg-white border rounded-lg hover:border-indigo-500 transition shadow-sm">La llibertat de moviments de capital.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="art31" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-indigo-900 mb-4">El representant (art. 31 CP)</h2>
+                <p>Mecanisme de suplecio de tipicitat: permet castigar qui actua materialment encara que no tingui la condicio personal de l'obligat (exemple: deutor tributari).</p>
+            </div>
+        </section>
+
+        <section id="delegacio" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-indigo-900 mb-4">Delegacio i garantia</h2>
+                <p>La delegacio es eficac si es real: capacitat, mitjans i control. Si es defectuosa, l'administrador continua essent garant del risc.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 mt-12">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm">
+                <p class="text-white font-bold mb-2">Manual de Dret Penal Economic</p>
+                <p>Lascurain, Dopico, Nieto i De la Mata (Dykinson 2024)</p>
+            </div>
+            <div class="text-right text-xs">
+                <p>&copy; 2026 - Recurs educatiu interactiu</p>
+                <p>Actualitzat segons LO 10/2022</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId, clickedButton) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach((c) => c.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach((b) => {
+                b.classList.remove('text-indigo-600', 'border-indigo-600');
+                b.classList.add('text-slate-500', 'border-transparent');
+            });
+
+            const section = document.getElementById(tabId);
+            if (section) {
+                section.classList.add('active');
+            }
+
+            clickedButton.classList.remove('text-slate-500', 'border-transparent');
+            clickedButton.classList.add('text-indigo-600', 'border-indigo-600');
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const parent = element.parentElement;
+            const buttons = parent.querySelectorAll('button');
+            buttons.forEach((b) => {
+                b.disabled = true;
+            });
+
+            if (isCorrect) {
+                element.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-800');
+                element.innerHTML += ' <i class="fas fa-check-circle ml-2"></i> Correcte';
+            } else {
+                element.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
+                element.innerHTML += ' <i class="fas fa-times-circle ml-2"></i> Incorrecte';
+            }
+        }
+
+        document.querySelectorAll('.tab-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                showTab(button.dataset.tab, button);
+            });
+        });
+    </script>
+    <script src="navbar-helper.js"></script>
+</body>
+
+</html>

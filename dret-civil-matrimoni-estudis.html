@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Civil"},{"label":"Matrimoni - Estudi Complet"}]'>
+    <title>Matrimoni: Institució, Efectes i Règims Econòmics | Estudi Complet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .uoc-blue {
+            color: #003399;
+        }
+
+        .uoc-bg-blue {
+            background-color: #003399;
+        }
+
+        .sidebar-link {
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-link:hover {
+            background-color: #f3f4f6;
+            color: #003399;
+            border-left-color: #003399;
+        }
+
+        .active-link {
+            background-color: #ebf5ff;
+            color: #003399;
+            border-left-color: #003399;
+            font-weight: 600;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f0f0f0;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-blue {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-red {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .badge-green {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .law-box {
+            border-left: 4px solid #003399;
+            background: #f8fafc;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #003399, #0066ff);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            border-bottom: 3px solid #003399;
+            color: #003399;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 min-h-screen relative">
+
+    <!-- Global Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Breadcrumb Container -->
+    <div id="breadcrumb-container" class="max-w-7xl mx-auto px-6 pt-24 pb-4"></div>
+
+    <main class="max-w-7xl mx-auto px-6 pb-16">
+
+        <!-- Header Principal -->
+        <header class="mb-12 text-center">
+            <div class="inline-block mb-6">
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Dret Civil: Família</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-violet-600">
+                El Matrimoni
+            </h1>
+            <p class="text-slate-600 max-w-3xl mx-auto text-lg mb-6">
+                Estudi complet de la institució matrimonial: sistema, requisits, celebració, efectes personals i patrimonials, regles de protecció, règims econòmics i autoritat parental.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                    <i class="fas fa-book mr-2"></i> Estudi Aprofundit
+                </span>
+                <span class="inline-block px-4 py-2 bg-slate-200 text-slate-700 rounded-full text-sm font-semibold">
+                    <i class="fas fa-graduation-cap mr-2"></i> Grau en Dret UOC
+                </span>
+            </div>
+        </header>
+
+        <div class="grid lg:grid-cols-4 gap-8 mb-12">
+
+            <!-- Sidebar Navigation -->
+            <aside class="lg:col-span-1">
+                <nav class="sticky-nav space-y-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h2 class="font-bold text-slate-900 mb-4 uppercase tracking-wider text-xs">Taula de Continguts</h2>
+                    <div class="space-y-1">
+                        <a href="#seccio-1" class="sidebar-link block p-2.5 rounded-lg text-sm hover:text-blue-700">
+                            1. Sistema Matrimonial
+                        </a>
+                        <a href="#seccio-2" class="sidebar-link block p-2.5 rounded-lg text-sm hover:text-blue-700">
+                            2. Capacitat i Impediments
+                        </a>
+                        <a href="#seccio-3" class="sidebar-link block p-2.5 rounded-lg text-sm hover:text-blue-700">
+                            3. Celebració i Consentiment
+                        </a>
+                        <a href="#seccio-4" class="sidebar-link block p-2.5 rounded-lg text-sm hover:text-blue-700">
+                            4. Efectes Personals
+                        </a>
+                        <a href="#seccio-5" class="sidebar-link block p-2.5 rounded-lg text-sm hover:text-blue-700">
+                            5. Règim Primari
+                        </a>
+                        <a href="#seccio-6" class="sidebar-link block p-2.5 rounded-lg text-sm hover:text-blue-700">
+                            6. Règims Econòmics
+                        </a>
+                        <a href="#seccio-7" class="sidebar-link block p-2.5 rounded-lg text-sm hover:text-blue-700">
+                            7. Protecció de l'Habitatge
+                        </a>
+                        <a href="#glossari" class="sidebar-link block p-2.5 rounded-lg text-sm hover:text-blue-700">
+                            8. Glossari de Conceptes
+                        </a>
+                        <div class="pt-4 mt-4 border-t border-slate-100">
+                            <a href="#quiz" class="flex items-center gap-2 p-2.5 rounded-lg text-sm font-bold text-blue-700 bg-blue-50 hover:bg-blue-100">
+                                <i class="fas fa-check-circle"></i> Autoavaluació
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="lg:col-span-3 space-y-12">
+
+                <!-- SECCIÓ 1: Sistema Matrimonial -->
+                <section id="seccio-1" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-number">1</div>
+                        <h2 class="text-3xl font-bold uoc-blue">Sistema Matrimonial</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="card p-6">
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                                <i class="fas fa-ring text-blue-600"></i> Conceptes Clau
+                            </h3>
+                            <p class="mb-4 text-slate-700">Espanya té un <strong>sistema de matrimoni únic amb pluralitat de formes</strong>. L'Estat determina quines formes són vàlides (Art. 149.1.8 CE).</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                    <span class="badge badge-blue mb-2 block">Forma Civil</span>
+                                    <p class="text-sm">Davant jutge, alcalde, regidor, secretari judicial o notari. Requereix expedient previ.</p>
+                                </div>
+                                <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                    <span class="badge badge-blue mb-2 block">Forma Religiosa</span>
+                                    <p class="text-sm">Catòlica, evangèlica, jueva, islàmica o confessions amb "notorio arraigo".</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card p-6 border-l-4 border-amber-400">
+                            <h3 class="font-bold text-lg mb-3">La Promesa de Matrimoni (Art. 42-43 CC)</h3>
+                            <p class="text-sm text-slate-700 mb-3 italic">"L'esponsali" o promesa no obliga a casar-se.</p>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>No-vinculació:</strong> No es pot demanar el compliment forçós.</li>
+                                <li><strong>Indemnització:</strong> Si es trenca sense causa, cal rescabalar les despeses fetes (perjudici real).</li>
+                                <li><strong>Caducitat:</strong> L'acció per reclamar caduca a l'<strong>any</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓ 2: Capacitat i Impediments -->
+                <section id="seccio-2" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-number">2</div>
+                        <h2 class="text-3xl font-bold uoc-blue">Capacitat i Impediments</h2>
+                    </div>
+
+                    <div class="card p-8 space-y-6">
+                        <div class="border-b pb-4">
+                            <h3 class="font-bold text-lg text-slate-900 mb-3">Aptitud Absoluta (Art. 46 CC)</h3>
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="flex-1 p-4 rounded-lg bg-red-50 text-red-900 border border-red-200">
+                                    <strong class="block mb-2">Edat:</strong> Només majors d'edat o menors <strong>emancipats</strong> (mínim 16 anys).
+                                </div>
+                                <div class="flex-1 p-4 rounded-lg bg-red-50 text-red-900 border border-red-200">
+                                    <strong class="block mb-2">Vincle Previ:</strong> No poden casar-se els qui ja tenen un matrimoni vigent (prohibició de bigàmia).
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-3">Impediments Relatius (Art. 47 CC)</h3>
+                            <ul class="grid md:grid-cols-2 gap-4">
+                                <li class="p-4 bg-slate-50 rounded border border-slate-200">
+                                    <strong>Parentiu línia recta:</strong> Prohibit entre ascendents i descendents (consanguinitat o adopció).
+                                </li>
+                                <li class="p-4 bg-slate-50 rounded border border-slate-200">
+                                    <strong>Col·laterals:</strong> Prohibit fins a 3r grau (germans, oncles/nebots). <em>Dispensa possible en 3r grau.</em>
+                                </li>
+                                <li class="p-4 bg-slate-50 rounded border border-slate-200">
+                                    <strong>Crim:</strong> Prohibit entre condemnats per la mort dolosa del cònjuge.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓ 3: Celebració i Consentiment -->
+                <section id="seccio-3" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-number">3</div>
+                        <h2 class="text-3xl font-bold uoc-blue">Celebració del Matrimoni</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="card p-6">
+                            <h3 class="font-bold text-lg mb-4 border-b pb-2">Vicis del Consentiment</h3>
+                            <p class="text-sm text-slate-700 mb-4">El matrimoni sense consentiment és <strong>nul</strong>. Poden invalidar-lo:</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="badge badge-red">Error</span> Sobre la identitat o qualitats personals determinants.
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="badge badge-red">Coacció</span> Por greu provocada per causes externes.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card p-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+                            <h3 class="font-bold text-lg mb-4 text-blue-300">Modalitats Especials</h3>
+                            <div class="space-y-4 text-sm">
+                                <div>
+                                    <h4 class="font-bold mb-1">Per Poders:</h4>
+                                    <p class="opacity-80">Consentiment via apoderat quan un no hi és present.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Secret:</h4>
+                                    <p class="opacity-80">Autoritzat per causa greu, s'inscriu en llibre reservat.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">En perill de mort:</h4>
+                                    <p class="opacity-80">Sense expedient previ, però amb testimonis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓ 4: Efectes Personals -->
+                <section id="seccio-4" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-number">4</div>
+                        <h2 class="text-3xl font-bold uoc-blue">Efectes Personals: Drets i Deures</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="card p-6 law-box">
+                            <p class="font-semibold mb-4 text-blue-900">Art. 231-2 CCCat: Marc de Convivència</p>
+                            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                                <div class="space-y-2">
+                                    <p><strong>• Respecte i Interès Familiar:</strong> Abstenir-se d'actes que menyscabin la família.</p>
+                                    <p><strong>• Lleialtat i Ajuda:</strong> Socors mutu en malaltia o necessitat.</p>
+                                    <p><strong>• Cura de Membres:</strong> Especialment fills o avis a càrrec.</p>
+                                </div>
+                                <div class="space-y-2">
+                                    <p><strong>• Responsabilitats Domèstiques:</strong> Han de ser compartides equitativament.</p>
+                                    <p><strong>• Autonomia:</strong> No hi ha representació forçosa. Cadascú conserva la seva capacitat.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card p-6 bg-red-50 border-l-4 border-red-400">
+                            <h3 class="font-bold text-lg text-red-900 mb-3 flex items-center gap-2">
+                                <i class="fas fa-exclamation-triangle"></i> Conseqüències de l'incompliment
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <span class="badge badge-red shrink-0">Civil</span>
+                                    <p class="text-sm">Generalment no comporta sancions econòmiques. La Llei 15/2005 remove l'obligació de provar incompliments com causa de separació/divorci.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="badge badge-red shrink-0">Penal</span>
+                                    <p class="text-sm">L'incompliment del manteniment (aliments) és <strong>delicte d'abandonament de família</strong> (Art. 226.1 CP).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card p-6">
+                            <h3 class="font-bold text-lg mb-3">Obligació de Prestar Aliments (Art. 237-4 CCCat)</h3>
+                            <p class="text-sm text-slate-700">El deure d'ajut mutu es tradueix en l'obligació de prestar aliments quan un dels cònjuges es trobi en estat de necessitat. Això caracteritza la «comunitat de vida» matrimonial.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓ 5: Règim Primari -->
+                <section id="seccio-5" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-number">5</div>
+                        <h2 class="text-3xl font-bold uoc-blue">Règim Primari (Bàsic)</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="card p-6">
+                            <h3 class="font-bold text-lg mb-4">Despeses Familiars</h3>
+                            <p class="text-sm text-slate-700 mb-4">Són aquelles destinades al <strong>sosteniment de la família</strong> (aliments, salut, educació). Els cònjuges hi han de contribuir <strong>proporcionalment</strong> als seus ingressos o patrimoni.</p>
+                            <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 italic text-xs">
+                                <strong>Nota Catalunya:</strong> Les quotes de la hipoteca NO es consideren despeses familiars ordinàries si així no s'ha pactat expressament (Art. 233-23).
+                            </div>
+                        </div>
+
+                        <div class="card p-6 border-2 border-blue-600">
+                            <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <i class="fas fa-home text-blue-600"></i> Protecció Especial de l'Habitatge Familiar
+                            </h3>
+                            <p class="text-sm text-slate-700 mb-4">Cal el <strong>consentiment de tots dos</strong> per a actes de disposició (venda, hipoteca, lloguer de llarga durada), encara que el bé sigui privatiu d'un sol cònjuge.</p>
+                            <div class="grid md:grid-cols-2 gap-3 text-xs font-bold uppercase">
+                                <div class="p-3 bg-amber-100 text-amber-800 rounded">Disposició Onerosa sense consentiment = Anul·lable</div>
+                                <div class="p-3 bg-red-100 text-red-800 rounded">Disposició Gratuïta sense consentiment = Nul</div>
+                            </div>
+                        </div>
+
+                        <div class="card p-6 bg-slate-50">
+                            <h3 class="font-bold text-lg mb-3">Compensació per Raó de Treball (Art. 232-5 CCCat)</h3>
+                            <p class="text-sm text-slate-700">En cas de separació o divorci, el cònjuge que ha treballat per a la casa té dret a una compensació si l'altre s'ha enriquit notablement.</p>
+                            <div class="mt-3 p-3 bg-blue-50 rounded-lg border border-blue-200 text-xs">
+                                <strong>Límit:</strong> Màxim 25% de la diferència dels increments patrimonials.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓ 6: Règims Econòmics -->
+                <section id="seccio-6" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-number">6</div>
+                        <h2 class="text-3xl font-bold uoc-blue">Règims Econòmics Matrimonials</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Separació de Béns -->
+                        <div class="card overflow-hidden border-l-4 border-blue-600">
+                            <div class="bg-gradient-to-r from-blue-800 to-blue-900 text-white p-6">
+                                <h3 class="font-bold text-xl">Separació de Béns (Legal a Catalunya)</h3>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm text-slate-700 mb-4">Cada cònjuge conserva la propietat, administració i lliure disposició dels seus béns. <strong>No hi ha patrimoni comú per defecte.</strong></p>
+                                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 text-sm">
+                                    <p class="text-slate-700">Aquest règim és el supletori a Catalunya per defecte. Els cònjuges conserven una total autonomia patrimonial, però hi ha obligacions quant a les despeses familiars.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Societat de Guanys -->
+                            <div class="card p-6 bg-slate-50 border-t-4 border-amber-400">
+                                <h3 class="font-bold text-lg text-slate-900 mb-3">Societat de Guanys (CC General)</h3>
+                                <p class="text-xs text-slate-600 mb-4">Règim supletori a Espanya (excepte Cat, Balears i València). Es fan comuns els guanys obtinguts durant el matrimoni.</p>
+                                <ul class="text-xs space-y-2">
+                                    <li><strong>Privatius:</strong> Anteriors al matrimoni, herències, roba personal.</li>
+                                    <li><strong>Guanys:</strong> Salaris, fruits dels béns, premis loteria.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Participació en Guanys -->
+                            <div class="card p-6 bg-slate-50 border-t-4 border-emerald-400">
+                                <h3 class="font-bold text-lg text-slate-900 mb-3">Participació en els Guanys</h3>
+                                <p class="text-xs text-slate-600 mb-4">Règim mixt. Mentre dura funciona com separació, però en acabar cada cònjuge participa en els increments de l'altre.</p>
+                                <p class="text-xs font-bold text-blue-700">* Cal pactar-lo en capítols matrimonials.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓ 7: Protecció de l'Habitatge Familiar -->
+                <section id="seccio-7" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-number">7</div>
+                        <h2 class="text-3xl font-bold uoc-blue">Protecció de l'Habitatge Familiar (Art. 231-9)</h2>
+                    </div>
+
+                    <div class="card p-8 border-l-4 border-emerald-500 bg-gradient-to-br from-white to-green-50">
+                        <h3 class="font-bold text-lg mb-4 text-green-900">Consentiment Mutu Obligatori</h3>
+                        <p class="text-slate-700 mb-6">Cal el consentiment expressat de tots dos cònjuges per a realitzar actes de disposició sobre l'habitatge familiar, <strong>independentment de qui en sigui la propietat formal</strong>.</p>
+
+                        <div class="grid md:grid-cols-2 gap-6 text-sm mb-6">
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-green-900">Actes Afectats:</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>Venda de la propietat</li>
+                                    <li>Hipoteca del bé</li>
+                                    <li>Lloguer de llarga durada (> 5 anys normalment)</li>
+                                    <li>Donació</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-green-900">Conseqüències:</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li><strong>Onerós s/consent:</strong> Anul·lable (4 anys)</li>
+                                    <li><strong>Gratuït s/consent:</strong> Nul de ple dret</li>
+                                    <li>Tercers de bona fe no resulten afectats</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-amber-100 border border-amber-300 rounded-lg text-xs">
+                            <strong class="text-amber-900 block mb-2">Qüestió de Dret:</strong>
+                            <p class="text-amber-900">L'error o inexactitud en la declaració de caràcter familiar no prejudica tercers de bona fe que hagin actuat basant-se en la documentació pública.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓ 8: Glossari de Conceptes -->
+                <section id="glossari" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-number">8</div>
+                        <h2 class="text-3xl font-bold uoc-blue">Glossari de Conceptes</h2>
+                    </div>
+
+                    <div class="card p-0 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="bg-blue-700 text-white">
+                                        <th class="text-left px-5 py-3.5 font-semibold w-1/4">Concepte</th>
+                                        <th class="text-left px-5 py-3.5 font-semibold w-2/5">Definició</th>
+                                        <th class="text-left px-5 py-3.5 font-semibold w-1/6">Marc Legal</th>
+                                        <th class="text-left px-5 py-3.5 font-semibold">Requisits o Característiques</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Adquisicions amb pacte de supervivència</td>
+                                        <td class="px-5 py-4 text-slate-700">Modalitat d'adquisició conjunta de béns a títol onerós on es pacta que, en morir un dels titulars, el supervivent esdevé titular únic de la totalitat.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 231-15 a 231-18 CCCat</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Indivisió mentre visquin ambdós; ineficaç si hi ha heretament universal previ; aplicable a cònjuges i parelles estables.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Aliments entre parents</td>
+                                        <td class="px-5 py-4 text-slate-700">Dret a rebre tot el que és indispensable per al manteniment, habitatge, vestit, assistència mèdica i formació d'una persona en estat de necessitat.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 237-1 CCCat / Art. 142 CC</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Obligació recíproca entre cònjuges, descendents, ascendents i germans; pressuposa estat de necessitat del creditor i capacitat de l'obligat.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Any de viduïtat (Any de plor)</td>
+                                        <td class="px-5 py-4 text-slate-700">Dret del supervivent a habitar l'habitatge familiar i ser alimentat a càrrec del patrimoni del premort durant l'any següent a la defunció.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 231-31 CCCat</span></td>
+                                        <td class="px-5 py-4 text-slate-600">El supervivent no pot ser usufructuari universal; es perd si es torna a casar o conviure maritalment.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Capítols matrimonials</td>
+                                        <td class="px-5 py-4 text-slate-700">Escriptura pública on els cònjuges pacten el règim econòmic, donacions, pactes successoris o previsions de ruptura.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 231-19 a 231-26 CCCat / Art. 1325 CC</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Atorgament en escriptura pública; ineficaços si no hi ha matrimoni en un any; modificables en qualsevol moment.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Compensació econòmica per raó de treball</td>
+                                        <td class="px-5 py-4 text-slate-700">Crèdit a favor del cònjuge que ha treballat per a la casa o per a l'altre sense retribució suficient en règim de separació de béns.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 232-5 CCCat</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Límit general de la quarta part de la diferència d'increments patrimonials; es reclama en el procés de dissolució.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Comunitat de béns (Règim de)</td>
+                                        <td class="px-5 py-4 text-slate-700">Règim on els guanys i els béns que els cònjuges decideixin aportar esdevenen comuns.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 232-30 a 232-38 CCCat</span></td>
+                                        <td class="px-5 py-4 text-slate-600">S'ha de pactar en capítols; l'administració correspon a ambdós; es divideix per meitats en dissoldre's.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Matrimoni</td>
+                                        <td class="px-5 py-4 text-slate-700">Vincle jurídic que crea una comunitat de vida amb plens efectes personals i patrimonials basat en la igualtat.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 32 CE / Art. 44 CC / Art. 231-2 CCCat</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Requereix consentiment i forma (civil o religiosa); obert a persones del mateix o diferent sexe.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Parella estable</td>
+                                        <td class="px-5 py-4 text-slate-700">Convivència de dues persones en una comunitat de vida anàloga a la matrimonial sense estar casades.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 234-1 CCCat</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Convivència &gt; 2 anys, fill en comú o escriptura pública; no exigeix registre obligatori per a efectes civils a Catalunya.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Parament de l'habitatge (Dret al)</td>
+                                        <td class="px-5 py-4 text-slate-700">Dret del supervivent a fer-se seva la roba, el mobiliari i els estris que constitueixen l'aixovar de la llar sense computar-ho en l'herència.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 231-30 CCCat / Art. 1321 CC</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Exclou joies i objectes de valor extraordinari; no aplicable si hi ha separació de fet.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Participació en els guanys</td>
+                                        <td class="px-5 py-4 text-slate-700">Règim mixt on cada cònjuge manté el seu patrimoni però neix un crèdit de participació en els guanys de l'altre en dissoldre's.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 232-13 a 232-24 CCCat</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Requereix pacte en capítols; es calcula per la diferència entre patrimoni inicial i final.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Règim primari</td>
+                                        <td class="px-5 py-4 text-slate-700">Conjunt de normes econòmiques bàsiques aplicables a tot matrimoni independentment del seu règim econòmic específic.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 231-4 a 231-14 CCCat / Art. 1315-1324 CC</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Inclou despeses familiars, protecció de l'habitatge familiar i dret a la informació patrimonial.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Separació de béns</td>
+                                        <td class="px-5 py-4 text-slate-700">Règim on els patrimonis dels cònjuges es mantenen separats i amb plena autonomia de gestió i disposició.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 232-1 CCCat / Art. 1435 CC</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Règim legal supletori a Catalunya en defecte de pacte; cada cònjuge és titular del que tenia i adquireix.</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50 transition-colors">
+                                        <td class="px-5 py-4 font-semibold text-blue-800">Societat de guanys (Sociedad de gananciales)</td>
+                                        <td class="px-5 py-4 text-slate-700">Règim on es fan comuns els beneficis obtinguts indistintament per qualsevol dels cònjuges, que es divideixen al liquidar-se.</td>
+                                        <td class="px-5 py-4"><span class="badge badge-blue">Art. 1344 CC</span></td>
+                                        <td class="px-5 py-4 text-slate-600">Règim supletori a l'Estat (fora de Catalunya/Balears); conviuen patrimonis privatius i comuns.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AUTOAVALUACIÓ -->
+                <section id="quiz" class="scroll-mt-28">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="fas fa-check-circle text-3xl text-blue-600"></i>
+                        <h2 class="text-3xl font-bold uoc-blue">Autoavaluació Interactiva</h2>
+                    </div>
+
+                    <div class="card p-10 bg-white border-2 border-blue-200 shadow-lg">
+                        <div id="quiz-container" class="space-y-6">
+                            <div id="question-area"></div>
+                            <div id="result-area" class="hidden p-6 rounded-lg text-center font-bold text-lg"></div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <p class="text-sm">Recurs educatiu complet basat en materials de l'assignatura de Dret Civil: Família de la UOC.</p>
+                <p class="text-xs mt-2 uppercase tracking-widest opacity-50">Fonts: PID_00285312 • PID_00285315 • LIRPF 2006 • CCCat</p>
+            </div>
+            <div class="md:text-right">
+                <span class="inline-block p-3 border border-slate-700 rounded text-xs font-mono">CC BY-NC-SA 4.0</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Navigation Helper -->
+    <script src="navbar-helper.js"></script>
+
+    <script>
+        // Quiz Questions (Fused from both pages)
+        const quizData = [
+            {
+                q: "Quin termini de caducitat té l'acció per reclamar indemnització pel trencament d'una promesa de matrimoni?",
+                a: ["6 mesos", "1 any des de la negativa", "2 anys", "4 anys"],
+                c: 1
+            },
+            {
+                q: "A partir de quina edat es pot contraure matrimoni a Espanya actualment?",
+                a: ["14 anys amb dispensa", "16 anys si hi ha emancipació", "Sempre a partir dels 18", "16 anys amb autorització paterna"],
+                c: 1
+            },
+            {
+                q: "És possible el matrimoni entre parents col·laterals de tercer grau (oncle i nebot)?",
+                a: ["No, és prohibit absolutament", "Sí, sense cap requisit", "Sí, si s'obté autorització judicial amb causa justa", "Només en forma religiosa"],
+                c: 2
+            },
+            {
+                q: "L'acte de disposició gratuït (donació) de l'habitatge familiar sense el consentiment de l'altre cònjuge és:",
+                a: ["Anul·lable", "Rescindible", "Nul de ple dret", "Vàlid si és del titular"],
+                c: 2
+            },
+            {
+                q: "Quin és el límit general de la compensació econòmica per raó de treball a Catalunya (Art. 232-5)?",
+                a: ["La meitat dels béns", "El 25% de la diferència dels increments", "El 10% del patrimoni total", "No té límit"],
+                c: 1
+            },
+            {
+                q: "Segons l'Art. 231-2 CCCat, quins són els deures essencials dels cònjuges?",
+                a: ["Fidelitat absoluta i obediència", "Respecte, lleialtat, ajuda i socors mutu", "Representació forçosa legal", "Sancions econòmiques automàtiques"],
+                c: 1
+            },
+            {
+                q: "L'incompliment de l'assistència per al manteniment del cònjuge pot ser delicte?",
+                a: ["No, és només una infracció civil", "Sí, és un delicte d'abandonament (Art. 226 CP)", "Només si hi ha violència física", "Només en règim de guanys"],
+                c: 1
+            },
+            {
+                q: "Quin és el règim econòmic matrimonial supletori a Catalunya?",
+                a: ["Societat de Béns Comuns", "Separació de Béns", "Participació en Guanys", "Comunitat Universal"],
+                c: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const area = document.getElementById('question-area');
+            const q = quizData[currentQuestion];
+            let html = `<div class="mb-6">
+                <p class="text-lg font-semibold text-slate-900 mb-6">
+                    Pregunta ${currentQuestion + 1} de ${quizData.length}: ${q.q}
+                </p>
+                <div class="space-y-3">`;
+            
+            q.a.forEach((opt, idx) => {
+                html += `<button onclick="checkAnswer(${idx})" 
+                    class="w-full text-left p-4 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all text-sm font-medium text-slate-700 hover:text-blue-700">
+                    ${opt}
+                </button>`;
+            });
+            html += `</div></div>`;
+            area.innerHTML = html;
+        }
+
+        function checkAnswer(idx) {
+            if (idx === quizData[currentQuestion].c) score++;
+            currentQuestion++;
+            if (currentQuestion < quizData.length) loadQuestion();
+            else showResults();
+        }
+
+        function showResults() {
+            const percent = Math.round((score / quizData.length) * 100);
+            const resultArea = document.getElementById('result-area');
+            
+            document.getElementById('question-area').innerHTML = '';
+            resultArea.classList.remove('hidden');
+            
+            let resultColor = 'bg-green-100 text-green-800';
+            let resultIcon = '<i class="fas fa-check-circle text-2xl mb-2"></i>';
+            let resultMessage = 'Excel·lent! Has demostrat una profunda comprensió del tema.';
+            
+            if (percent < 50) {
+                resultColor = 'bg-red-100 text-red-800';
+                resultIcon = '<i class="fas fa-info-circle text-2xl mb-2"></i>';
+                resultMessage = 'Necessites revisar alguns conceptes.';
+            } else if (percent < 70) {
+                resultColor = 'bg-yellow-100 text-yellow-800';
+                resultIcon = '<i class="fas fa-lightbulb text-2xl mb-2"></i>';
+                resultMessage = 'Bona feina! Pots millorar en alguns aspectes.';
+            }
+            
+            resultArea.className = `p-8 rounded-lg text-center font-bold text-lg ${resultColor}`;
+            resultArea.innerHTML = `${resultIcon}
+                <p class="text-2xl mb-2">${score}/${quizData.length} (${percent}%)</p>
+                <p class="text-sm mb-4">${resultMessage}</p>
+                <button onclick="resetQuiz()" class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-redo mr-2"></i> Tornar a intentar
+                </button>`;
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('result-area').classList.add('hidden');
+            loadQuestion();
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            loadQuestion();
+            
+            // Smooth scroll to sidebar links
+            document.querySelectorAll('[href^="#seccio-"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

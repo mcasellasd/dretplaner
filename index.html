@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dret Català Visual | Home</title>
+    <title>Dret Visual | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
 
@@ -46,6 +47,9 @@
 </head>
 
 <body class="min-h-screen relative">
+    <!-- Global Navbar Container -->
+    <div id="navbar-container"></div>
+
     <!-- Fons / Elements Decoratius -->
     <div class="blob bg-blue-600/30 w-96 h-96 rounded-full top-[-100px] left-[-100px]"></div>
     <div class="blob bg-purple-600/20 w-[500px] h-[500px] rounded-full bottom-[-100px] right-[-100px]"></div>
@@ -61,10 +65,10 @@
                     <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
                     <polyline points="14 2 14 8 20 8" />
                 </svg>
-                Acadèmia Audiovisual Jurídica
+                Dret Visual
             </div>
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                Visual <span class="bg-gradient-to-r from-blue-400 to-indigo-500 gradient-text">Law</span>
+                <span class="bg-gradient-to-r from-blue-400 to-indigo-500 gradient-text">Dret Visual</span>
             </h1>
             <p class="text-slate-400 max-w-2xl mx-auto text-xl font-light">
                 Apunts visuals, esquemes interactius i <span class="text-white font-semibold">vídeos d'alta
@@ -105,23 +109,95 @@
                     </div>
 
                     <div
-                        class="mt-auto pt-4 flex gap-3 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="mt-auto pt-4 grid grid-cols-3 gap-2 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <a href="dret-penal.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-400 font-semibold text-sm transition-colors border border-red-500/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-400 font-semibold text-xs transition-colors border border-red-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                 fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3" />
                             </svg>
                             Vídeos
                         </a>
                         <a href="dret-penal-text.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition-colors border border-slate-600/50">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors border border-slate-600/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                             </svg>
                             Mòduls
+                        </a>
+                        <a href="visuals.html#penal"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 font-semibold text-xs transition-colors border border-indigo-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="m21 15-5-5-5 5" />
+                            </svg>
+                            Visuals
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.5 Dret Penal Econòmic (NOU) -->
+            <div class="block group h-full">
+                <div class="glass-card rounded-3xl p-8 h-full relative overflow-hidden flex flex-col justify-between">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-bl-full transition-transform group-hover:scale-[2] duration-700 ease-in-out">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-red-500/20 flex items-center justify-center text-red-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 2v20" />
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                </svg>
+                            </div>
+                            <span
+                                class="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full border border-red-500/30">Mòdul Especialitzat</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-3 text-white">Dret Penal Econòmic</h2>
+                        <p class="text-slate-400 leading-relaxed font-light text-sm">
+                            Responsabilitat penal empresarial, imputació objectiva i subjectiva, i sistema penológic de
+                            persones jurídiques.
+                        </p>
+                    </div>
+
+                    <div
+                        class="mt-auto pt-4 grid grid-cols-3 gap-2 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <a href="dret-penal-economic.html"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-400 font-semibold text-xs transition-colors border border-red-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                            </svg>
+                            Mòdul
+                        </a>
+                        <a href="dret-penal-economic.html#visuals"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 font-semibold text-xs transition-colors border border-indigo-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="m21 15-5-5-5 5" />
+                            </svg>
+                            Visuals
+                        </a>
+                        <a href="dret-penal-economic.html"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors border border-slate-600/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            Llegir
                         </a>
                     </div>
                 </div>
@@ -158,23 +234,34 @@
                     </div>
 
                     <div
-                        class="mt-auto pt-4 flex gap-3 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="mt-auto pt-4 grid grid-cols-3 gap-2 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <a href="dret-civil.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 font-semibold text-sm transition-colors border border-purple-500/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 font-semibold text-xs transition-colors border border-purple-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                 fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3" />
                             </svg>
                             Vídeos
                         </a>
                         <a href="dret-civil-text.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition-colors border border-slate-600/50">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors border border-slate-600/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                             </svg>
                             Mòduls
+                        </a>
+                        <a href="dret-civil.html#visuals"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 font-semibold text-xs transition-colors border border-indigo-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="m21 15-5-5-5 5" />
+                            </svg>
+                            Visuals
                         </a>
                     </div>
                 </div>
@@ -208,9 +295,9 @@
                     </div>
 
                     <div
-                        class="mt-auto pt-4 flex gap-3 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="mt-auto pt-4 grid grid-cols-3 gap-2 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <a href="dret-financer-videos.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 font-semibold text-sm transition-colors border border-blue-500/30">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 font-semibold text-xs transition-colors border border-blue-500/30">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -218,13 +305,24 @@
                             Vídeos
                         </a>
                         <a href="dret-financer.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition-colors border border-slate-600/50">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors border border-slate-600/50">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                             </svg>
                             Mòduls
+                        </a>
+                        <a href="visuals.html#financer"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 font-semibold text-xs transition-colors border border-indigo-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="m21 15-5-5-5 5" />
+                            </svg>
+                            Visuals
                         </a>
                     </div>
                 </div>
@@ -260,9 +358,9 @@
                     </div>
 
                     <div
-                        class="mt-auto pt-4 flex gap-3 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="mt-auto pt-4 grid grid-cols-3 gap-2 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <a href="dret-mercantil.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 font-semibold text-sm transition-colors border border-amber-500/30">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 font-semibold text-xs transition-colors border border-amber-500/30">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -270,13 +368,24 @@
                             Vídeos
                         </a>
                         <a href="dret-mercantil-text.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition-colors border border-slate-600/50">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors border border-slate-600/50">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                             </svg>
                             Mòduls
+                        </a>
+                        <a href="visuals.html#mercantil"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 font-semibold text-xs transition-colors border border-indigo-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="m21 15-5-5-5 5" />
+                            </svg>
+                            Visuals
                         </a>
                     </div>
                 </div>
@@ -306,29 +415,40 @@
                         </div>
                         <h2 class="text-2xl font-bold mb-3 text-white">Dret Administratiu</h2>
                         <p class="text-slate-400 leading-relaxed font-light text-sm">
-                            Una introducció a l'Administració Pública, les seves fons constitucionals, i la seva
-                            activitat.
+                            Administratiu I i II: fonts, activitat administrativa i garanties jurisdiccionals del
+                            contenciós administratiu.
                         </p>
                     </div>
 
                     <div
-                        class="mt-auto pt-4 flex gap-3 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                        <a href="#"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 font-semibold text-sm transition-colors border border-emerald-500/30">
+                        class="mt-auto pt-4 grid grid-cols-3 gap-2 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <a href="dret-administratiu-ii.html"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 font-semibold text-xs transition-colors border border-emerald-500/30">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3" />
                             </svg>
-                            Vídeos
+                            Admin II
                         </a>
                         <a href="dret-administratiu.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition-colors border border-slate-600/50">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors border border-slate-600/50">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                             </svg>
                             Mòduls
+                        </a>
+                        <a href="visuals.html#administratiu"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 font-semibold text-xs transition-colors border border-indigo-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="m21 15-5-5-5 5" />
+                            </svg>
+                            Visuals
                         </a>
                     </div>
                 </div>
@@ -417,9 +537,9 @@
                     </div>
 
                     <div
-                        class="mt-auto pt-4 flex gap-3 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="mt-auto pt-4 grid grid-cols-3 gap-2 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <a href="dret-processal-videos.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 font-semibold text-sm transition-colors border border-rose-500/30">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 font-semibold text-xs transition-colors border border-rose-500/30">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -427,13 +547,24 @@
                             Vídeos
                         </a>
                         <a href="dret-processal.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition-colors border border-slate-600/50">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors border border-slate-600/50">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                             </svg>
                             Mòduls
+                        </a>
+                        <a href="dret-processal.html#visuals"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 font-semibold text-xs transition-colors border border-indigo-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="m21 15-5-5-5 5" />
+                            </svg>
+                            Visuals
                         </a>
                     </div>
                 </div>
@@ -468,9 +599,9 @@
                     </div>
 
                     <div
-                        class="mt-auto pt-4 flex gap-3 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="mt-auto pt-4 grid grid-cols-3 gap-2 relative z-20 w-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <a href="dret-constitucional-videos.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 font-semibold text-sm transition-colors border border-cyan-500/30">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 font-semibold text-xs transition-colors border border-cyan-500/30">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="currentColor">
                                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -478,13 +609,24 @@
                             Vídeos
                         </a>
                         <a href="dret-constitucional.html"
-                            class="flex-1 flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition-colors border border-slate-600/50">
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors border border-slate-600/50">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                             </svg>
                             Mòduls
+                        </a>
+                        <a href="dret-constitucional.html#visuals"
+                            class="flex justify-center items-center gap-2 py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 font-semibold text-xs transition-colors border border-indigo-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="m21 15-5-5-5 5" />
+                            </svg>
+                            Visuals
                         </a>
                     </div>
                 </div>
@@ -504,7 +646,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
-                        <h3 class="font-bold flex-1">Prof. Dret Català Visual (AI)</h3>
+                        <h3 class="font-bold flex-1">Prof. Dret Visual (AI)</h3>
                     </div>
                     <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -642,6 +784,8 @@
                 }
             });
         </script>
+        <!-- Global Navigation Helper -->
+        <script src="navbar-helper.js"></script>
 </body>
 
 </html>

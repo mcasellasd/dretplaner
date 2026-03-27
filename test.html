@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Altres","url":"#"},{"label":"Prova"}]'>
+  <title>Garanties jurisdiccionals (Dret Administratiu II) — Desenvolupament del mind map</title>
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a30;
+      --muted:#9fb2d6;
+      --text:#e8f0ff;
+      --accent:#6ee7b7;
+      --accent2:#60a5fa;
+      --border:rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(96,165,250,.25), transparent 60%),
+                  radial-gradient(900px 600px at 90% 15%, rgba(110,231,183,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    header{
+      padding:32px 18px 18px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    h1{
+      margin:0 0 8px;
+      font-size: clamp(22px, 2.6vw, 34px);
+      letter-spacing:.2px;
+    }
+    header p{
+      margin:0;
+      color:var(--muted);
+      max-width:80ch;
+    }
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px;
+      display:grid;
+      gap:14px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 55%), var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+      margin-bottom:10px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:99px;background:var(--accent);
+      box-shadow: 0 0 0 4px rgba(110,231,183,.12);
+    }
+    h2{
+      margin:6px 0 10px;
+      font-size: clamp(18px, 2.0vw, 24px);
+    }
+    h3{
+      margin:14px 0 8px;
+      font-size: 16px;
+      color: #d8e6ff;
+    }
+    p{margin:8px 0;color:var(--text)}
+    .muted{color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+    }
+    .span-6{grid-column: span 6;}
+    .span-12{grid-column: span 12;}
+    @media (max-width: 900px){
+      .span-6{grid-column: span 12;}
+    }
+
+    details{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:10px 12px;
+      background: rgba(255,255,255,.03);
+    }
+    details + details{margin-top:10px}
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      font-weight:650;
+    }
+    summary::-webkit-details-marker{display:none}
+    .badge{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--border);
+      padding:3px 8px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    ul{margin:8px 0 8px 18px;color:var(--text)}
+    li{margin:6px 0}
+    .law{
+      border-left:3px solid rgba(96,165,250,.7);
+      padding-left:10px;
+      margin:10px 0;
+      color:var(--muted);
+    }
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: rgba(255,255,255,.02);
+    }
+    th,td{
+      text-align:left;
+      padding:10px 10px;
+      border-bottom:1px solid var(--border);
+      vertical-align:top;
+    }
+    th{
+      color:#d8e6ff;
+      font-size:13px;
+      background: rgba(255,255,255,.03);
+    }
+    tr:last-child td{border-bottom:none}
+    .pill{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:12px;
+      margin-right:6px;
+    }
+    footer{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .note{
+      border:1px dashed rgba(110,231,183,.45);
+      background: rgba(110,231,183,.06);
+      padding:10px 12px;
+      border-radius:14px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+  <div id="breadcrumb-container" class="max-w-[1100px] mx-auto px-[18px] pt-20"></div>
+
+  <header>
+    <h1>Garanties jurisdiccionals (Dret Administratiu II)</h1>
+    <p>
+      Desenvolupament dels conceptes del mind map sobre l’<strong>Ordre Jurisdiccional Contenciós-Administratiu</strong>
+      (LJCA 29/1998): evolució, funció, àmbit, òrgans, parts, procediments, mesures cautelars, recursos i execució.
+    </p>
+  </header>
+
+  <main>
+    <!-- 1) ORDRE JURISDICCIONAL CA -->
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Bloc 1</div>
+      <h2>1) Ordre Jurisdiccional Contenciós-Administratiu</h2>
+
+      <div class="grid">
+        <div class="span-6">
+          <details open>
+            <summary>
+              Evolució històrica
+              <span class="badge">context i fites</span>
+            </summary>
+            <p class="muted">
+              L’origen del contenciós-administratiu s’explica per la tensió entre el control de l’Administració i el principi
+              de separació de poders. Es consolida progressivament fins a l’actual sistema jurisdiccional.
+            </p>
+            <ul>
+              <li><span class="pill">Sistema francès</span> model de <em>jurisdicció retenida</em>: el control sobre l’Administració s’articula fora dels tribunals ordinaris, amb un paper destacat d’òrgans administratius especialitzats.</li>
+              <li><span class="pill">1888</span> <strong>Llei Santamaría de Paredes</strong>: institucionalitza un primer règim contenciós a Espanya.</li>
+              <li><span class="pill">1956</span> <strong>Llei de la jurisdicció contenciosa-administrativa</strong>: modernitza el sistema i amplia el control judicial sobre l’activitat administrativa.</li>
+              <li><span class="pill">1998</span> <strong>Llei 29/1998 (LJCA)</strong>: configura el model vigent (òrgans, competències, procediments i garanties).</li>
+            </ul>
+            <div class="law">
+              Referències clau: LJCA 29/1998; Constitució (principis de sotmetiment a la llei i control jurisdiccional).
+            </div>
+          </details>
+        </div>
+
+        <div class="span-6">
+          <details open>
+            <summary>
+              Naturalesa i funció
+              <span class="badge">què protegeix</span>
+            </summary>
+            <p>
+              La jurisdicció contenciosa-administrativa és l’instrument processal principal per sotmetre l’Administració al Dret
+              i garantir la protecció dels drets i interessos legítims davant l’activitat administrativa.
+            </p>
+            <ul>
+              <li><strong>Control de legalitat</strong> (art. 106 CE): els tribunals controlen la potestat reglamentària i la legalitat de l’actuació administrativa, així com la submissió a les finalitats que la justifiquen.</li>
+              <li><strong>Tutela judicial efectiva</strong> (art. 24 CE): dret d’accés als tribunals, a obtenir una resolució motivada i a l’execució de les resolucions.</li>
+              <li><strong>Unitat jurisdiccional</strong>: el control de la legalitat es canalitza per òrgans judicials, dins el marc general del Poder Judicial (amb especialització contenciosa).</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) ÀMBIT DE LA JURISDICCIÓ -->
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Bloc 2</div>
+      <h2>2) Àmbit de la jurisdicció</h2>
+
+      <div class="grid">
+        <div class="span-6">
+          <details open>
+            <summary>
+              Àmbit subjectiu
+              <span class="badge">qui pot ser demandat</span>
+            </summary>
+            <p>
+              Determina quins subjectes queden sotmesos al control del contenciós-administratiu quan actuen amb potestats
+              públiques o en l’exercici de funcions administratives.
+            </p>
+            <ul>
+              <li><strong>Administracions públiques</strong>: Estat, comunitats autònomes i administració local (i, en general, el sector públic institucional en el que pertoqui).</li>
+              <li><strong>Entitats de dret públic vinculades o dependents</strong>: organismes autònoms, entitats públiques empresarials, consorcis, etc., quan actuen en l’àmbit administratiu.</li>
+              <li><strong>Activitat administrativa d’òrgans constitucionals</strong>: control dels actes/materialitat administrativa quan aquests òrgans actuen fora de la seva funció política/parlamentària estricta.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="span-6">
+          <details open>
+            <summary>
+              Àmbit objectiu
+              <span class="badge">què es pot impugnar</span>
+            </summary>
+            <p>
+              Es refereix als tipus d’actuacions (i omissions) que poden ser revisades: decisions formals, normes, inactivitat i via de fet.
+            </p>
+
+            <details>
+              <summary>Actes administratius <span class="badge">definitius i tràmit qualificat</span></summary>
+              <ul>
+                <li><strong>Actes definitius</strong>: resolucions que posen fi a un procediment i afecten drets o interessos.</li>
+                <li><strong>Tràmits qualificats</strong>: tràmits que decideixen directa o indirectament el fons, determinen la impossibilitat de continuar el procediment, o produeixen indefensió o perjudici irreparable.</li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>Disposicions generals <span class="badge">reglaments</span></summary>
+              <ul>
+                <li>Control de la <strong>potestat reglamentària</strong>: nul·litat/anul·labilitat per infracció de jerarquia normativa, competència, procediment, reserva de llei, etc.</li>
+                <li>Possible connexió amb <strong>qüestió d’il·legalitat</strong> (vegeu procediments especials).</li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>Inactivitat administrativa <span class="badge">omissió</span></summary>
+              <ul>
+                <li>Quan l’Administració <strong>no resol</strong> en termini o <strong>no executa</strong> obligacions concretes imposades per norma o acte ferm.</li>
+                <li>Objectiu: obtenir un pronunciament que obligui l’Administració a actuar (i, si escau, mesures per fer-ho efectiu).</li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>Actuacions materials <span class="badge">via de fet</span></summary>
+              <ul>
+                <li><strong>Via de fet</strong>: actuació material sense cobertura jurídica suficient (manca total de procediment/competència) o amb desviació greu.</li>
+                <li>Finalitat: cessament, restitució i, si escau, indemnització.</li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>Decrets legislatius <span class="badge">ultra vires</span></summary>
+              <ul>
+                <li>Control quan el decret legislatiu excedeix la <strong>delegació</strong> (ultra vires) o vulnera límits materials/temporals de la delegació.</li>
+              </ul>
+            </details>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) ÒRGANS I COMPETÈNCIES -->
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Bloc 3</div>
+      <h2>3) Òrgans i competències</h2>
+
+      <p class="muted">
+        La competència s’atribueix per criteris materials (matèria), territorials, funcionals (instància/recurs) i per l’òrgan del qual prové l’acte.
+        La LJCA distribueix el coneixement entre jutjats i tribunals contenciosos.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Òrgan</th>
+            <th>Funció típica</th>
+            <th>Idea clau</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Jutjats del Contenciós-Administratiu (provincials)</strong></td>
+            <td>Primera instància per gran part d’actes d’Administració territorial/institucional dins l’àmbit provincial.</td>
+            <td>Òrgan de base del contenciós en primera instància.</td>
+          </tr>
+          <tr>
+            <td><strong>Jutjats Centrals del Contenciós-Administratiu</strong></td>
+            <td>Primera instància en assumptes d’òrgans centrals de l’Administració de l’Estat (segons distribució LJCA).</td>
+            <td>Especial rellevància en actes d’abast estatal.</td>
+          </tr>
+          <tr>
+            <td><strong>Tribunals Superiors de Justícia (TSJ)</strong></td>
+            <td>Competències autonòmiques i recursos (segons matèria/instància), inclosa activitat administrativa d’àmbit autonòmic.</td>
+            <td>Peça clau en la jurisdicció contenciosa a nivell de comunitat autònoma.</td>
+          </tr>
+          <tr>
+            <td><strong>Audiència Nacional</strong></td>
+            <td>Matèries d’especial transcendència estatal i determinats recursos/assumptes assignats per LJCA.</td>
+            <td>Òrgan centralitzat per casos específics.</td>
+          </tr>
+          <tr>
+            <td><strong>Tribunal Suprem</strong></td>
+            <td>Cassació i unificació de doctrina (quan escau), garantint coherència interpretativa.</td>
+            <td>Funció nomofilàctica (orientada a la interpretació uniforme del dret).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note" style="margin-top:12px">
+        Suggeriment d’estudi: per a cada òrgan, identifica (1) quins actes coneix en 1a instància, (2) quins recursos resol i (3) quin criteri de competència ho justifica (territori/matèria/òrgan emissor).
+      </div>
+    </section>
+
+    <!-- 4) LES PARTS EN EL PROCÉS -->
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Bloc 4</div>
+      <h2>4) Les parts en el procés</h2>
+
+      <div class="grid">
+        <div class="span-6">
+          <details open>
+            <summary>
+              Capacitat processal
+              <span class="badge">qui pot ser part</span>
+            </summary>
+            <p>
+              Aptitud per actuar davant els tribunals com a part en un procés contenciós.
+              Inclou persones físiques, jurídiques i, quan la llei ho permet, determinats grups/col·lectius.
+            </p>
+            <ul>
+              <li><strong>Persones físiques</strong>: en principi, capacitat processal vinculada a la capacitat d’obrar (amb representació/assistència si escau).</li>
+              <li><strong>Persones jurídiques</strong>: actuen per mitjà dels seus òrgans de representació.</li>
+              <li><strong>Grups/col·lectius</strong>: quan el règim processal admet la seva intervenció (p. ex. interessos col·lectius o difusos en determinats àmbits).</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>
+              Legitimació
+              <span class="badge">interès per recórrer</span>
+            </summary>
+            <p>
+              La legitimació connecta el subjecte amb l’objecte del litigi: cal un vincle suficient (dret subjectiu o interès legítim).
+            </p>
+            <details>
+              <summary>Legitimació activa <span class="badge">dret o interès legítim</span></summary>
+              <ul>
+                <li>Pot recórrer qui acrediti un <strong>dret subjectiu</strong> afectat o un <strong>interès legítim</strong> (personal, actual o potencial, no merament abstracte).</li>
+                <li>En alguns àmbits, pot existir <strong>acció pública</strong> si la norma la preveu (casos típics: urbanisme, medi ambient, etc., segons legislació específica).</li>
+              </ul>
+            </details>
+            <details>
+              <summary>Legitimació passiva <span class="badge">qui ha de respondre</span></summary>
+              <ul>
+                <li>Normalment, l’<strong>Administració autora</strong> de l’acte o actuació impugnada.</li>
+                <li>Poden aparèixer <strong>codemandats</strong> (altres administracions o subjectes) quan tinguin una posició jurídica afectada o connexió directa amb l’objecte del recurs.</li>
+              </ul>
+            </details>
+          </details>
+        </div>
+
+        <div class="span-6">
+          <details open>
+            <summary>
+              Postulació (representació i defensa)
+              <span class="badge">advocat/procurador</span>
+            </summary>
+            <p>
+              Regula com compareixen les parts: qui les representa i qui les defensa tècnicament.
+              La regla general és actuar amb <strong>advocat</strong> i, sovint, també <strong>procurador</strong>, amb excepcions segons quantia/òrgan/procediment.
+            </p>
+            <ul>
+              <li><strong>Advocat i procurador</strong>: esquema habitual de defensa (advocat) i representació processal (procurador), d’acord amb les regles aplicables al contenciós.</li>
+              <li><strong>Autodefensa de funcionaris (personal)</strong>: en supòsits específics, es pot articular una defensa vinculada a la seva posició estatutària (segons el règim legal aplicable al cas).</li>
+            </ul>
+            <p class="muted">
+              Idea d’examen: distingeix sempre (1) representació, (2) defensa, (3) excepcions i (4) efectes de defectes de postulació (esmena/inadmissió).
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) PROCEDIMENTS -->
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Bloc 5</div>
+      <h2>5) Procediments</h2>
+
+      <details open>
+        <summary>Procediment ordinari <span class="badge">via general</span></summary>
+        <p>
+          És el canal processal general per impugnar actes, disposicions, inactivitat o via de fet quan no procedeix un procediment especial.
+        </p>
+        <ul>
+          <li>Estructura típica: interposició i formalització, demanda/contestació, prova i conclusió, vista (si escau) i sentència.</li>
+          <li>Control ple de legalitat (competència, procediment, motivació, proporcionalitat, desviació de poder, etc.).</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Procediment abreujat <span class="badge">quantia &lt; 30.000€ i personal</span></summary>
+        <p>
+          Procediment simplificat, especialment orientat a litigis de menor quantia i a determinades matèries (com el personal al servei de les administracions),
+          amb una tramitació més concentrada.
+        </p>
+        <ul>
+          <li>Major concentració d’actuacions (freqüentment amb vista).</li>
+          <li>Objectiu: agilitat i reducció de formalismes mantenint garanties.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Procediments especials <span class="badge">supòsits reforçats</span></summary>
+        <p>
+          Vies específiques quan la matèria requereix una tutela reforçada o una tècnica processal particular.
+        </p>
+
+        <details>
+          <summary>Protecció de drets fonamentals <span class="badge">tutela reforçada</span></summary>
+          <ul>
+            <li>Quan l’actuació administrativa vulnera drets fonamentals (art. 14 a 29 CE i altres amb projecció processal).</li>
+            <li>Tramitació amb <strong>preferència i sumarietat</strong> per garantir efectivitat.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Qüestió d’il·legalitat <span class="badge">reglaments</span></summary>
+          <ul>
+            <li>Mecanisme vinculat al control de <strong>disposicions generals</strong> (reglaments) quan la seva validesa és determinant per resoldre un litigi.</li>
+            <li>Finalitat: depurar l’ordenament i evitar aplicacions reiterades d’un reglament il·legal.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Garantia de la unitat de mercat <span class="badge">circulació econòmica</span></summary>
+          <ul>
+            <li>Procediment connectat a la protecció de la unitat de mercat quan actes o disposicions creen barreres injustificades.</li>
+            <li>Enfocament: rapidesa i eficàcia per corregir obstacles regulatoris incompatibles amb els principis de necessitat i proporcionalitat.</li>
+          </ul>
+        </details>
+      </details>
+    </section>
+
+    <!-- 6) MESURES CAUTELARS -->
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Bloc 6</div>
+      <h2>6) Mesures cautelars</h2>
+
+      <p>
+        Serveixen per assegurar l’efectivitat de la sentència i evitar que el temps del procés faci inútil la tutela.
+        La lògica és ponderar <strong>fumus boni iuris</strong> (aparent bon dret) i <strong>periculum in mora</strong> (risc pel retard), amb balanç d’interessos.
+      </p>
+
+      <details open>
+        <summary>Suspensió de l’acte <span class="badge">aturar efectes</span></summary>
+        <ul>
+          <li>Mesura típica: paralitzar l’executivitat de l’acte impugnat si el seu compliment causaria danys difícilment reparables o faria inútil el recurs.</li>
+          <li>Ponderació: interès públic vs. perjudici particular, i proporcionalitat.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Mesures positives <span class="badge">obligar a fer</span></summary>
+        <ul>
+          <li>Ordres provisionals que imposen una actuació (p. ex. adoptar una mesura mínima de protecció, facilitar accés, reintegrar provisionalment una prestació, etc.).</li>
+          <li>Requisit pràctic: especial cura en la proporcionalitat per no anticipar indegudament el fons del litigi.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Mesures cautelaríssimes <span class="badge">inaudita parte</span></summary>
+        <ul>
+          <li>Mesures d’urgència adoptades <strong>sense sentir l’altra part</strong> quan el retard faria perdre la finalitat cautelar.</li>
+          <li>Són provisionals i s’han de revisar ràpidament amb audiència posterior per preservar contradicció i defensa.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- 7) RECURSOS -->
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Bloc 7</div>
+      <h2>7) Recursos contra resolucions judicials</h2>
+
+      <p class="muted">
+        Els recursos serveixen per revisar resolucions dins el mateix procediment (revisió “interna”) o per un òrgan superior (segona instància o cassació),
+        segons el model de competències de la LJCA.
+      </p>
+
+      <details open>
+        <summary>Reposició (súplica) <span class="badge">mateix òrgan</span></summary>
+        <ul>
+          <li>Recurs davant el mateix òrgan que dicta la resolució per sol·licitar-ne reconsideració.</li>
+          <li>Útil per corregir errors, qüestions processals o resolucions interlocutòries segons el cas.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Apel·lació (segona instància) <span class="badge">òrgan superior</span></summary>
+        <ul>
+          <li>Permet revisió per un òrgan superior en els supòsits legalment previstos.</li>
+          <li>Objectiu: control de la correcta aplicació del dret i, si escau, revisió de fets/prova dins límits processals.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Cassació (interès cassacional objectiu) <span class="badge">unificació</span></summary>
+        <ul>
+          <li>Recurs extraordinari orientat a assegurar interpretació uniforme del dret i qualitat de la jurisprudència.</li>
+          <li>Clau: acreditar <strong>interès cassacional objectiu</strong> (relevància general, divergències interpretatives, afectació a molts supòsits, etc.).</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Queixa <span class="badge">admissió/denegació</span></summary>
+        <ul>
+          <li>Habitualment connectat a decisions sobre inadmissió o denegació de recursos (segons el disseny processal aplicable).</li>
+          <li>Finalitat: obtenir revisió sobre si s’ha d’admetre el recurs o tramitar-lo.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- 8) EXECUCIÓ DE SENTÈNCIES -->
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Bloc 8</div>
+      <h2>8) Execució de sentències</h2>
+
+      <p>
+        La tutela judicial efectiva inclou el dret a l’<strong>execució</strong> del que s’ha resolt. En contenciós-administratiu és especialment rellevant
+        perquè sovint implica obligar l’Administració a fer, no fer o donar.
+      </p>
+
+      <details open>
+        <summary>Potestat jurisdiccional d’execució <span class="badge">fer complir</span></summary>
+        <ul>
+          <li>El jutge/tribunal conserva facultats per dirigir l’execució: concretar actes necessaris, controlar compliment i evitar execucions aparents.</li>
+          <li>Principi: l’Administració ha de complir en els seus propis termes (execució “real” i no merament formal).</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Impossibilitat material o legal <span class="badge">límit</span></summary>
+        <ul>
+          <li>Si executar literalment és impossible (materialment) o contrari a dret (legalment), cal una resposta d’execució substitutòria o equivalent.</li>
+          <li>Control judicial: evitar que la “impossibilitat” s’utilitzi com a excusa per incomplir.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Extensió d’efectes <span class="badge">altres afectats</span></summary>
+        <ul>
+          <li>En determinades situacions, els efectes d’una sentència poden projectar-se sobre tercers en situació idèntica, per coherència i igualtat.</li>
+          <li>Finalitat: reduir litigiositat repetitiva i assegurar tracte uniforme quan concorrin els requisits legals.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Multes coercitives i responsabilitat <span class="badge">compliment</span></summary>
+        <ul>
+          <li><strong>Multes coercitives</strong>: instruments per forçar el compliment quan hi ha resistència o demora injustificada.</li>
+          <li><strong>Responsabilitat</strong>: eventual exigència de responsabilitats (inclosa patrimonial) si l’incompliment causa danys o vulnera el mandat judicial.</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    Document HTML d’estudi basat en el mind map: estructura per blocs i desplegables (<code>&lt;details&gt;</code>) per repassar.
+    Pots copiar-ho a un fitxer <code>.html</code> i obrir-lo al navegador.
+  </footer>
+  <script src="navbar-helper.js"></script></body>
+</html>

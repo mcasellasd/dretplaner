@@ -27,3 +27,4 @@ models/
 # data/*.pdf
 # data/*.json
 # data/*.jsonl
+.vercel

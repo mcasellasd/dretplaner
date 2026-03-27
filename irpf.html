@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Fiscalitat","url":"#"},{"label":"IRPF Aprofundit"}]'>
+    <title>Estudi Profund de l'IRPF | Normativa Completa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .tax-card {
+            transition: all 0.3s ease;
+        }
+
+        .tax-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen relative">
+
+    <!-- Global Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Breadcrumb Container -->
+    <div id="breadcrumb-container" class="max-w-5xl mx-auto px-6 pt-24 pb-4"></div>
+
+    <main class="max-w-5xl mx-auto px-6 pb-12">
+
+        <!-- Header -->
+        <header class="mb-12 text-center">
+            <span class="text-blue-600 font-bold tracking-widest uppercase text-xs italic">Estudi Aprofundit</span>
+            <h1
+                class="text-4xl md:text-5xl font-extrabold mt-2 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-violet-500">
+                Impost sobre la Renda de les Persones Físiques (IRPF)
+            </h1>
+            <p class="text-slate-500 max-w-2xl mx-auto text-base">
+                Desenvolupament exhaustiu de l'impost que grava la renda mundial de les persones físiques residents a Espanya: rendiments, deduccions i reduccions fiscals.
+            </p>
+        </header>
+
+        <!-- Naturalesa i Subjectes -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold mb-6 text-blue-700 flex items-center gap-2">
+                    <i class="fas fa-clipboard-list"></i> 1. Naturalesa del Tribut <span
+                        class="bg-blue-100 text-blue-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2">Art.
+                        1-3 LIRPF</span>
+                </h3>
+                <ul class="space-y-4 text-slate-600 text-sm">
+                    <li class="flex items-start gap-3">
+                        <div class="mt-0.5 text-blue-500"><i class="fas fa-check-circle"></i></div>
+                        <span><strong>Impost Directe sobre la Renda:</strong> Grava la totalitat de la renda de les persones físiques, independentment de la seva procedència.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-0.5 text-blue-500"><i class="fas fa-check-circle"></i></div>
+                        <span><strong>Progressiu i Personal:</strong> Tipus impositivo progressiu (19%-45%) que escala conforme augmenten les rendes. Personalitzat amb mínim personal i familiar.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-0.5 text-blue-500"><i class="fas fa-check-circle"></i></div>
+                        <span><strong>Cedit a l'Estat (50%) i CCAA (50%):</strong> Repartit entre governs central i autonòmics per repartit de recaptació.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold mb-6 text-blue-700 flex items-center gap-2">
+                    <i class="fas fa-sitemap"></i> 2. Subjectes Passius <span
+                        class="bg-blue-100 text-blue-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2">Art.
+                        8-10 LIRPF</span>
+                </h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                        <span class="font-bold text-blue-900 block mb-1">Residents a Espanya:</span>
+                        <span class="text-sm text-blue-800">Residents que romanguin >183 dies a Espanya o tinguin aquí el nucli principal d'interessos econòmics. Tributen pel patrimoni mundial.</span>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                        <span class="font-bold text-blue-900 block mb-1">No Residents a Espanya:</span>
+                        <span class="text-sm text-blue-800">Persones físiques sense residència fitxa. Tributen només per rendes obtingudes en territorio espanyol (règim de territorialitat).</span>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                        <span class="font-bold text-blue-900 block mb-1">Patrimoni Exterior:</span>
+                        <span class="text-sm text-blue-800">Residents han de declarar béns i rendes que generen en l'estranger. IRNR para non-residents.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Esquema de Liquidació Pedagògic -->
+        <div class="bg-slate-900 text-white p-8 md:p-12 rounded-[2.5rem] shadow-xl mb-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
+            <h3
+                class="text-2xl font-bold mb-10 text-center text-blue-400 relative z-10 flex justify-center items-center gap-3">
+                Esquema Complet de Liquidació de l'IRPF <span
+                    class="bg-slate-700 text-slate-300 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider">LIRPF 2006</span>
+            </h3>
+
+            <div class="max-w-3xl mx-auto space-y-3 relative z-10 text-sm">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400">Rendiments Bruts</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 font-medium">Treball, activitats, capital, immobiliari</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-blue-400 hidden md:block">(-)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-blue-400 font-mono mr-2">(-)</span> Despeses de treball, activitats, interessos</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div class="flex-1 bg-blue-900/40 p-4 rounded-xl border border-blue-500/30 font-bold text-blue-50">
+                        <span class="md:hidden text-slate-400 font-mono mr-2">(=)</span> Base Imposable General (Treball + Activitats + Capital Immobiliari)
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-blue-400 hidden md:block">(+)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-blue-400 font-mono mr-2">(+)</span> Base Imposable Estalvi (Dividends, interessos, guanys patrimonials)</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div class="flex-1 bg-blue-900/40 p-4 rounded-xl border border-blue-500/30 font-bold text-blue-50">
+                        <span class="md:hidden text-slate-400 font-mono mr-2">(=)</span> Base Imposable Total
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-blue-400 hidden md:block">(-)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-blue-400 font-mono mr-2">(-)</span> Mínim Personal/Familiar d'Exempció</span></div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div class="flex-1 bg-blue-900/40 p-4 rounded-xl border border-blue-500/30 font-bold text-blue-50">
+                        <span class="md:hidden text-slate-400 font-mono mr-2">(=)</span> Base Liquidable Final
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-blue-400 hidden md:block">(x)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-blue-400 font-mono mr-2">(x)</span> Tarifa General (19%-45% per escales)</span></div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 font-medium text-slate-200">
+                        <span class="md:hidden text-slate-400 font-mono mr-2">(=)</span> Quota Íntegra Estatal + Autonòmica
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-blue-400 hidden md:block">(-)</div>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-blue-400 font-mono mr-2">(-)</span> Deduccions (Plans pensionals, donacions, IP, etc.)</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <div class="md:w-56 md:text-right font-mono text-blue-400 hidden md:block">(-)</span>
+                    <div class="flex-1 bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-slate-300"><span
+                            class="md:hidden text-blue-400 font-mono mr-2">(-)</span> Retencions ja practicades a font</div>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 pt-2">
+                    <div class="md:w-56 md:text-right font-mono text-slate-400 hidden md:block">(=)</div>
+                    <div
+                        class="flex-1 bg-gradient-to-r from-blue-600 to-violet-600 p-5 rounded-xl shadow-lg font-bold text-center text-lg text-white">
+                        <span class="md:hidden text-white font-mono mr-2">(=)</span> Resultat: Devolució o Quota a Pagar
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Components de la Renda -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                <i class="fas fa-coins text-blue-600"></i> Components de la Renda IRPF <span
+                    class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2">Art.
+                    15-47 LIRPF</span>
+            </h3>
+            <p class="mb-8 text-slate-500 max-w-3xl">La renda s'organitza en 4 categoris: rendiments del treball, del capital immobiliari, d'activitats econòmiques i de patrimoni.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-blue-400">
+                    <span
+                        class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Treball</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Rendiments de Treball <span class="text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal">Art. 17-19 LIRPF</span></h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Salaris, jornals, gratificacions, incentius, bonus. Reduccions per obtenció (fins 6.498€), despesa fixa (2.000€), cotitzacions professionals (500€) i defensa jurídica (300€).</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-violet-400">
+                    <span class="bg-violet-100 text-violet-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Capital</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Rendiments de Capital Mobiliari <span class="text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal">Art. 25 LIRPF</span></h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Interessos de títols, dividends, rendiments d'efectes financers. Tarifa estalvi (19%-28%). Integració al baremo general si superior a 1.500€ anuals.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-cyan-400">
+                    <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Immobiliari</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Rendiments Capital Immobiliari <span class="text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal">Art. 22-24 LIRPF</span></h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Arrendament habitatge (bonificacions 60%-90%), rendes imputades (béns no arrendats). Deduccions: impostos, interessos, amortitzacions, conservació (100%).</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-indigo-400">
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Activitats</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Rendiments Activitats Econòmiques <span class="text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal">Art. 27-32 LIRPF</span></h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Autònoms, negocis, professions lliures. Estimació directa (100% despeses deduïbles) o objectiva. Reduccions per inici (20% fins 100.000€ annually).</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-rose-400">
+                    <span class="bg-rose-100 text-rose-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Patrimoni</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Guanys/Pèrdues Patrimonials <span class="text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal">Art. 33-38 LIRPF</span></h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Transmissions de béns (immobles, valors). Reduccions per antiguitat (20 anys: 100%). Compensació: guanys s'ajusten amb pèrdues del mateix anyy.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-b-4 border-b-amber-400">
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 rounded inline-block mb-2">Altres</span>
+                    <h4 class="font-bold text-slate-800 mt-2">Rendiments de Font Desconeguda <span class="text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ml-2 font-normal">Art. 39 LIRPF</span></h4>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">Premis, loteries, herències, beques. Majorment exemptes o amb tractament específic (ISD per herències, 45% deducció donacions).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarifa i Escales -->
+        <div class="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm mb-12">
+            <h3 class="text-2xl font-bold mb-8 text-slate-800 flex items-center flex-wrap gap-2">
+                <i class="fas fa-chart-bar text-blue-600"></i> Tarifa General i Base Imposable Estalvi <span
+                    class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2 mt-1 md:mt-0">Art.
+                    64-76 LIRPF</span>
+            </h3>
+
+            <div class="space-y-8">
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-4">Tarifa de Base Imposable General (Treball + Activitats + Immobiliari):</h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <span class="font-semibold">Fins a 10.000€</span>
+                            <span class="font-bold text-blue-700">19%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <span class="font-semibold">De 10.000€ a 34.600€</span>
+                            <span class="font-bold text-blue-700">21%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <span class="font-semibold">De 34.600€ a 61.000€</span>
+                            <span class="font-bold text-blue-700">26%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <span class="font-semibold">De 61.000€ a 308.000€</span>
+                            <span class="font-bold text-blue-700">37%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <span class="font-semibold">Superior a 308.000€</span>
+                            <span class="font-bold text-blue-700">45%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-4">Tarifa Base Imposable Estalvi (Dividends, Interessos, Guanys Patrimonials):</h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between items-center p-4 bg-violet-50 rounded-lg border border-violet-200">
+                            <span class="font-semibold">Fins a 6.000€</span>
+                            <span class="font-bold text-violet-700">19%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-violet-50 rounded-lg border border-violet-200">
+                            <span class="font-semibold">De 6.000€ a 24.000€</span>
+                            <span class="font-bold text-violet-700">21%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-violet-50 rounded-lg border border-violet-200">
+                            <span class="font-semibold">Superior a 24.000€</span>
+                            <span class="font-bold text-violet-700">23%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-6">
+                <h4 class="font-bold text-yellow-900 mb-2">📌 NOTA IMPORTANT</h4>
+                <p class="text-sm text-slate-700">Aquestes tarifes són estatals. Els governs autonòmics estableixen suplements de tarifa que fan augmentar el tipus efectiu. Catalunya, per exemple, pot sumar 0,5%-2% sobre la tarifa estatal.</p>
+            </div>
+        </div>
+
+        <!-- Mínim Personal i Familiar -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-slate-800">Mínim Personal i Familiar d'Exempció</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-blue-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Contribuent <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 57 LIRPF 2026)</span></h5>
+                    <p class="text-sm text-slate-600 mb-3">Base mínima exenta de 5.550€ (ha pujat dels 5.500€ el 2024). Els rendiments per sota d'aquesta quantitat no generen obligació tributária.</p>
+                    <div class="p-3 bg-blue-50 rounded-lg border border-blue-200 text-xs text-blue-800 font-semibold">Mínim 2026: 5.550€</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-violet-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Cònjuge (Règim de Ganancials) <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 58 LIRPF)</span></h5>
+                    <p class="text-sm text-slate-600 mb-3">Cada cònjuge: 5.550€. Si es fa declaració conjunta, el mínim es suma doblement (11.100€ brut familiar).</p>
+                    <div class="p-3 bg-violet-50 rounded-lg border border-violet-200 text-xs text-violet-800 font-semibold">Per cònjuge: 5.550€</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-cyan-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Per Fill o Descendent <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 59 LIRPF)</span></h5>
+                    <p class="text-sm text-slate-600 mb-3">Per cada fill: 2.200€ (o 1.500€ si només té renda de treball). Límit de renda bruta del fill situa-se en 8.000€ aproximadament per mantenir dependency.</p>
+                    <div class="p-3 bg-cyan-50 rounded-lg border border-cyan-200 text-xs text-cyan-800 font-semibold">Per fill: 2.200€ (total)</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-indigo-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Per Ascendent (Pares avis) <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 60 LIRPF)</span></h5>
+                    <p class="text-sm text-slate-600 mb-3">2.200€ per cada ascendent que viu a casa o que rep pensió de jubilació/invalidesa. Límit renda bruta: >8.000€ treu deduccio dependents.</p>
+                    <div class="p-3 bg-indigo-50 rounded-lg border border-indigo-200 text-xs text-indigo-800 font-semibold">Per ascendent: 2.200€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deduccions Principals -->
+        <div class="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm mb-12">
+            <h3 class="text-2xl font-bold mb-8 text-slate-800 flex items-center flex-wrap gap-2">
+                <i class="fas fa-receipt text-blue-600"></i> Deduccions de la Quota Íntegra <span
+                    class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-wider ml-2 mt-1 md:mt-0">Art.
+                    77-90 LIRPF</span>
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Plans Pensionals -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex justify-center items-center mb-4">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Aportacions a Plans de Pensionals <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 82 LIRPF)</span></h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Límit anual: 1.500€ per plans de pensió personals. Aportacions a mitjans complementaris: cotitzacions professionals, mutualitats de previsió (límits menors).</p>
+                </div>
+                <!-- Donacions -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex justify-center items-center mb-4">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Donacions a Fundacions i Associacions <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 80 LIRPF)</span></h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Deducció: 80% fins 3.000€, reste 45%. Requisit: beneficiari ha de ser patrimoni històric, público, recerca, etc.</p>
+                </div>
+                <!-- Interessos Hipotecaris -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex justify-center items-center mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Interessos de Préstec Vivenda Principal <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 85 LIRPF)</span></h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Límit: 9.040€ anuals sobre interessos de préstecs per adquisició, reforma o rehabilitació d'habitatge habitual.</p>
+                </div>
+                <!-- Cotitzacions -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex justify-center items-center mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Cotitzacions a Mutualitats <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 87 LIRPF)</span></h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Deducció no limitada de cotitzacions a mutualitats de previsió social (plans de salut privats, mutuals de jubilació).</p>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-red-50 border-l-4 border-red-500 rounded-lg p-6">
+                <h4 class="font-bold text-red-900 mb-3 text-lg">⚠️ Deduccions Autonòmiques Addicionals</h4>
+                <ul class="space-y-2 text-slate-700 text-sm">
+                    <li><strong>• Catalunya:</strong> Deductió per nens (100-150€), compra primera vivenda (ampliació), donacions CCAA.</li>
+                    <li><strong>• Comunitats altres:</strong> Cada CCAA pot establir deduccions suplements: familiars amb discapacitat, despeses educatives, dependents.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Declaració i Obligacions -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-slate-800">Declaració i Obligacions Tributàries</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-blue-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Obligació de Declarar <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 97 LIRPF)</span></h5>
+                    <p class="text-sm text-slate-600">Obligatori si: rendiments acumulats superen 22.000€ (treball), 1.000€ (capital immobiliari), 3.600€ (guanys patrimonials) o patrimoni net > 700.000€.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-violet-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Termini de Presentació <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Anual abril-juny)</span></h5>
+                    <p class="text-sm text-slate-600">25 dies hàbils a partir del dia següent al tancar l'abril. Prorrogable a demanda. Presentació telemàtica obligatòria.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-cyan-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Retencions i Ingressos a Compte <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 102 LTRHY)</span></h5>
+                    <p class="text-sm text-slate-600">Les retencions ja fetes a lloc (salaris, béns immobiliari loguers) es dedueixen de la quota final a pagar. Compensen amb declaració.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autres Conceptes -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-slate-800">Altres Conceptes Clau</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-blue-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Devolució per Compensació <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 71-75 LIRPF)</span></h5>
+                    <p class="text-sm text-slate-600">Guanys i pèrdues patrimonials es compensen dins del mateix anys. Pèrdues no compensades: es traslladen 4 anys següents.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-violet-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Patrimoni Exterior <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 109 LIRPF)</span></h5>
+                    <p class="text-sm text-slate-600">Residents tributen per renda mundial (béns dins i fora d'Espanya). Crèdit d'impostos estrangers per evitar doble imposició.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-cyan-500">
+                    <h5 class="font-bold text-slate-800 mb-2">Prescripció i Revisió <span
+                            class="text-blue-600 font-mono text-[10px] ml-1">(Art. 44-45 LGT)</span></h5>
+                    <p class="text-sm text-slate-600">4 anys revisió des de presentació declaració. Extensions: 5 anys si renda gravada omesa; 10 anys si delicte fiscal.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-sm">Nota: Les dades, tarifes i límits han de ser verificats cada exercici fiscal pel Ministerio de Hisenda. Aquests valors corresponen a l'exercici 2026. Aquesta infografia té un propòsit informatiu basat en la normativa vigent (LIRPF 2006 i modificacions subasequents).</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

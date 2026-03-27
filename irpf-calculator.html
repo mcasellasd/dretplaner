@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Fiscalitat","url":"#"},{"label":"Calculadora IRPF"}]'>
+  <title>Calculadora (simplificada) de Renda Neta IRPF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 min-h-screen pb-28">
+
+  <div id="navbar-container"></div>
+  <div id="breadcrumb-container" class="max-w-4xl mx-auto px-4 pt-24"></div>
+
+  <header class="bg-blue-600 text-white py-8 px-4 shadow-lg mb-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-2">Calculadora (simplificada) de Renda Neta</h1>
+      <p class="text-blue-100 italic">Inclou límits i regles bàsiques LIRPF/RIRPF (no substitueix una liquidació completa).</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4">
+
+    <!-- DISCLAIMER -->
+    <section class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <p class="text-sm text-slate-700">
+        <strong>Nota:</strong> Aquesta eina calcula rendiments nets i una agregació bàsica en "base general" i "base estalvi".
+        No aplica totes les regles de compensació, integració ni casuística (FIFO, reduccions, imputacions, rendes exemptes, etc.).
+      </p>
+    </section>
+
+    <!-- 1. TREBALL -->
+    <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6 transition-all hover:shadow-md">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-2xl">💼</span>
+        <h2 class="text-xl font-bold text-slate-800">Rendiments del Treball</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Ingressos Íntegres (+)</label>
+          <input type="number" data-sec="work" data-type="plus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Cotitzacions SS / Mutualitats obligatòries (-)</label>
+          <input type="number" data-sec="work" data-type="minus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Quotes Sindicats (-)</label>
+          <input type="number" id="work-union" data-sec="work" data-type="minus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Quotes Col·legi Professional (-) <span class="text-xs text-slate-400">(límit 500€)</span></label>
+          <input type="number" id="work-college" data-sec="work" data-type="minus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+          <p id="warn-work-college" class="hidden mt-1 text-xs text-amber-700">S'aplica límit de 500€.</p>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Defensa Jurídica laboral (-) <span class="text-xs text-slate-400">(límit 300€)</span></label>
+          <input type="number" id="work-legal" data-sec="work" data-type="minus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+          <p id="warn-work-legal" class="hidden mt-1 text-xs text-amber-700">S'aplica límit de 300€.</p>
+        </div>
+
+        <div class="md:col-span-2 bg-slate-50 border border-slate-200 rounded-lg p-3">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <p class="text-sm font-semibold text-slate-700">Altres despeses deduïbles del treball</p>
+              <p class="text-xs text-slate-500">Per defecte: 2.000€ anuals (simplificat). En alguns casos hi ha increments/condicions.</p>
+            </div>
+            <label class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 select-none">
+              <input id="work-other-toggle" type="checkbox" class="h-4 w-4" checked>
+              Aplicar 2.000€
+            </label>
+          </div>
+          <div class="mt-2 flex justify-between text-sm">
+            <span class="text-slate-600">Aplicat:</span>
+            <span id="work-other-applied" class="font-mono text-slate-800">-2000.00 €</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-t flex justify-between items-center">
+        <span class="font-semibold text-slate-600">Rendiment net del treball:</span>
+        <span id="res-work" class="text-xl font-bold text-blue-600">0.00 €</span>
+      </div>
+    </section>
+
+    <!-- 2. IMMOBILIARI -->
+    <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6 transition-all hover:shadow-md border-l-4 border-amber-400">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-2xl">🏠</span>
+        <h2 class="text-xl font-bold text-slate-800">Capital Immobiliari (lloguers)</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Rendes cobrades (+)</label>
+          <input type="number" id="re-income" data-sec="realestate" data-type="plus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Altres despeses deduïbles (IBI, comunitat, assegurança, admin.) (-)</label>
+          <input type="number" id="re-other" data-sec="realestate" data-type="minus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+          <p class="text-sm font-semibold text-slate-700 mb-2">Interessos + reparació/conservació</p>
+          <div class="grid grid-cols-1 gap-3">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1">Interessos hipoteca / finançament (-)</label>
+              <input type="number" id="re-interest" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1">Reparacions / conservació (-)</label>
+              <input type="number" id="re-repairs" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+            </div>
+            <p class="text-xs text-slate-500">
+              Simplificat: s'aplica el límit que "interessos + reparacions/conservació" no excedeixin els rendiments íntegres. L'excés es mostra com a pendent.
+            </p>
+            <p id="re-excess" class="text-xs text-amber-700 hidden">Excés pendent: 0.00 €</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+          <p class="text-sm font-semibold text-slate-700 mb-2">Amortització (càlcul)</p>
+          <div class="grid grid-cols-1 gap-3">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1">Base amortitzable construcció (exclou sòl) (€)</label>
+              <input type="number" id="re-amort-base" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <label class="block text-sm font-medium text-slate-700">Percentatge</label>
+              <span class="text-sm font-mono text-slate-700">3%</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-slate-600">Amortització aplicada:</span>
+              <span id="re-amort-applied" class="font-mono text-slate-800">0.00 €</span>
+            </div>
+            <p class="text-xs text-slate-500">
+              Simplificat: 3% sobre la base amortitzable de construcció. (No calcula mobiliari ni comparativa amb valor cadastral/cost, etc.)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-t flex justify-between items-center">
+        <span class="font-semibold text-slate-600">Rendiment net immobiliari:</span>
+        <span id="res-realestate" class="text-xl font-bold text-blue-600">0.00 €</span>
+      </div>
+    </section>
+
+    <!-- 3. ESTALVI (simplificat) -->
+    <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6 transition-all hover:shadow-md border-l-4 border-emerald-400">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-2xl">📈</span>
+        <h2 class="text-xl font-bold text-slate-800">Base de l'Estalvi (simplificat)</h2>
+      </div>
+
+      <p class="text-xs text-slate-500 mb-4">
+        Simplificat: no aplica FIFO, ni desglossament d'operacions, ni compensacions detallades.
+      </p>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-sm font-bold uppercase text-slate-400 mb-3">Rendiments de capital mobiliari</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1">Interessos i dividends (+)</label>
+              <input type="number" data-sec="savings-yield" data-type="plus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1">Despeses custòdia/administració (-)</label>
+              <input type="number" data-sec="savings-yield" data-type="minus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold uppercase text-slate-400 mb-3">Guanys / pèrdues patrimonials per transmissions</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1">Valor venda net (+)</label>
+              <input type="number" data-sec="savings-capital" data-type="plus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1">Valor adquisició net (-)</label>
+              <input type="number" data-sec="savings-capital" data-type="minus" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-t flex justify-between items-center">
+        <span class="font-semibold text-slate-600">Total base estalvi (simplificat):</span>
+        <span id="res-savings" class="text-xl font-bold text-blue-600">0.00 €</span>
+      </div>
+    </section>
+
+    <!-- 4. ACTIVITATS ECONÒMIQUES -->
+    <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6 transition-all hover:shadow-md border-l-4 border-purple-500">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-2xl">🚀</span>
+        <h2 class="text-xl font-bold text-slate-800">Activitats Econòmiques</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Exercici</label>
+          <input type="number" id="biz-year" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" value="2024" min="2007" step="1">
+          <p class="text-xs text-slate-500 mt-1">El 7% és excepcional (2023). Per defecte, 5% en directa simplificada.</p>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Règim</label>
+          <select id="biz-method" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all calc-trigger">
+            <option value="directa_simplificada" selected>Estimació directa simplificada</option>
+            <option value="directa_normal">Estimació directa normal</option>
+            <option value="moduls">Mòduls (no calculat aquí)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Ingressos (facturació) (+)</label>
+          <input type="number" id="biz-income" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Despeses deduïbles (sense provisió) (-)</label>
+          <input type="number" id="biz-expense" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-right calc-trigger" placeholder="0.00">
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-purple-50 rounded-lg text-sm text-purple-700">
+        <p><strong>Provisions + despeses de difícil justificació (simplificat):</strong></p>
+        <ul class="list-disc ml-5 mt-1 text-sm">
+          <li>Directa simplificada: 5% (màx 2.000€). En exercici 2023: 7% (màx 2.000€).</li>
+          <li>Directa normal: 0€ aquí (no s'aplica percentatge automàtic).</li>
+          <li>Mòduls: no calculat.</li>
+        </ul>
+        <p id="biz-provision-display" class="font-mono mt-2 italic">Provisió aplicada: 0.00 €</p>
+      </div>
+
+      <div class="mt-4 pt-4 border-t flex justify-between items-center">
+        <span class="font-semibold text-slate-600">Rendiment net d'activitat:</span>
+        <span id="res-business" class="text-xl font-bold text-blue-600">0.00 €</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SUMMARY BAR -->
+  <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-300 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] p-4 z-50">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 gap-4">
+      <div class="p-4 rounded-lg text-center bg-slate-100">
+        <p class="text-xs uppercase font-bold text-slate-500 mb-1">Base General (simplificat)</p>
+        <p id="total-general" class="text-xl font-black text-slate-800">0.00 €</p>
+      </div>
+      <div class="p-4 rounded-lg text-center bg-blue-50">
+        <p class="text-xs uppercase font-bold text-blue-500 mb-1">Base Estalvi (simplificat)</p>
+        <p id="total-savings" class="text-xl font-black text-blue-800">0.00 €</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const inputs = document.querySelectorAll('.calc-trigger');
+
+    const fmt = (n) =>
+      (Number.isFinite(n) ? n : 0).toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+
+    const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+    function getNum(id) {
+      const el = document.getElementById(id);
+      return el ? (parseFloat(el.value) || 0) : 0;
+    }
+
+    function setWarn(id, show) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('hidden', !show);
+    }
+
+    function calculate() {
+      let sections = {
+        work: 0,
+        realestate: 0,
+        savingsYield: 0,
+        savingsCapital: 0,
+        business: 0
+      };
+
+      // --- WORK: apply limits & other expenses
+      let workPlus = 0;
+      let workMinus = 0;
+
+      // plus/minus from generic fields (except the ones with special rules we handle below)
+      document.querySelectorAll('[data-sec="work"]').forEach(input => {
+        const type = input.getAttribute('data-type');
+        const id = input.id || "";
+        if (id === 'work-college' || id === 'work-legal') return; // handle separately (limits)
+        const val = parseFloat(input.value) || 0;
+        if (type === 'plus') workPlus += val;
+        else workMinus += val;
+      });
+
+      // College limit 500
+      const collegeRaw = getNum('work-college');
+      const collegeApplied = clamp(collegeRaw, 0, 500);
+      setWarn('warn-work-college', collegeRaw > 500);
+      workMinus += collegeApplied;
+
+      // Legal defense limit 300
+      const legalRaw = getNum('work-legal');
+      const legalApplied = clamp(legalRaw, 0, 300);
+      setWarn('warn-work-legal', legalRaw > 300);
+      workMinus += legalApplied;
+
+      // Other expenses 2,000 toggle (simplified)
+      const otherToggle = document.getElementById('work-other-toggle');
+      const otherApplied = otherToggle && otherToggle.checked ? 2000 : 0;
+      document.getElementById('work-other-applied').innerText = `-${otherApplied.toFixed(2)} €`;
+      workMinus += otherApplied;
+
+      sections.work = workPlus - workMinus;
+
+      // --- REAL ESTATE: apply interest+repairs limit, amortization calc
+      const reIncome = getNum('re-income');
+      const reOther = getNum('re-other');
+      const reInterest = getNum('re-interest');
+      const reRepairs = getNum('re-repairs');
+
+      // Limit for (interest + repairs) <= income (simplified per-property logic)
+      const irSum = reInterest + reRepairs;
+      const irApplied = Math.min(irSum, reIncome);
+      const irExcess = Math.max(0, irSum - reIncome);
+
+      const reExcessEl = document.getElementById('re-excess');
+      reExcessEl.classList.toggle('hidden', irExcess <= 0);
+      reExcessEl.innerText = `Excés pendent (interessos + reparacions): ${fmt(irExcess).replace(' €','')} €`;
+
+      // Amortization: 3% of base (construction only)
+      const reAmortBase = getNum('re-amort-base');
+      const reAmortApplied = Math.max(0, reAmortBase * 0.03);
+      document.getElementById('re-amort-applied').innerText = fmt(reAmortApplied);
+
+      sections.realestate = reIncome - reOther - irApplied - reAmortApplied;
+
+      // --- SAVINGS (simplified)
+      document.querySelectorAll('[data-sec="savings-yield"], [data-sec="savings-capital"]').forEach(input => {
+        const val = parseFloat(input.value) || 0;
+        const sec = input.getAttribute('data-sec');
+        const type = input.getAttribute('data-type');
+        const delta = (type === 'plus' ? val : -val);
+        if (sec === 'savings-yield') sections.savingsYield += delta;
+        if (sec === 'savings-capital') sections.savingsCapital += delta;
+      });
+
+      // --- BUSINESS: method/year logic for provision %
+      const year = Math.trunc(getNum('biz-year')) || 2024;
+      const method = (document.getElementById('biz-method')?.value) || 'directa_simplificada';
+      const bizInc = getNum('biz-income');
+      const bizExp = getNum('biz-expense');
+
+      const bizNetPrev = bizInc - bizExp;
+
+      let provision = 0;
+      if (method === 'directa_simplificada') {
+        const pct = (year === 2023) ? 0.07 : 0.05;
+        provision = Math.max(0, bizNetPrev) * pct;
+        if (provision > 2000) provision = 2000;
+      } else {
+        provision = 0; // directa normal / mòduls: no percent automàtic aquí
+      }
+
+      // If negative net, provision should be 0
+      if (bizNetPrev <= 0) provision = 0;
+
+      sections.business = bizNetPrev - provision;
+      document.getElementById('biz-provision-display').innerText = `Provisió aplicada: -${provision.toFixed(2)} €`;
+
+      // --- UI totals
+      document.getElementById('res-work').innerText = fmt(sections.work);
+      document.getElementById('res-realestate').innerText = fmt(sections.realestate);
+      document.getElementById('res-savings').innerText = fmt(sections.savingsYield + sections.savingsCapital);
+      document.getElementById('res-business').innerText = fmt(sections.business);
+
+      // --- Aggregate bases (simplified)
+      const totalGeneral = sections.work + sections.realestate + sections.business;
+      const totalSavings = sections.savingsYield + sections.savingsCapital;
+
+      document.getElementById('total-general').innerText = fmt(totalGeneral);
+      document.getElementById('total-savings').innerText = fmt(totalSavings);
+    }
+
+    inputs.forEach(input => input.addEventListener('input', calculate));
+    document.getElementById('work-other-toggle')?.addEventListener('change', calculate);
+    document.getElementById('biz-method')?.addEventListener('change', calculate);
+
+    calculate();
+  </script>
+
+  <script src="navbar-helper.js"></script>
+</body>
+</html>

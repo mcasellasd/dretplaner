@@ -1,0 +1,53 @@
+<!-- Breadcrumb Component -->
+<!-- Usage: 
+  Include this HTML snippet where you want breadcrumbs to appear.
+  Use data attributes to customize:
+  - data-crumbs: JSON array of breadcrumb items [{label: "Home", url: "index.html"}, {label: "Current"}]
+  - data-section: The main section name
+-->
+
+<div class="breadcrumb" id="breadcrumb" style="display: none;">
+  <!-- Will be populated by JavaScript based on data attributes -->
+</div>
+
+<script>
+function initBreadcrumbs() {
+  const breadcrumbContainer = document.getElementById('breadcrumb');
+  if (!breadcrumbContainer) return;
+
+  // Get breadcrumb data from page-specific meta tag or data attributes
+  const metaTag = document.querySelector('meta[name="breadcrumbs"]');
+  let crumbs = [];
+
+  if (metaTag) {
+    try {
+      crumbs = JSON.parse(metaTag.getAttribute('content'));
+    } catch (e) {
+      console.error('Invalid breadcrumbs meta tag:', e);
+      return; // Skip if invalid
+    }
+  }
+
+  if (crumbs.length === 0) return; // Don't show if empty
+
+  // Build breadcrumb HTML
+  let html = '';
+  crumbs.forEach((crumb, index) => {
+    if (index > 0) {
+      html += '<span class="breadcrumb-separator">/</span>';
+    }
+    
+    if (crumb.url) {
+      html += `<span class="breadcrumb-item"><a href="${crumb.url}">${crumb.label}</a></span>`;
+    } else {
+      html += `<span class="breadcrumb-item breadcrumb-current">${crumb.label}</span>`;
+    }
+  });
+
+  breadcrumbContainer.innerHTML = html;
+  breadcrumbContainer.style.display = 'flex';
+}
+
+// Initialize breadcrumbs when DOM is ready
+document.addEventListener('DOMContentLoaded', initBreadcrumbs);
+</script>

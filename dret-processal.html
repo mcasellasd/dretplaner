@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual Interactiu: Dret Processal | Dret Català Visual</title>
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Processal"}]'>
+    <title>Manual Interactiu: Dret Processal | Què diu la Llei?</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
 
@@ -47,17 +49,8 @@
 
 <body class="bg-slate-50 text-slate-900 min-h-screen relative">
 
-    <!-- Navbar global -->
-    <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20 max-w-6xl mx-auto left-0 right-0">
-        <a href="index.html"
-            class="flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-all hover:bg-white bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-200/60 shadow-sm hover:shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m15 18-6-6 6-6" />
-            </svg>
-            Tornar a l'inici
-        </a>
-    </nav>
+    <div id="navbar-container"></div>
+    <div id="breadcrumb-container" class="max-w-6xl mx-auto px-4 pt-28"></div>
 
     <div class="max-w-6xl mx-auto px-4 py-16 mt-8">
         <!-- Capçalera -->
@@ -125,6 +118,168 @@
             </div>
         </div>
     </div>
+
+    <!-- Secció Visuals -->
+    <section id="visuals" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="mb-12">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-50 text-indigo-700 text-xs font-bold tracking-widest uppercase mb-4 border border-indigo-100/50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <path d="m21 15-5-5-5 5" />
+                </svg>
+                Esquemes Visuals
+            </div>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-4 tracking-tight">Recursos Visuals de Dret Processal</h2>
+            <p class="text-slate-600 text-lg leading-relaxed max-w-3xl">Arquitectura visual de la justícia i del poder judicial a Espanya.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Visual 1: Independència Judicial -->
+            <a href="data/processal civil/Judicial_Independence_Architecture.pdf" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-indigo-300">
+                    <div class="aspect-video bg-gradient-to-br from-indigo-50 to-slate-50 flex items-center justify-center p-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-indigo-400 group-hover:text-indigo-600 transition-colors">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">PDF</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-1 rounded">Processal</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Arquitectura de la Independència Judicial</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Esquema visual dels principis constitucionals que garanteixen la independència del poder judicial.</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Visual 2: Arquitectura Justícia -->
+            <a href="data/processal civil/L_Arquitectura_de_la_Justícia.pdf" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-rose-300">
+                    <div class="aspect-video bg-gradient-to-br from-rose-50 to-slate-50 flex items-center justify-center p-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-rose-400 group-hover:text-rose-600 transition-colors">
+                            <line x1="3" y1="22" x2="21" y2="22"/>
+                            <line x1="6" y1="18" x2="6" y2="11"/>
+                            <line x1="10" y1="18" x2="10" y2="11"/>
+                            <line x1="14" y1="18" x2="14" y2="11"/>
+                            <line x1="18" y1="18" x2="18" y2="11"/>
+                            <polygon points="12 2 20 7 4 7"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-1 rounded">PDF</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-1 rounded">Estructura</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-rose-600 transition-colors">L'Arquitectura de la Justícia</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Organització jeràrquica dels tribunals i els quatre ordres jurisdiccionals a Espanya.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/acumulació%20accions.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-emerald-300">
+                    <img src="data/processal civil/jurisdiccio/acumulació%20accions.png" alt="Esquema d'acumulació d'accions" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">Acumulació d'Accions</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Mapa visual per identificar quan i com es poden acumular pretensions dins el procés civil.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/anato%20defensa.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-cyan-300">
+                    <img src="data/processal civil/jurisdiccio/anato%20defensa.png" alt="Anatomia de la defensa processal" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-cyan-600 transition-colors">Anatomia de la Defensa</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Estructura dels mecanismes de defensa i resposta de les parts en el procediment civil.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/comparativa%20processps.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-orange-300">
+                    <img src="data/processal civil/jurisdiccio/comparativa%20processps.png" alt="Comparativa de processos" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-orange-600 transition-colors">Comparativa de Processos</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Quadre comparatiu dels principals itineraris processals i les seves diferències clau.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/embut%20competencia.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-teal-300">
+                    <img src="data/processal civil/jurisdiccio/embut%20competencia.png" alt="Embut de competència judicial" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-teal-600 transition-colors">Embut de Competència</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Guia visual per determinar l'òrgan competent segons matèria, territori i quantia.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/guia%20proces.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-lime-300">
+                    <img src="data/processal civil/jurisdiccio/guia%20proces.png" alt="Guia del procés civil" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-lime-600 transition-colors">Guia del Procés</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Visió panoràmica de les fases del procediment civil des de la demanda fins a l'execució.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/mapa%20visual%20termi.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-fuchsia-300">
+                    <img src="data/processal civil/jurisdiccio/mapa%20visual%20termi.png" alt="Mapa visual de terminologia processal" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-fuchsia-600 transition-colors">Mapa Visual de Terminologia</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Resum gràfic de conceptes essencials per dominar el llenguatge processal civil.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/oportunitat.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-yellow-300">
+                    <img src="data/processal civil/jurisdiccio/oportunitat.png" alt="Esquema de principi d'oportunitat" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-yellow-600 transition-colors">Principi d'Oportunitat</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Representació visual dels marges d'actuació processal i dels moments estratègics de decisió.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/ppis%20proc%20judi.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-sky-300">
+                    <img src="data/processal civil/jurisdiccio/ppis%20proc%20judi.png" alt="Principis del procés judicial" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-sky-600 transition-colors">Principis del Procés Judicial</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Esquema sintètic dels principis rectors que ordenen la dinàmica del procés civil.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/proc%20ciu%20i%20jus.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-red-300">
+                    <img src="data/processal civil/jurisdiccio/proc%20ciu%20i%20jus.png" alt="Procés civil i jurisdicció" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-red-600 transition-colors">Procés Civil i Jurisdicció</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Connexió entre l'acció civil, la funció jurisdiccional i la resposta dels tribunals.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="data/processal civil/jurisdiccio/radio%20parts%20civils.png" target="_blank" class="group block">
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-violet-300">
+                    <img src="data/processal civil/jurisdiccio/radio%20parts%20civils.png" alt="Relació entre parts civils" class="w-full aspect-video object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-violet-600 transition-colors">Radiografia de les Parts Civils</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Visualització dels rols, posicions i interaccions de les parts dins el litigi civil.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
 
     <!-- Script de Càrrega Dinàmica -->
     <script>
@@ -289,10 +444,13 @@
                         </div>
                     `).join('')}
                     ${topic.pdf ? `
-                    <div class="col-span-full mt-6">
-                        <div class="w-full h-[600px] md:h-[700px] rounded-2xl overflow-hidden bg-slate-50 border-4 border-slate-200 shadow-inner">
-                            <iframe src="${topic.pdf}#toolbar=0&view=FitH" class="w-full h-full" frameborder="0"></iframe>
-                        </div>
+                    <div class="col-span-full mt-6 p-6 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-3xl text-white shadow-lg">
+                        <h3 class="text-2xl font-bold mb-2">Visuals centralitzats</h3>
+                        <p class="text-cyan-100 opacity-90 mb-4">Els PDFs d'aquesta secció s'han traslladat a la pàgina de visuals per tenir-los agrupats en un únic lloc.</p>
+                        <a href="visuals.html#processal"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/20 hover:bg-white/30 border border-white/30 font-semibold transition">
+                            Obrir Visuals de Processal
+                        </a>
                     </div>
                     ` : ''}
                 </div>
@@ -330,6 +488,8 @@
             showTopic('conceptes');
         });
     </script>
+
+    <script src="navbar-helper.js"></script>
 </body>
 
 </html>

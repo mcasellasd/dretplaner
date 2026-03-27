@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudi Profund de l'ISD | Dret Català Visual</title>
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Fiscalitat","url":"#"},{"label":"ISD Aprofundit"}]'>
+    <title>Estudi Profund de l'ISD | Què diu la Llei?</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
@@ -27,19 +29,13 @@
 
 <body class="bg-slate-50 text-slate-800 min-h-screen relative">
 
-    <!-- Navbar tornar enrere -->
-    <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20 max-w-5xl mx-auto left-0 right-0">
-        <a href="fiscalitat-directa.html"
-            class="flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-all hover:bg-white bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-200/60 shadow-sm hover:shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m15 18-6-6 6-6" />
-            </svg>
-            Tornar a Fiscalitat Directa
-        </a>
-    </nav>
+    <!-- Global Navbar Container -->
+    <div id="navbar-container"></div>
 
-    <main class="max-w-5xl mx-auto px-6 py-12 pt-32">
+    <!-- Breadcrumb Container -->
+    <div id="breadcrumb-container" class="max-w-5xl mx-auto px-6 pt-24 pb-4"></div>
+
+    <main class="max-w-5xl mx-auto px-6 pb-12">
 
         <!-- Header -->
         <header class="mb-12 text-center">
@@ -302,11 +298,43 @@
 
     </main>
 
-    <footer class="mt-12 py-8 border-t border-slate-200 text-center text-slate-400 text-sm">
-        <p>Font: Manual de Fiscalitat Directa i Llei de l'ISD 29/1987.</p>
-        <p class="mt-2">Aquest document pertany a la línia d'Estudis Aprofundits de Dret Català Visual.</p>
+    <!-- Footer -->
+    <footer class="relative z-10 bg-slate-900/50 border-t border-slate-700/50 mt-24 py-12">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-white mb-4">Què diu la Llei?</h3>
+                    <p class="text-slate-400 text-sm">Plataforma digital per dominar el dret de manera eficient.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Assignatures</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="dret-penal.html" class="hover:text-white transition-colors">Dret Penal</a></li>
+                        <li><a href="dret-civil.html" class="hover:text-white transition-colors">Dret Civil</a></li>
+                        <li><a href="dret-mercantil.html" class="hover:text-white transition-colors">Dret Mercantil</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Recursos</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
+                        <li><a href="https://catalunyalegal.vercel.app/" target="_blank" class="hover:text-white transition-colors">Catalunya Legal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Contacte</h4>
+                    <p class="text-slate-400 text-sm">Per més informació, visita<br><a href="https://catalunyalegal.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300">catalunyalegal.vercel.app</a></p>
+                </div>
+            </div>
+            <div class="border-t border-slate-700/50 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2026 Què diu la Llei?. Tots els drets reservats.</p>
+                <p>Plataforma educativa de dret</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Global Navigation Helper -->
+    <script src="navbar-helper.js"></script>
 </body>
 
 </html>
