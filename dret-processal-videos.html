@@ -106,7 +106,7 @@
                         class="text-slate-400">
                         <polygon points="5 3 19 12 5 21 5 3" />
                     </svg>
-                    2 Vídeos Clau
+                    3 Vídeos Clau
                 </div>
             </div>
         </header>
@@ -117,7 +117,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <!-- Video 1 -->
-                <a href="https://youtu.be/Ew6jDvkQla8" target="_blank" class="block group">
+                <a href="https://youtu.be/Ew6jDvkQla8" target="_blank" rel="noopener noreferrer" class="block group">
                     <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
                         <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
                             <img src="https://img.youtube.com/vi/Ew6jDvkQla8/hqdefault.jpg"
@@ -146,7 +146,7 @@
                 </a>
 
                 <!-- Video 2 -->
-                <a href="https://youtube.com/shorts/qKobK8r21hI" target="_blank" class="block group">
+                <a href="https://youtube.com/shorts/qKobK8r21hI" target="_blank" rel="noopener noreferrer" class="block group">
                     <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
                         <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
                             <img src="https://img.youtube.com/vi/qKobK8r21hI/hqdefault.jpg"
@@ -174,6 +174,34 @@
                     </div>
                 </a>
 
+                <!-- Video 3 -->
+                <a href="https://www.youtube.com/watch?v=MlX0xbYPhRg" target="_blank" rel="noopener noreferrer" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/MlX0xbYPhRg/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Dret Processal Civil">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Processal Civil</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Dret Processal Civil: vídeo recomanat</h3>
+                    </div>
+                </a>
+
             </div>
         </div>
 
@@ -183,7 +211,7 @@
     <div id="videoModal"
         class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
         <div class="relative w-full max-w-5xl aspect-video mx-4">
-            <button onclick="closeVideo()"
+            <button onclick="closeVideo()" title="Tancar vídeo"
                 class="absolute -top-12 right-0 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -192,7 +220,7 @@
                 </svg>
             </button>
             <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-                <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0"
+                <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0" title="Reproductor de vídeo de YouTube"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
