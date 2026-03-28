@@ -8,12 +8,12 @@
   /* Section Colors - Harmonized */
   --color-home: #3b82f6;
   --color-home-hover: #2563eb;
-  --color-dret: #8b5cf6;
-  --color-dret-hover: #7c3aed;
-  --color-fiscalitat: #3b82f6;
-  --color-fiscalitat-hover: #2563eb;
-  --color-altres: #6b7280;
-  --color-altres-hover: #4b5563;
+  --color-videos: #ef4444;
+  --color-videos-hover: #dc2626;
+  --color-visuals: #6366f1;
+  --color-visuals-hover: #4f46e5;
+  --color-modules: #10b981;
+  --color-modules-hover: #059669;
 }
 
 /* Main Navbar Container */
@@ -115,31 +115,31 @@
   background: rgba(59, 130, 246, 0.1);
 }
 
-.navbar-item.dret .navbar-link {
-  color: var(--color-dret);
+.navbar-item.videos .navbar-link {
+  color: var(--color-videos);
 }
 
-.navbar-item.dret .navbar-link:hover {
-  color: var(--color-dret-hover);
-  background: rgba(139, 92, 246, 0.1);
+.navbar-item.videos .navbar-link:hover {
+  color: var(--color-videos-hover);
+  background: rgba(239, 68, 68, 0.1);
 }
 
-.navbar-item.fiscalitat .navbar-link {
-  color: var(--color-fiscalitat);
+.navbar-item.visuals .navbar-link {
+  color: var(--color-visuals);
 }
 
-.navbar-item.fiscalitat .navbar-link:hover {
-  color: var(--color-fiscalitat-hover);
-  background: rgba(59, 130, 246, 0.1);
+.navbar-item.visuals .navbar-link:hover {
+  color: var(--color-visuals-hover);
+  background: rgba(99, 102, 241, 0.1);
 }
 
-.navbar-item.altres .navbar-link {
-  color: var(--color-altres);
+.navbar-item.modules .navbar-link {
+  color: var(--color-modules);
 }
 
-.navbar-item.altres .navbar-link:hover {
-  color: var(--color-altres-hover);
-  background: rgba(107, 114, 128, 0.1);
+.navbar-item.modules .navbar-link:hover {
+  color: var(--color-modules-hover);
+  background: rgba(16, 185, 129, 0.1);
 }
 
 /* Dropdown Arrow */
@@ -200,36 +200,36 @@
 }
 
 /* Section-specific submenu link colors */
-.navbar-item.dret .navbar-submenu-link {
+.navbar-item.videos .navbar-submenu-link {
   border-left-color: transparent;
 }
 
-.navbar-item.dret .navbar-submenu-link:hover {
-  color: var(--color-dret);
-  background: rgba(139, 92, 246, 0.08);
-  border-left-color: var(--color-dret);
+.navbar-item.videos .navbar-submenu-link:hover {
+  color: var(--color-videos);
+  background: rgba(239, 68, 68, 0.08);
+  border-left-color: var(--color-videos);
   padding-left: 1.5rem;
 }
 
-.navbar-item.fiscalitat .navbar-submenu-link {
+.navbar-item.visuals .navbar-submenu-link {
   border-left-color: transparent;
 }
 
-.navbar-item.fiscalitat .navbar-submenu-link:hover {
-  color: var(--color-fiscalitat);
-  background: rgba(59, 130, 246, 0.08);
-  border-left-color: var(--color-fiscalitat);
+.navbar-item.visuals .navbar-submenu-link:hover {
+  color: var(--color-visuals);
+  background: rgba(99, 102, 241, 0.08);
+  border-left-color: var(--color-visuals);
   padding-left: 1.5rem;
 }
 
-.navbar-item.altres .navbar-submenu-link {
+.navbar-item.modules .navbar-submenu-link {
   border-left-color: transparent;
 }
 
-.navbar-item.altres .navbar-submenu-link:hover {
-  color: var(--color-altres);
-  background: rgba(107, 114, 128, 0.08);
-  border-left-color: var(--color-altres);
+.navbar-item.modules .navbar-submenu-link:hover {
+  color: var(--color-modules);
+  background: rgba(16, 185, 129, 0.08);
+  border-left-color: var(--color-modules);
   padding-left: 1.5rem;
 }
 
@@ -281,13 +281,13 @@
 }
 
 .breadcrumb-item a {
-  color: var(--color-fiscalitat);
+  color: var(--color-home);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .breadcrumb-item a:hover {
-  color: var(--color-fiscalitat-hover);
+  color: var(--color-home-hover);
   text-decoration: underline;
 }
 
@@ -338,16 +338,20 @@
     backdrop-filter: none;
   }
 
-  .navbar-item.dret .navbar-submenu {
-    border-left-color: var(--color-dret);
+  .navbar-item.videos .navbar-submenu {
+    border-left-color: var(--color-videos);
   }
 
-  .navbar-item.fiscalitat .navbar-submenu {
-    border-left-color: var(--color-fiscalitat);
+  .navbar-item.visuals .navbar-submenu {
+    border-left-color: var(--color-visuals);
   }
 
-  .navbar-item.altres .navbar-submenu {
-    border-left-color: var(--color-altres);
+  .navbar-item.modules .navbar-submenu {
+    border-left-color: var(--color-modules);
+  }
+
+  .navbar-submenu {
+    display: none;
   }
 
   .navbar-item.active .navbar-submenu {

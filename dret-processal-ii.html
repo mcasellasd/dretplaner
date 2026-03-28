@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Processal II"}]'>
+    <title>El Procés - Introducció al Dret Processal II</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .sidebar-link:hover {
+            background-color: #f3f4f6;
+            color: #1d4ed8;
+        }
+
+        .section-card {
+            transition: transform 0.2s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+    <div id="navbar-container"></div>
+    <div id="breadcrumb-container" class="max-w-7xl mx-auto px-6 pt-24"></div>
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-8 px-6 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-6">
+            <div>
+                <h1 class="text-3xl font-bold italic">El Procés (Dret Processal II)</h1>
+                <p class="text-blue-200 mt-2 font-light">Guia d'estudi completa basada en el mapa mental i la unitat didàctica</p>
+            </div>
+            <div class="hidden md:block text-right">
+                <span class="bg-blue-800 px-4 py-2 rounded-full text-sm font-semibold tracking-wide">PID_00302137</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 p-6">
+
+        <nav class="w-full md:hidden">
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-wrap gap-2 justify-center">
+                <a href="dret-processal.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors">Mòdul I</a>
+                <a href="dret-processal-moduls.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Distribuïdora</a>
+                <a href="dret-processal-ii.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-emerald-100 text-emerald-700">Mòdul II</a>
+                <a href="dret-processal-iii.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-sky-50 text-sky-700 hover:bg-sky-100 transition-colors">Mòdul III</a>
+            </div>
+        </nav>
+
+        <!-- Sidebar Navigation -->
+        <nav class="md:w-64 shrink-0">
+            <div class="space-y-2">
+                <div class="mb-5 p-3 bg-white border border-slate-200 rounded-xl shadow-sm hidden md:block">
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Navegació mòduls</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        <a href="dret-processal.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors">Mòdul I</a>
+                        <a href="dret-processal-moduls.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Distribuïdora</a>
+                        <a href="dret-processal-ii.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-emerald-100 text-emerald-700">Mòdul II</a>
+                        <a href="dret-processal-iii.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-sky-50 text-sky-700 hover:bg-sky-100 transition-colors">Mòdul III</a>
+                    </div>
+                </div>
+                <h3 class="text-xs font-bold uppercase text-slate-500 px-4 mb-4">Índex de Continguts</h3>
+                <a href="#elements" class="sidebar-link block px-4 py-2 rounded-lg text-sm font-medium transition-all">1. Elements Bàsics</a>
+                <a href="#tipus" class="sidebar-link block px-4 py-2 rounded-lg text-sm font-medium transition-all">2. Tipus de Processos</a>
+                <a href="#principis" class="sidebar-link block px-4 py-2 rounded-lg text-sm font-medium transition-all">3. Principis del Procés</a>
+                <a href="#drets" class="sidebar-link block px-4 py-2 rounded-lg text-sm font-medium transition-all">4. Drets i Garanties (CE)</a>
+                <a href="#actes" class="sidebar-link block px-4 py-2 rounded-lg text-sm font-medium transition-all">5. Actes Processals</a>
+                <a href="#alternatius" class="sidebar-link block px-4 py-2 rounded-lg text-sm font-medium transition-all">6. Mètodes Alternatius</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 space-y-12 pb-24">
+
+            <!-- 1. Elements Bàsics -->
+            <section id="elements" class="section-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-blue-100 p-3 rounded-lg text-blue-700">
+                        <i class="fa-solid fa-gavel text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">1. Elements Bàsics del Procés</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-blue-800 mb-3 border-b pb-2">Naturalesa i Funció</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                            El procés és l'instrument que permet posar en relació els drets dels justiciables amb la potestat jurisdiccional. S'han formulat diverses teories sobre la seva naturalesa:
+                        </p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex gap-2"><strong>Relació Jurídica:</strong> Condicionada per pressupòsits processals (Von Bülow).</li>
+                            <li class="flex gap-2"><strong>Situació Jurídica:</strong> Expectativa de sentència basada en càrregues (Goldschmidt).</li>
+                            <li class="flex gap-2"><strong>Institució Jurídica:</strong> Idea comuna que aglutina activitats (Guasp).</li>
+                            <li class="flex gap-2"><strong>Concepte Autònom:</strong> Successió d'actes per exercir la funció jurisdiccional.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-4">La Trilogia Conceptual</h3>
+                        <div class="space-y-4">
+                            <div class="p-3 bg-white rounded-lg shadow-sm border-l-4 border-blue-500">
+                                <span class="font-bold text-blue-700">Procés:</span> Realitat superior (Civil, Penal, etc.).
+                            </div>
+                            <div class="p-3 bg-white rounded-lg shadow-sm border-l-4 border-emerald-500">
+                                <span class="font-bold text-emerald-700">Procediment:</span> Realitat exterior (successió d'actes: demanda, vista, sentència).
+                            </div>
+                            <div class="p-3 bg-white rounded-lg shadow-sm border-l-4 border-amber-500">
+                                <span class="font-bold text-amber-700">Judici:</span> Operació intel·lectual i volitiva de jutjar (ius dicere).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Tipus de Processos -->
+            <section id="tipus" class="section-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-emerald-100 p-3 rounded-lg text-emerald-700">
+                        <i class="fa-solid fa-diagram-project text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">2. Tipus de Processos</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="border border-slate-100 p-5 rounded-xl bg-slate-50">
+                        <h4 class="font-bold text-emerald-800 mb-2">Processos Declaratius</h4>
+                        <p class="text-xs text-slate-500 mb-3">Apliquen el dret al cas concret.</p>
+                        <ul class="text-sm space-y-2 text-slate-700">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Merament declaratius</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Constitutius</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>De condemna</li>
+                        </ul>
+                    </div>
+                    <div class="border border-slate-100 p-5 rounded-xl bg-slate-50">
+                        <h4 class="font-bold text-amber-800 mb-2">Processos d'Execució</h4>
+                        <p class="text-xs text-slate-500 mb-3">Fan efectiu el jutjat (o títols extrajudicials).</p>
+                        <ul class="text-sm space-y-2 text-slate-700">
+                            <li><i class="fa-solid fa-bolt text-amber-500 mr-2"></i>Diners (Subhasta)</li>
+                            <li><i class="fa-solid fa-bolt text-amber-500 mr-2"></i>Fer / No fer / Lliurar</li>
+                            <li><i class="fa-solid fa-bolt text-amber-500 mr-2"></i>Multes coercitives</li>
+                        </ul>
+                    </div>
+                    <div class="border border-slate-100 p-5 rounded-xl bg-slate-50">
+                        <h4 class="font-bold text-blue-800 mb-2">Mesures Cautelars</h4>
+                        <p class="text-xs text-slate-500 mb-3">Asseguren l'efectivitat de la futura sentència.</p>
+                        <ul class="text-sm space-y-2 text-slate-700">
+                            <li><i class="fa-solid fa-shield text-blue-500 mr-2"></i>Embargament preventiu</li>
+                            <li><i class="fa-solid fa-shield text-blue-500 mr-2"></i>Anotacions registrals</li>
+                            <li><i class="fa-solid fa-shield text-blue-500 mr-2"></i>Periculum in mora</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900 text-white p-6 rounded-xl">
+                    <h3 class="font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Ordres Jurisdiccionals</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="bg-emerald-800 p-3 rounded-lg border border-emerald-700">
+                            <span class="block font-bold">Civil</span>
+                            <span class="text-xs opacity-75">Llei 1/2000 (LEC)</span>
+                        </div>
+                        <div class="bg-emerald-800 p-3 rounded-lg border border-emerald-700">
+                            <span class="block font-bold">Penal</span>
+                            <span class="text-xs opacity-75">LECrim (1882)</span>
+                        </div>
+                        <div class="bg-emerald-800 p-3 rounded-lg border border-emerald-700">
+                            <span class="block font-bold">Contenciós</span>
+                            <span class="text-xs opacity-75">Llei 29/1998</span>
+                        </div>
+                        <div class="bg-emerald-800 p-3 rounded-lg border border-emerald-700">
+                            <span class="block font-bold">Laboral</span>
+                            <span class="text-xs opacity-75">Llei 36/2011</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Principis del Procés -->
+            <section id="principis" class="section-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-blue-100 p-3 rounded-lg text-blue-700">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">3. Principis del Procés</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="border-l-4 border-blue-600 pl-6 py-2">
+                        <h3 class="font-bold text-blue-900 mb-2">Principis Comuns (Estat de Dret)</h3>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm">
+                            <div class="p-4 bg-slate-50 rounded-lg">
+                                <span class="font-bold block mb-1">Dualitat de Posicions</span>
+                                Dues parts amb interessos oposats (Actor/Demandat o Acusador/Acusat).
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-lg">
+                                <span class="font-bold block mb-1">Contradicció/Audiència</span>
+                                Ningú pot ser condemnat sense ser sentit i vençut en judici.
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-lg">
+                                <span class="font-bold block mb-1">Igualtat de Parts</span>
+                                Tenir les mateixes oportunitats d'actuació (Armes processals).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-amber-600 pl-6 py-2">
+                        <h3 class="font-bold text-amber-900 mb-2">Principis Específics (Segons matèria)</h3>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div class="p-4 bg-amber-50 rounded-lg">
+                                <span class="font-bold block mb-1 text-amber-800">Legalitat vs Oportunitat</span>
+                                <p class="text-xs">Penal: Necessitat de perseguir tota notitia criminis (Legalitat). Civil: Lliure disposició dels drets (Oportunitat).</p>
+                            </div>
+                            <div class="p-4 bg-amber-50 rounded-lg">
+                                <span class="font-bold block mb-1 text-amber-800">Dispositiu vs Oficialitat</span>
+                                <p class="text-xs">Civil: Les parts dominen l'objecte del procés. Penal: Preval l'interès públic indisponible.</p>
+                            </div>
+                            <div class="p-4 bg-amber-50 rounded-lg">
+                                <span class="font-bold block mb-1 text-amber-800">Aportació vs Investigació</span>
+                                <p class="text-xs">Civil: Les parts aporten fets i proves. Penal (Instrucció): El jutge investiga d'ofici.</p>
+                            </div>
+                            <div class="p-4 bg-amber-50 rounded-lg">
+                                <span class="font-bold block mb-1 text-amber-800">Valoració de Prova</span>
+                                <p class="text-xs">Lliure (Sana crítica) vs Legal (Taxada per la norma).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-slate-600 pl-6 py-2">
+                        <h3 class="font-bold text-slate-900 mb-2">Principis del Procediment (La Forma)</h3>
+                        <div class="flex flex-wrap gap-4 text-xs font-bold uppercase tracking-wider">
+                            <span class="bg-slate-200 px-3 py-1 rounded text-slate-700">Oralitat i Escriptura</span>
+                            <span class="bg-slate-200 px-3 py-1 rounded text-slate-700">Immediatesa i Mediació</span>
+                            <span class="bg-slate-200 px-3 py-1 rounded text-slate-700">Concentració</span>
+                            <span class="bg-slate-200 px-3 py-1 rounded text-slate-700">Publicitat i Secret</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Drets i Garanties -->
+            <section id="drets" class="section-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-red-100 p-3 rounded-lg text-red-700">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">4. Drets i Garanties Constitucionals (Art. 24 CE)</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="p-4 border border-red-100 rounded-xl bg-red-50/50">
+                            <h4 class="font-bold text-red-900 mb-1">Prohibició d'Indefensió</h4>
+                            <p class="text-xs text-slate-600">Formulació negativa del dret de defensa. El TC exigeix una indefensió material amb incidència en la decisió.</p>
+                        </div>
+                        <div class="p-4 border border-red-100 rounded-xl bg-red-50/50">
+                            <h4 class="font-bold text-red-900 mb-1">Dret a ser Informat de l'Acusació</h4>
+                            <p class="text-xs text-slate-600">Coneixement previ, explícit i efectiu dels fets que s'imputen per poder articular la defensa.</p>
+                        </div>
+                        <div class="p-4 border border-red-100 rounded-xl bg-red-50/50">
+                            <h4 class="font-bold text-red-900 mb-1">Presumpció d'Innocència</h4>
+                            <p class="text-xs text-slate-600">Càrrega de la prova per a l'acusació. Exigeix una mínima activitat probatòria de càrrec legítima.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 border border-red-100 rounded-xl bg-red-50/50">
+                            <h4 class="font-bold text-red-900 mb-1">Dret a no declarar contra un mateix</h4>
+                            <p class="text-xs text-slate-600">Inclou el dret a guardar silenci i a no confessar-se culpable.</p>
+                        </div>
+                        <div class="p-4 border border-red-100 rounded-xl bg-red-50/50">
+                            <h4 class="font-bold text-red-900 mb-1">Jutge Ordinari Predeterminat</h4>
+                            <p class="text-xs text-slate-600">L'òrgan ha de ser creat i les competències fixades per llei abans de l'inici del procés.</p>
+                        </div>
+                        <div class="p-4 border border-red-100 rounded-xl bg-red-50/50">
+                            <h4 class="font-bold text-red-900 mb-1">Proporcionalitat</h4>
+                            <p class="text-xs text-slate-600">Equilibri en les mesures limitadores de drets (Idoneïtat, Necessitat i Proporcionalitat stricto sensu).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Actes Processals -->
+            <section id="actes" class="section-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-indigo-100 p-3 rounded-lg text-indigo-700">
+                        <i class="fa-solid fa-file-invoice text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">5. Actes Processals</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-indigo-900 text-white p-6 rounded-xl">
+                        <h3 class="font-bold mb-4 border-b border-indigo-700 pb-2">Digitalització (RDL 6/2023)</h3>
+                        <ul class="text-sm space-y-3">
+                            <li class="flex items-start gap-2 italic">
+                                <i class="fa-solid fa-microchip mt-1"></i>
+                                La tramitació electrònica és la regla general.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-folder-open mt-1"></i>
+                                Expedient Judicial Electrònic (EJE) i Carpeta Justícia.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-video mt-1"></i>
+                                Judicis telemàtics i videoconferència com a preferència.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-indigo-900 mb-4">Requisits Temporals</h3>
+                        <table class="w-full text-xs text-left border-collapse">
+                            <thead>
+                                <tr class="bg-indigo-50">
+                                    <th class="p-2 border border-slate-200">Concepte</th>
+                                    <th class="p-2 border border-slate-200">Norma General</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-2 border border-slate-200 font-semibold">Dies Hàbils</td>
+                                    <td class="p-2 border border-slate-200">Tots excepte dissabtes, diumenges, festius i agost (excepte urgències).</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-slate-200 font-semibold">Hores Hàbils</td>
+                                    <td class="p-2 border border-slate-200">De 08:00 a 20:00 h (fins a les 22:00 h per a actes de comunicació).</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-slate-200 font-semibold">Còmput</td>
+                                    <td class="p-2 border border-slate-200">Comencen l'endemà de la notificació. L'últim dia expira a les 24h.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-indigo-900 mb-4 uppercase text-xs tracking-widest">Resolucions Judicials</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between"><strong>Provisions:</strong> Ordenació material.</div>
+                            <div class="flex justify-between"><strong>Interlocutòries:</strong> Qüestions incidentals/recursos (Motivades).</div>
+                            <div class="flex justify-between"><strong>Sentències:</strong> Decideixen el plet definitivament.</div>
+                            <div class="flex justify-between text-indigo-700"><strong>Decrets:</strong> LAJ (Admissió demanda, final procés).</div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-indigo-900 mb-4 uppercase text-xs tracking-widest">Actes de Comunicació</h3>
+                        <div class="space-y-2 text-sm">
+                            <p><span class="font-bold">Notificació:</span> Donar notícia d'una resolució.</p>
+                            <p><span class="font-bold">Emplaçament:</span> Per personar-se en un termini.</p>
+                            <p><span class="font-bold">Citació:</span> Lloc, data i hora per comparèixer.</p>
+                            <p><span class="font-bold">Requeriment:</span> Ordenar una conducta o inactivitat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-amber-50 p-6 rounded-xl border border-amber-200">
+                    <h4 class="font-bold text-amber-900 mb-2 flex items-center gap-2"><i class="fa-solid fa-hand-holding-dollar"></i> Assistència Jurídica Gratuïta (Art. 119 CE)</h4>
+                    <p class="text-sm text-amber-800 mb-3">Garanteix l'accés a la justícia a qui acredita insuficiència de recursos (Llei 1/1996).</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-medium">
+                        <div class="p-2 bg-white rounded border border-amber-100">Assessorament previ</div>
+                        <div class="p-2 bg-white rounded border border-amber-100">Advocat i Procurador d'ofici</div>
+                        <div class="p-2 bg-white rounded border border-amber-100">Inserció gratuïta d'edictes</div>
+                        <div class="p-2 bg-white rounded border border-amber-100">Exempció de dipòsits</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Mètodes Alternatius -->
+            <section id="alternatius" class="section-card bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-emerald-100 p-3 rounded-lg text-emerald-700">
+                        <i class="fa-solid fa-comments text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">6. Mètodes Alternatius (ADR/MASC)</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-5 border border-slate-100 rounded-xl hover:bg-slate-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2">Arbitratge</h4>
+                        <p class="text-sm text-slate-600">Un tercer neutral (àrbitre) dicta una decisió vinculant anomenada <strong>laude</strong>, amb força de cosa jutjada.</p>
+                    </div>
+                    <div class="p-5 border border-slate-100 rounded-xl hover:bg-slate-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2">Mediació</h4>
+                        <p class="text-sm text-slate-600">El mediador ajuda les parts a assolir <strong>voluntàriament</strong> el seu propi acord. No té poder de decisió.</p>
+                    </div>
+                    <div class="p-5 border border-slate-100 rounded-xl hover:bg-slate-50 transition-all">
+                        <h4 class="font-bold text-slate-900 mb-2">Conciliació</h4>
+                        <p class="text-sm text-slate-600">Acord davant un tercer (com el LAJ o Jutge de Pau) per evitar el plet o posar-hi fi un cop iniciat.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-col md:flex-row gap-6">
+                    <div class="flex-1 bg-green-50 p-4 rounded-lg">
+                        <h5 class="text-xs font-bold text-green-700 uppercase mb-2">Avantatges</h5>
+                        <ul class="text-sm text-green-900 space-y-1">
+                            <li><i class="fa-solid fa-plus-circle mr-2"></i>Celeritat i flexibilitat</li>
+                            <li><i class="fa-solid fa-plus-circle mr-2"></i>Menor cost econòmic</li>
+                            <li><i class="fa-solid fa-plus-circle mr-2"></i>Pacificació del conflicte</li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 bg-red-50 p-4 rounded-lg">
+                        <h5 class="text-xs font-bold text-red-700 uppercase mb-2">Crítiques / Límits</h5>
+                        <ul class="text-sm text-red-900 space-y-1">
+                            <li><i class="fa-solid fa-minus-circle mr-2"></i>Manca de poders coercitius</li>
+                            <li><i class="fa-solid fa-minus-circle mr-2"></i>Renúncia a garanties judicials</li>
+                            <li><i class="fa-solid fa-minus-circle mr-2"></i>Manca de publicitat (secret)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-6 pb-6">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+            <span class="text-sm text-slate-600 font-medium">Navegació entre mòduls de Dret Processal</span>
+            <div class="flex flex-wrap gap-2">
+                <a href="dret-processal.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-blue-200 text-blue-700 bg-blue-50 hover:bg-blue-100 text-sm font-semibold transition-colors">← Mòdul I</a>
+                <a href="dret-processal-moduls.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 bg-slate-100 hover:bg-slate-200 text-sm font-semibold transition-colors">Distribuïdora</a>
+                <a href="dret-processal-iii.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-sky-200 text-sky-700 bg-sky-50 hover:bg-sky-100 text-sm font-semibold transition-colors">Mòdul III →</a>
+                <a href="#elements" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-emerald-200 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 text-sm font-semibold transition-colors">Inici Mòdul II</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <p class="text-sm">Desenvolupat a partir dels materials de Teresa Armenta Deu i Silvia Pereira Puigvert.</p>
+                <p class="text-xs mt-2">© 2026 - Recurs d'aprenentatge sobre Dret Processal.</p>
+            </div>
+            <div class="text-right space-x-4">
+                <a href="#elements" class="hover:text-white transition-colors">Inici</a>
+                <a href="dret-processal.html" class="hover:text-white transition-colors">Mòdul I</a>
+                <a href="dret-processal-iii.html" class="hover:text-white transition-colors">Mòdul III</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navbar-helper.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Processal III"}]'>
+    <title>Pressupòsits i Objecte del Procés Civil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .sidebar-link:hover {
+            background-color: #f0f9ff;
+            color: #0369a1;
+        }
+
+        .section-card {
+            transition: all 0.3s ease;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+    <div id="navbar-container"></div>
+    <div id="breadcrumb-container" class="max-w-7xl mx-auto px-6 pt-24"></div>
+
+    <!-- Header -->
+    <header class="bg-sky-900 text-white py-10 px-8 shadow-xl">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-6">
+            <div>
+                <h1 class="text-3xl font-extrabold tracking-tight">Pressupòsits i Objecte del Procés Civil</h1>
+                <p class="text-sky-200 mt-2 font-light italic">Estudi detallat dels requisits de validesa del procés civil declaratiu</p>
+            </div>
+            <div class="hidden lg:block text-right">
+                <span class="bg-sky-800 border border-sky-700 px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase">Mòdul UOC PID_00302139</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 p-8">
+
+        <nav class="w-full lg:hidden">
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-wrap gap-2 justify-center">
+                <a href="dret-processal.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors">Mòdul I</a>
+                <a href="dret-processal-ii.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors">Mòdul II</a>
+                <a href="dret-processal-moduls.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Distribuïdora</a>
+                <a href="dret-processal-iii.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-sky-100 text-sky-700">Mòdul III</a>
+            </div>
+        </nav>
+
+        <!-- Sidebar Navigation -->
+        <nav class="lg:w-72 shrink-0">
+            <div class="space-y-1">
+                <div class="mb-5 p-3 bg-white border border-slate-200 rounded-xl shadow-sm hidden lg:block">
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Navegació mòduls</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        <a href="dret-processal.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors">Mòdul I</a>
+                        <a href="dret-processal-ii.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors">Mòdul II</a>
+                        <a href="dret-processal-moduls.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Distribuïdora</a>
+                        <a href="dret-processal-iii.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-sky-100 text-sky-700">Mòdul III</a>
+                    </div>
+                </div>
+                <h3 class="text-xs font-black uppercase text-slate-400 px-4 mb-4 tracking-tighter">Guia de Navegació</h3>
+                <a href="#intro" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all border border-transparent hover:border-sky-100">
+                    <i class="fa-solid fa-info-circle w-5"></i> Introducció
+                </a>
+                <a href="#organ" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all border border-transparent hover:border-sky-100">
+                    <i class="fa-solid fa-building-columns w-5"></i> Pressupòsits de l'Òrgan
+                </a>
+                <a href="#parts" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all border border-transparent hover:border-sky-100">
+                    <i class="fa-solid fa-users-gear w-5"></i> Pressupòsits de les Parts
+                </a>
+                <a href="#postulacio" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all border border-transparent hover:border-sky-100">
+                    <i class="fa-solid fa-user-tie w-5"></i> Postulació Processal
+                </a>
+                <a href="#objecte" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all border border-transparent hover:border-sky-100">
+                    <i class="fa-solid fa-bullseye w-5"></i> L'Objecte del Procés
+                </a>
+                <a href="#acumulacio" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all border border-transparent hover:border-sky-100">
+                    <i class="fa-solid fa-layer-group w-5"></i> Acumulació
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 space-y-16 pb-32">
+
+            <!-- 1. Introducció -->
+            <section id="intro" class="section-card bg-white p-10 rounded-3xl shadow-md border border-slate-200">
+                <div class="flex items-center gap-4 mb-8 border-b border-slate-100 pb-6">
+                    <div class="bg-sky-100 p-4 rounded-2xl text-sky-700">
+                        <i class="fa-solid fa-key text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-slate-900">Concepte de Pressupòsits Processals</h2>
+                        <p class="text-slate-500 text-sm">Els requisits previs per a una sentència sobre el fons</p>
+                    </div>
+                </div>
+                <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed">
+                    <p class="mb-4">
+                        Els <strong>pressupòsits processals</strong> són aquells requisits que han de concórrer perquè el procés sigui vàlid i el jutge pugui dictar una sentència que resolgui la qüestió de fons (estimatòria o desestimatòria).
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6 mt-8">
+                        <div class="bg-sky-50 p-6 rounded-2xl border-l-4 border-sky-500">
+                            <h4 class="font-bold text-sky-900 mb-2 italic">Substantius</h4>
+                            <p class="text-xs">Condicionen l'estimació de la pretensió (ex. existència del dret, prova dels fets).</p>
+                        </div>
+                        <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-500">
+                            <h4 class="font-bold text-indigo-900 mb-2 italic">Processals</h4>
+                            <p class="text-xs">Condicionen l'admissibilitat del procés (ex. competència del jutge, capacitat de les parts).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Pressupòsits de l'Òrgan -->
+            <section id="organ" class="section-card bg-white p-10 rounded-3xl shadow-md border border-slate-200">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="bg-amber-100 p-4 rounded-2xl text-amber-700">
+                        <i class="fa-solid fa-landmark text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-black text-slate-900">L'Òrgan Jurisdiccional</h2>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="p-6 bg-slate-50 rounded-2xl">
+                        <h3 class="font-bold text-amber-900 mb-4 flex items-center gap-2 underline decoration-amber-300 decoration-2 underline-offset-4">
+                            Jurisdicció i Competència
+                        </h3>
+                        <div class="grid gap-4">
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                                <span class="font-bold text-amber-700">Jurisdicció:</span> L'àmbit genèric de l'ordre civil (Llei Orgànica del Poder Judicial). S'analitza si l'assumpte correspon als tribunals espanyols i a l'ordre civil.
+                            </div>
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                                <span class="font-bold text-amber-700">Competència Objectiva:</span> Determina quin tipus de tribunal (ex. Jutjat de Primera Instància, Mercantil) coneix de l'assumpte en 1a instància per raó de la <strong>matèria</strong> o la <strong>quantia</strong>.
+                            </div>
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                                <span class="font-bold text-amber-700">Competència Territorial:</span> Determina el lloc. Regeixen els <strong>furs</strong> (legals o convencionals). La submissió expressa o tàcita és clau en determinats supòsits.
+                            </div>
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                                <span class="font-bold text-amber-700">Competència Funcional:</span> Reparteix el coneixement de les diverses fases del procés (recursos, execució, incidents).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Pressupòsits de les Parts -->
+            <section id="parts" class="section-card bg-white p-10 rounded-3xl shadow-md border border-slate-200">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="bg-emerald-100 p-4 rounded-2xl text-emerald-700">
+                        <i class="fa-solid fa-users text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-black text-slate-900">Capacitat i Legitimació</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="p-6 border border-emerald-100 rounded-2xl bg-emerald-50/30">
+                            <h4 class="font-bold text-emerald-900 mb-2">Capacitat per ser part</h4>
+                            <p class="text-sm text-slate-600">Aptitud per ser titular de drets i càrregues en un procés. Equival a la capacitat jurídica civil (persones físiques, jurídiques i determinades entitats sense personalitat).</p>
+                        </div>
+                        <div class="p-6 border border-emerald-100 rounded-2xl bg-emerald-50/30">
+                            <h4 class="font-bold text-emerald-900 mb-2">Capacitat Processal</h4>
+                            <p class="text-sm text-slate-600">Aptitud per comparèixer en judici i realitzar vàlidament actes processals. Requereix el ple exercici dels drets civils. Si manca, cal <strong>representació o assistència</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900 text-white rounded-2xl shadow-inner">
+                        <h4 class="font-bold text-emerald-400 mb-3 italic">La Legitimació</h4>
+                        <p class="text-xs leading-loose opacity-90">
+                            A diferència de les capacitats (que són genèriques), la legitimació és la relació específica d'un subjecte amb l'objecte del procés.
+                        </p>
+                        <ul class="mt-4 space-y-3 text-xs">
+                            <li class="flex gap-2 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> <strong>Ordinària:</strong> Titularitat del dret o obligació.</li>
+                            <li class="flex gap-2 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> <strong>Extraordinària:</strong> Substitució processal (actuar en nom propi per un dret aliè, ex. acció subrogatòria).</li>
+                            <li class="flex gap-2 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> <strong>Interessos col·lectius:</strong> Protecció de consumidors i usuaris.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Postulació -->
+            <section id="postulacio" class="section-card bg-white p-10 rounded-3xl shadow-md border border-slate-200">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="bg-indigo-100 p-4 rounded-2xl text-indigo-700">
+                        <i class="fa-solid fa-user-shield text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-black text-slate-900">Postulació: Advocat i Procurador</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-6 rounded-2xl border-2 border-dashed border-slate-200">
+                        <h4 class="font-bold text-indigo-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-pen-nib"></i> L'Advocat (Defensa)</h4>
+                        <p class="text-sm text-slate-600 italic">Direcció tècnica del procés.</p>
+                        <p class="text-xs mt-2">És obligatori excepte en judicis verbals de quantia inferior a 2.000 euros i determinats actes urgents.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border-2 border-dashed border-slate-200">
+                        <h4 class="font-bold text-indigo-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-gavel"></i> El Procurador (Representació)</h4>
+                        <p class="text-sm text-slate-600 italic">Representació processal de la part davant del jutjat.</p>
+                        <p class="text-xs mt-2">Actua mitjançant poder (notarial o apud acta). Obligatorietat similar a la de l'advocat.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. L'Objecte del Procés -->
+            <section id="objecte" class="section-card bg-white p-10 rounded-3xl shadow-md border border-slate-200">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="bg-rose-100 p-4 rounded-2xl text-rose-700">
+                        <i class="fa-solid fa-crosshairs text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-black text-slate-900">L'Objecte del Procés: La Pretensió</h2>
+                </div>
+
+                <div class="prose prose-rose max-w-none text-slate-600">
+                    <p class="text-sm mb-6">L'objecte del procés és la <strong>pretensió</strong>: la petició fundada que el demandant dirigeix al jutge enfront del demandat.</p>
+
+                    <div class="grid lg:grid-cols-3 gap-6">
+                        <div class="bg-rose-50 p-6 rounded-2xl">
+                            <span class="font-black text-rose-900 block mb-2 uppercase text-xs tracking-widest">Subjectes</span>
+                            <p class="text-xs">Demandant (qui demana) i demandat (enfront de qui es demana).</p>
+                        </div>
+                        <div class="bg-rose-50 p-6 rounded-2xl">
+                            <span class="font-black text-rose-900 block mb-2 uppercase text-xs tracking-widest">Petitum (Petició)</span>
+                            <p class="text-xs">L'objecte immediat (la classe de tutela: condemna, declaració) i el mediat (el bé jurídic).</p>
+                        </div>
+                        <div class="bg-rose-50 p-6 rounded-2xl">
+                            <span class="font-black text-rose-900 block mb-2 uppercase text-xs tracking-widest">Causa Petendi</span>
+                            <p class="text-xs">El fonament: fets rellevants (causa de demanar fàctica) i títol jurídic (funció individualitzadora).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-6 bg-slate-900 text-slate-300 rounded-2xl">
+                    <h4 class="text-white font-bold mb-3 italic">L'Art. 400 LEC: La preclusió de l'al·legació de fets</h4>
+                    <p class="text-xs leading-relaxed">
+                        Si es demana basant-se en uns fets, s'han d'al·legar tots els títols o fonaments disponibles. No es pot iniciar un nou procés posterior basat en fets que s'haurien pogut al·legar en el primer.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 6. Acumulació -->
+            <section id="acumulacio" class="section-card bg-white p-10 rounded-3xl shadow-md border border-slate-200">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="bg-purple-100 p-4 rounded-2xl text-purple-700">
+                        <i class="fa-solid fa-boxes-stacked text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-black text-slate-900">Acumulació d'Accions i Processos</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-purple-900 border-b-2 border-purple-200 pb-2">Acumulació d'Accions</h3>
+                        <p class="text-xs text-slate-500">Unir diverses pretensions en un sol procés per economia processal i evitar sentències contradictòries.</p>
+                        <div class="space-y-2">
+                            <div class="p-3 bg-purple-50 rounded-lg text-xs"><strong>Objectiva:</strong> Un demandant contra un demandat (ex. demanar deute i danys).</div>
+                            <div class="p-3 bg-purple-50 rounded-lg text-xs"><strong>Subjectiva:</strong> Pluralitat de subjectes (litisconsorci facultatiu) amb nexe causal.</div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-purple-900 border-b-2 border-purple-200 pb-2">Acumulació de Processos</h3>
+                        <p class="text-xs text-slate-500">Reunir processos ja iniciats (pendents) perquè es decideixin en una sola sentència.</p>
+                        <p class="text-xs leading-relaxed italic">Requereix que la sentència d'un pugui produir efectes de cosa jutjada en l'altre o que hi hagi una connexió íntima que faci aconsellable la tramitació conjunta.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-8 pb-8">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+            <span class="text-sm text-slate-600 font-medium">Navegació entre mòduls de Dret Processal</span>
+            <div class="flex flex-wrap gap-2">
+                <a href="dret-processal-ii.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-emerald-200 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 text-sm font-semibold transition-colors">← Mòdul II</a>
+                <a href="dret-processal-moduls.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 bg-slate-100 hover:bg-slate-200 text-sm font-semibold transition-colors">Distribuïdora</a>
+                <a href="#intro" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-sky-200 text-sky-700 bg-sky-50 hover:bg-sky-100 text-sm font-semibold transition-colors">Inici Mòdul III</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-500 py-16 px-8 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <p class="text-slate-300 font-bold">Pressupòsits i Objecte del Procés Civil Declaratiu</p>
+                <p class="text-xs mt-1">Basat en PID_00302139 (Teresa Armenta Deu / Susanna Oromí Vall-llovera)</p>
+            </div>
+            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest">
+                <a href="#intro" class="hover:text-white transition-colors">Tornar a l'inici</a>
+                <span class="text-slate-700">|</span>
+                <span class="text-slate-600 italic">Dret Processal UOC</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navbar-helper.js"></script>
+</body>
+
+</html>

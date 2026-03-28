@@ -251,6 +251,7 @@
             </div>
             <div class="pdf-viewer-container">
                 <canvas id="pdf-canvas"></canvas>
+                <img id="pdf-image" alt="Visual ampliat" class="hidden max-w-full h-auto rounded-lg shadow-xl">
             </div>
             <div class="pdf-controls">
                 <button onclick="previousPage()" id="prevBtn">← Anterior</button>
@@ -407,6 +408,120 @@
                             <div class="mt-4 flex gap-2 text-[10px]">
                                 <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Art 31 bis</span>
                                 <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 5: RPPJ (Nou esquema) -->
+                <a onclick="openPdf('data/penal 2/rppj.png', 'RPPJ - Esquema General')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/penal 2/rppj.png"
+                            alt="RPPJ - Esquema General"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">RPPJ - Esquema General</h4>
+                            <p class="text-xs text-slate-400 flex-1">Visio sintetic de la responsabilitat penal de la persona juridica i els seus elements de connexio.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">RPPJ</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Esquema</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 6: Estructura imputació penal -->
+                <a onclick="openPdf('data/penal 2/estrc impu pen.png', 'Estructura d\'Imputacio Penal')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/penal 2/estrc impu pen.png"
+                            alt="Estructura d'Imputacio Penal"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Estructura d'Imputacio Penal</h4>
+                            <p class="text-xs text-slate-400 flex-1">Mapa de les fases i punts de decisio en la imputacio dels delictes economics.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Imputacio</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Penal</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 7: Blanqueig -->
+                <a onclick="openPdf('data/penal 2/blanqueix.png', 'Blanqueig de Capitals')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/penal 2/blanqueix.png"
+                            alt="Blanqueig de capitals"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Blanqueig de Capitals</h4>
+                            <p class="text-xs text-slate-400 flex-1">Infografia sobre fases de blanqueig, indicadors de risc i connexio amb el delicte previ.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Tema 14</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Infografia</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 8: Assetjament sexual a l'empresa -->
+                <a onclick="openPdf('data/penal 2/empresa asset sex.png', 'Assetjament Sexual en l\'Empresa')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="data/penal 2/empresa asset sex.png"
+                            alt="Assetjament sexual en l'empresa"
+                            class="w-full h-48 object-cover group-hover:scale-[1.05] transition-transform duration-300">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Assetjament Sexual en l'Empresa</h4>
+                            <p class="text-xs text-slate-400 flex-1">Esquema de riscos, elements tipics i responsabilitats en l'ambit corporatiu.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Art. 184</span>
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Empresa</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 9: Economic Law Sedimentation (PDF) -->
+                <a onclick="openPdf('data/penal 2/Economic_Law_Sedimentationlr.pdf', 'Economic Law Sedimentation')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-red-900/20">
+                        <div class="w-full h-48 bg-red-950/50 flex items-center justify-center group-hover:bg-red-900/60 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-red-300">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <line x1="10" y1="9" x2="8" y2="9"/>
+                            </svg>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-red-300 transition-colors">Economic Law Sedimentation</h4>
+                            <p class="text-xs text-slate-400 flex-1">PDF visual sobre capes evolutives del dret penal economic i la seva construccio historica.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">Penal Economic</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Visual 10: Tax Risk Blueprint (PDF) -->
+                <a onclick="openPdf('data/penal 2/Tax_Risk_Blueprint.pdf', 'Tax Risk Blueprint')" href="#" class="group">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col bg-amber-900/20">
+                        <div class="w-full h-48 bg-amber-950/50 flex items-center justify-center group-hover:bg-amber-900/60 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-300">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <line x1="10" y1="9" x2="8" y2="9"/>
+                            </svg>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h4 class="font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">Tax Risk Blueprint</h4>
+                            <p class="text-xs text-slate-400 flex-1">PDF de planificacio de risc fiscal: focus en prevencio, controls i responsabilitat corporativa.</p>
+                            <div class="mt-4 flex gap-2 text-[10px]">
+                                <span class="bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Tema 15</span>
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded">PDF</span>
                             </div>
                         </div>
                     </div>
@@ -1108,16 +1223,78 @@
         let currentPdfUrl = null;
         let currentPdfDoc = null;
         let currentPage = 1;
+        let currentAssetType = 'pdf';
+
+        function isPdfAsset(url) {
+            return /\.pdf(?:$|[?#])/i.test(url);
+        }
+
+        function updatePageInfo(pageNum, totalPages, isImage = false) {
+            const pageNumEl = document.getElementById('pageNum');
+            const pageCountEl = document.getElementById('pageCount');
+            const pageInfoEl = document.querySelector('.pdf-page-info');
+
+            if (!pageNumEl || !pageCountEl || !pageInfoEl) return;
+
+            if (isImage) {
+                pageInfoEl.textContent = 'Imatge';
+                return;
+            }
+
+            pageInfoEl.innerHTML = `Pàgina <span id="pageNum">${pageNum}</span> de <span id="pageCount">${totalPages}</span>`;
+        }
+
+        function setViewerMode(type) {
+            const canvas = document.getElementById('pdf-canvas');
+            const image = document.getElementById('pdf-image');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            currentAssetType = type;
+
+            if (type === 'image') {
+                canvas.classList.add('hidden');
+                image.classList.remove('hidden');
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+                updatePageInfo(1, 1, true);
+                return;
+            }
+
+            image.classList.add('hidden');
+            image.removeAttribute('src');
+            canvas.classList.remove('hidden');
+            prevBtn.style.display = '';
+            nextBtn.style.display = '';
+            updatePageInfo(currentPage, currentPdfDoc ? currentPdfDoc.numPages : 0);
+        }
 
         function openPdf(url, title) {
             const modal = document.getElementById('pdfModal');
             const header = modal.querySelector('.pdf-modal-header h3');
+            const image = document.getElementById('pdf-image');
             header.textContent = title || 'PDF Viewer';
             currentPdfUrl = url;
             currentPage = 1;
+            currentPdfDoc = null;
             modal.style.display = 'flex';
-            
-            // Load PDF document
+
+            if (!isPdfAsset(currentPdfUrl)) {
+                setViewerMode('image');
+                image.onload = () => {
+                    image.onload = null;
+                };
+                image.onerror = () => {
+                    image.onerror = null;
+                    console.error('Error loading image:', currentPdfUrl);
+                    alert('No es pot carregar la imatge. Intenta de nou més tard.');
+                    closePdfModal();
+                };
+                image.src = currentPdfUrl;
+                return;
+            }
+
+            setViewerMode('pdf');
             pdfjsLib.getDocument(currentPdfUrl).promise.then(pdf => {
                 currentPdfDoc = pdf;
                 renderPage(currentPage);
@@ -1125,14 +1302,21 @@
             }).catch(error => {
                 console.error('Error loading PDF:', error);
                 alert('No es pot carregar el PDF. Intenta de nou més tard.');
+                closePdfModal();
             });
         }
 
         function closePdfModal() {
             const modal = document.getElementById('pdfModal');
+            const image = document.getElementById('pdf-image');
             modal.style.display = 'none';
             currentPdfDoc = null;
             currentPage = 1;
+            currentAssetType = 'pdf';
+            image.classList.add('hidden');
+            image.removeAttribute('src');
+            document.getElementById('pdf-canvas').classList.remove('hidden');
+            updatePageInfo(1, 0);
         }
 
         function renderPage(pageNum) {
@@ -1155,7 +1339,7 @@
                 };
                 
                 page.render(renderContext).promise.then(() => {
-                    document.getElementById('pdf-page-info').textContent = `Pàgina ${pageNum} de ${currentPdfDoc.numPages}`;
+                    updatePageInfo(pageNum, currentPdfDoc.numPages);
                 });
             });
         }
@@ -1177,8 +1361,14 @@
         }
 
         function updateNavigation() {
-            const prevBtn = document.querySelector('.pdf-controls button:nth-child(1)');
-            const nextBtn = document.querySelector('.pdf-controls button:nth-child(2)');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (currentAssetType !== 'pdf') {
+                if (prevBtn) prevBtn.disabled = true;
+                if (nextBtn) nextBtn.disabled = true;
+                return;
+            }
             
             if (prevBtn) prevBtn.disabled = currentPage <= 1;
             if (nextBtn) nextBtn.disabled = currentPdfDoc && currentPage >= currentPdfDoc.numPages;
@@ -1199,7 +1389,7 @@
         });
 
         document.addEventListener('keydown', (e) => {
-            if (currentPdfDoc && document.getElementById('pdfModal').style.display === 'flex') {
+            if (document.getElementById('pdfModal').style.display === 'flex') {
                 if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') previousPage();
                 if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextPage();
                 if (e.key === 'Escape') closePdfModal();
@@ -1211,6 +1401,10 @@
         if (closeBtn) closeBtn.addEventListener('click', closePdfModal);
 
         // Auto-style PDF cards
+        document.querySelectorAll('a[onclick*="openPdf("]').forEach(link => {
+            link.addEventListener('click', (event) => event.preventDefault());
+        });
+
         document.querySelectorAll('a[onclick]').forEach(link => {
             const attr = link.getAttribute('onclick') || '';
             if (!/openPdf\(['"'][^'"]+\.pdf/i.test(attr)) return;

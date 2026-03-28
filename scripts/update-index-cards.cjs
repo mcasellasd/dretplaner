@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 
-const file = 'index.html';
+const file = path.resolve(__dirname, '../index.html');
 let content = fs.readFileSync(file, 'utf8');
 
 const mapping = {

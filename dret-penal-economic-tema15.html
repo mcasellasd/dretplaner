@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Penal Economic","url":"dret-penal-economic.html"},{"label":"Tema 15"}]'>
+    <title>Tema 15 | Hisenda publica i Seguretat Social</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+        }
+
+        .gradient-dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+
+    <div id="navbar-container"></div>
+    <div id="breadcrumb-container" class="max-w-6xl mx-auto px-6 pt-24"></div>
+
+    <header class="gradient-dark text-white py-16 px-6 shadow-2xl">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-amber-500 rounded-lg shadow-inner">
+                    <i class="fas fa-landmark text-3xl text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-4xl font-extrabold tracking-tight">Tema 15: Hisenda publica i Seguretat Social</h1>
+                    <p class="text-amber-300 font-medium">Delictes fiscals, cotitzacions i frau de subvencions</p>
+                </div>
+            </div>
+            <p class="text-slate-300 text-lg max-w-3xl">Guia interactiva sobre arts. 305 a 310 bis CP: tipus basics i qualificats, regularitzacio, responsabilitat de persona juridica i concurs de normes.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+                <a href="dret-penal-economic.html" class="inline-flex items-center gap-2 bg-white text-slate-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-amber-100 transition">
+                    <i class="fas fa-arrow-left"></i>
+                    Tornar al Hub
+                </a>
+                <a href="dret-penal-economic-tema14.html" class="inline-flex items-center gap-2 bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-amber-600 transition">
+                    <i class="fas fa-arrow-left"></i>
+                    Tema 14
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sticky top-20 bg-white border-b border-slate-200 z-40 shadow-md">
+        <div class="max-w-6xl mx-auto flex overflow-x-auto no-scrollbar">
+            <button data-tab="mapa" class="tab-btn px-6 py-5 font-bold text-amber-600 border-b-4 border-amber-600 whitespace-nowrap">1. Mapa del tema</button>
+            <button data-tab="fiscal" class="tab-btn px-6 py-5 font-bold text-slate-500 hover:text-amber-600 border-b-4 border-transparent whitespace-nowrap">2. Delicte fiscal (305)</button>
+            <button data-tab="ss" class="tab-btn px-6 py-5 font-bold text-slate-500 hover:text-amber-600 border-b-4 border-transparent whitespace-nowrap">3. Seguretat Social (307)</button>
+            <button data-tab="subvencions" class="tab-btn px-6 py-5 font-bold text-slate-500 hover:text-amber-600 border-b-4 border-transparent whitespace-nowrap">4. Subvencions (308)</button>
+            <button data-tab="regularitzacio" class="tab-btn px-6 py-5 font-bold text-slate-500 hover:text-amber-600 border-b-4 border-transparent whitespace-nowrap">5. Regularitzacio i penes</button>
+            <button data-tab="quiz" class="tab-btn px-6 py-5 font-bold text-slate-500 hover:text-amber-600 border-b-4 border-transparent whitespace-nowrap">6. Test</button>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-6 my-10">
+
+        <section id="mapa" class="tab-content active space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-800 mb-6">Arquitectura del Tema 15</h2>
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+                        <h3 class="font-bold text-amber-900 mb-2">Bloc I</h3>
+                        <p class="text-amber-800">Delictes fiscals (art. 305 i 305 bis): impagament fraudulent, quota i tipus agreujats.</p>
+                    </div>
+                    <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+                        <h3 class="font-bold text-amber-900 mb-2">Bloc II</h3>
+                        <p class="text-amber-800">Delictes contra la Seguretat Social (art. 307, 307 bis i 307 ter).</p>
+                    </div>
+                    <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+                        <h3 class="font-bold text-amber-900 mb-2">Bloc III</h3>
+                        <p class="text-amber-800">Fraus de subvencions i ajudes publiques (art. 308 i 306 UE).</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-slate-900 text-slate-200 rounded-xl text-sm">
+                    <span class="font-bold text-amber-300">Clau comuna:</span> el dret penal protegeix la capacitat financera publica i la igualtat en el compliment de deures tributaris i de cotitzacio.
+                </div>
+            </div>
+        </section>
+
+        <section id="fiscal" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-amber-700 mb-6">Delicte fiscal (Art. 305 CP)</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">Conducta tipica</h3>
+                        <p class="text-sm text-slate-600">Defraudar evitant el pagament de tributs, retencions o ingressos a compte, o obtenint devolucions/beneficis fiscals indeguts.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">Llindar i quantia</h3>
+                        <p class="text-sm text-slate-600">La quota defraudada te funcio decisiva per distingir infraccio administrativa i delicte.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">Tipus qualificats (305 bis)</h3>
+                        <p class="text-sm text-slate-600">S'agreuja per elevada quantia, organitzacio criminal o interposicio de persones.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">Responsabilitat d'empresa</h3>
+                        <p class="text-sm text-slate-600">La persona juridica pot respondre penalment via art. 310 bis CP.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ss" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-amber-700 mb-6">Seguretat Social (Art. 307 i ss.)</h2>
+                <div class="grid md:grid-cols-2 gap-6 text-sm">
+                    <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+                        <h3 class="font-bold text-amber-900 mb-2">Tipus basic (307.1)</h3>
+                        <p class="text-amber-800">Impagament fraudulent de quotes o conceptes de recaptacio conjunta.</p>
+                    </div>
+                    <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+                        <h3 class="font-bold text-amber-900 mb-2">Tipus qualificats (307 bis)</h3>
+                        <p class="text-amber-800">Agreujacio per quantia, estructura organitzada o persones interposades.</p>
+                    </div>
+                    <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+                        <h3 class="font-bold text-amber-900 mb-2">Prestacions indegudes (307 ter)</h3>
+                        <p class="text-amber-800">Obtencio o manteniment fraudulent de prestacions, amb modalitats agreujades.</p>
+                    </div>
+                    <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+                        <h3 class="font-bold text-amber-900 mb-2">Empresa i autoria</h3>
+                        <p class="text-amber-800">Cal identificar deutor responsable, administradors i eventual participacio de tercers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="subvencions" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-amber-700 mb-6">Fraus de subvencions i ajudes publiques (Art. 308)</h2>
+                <div class="overflow-x-auto rounded-xl border border-slate-200">
+                    <table class="min-w-full divide-y divide-slate-200 text-xs">
+                        <thead class="bg-slate-50 text-slate-600 uppercase tracking-wider">
+                            <tr>
+                                <th class="px-4 py-3 text-left border-r">Modalitat</th>
+                                <th class="px-4 py-3 text-left border-r">Article</th>
+                                <th class="px-4 py-3 text-left">Resum</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="px-4 py-3 font-bold text-slate-800 border-r">Obtencio fraudulenta</td>
+                                <td class="px-4 py-3 border-r">308.1</td>
+                                <td class="px-4 py-3">Aconseguir subvencions mitjancant falsedat, ocultacio o engany rellevant.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-bold text-slate-800 border-r">Destinacio indeguda</td>
+                                <td class="px-4 py-3 border-r">308.2</td>
+                                <td class="px-4 py-3">Aplicar els fons a finalitats diferents de les concedides.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-bold text-slate-800 border-r">Interessos financers UE</td>
+                                <td class="px-4 py-3 border-r">306</td>
+                                <td class="px-4 py-3">Proteccio penal especifica dels pressupostos de la Unio Europea.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="regularitzacio" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-amber-700 mb-6">Regularitzacio, penes i concursos</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">Regularitzacio</h3>
+                        <p class="text-sm text-slate-600">Pot excloure o atenuar responsabilitat quan es compleixin estrictament els requisits legals de pagament o reintegrament.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">Conseqencies</h3>
+                        <p class="text-sm text-slate-600">Preso, multa, responsabilitat civil i eventual responsabilitat penal de persona juridica.</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-lg text-xs text-amber-900">
+                    <span class="font-bold">Atencio:</span> la frontera entre il licit administratiu i penal depen de llindars economics i del desvalor de la conducta (engany, ocultacio, estructures interposades).
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="tab-content space-y-8">
+            <div class="max-w-2xl mx-auto space-y-6">
+                <h2 class="text-2xl font-bold text-center mb-8">Posa't a prova (Tema 15)</h2>
+                <div class="bg-white p-6 rounded-2xl border shadow-sm">
+                    <p class="font-bold text-amber-900 mb-4">1. El delicte fiscal protegeix principalment...</p>
+                    <div class="space-y-2">
+                        <button onclick="checkAnswer(true, this)" class="w-full text-left p-4 rounded-xl border hover:bg-amber-50 transition">La capacitat financera publica i la igualtat tributaria.</button>
+                        <button onclick="checkAnswer(false, this)" class="w-full text-left p-4 rounded-xl border hover:bg-amber-50 transition">Nomes el patrimoni privat del contribuent.</button>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border shadow-sm">
+                    <p class="font-bold text-amber-900 mb-4">2. Quin article regula la responsabilitat penal de la persona juridica en materia fiscal/SS?</p>
+                    <div class="space-y-2">
+                        <button onclick="checkAnswer(false, this)" class="w-full text-left p-4 rounded-xl border hover:bg-amber-50 transition">Art. 31 ter CP.</button>
+                        <button onclick="checkAnswer(true, this)" class="w-full text-left p-4 rounded-xl border hover:bg-amber-50 transition">Art. 310 bis CP.</button>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border shadow-sm">
+                    <p class="font-bold text-amber-900 mb-4">3. En subvencions, quina conducta es tipica?</p>
+                    <div class="space-y-2">
+                        <button onclick="checkAnswer(true, this)" class="w-full text-left p-4 rounded-xl border hover:bg-amber-50 transition">Obtenir o destinar fons publics de forma fraudulenta.</button>
+                        <button onclick="checkAnswer(false, this)" class="w-full text-left p-4 rounded-xl border hover:bg-amber-50 transition">Presentar una sol licitud que finalment es denegada sense engany.</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="max-w-6xl mx-auto px-6 pb-6">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+            <span class="text-sm text-slate-600 font-medium">Navegacio entre temes de Dret Penal Economic</span>
+            <div class="flex flex-wrap gap-2">
+                <a href="dret-penal-economic-tema14.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-emerald-200 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 text-sm font-semibold transition-colors">← Tema 14</a>
+                <a href="dret-penal-economic.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 bg-slate-100 hover:bg-slate-200 text-sm font-semibold transition-colors">Distribuidora</a>
+                <a href="#mapa" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-orange-200 text-orange-700 bg-orange-50 hover:bg-orange-100 text-sm font-semibold transition-colors">Inici Tema 15</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 mt-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+            <div class="max-w-xs">
+                <h5 class="text-white font-bold mb-4">Bibliografia Tema 15</h5>
+                <p class="text-xs italic leading-relaxed">De la Mata Barranco: Delitos contra la Hacienda Publica y la Seguridad Social, en Derecho Penal Economico y de la Empresa, Dykinson, 2024.</p>
+            </div>
+            <div class="flex gap-6">
+                <div class="text-center">
+                    <div class="text-white font-extrabold text-2xl">305</div>
+                    <div class="text-[10px] uppercase tracking-widest">Hisenda</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-white font-extrabold text-2xl">307</div>
+                    <div class="text-[10px] uppercase tracking-widest">Seg. Social</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-white font-extrabold text-2xl">308</div>
+                    <div class="text-[10px] uppercase tracking-widest">Subvencions</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId, clickedButton) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach((c) => c.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach((b) => {
+                b.classList.remove('text-amber-600', 'border-amber-600');
+                b.classList.add('text-slate-500', 'border-transparent');
+            });
+
+            const target = document.getElementById(tabId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            clickedButton.classList.remove('text-slate-500', 'border-transparent');
+            clickedButton.classList.add('text-amber-600', 'border-amber-600');
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const parent = element.parentElement;
+            const buttons = parent.querySelectorAll('button');
+            buttons.forEach((b) => {
+                b.disabled = true;
+                b.classList.remove('hover:bg-amber-50');
+            });
+
+            if (isCorrect) {
+                element.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-800');
+                element.innerHTML += ' <i class="fas fa-check-circle ml-2"></i> Correcte';
+            } else {
+                element.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
+                element.innerHTML += ' <i class="fas fa-times-circle ml-2"></i> Incorrecte';
+            }
+        }
+
+        document.querySelectorAll('.tab-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                showTab(button.dataset.tab, button);
+            });
+        });
+    </script>
+    <script src="navbar-helper.js"></script>
+</body>
+
+</html>

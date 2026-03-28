@@ -1,7 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 
-const fileVideos = 'dret-financer-videos.html';
-const fileText = 'dret-financer.html';
+const fileVideos = path.resolve(__dirname, '../dret-financer-videos.html');
+const fileText = path.resolve(__dirname, '../dret-financer.html');
 
 let contentV = fs.readFileSync(fileVideos, 'utf8');
 let contentT = fs.readFileSync(fileText, 'utf8');

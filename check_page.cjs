@@ -1,4 +1,9 @@
 const puppeteer = require('puppeteer');
+const path = require('path');
+const { pathToFileURL } = require('url');
+
+const targetFile = path.resolve(__dirname, 'fiscalitat-directa.html');
+const targetUrl = pathToFileURL(targetFile).href;
 
 (async () => {
     let hasError = false;
@@ -17,7 +22,7 @@ const puppeteer = require('puppeteer');
         hasError = true;
     });
     
-    await page.goto('file:///Users/marccasellas/Desktop/docus2024/DOCUS 2026/legal data visualization/fiscalitat-directa.html', { waitUntil: 'networkidle0' });
+    await page.goto(targetUrl, { waitUntil: 'networkidle0' });
     
     if (!hasError) console.log("No JS errors detected on load.");
     await browser.close();

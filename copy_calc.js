@@ -1,7 +1,15 @@
-const fs = require('fs');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const directes = fs.readFileSync('impostos-directes.html', 'utf-8');
-const fiscalitat = fs.readFileSync('fiscalitat-directa.html', 'utf-8');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const directesFile = path.resolve(__dirname, 'impostos-directes.html');
+const fiscalitatFile = path.resolve(__dirname, 'fiscalitat-directa.html');
+
+const directes = fs.readFileSync(directesFile, 'utf-8');
+const fiscalitat = fs.readFileSync(fiscalitatFile, 'utf-8');
 
 // 1. Get calculator section
 const calcSectionMatch = directes.match(/<!-- Calculadora de Rendiments -->[\s\S]*?(?=<\/div>\s*<footer)/);
@@ -98,6 +106,6 @@ newFiscalitat = newFiscalitat.replace(
             area.className = "grid md:grid-cols-3 gap-8";`
 );
 
-fs.writeFileSync('fiscalitat-directa.html', newFiscalitat);
+fs.writeFileSync(fiscalitatFile, newFiscalitat);
 console.log('Modified fiscalitat-directa.html successfully.');
 
