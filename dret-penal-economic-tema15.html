@@ -7,6 +7,7 @@
     <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Penal Economic","url":"dret-penal-economic.html"},{"label":"Tema 15"}]'>
     <title>Tema 15 | Hisenda publica i Seguretat Social</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="navbar.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -35,6 +36,20 @@
         .gradient-dark {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
+        .t15-crime-card.t15-active {
+            background-color: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+            box-shadow: 0 10px 15px -3px rgba(15,23,42,0.25);
+        }
+        .t15-crime-card.t15-active .t15-art-lbl { color: #94a3b8 !important; }
+        .t15-crime-card.t15-active .t15-ttl-lbl { color: #fbbf24 !important; }
+        .t15-scrollbar::-webkit-scrollbar { width: 5px; }
+        .t15-scrollbar::-webkit-scrollbar-track { background: #f8fafc; border-radius: 4px; }
+        .t15-scrollbar::-webkit-scrollbar-thumb { background: #f59e0b; border-radius: 4px; }
+        .t15-scrollbar::-webkit-scrollbar-thumb:hover { background: #d97706; }
+        .t15-chart-container { height: 300px; }
+        .t15-explorer-container { min-height: 480px; }
     </style>
 </head>
 
@@ -186,23 +201,147 @@
             </div>
         </section>
 
-        <section id="regularitzacio" class="tab-content space-y-8">
+        <section id="regularitzacio" class="tab-content space-y-10">
+
+            <!-- Bloc I: Regularització i penes personals -->
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-2xl font-bold text-amber-700 mb-6">Regularitzacio, penes i concursos</h2>
+                <h2 class="text-2xl font-bold text-amber-700 mb-6">Regularització, penes i concursos</h2>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
-                        <h3 class="font-bold text-slate-800 mb-2">Regularitzacio</h3>
-                        <p class="text-sm text-slate-600">Pot excloure o atenuar responsabilitat quan es compleixin estrictament els requisits legals de pagament o reintegrament.</p>
+                        <h3 class="font-bold text-slate-800 mb-2">Regularització (arts. 305.4, 307.3, 308.6)</h3>
+                        <p class="text-sm text-slate-600">Exclou la responsabilitat penal si el contribuent reconeix i paga íntegrament el deute tributari <strong>abans</strong> que l'Administració notifiqui actuacions d'inspecció o es presenti denúncia. Requereix acte <em>espontani</em> i <em>complet</em>.</p>
                     </div>
                     <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
-                        <h3 class="font-bold text-slate-800 mb-2">Conseqencies</h3>
-                        <p class="text-sm text-slate-600">Preso, multa, responsabilitat civil i eventual responsabilitat penal de persona juridica.</p>
+                        <h3 class="font-bold text-slate-800 mb-2">Penes personals</h3>
+                        <p class="text-sm text-slate-600">Presó de 1 a 5 anys (bàsic) o fins a 7 anys (305 bis agreujat). Multa proporcional a la quota. Inhabilitació per exercici de càrrecs públics i pèrdua del dret a subvencions (3–6 anys).</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">Responsabilitat de la persona jurídica (art. 310 bis)</h3>
+                        <p class="text-sm text-slate-600">Les entitats responen penalment pels delictes dels arts. 305 a 310 comesos pels seus representants o empleats en benefici seu, o per defecte greu de supervisió i control intern.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">Concurs de normes i delictes</h3>
+                        <p class="text-sm text-slate-600">El delicte comptable (art. 310) sol ser absorbit pel fiscal si es regularitza. El blanqueig pot concursar amb el fiscal si el subjecte reinverteix quotes evitades en l'economia lícita.</p>
                     </div>
                 </div>
                 <div class="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-lg text-xs text-amber-900">
-                    <span class="font-bold">Atencio:</span> la frontera entre il licit administratiu i penal depen de llindars economics i del desvalor de la conducta (engany, ocultacio, estructures interposades).
+                    <span class="font-bold">Atenció:</span> la frontera entre il·lícit administratiu i penal depèn de llindars econòmics i del desvalor de la conducta (engany, ocultació, estructures interposades).
                 </div>
             </div>
+
+            <!-- Bloc II: Llindars econòmics -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Llindars econòmics activadors (Tema 15)</h3>
+                <p class="text-sm text-slate-500 mb-5 max-w-3xl">Quantitats que separen la infracció administrativa del delicte, o el tipus bàsic de l'agreujat, en els delictes dels arts. 305 a 310 bis CP.</p>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                    <div class="relative w-full t15-chart-container">
+                        <canvas id="t15ThresholdChart"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-slate-400 mt-4">* Llindars dels articles 305, 305 bis, 307, 307 bis, 308 i 310 CP.</p>
+                </div>
+            </div>
+
+            <!-- Bloc III: Explorador de penes per delicte -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Explorador de penes per delicte</h3>
+                <p class="text-sm text-slate-500 mb-5 max-w-3xl">Selecciona un tipus delictiu per veure les penes per a la persona jurídica (art. 310 bis), els llindars que les activen i els criteris d'atenuació específics.</p>
+                <div class="flex flex-col lg:flex-row gap-6 t15-explorer-container">
+                    <div class="w-full lg:w-1/3 bg-white rounded-2xl shadow-sm border border-slate-200 p-4 lg:h-[480px] overflow-y-auto t15-scrollbar" id="t15CrimeList"></div>
+                    <div class="w-full lg:w-2/3 bg-slate-900 text-white rounded-2xl shadow-xl p-8 flex flex-col" id="t15CrimeDetail">
+                        <div id="t15Idle" class="flex-grow flex items-center justify-center text-center">
+                            <div>
+                                <div class="text-4xl mb-3">&#128203;</div>
+                                <h4 class="text-xl font-bold mb-2">Selecciona un delicte</h4>
+                                <p class="text-slate-400 text-sm">Tria una opció del llistat per veure'n l'anàlisi jurídica detallada.</p>
+                            </div>
+                        </div>
+                        <div id="t15Active" class="hidden flex-grow flex flex-col">
+                            <div class="mb-5">
+                                <span id="t15Art" class="inline-block px-3 py-1 bg-amber-500 text-slate-900 font-bold text-xs rounded-md mb-3 tracking-wider"></span>
+                                <h4 id="t15Ttl" class="text-2xl md:text-3xl font-bold text-white"></h4>
+                            </div>
+                            <div class="space-y-5 flex-grow">
+                                <div class="bg-slate-800 rounded-xl p-5 border-l-4 border-amber-500">
+                                    <h5 class="text-amber-400 font-bold uppercase tracking-wider text-xs mb-2">Pena Principal — Persona Jurídica (art. 310 bis)</h5>
+                                    <p id="t15Pen" class="text-slate-200 leading-relaxed text-sm"></p>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <h5 class="text-slate-400 font-bold uppercase text-xs mb-2 border-b border-slate-700 pb-2">Llindars i Condicions</h5>
+                                        <p id="t15Thr" class="text-slate-200 text-sm"></p>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-slate-400 font-bold uppercase text-xs mb-2 border-b border-slate-700 pb-2">Criteris d'Imputació</h5>
+                                        <p id="t15Imp" class="text-slate-200 text-sm"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-slate-700">
+                                <h5 class="text-amber-400 font-bold uppercase text-xs mb-2">&#128737; Atenuants / Exempcions / Notes</h5>
+                                <p id="t15Not" class="text-slate-300 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloc IV: Penes interdictives art. 33.7 -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Art. 33.7 CP — Penes interdictives per a persones jurídiques</h3>
+                <p class="text-sm text-slate-500 mb-5 max-w-3xl">Sancions que van més enllà de la multa econòmica. Poden suposar la paralització o extinció de l'empresa. S'apliquen de forma facultativa o obligatòria en funció de la gravetat del cas.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="text-3xl mb-3">&#128683;</div>
+                        <h4 class="text-base font-bold text-slate-800 mb-3">Aïllament Econòmic</h4>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold flex-shrink-0">›</span>Pèrdua del dret a subvencions i ajudes (3–8 anys).</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold flex-shrink-0">›</span>Pèrdua de beneficis fiscals o de la Seguretat Social.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold flex-shrink-0">›</span>Prohibició de contractar amb el sector públic.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="text-3xl mb-3">&#9940;</div>
+                        <h4 class="text-base font-bold text-slate-800 mb-3">Paràlisi de l'Activitat</h4>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold flex-shrink-0">›</span>Suspensió d'activitats socials (fins a 5 anys).</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold flex-shrink-0">›</span>Clausura de locals i establiments (fins a 5 anys).</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold flex-shrink-0">›</span>Prohibició de realitzar activitats vinculades al delicte.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-2xl shadow-md text-white hover:bg-slate-800 transition-colors">
+                        <div class="text-3xl text-red-400 mb-3">&#9888;</div>
+                        <h4 class="text-base font-bold mb-3 text-white">Extinció i Intervenció</h4>
+                        <ul class="space-y-2 text-slate-300 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-red-400 font-bold flex-shrink-0">›</span><span><strong class="text-white">Dissolució:</strong> Pèrdua definitiva de la capacitat d'actuar en el tràfic jurídic.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-400 font-bold flex-shrink-0">›</span><span><strong class="text-white">Intervenció judicial:</strong> Per salvaguardar drets de treballadors i creditors.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloc V: Compliance penal -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Vies de protecció: el Compliance Penal</h3>
+                <p class="text-sm text-slate-500 mb-6 max-w-3xl">La llei permet eximir o atenuar la responsabilitat penal si l'empresa ha adoptat mesures preventives eficaces o demostra col·laboració proactiva en seu judicial.</p>
+                <div class="flex flex-col md:flex-row gap-5">
+                    <div class="flex-1 rounded-2xl border-2 border-dashed border-amber-400 p-6 text-center hover:bg-amber-50 transition-colors">
+                        <div class="w-12 h-12 mx-auto bg-amber-100 text-amber-600 text-xl flex items-center justify-center rounded-full mb-3">&#10004;</div>
+                        <h4 class="text-sm font-bold text-slate-800 mb-2">Model de Prevenció (Exempció)</h4>
+                        <p class="text-slate-600 text-xs">Adoptar i executar un model d'organització idoni per prevenir delictes, <em>abans</em> de la comissió del fet, amb supervisió autònoma eficaç (art. 31 bis CP).</p>
+                    </div>
+                    <div class="flex-1 rounded-2xl border border-slate-200 p-6 text-center hover:shadow-md transition-all">
+                        <div class="w-12 h-12 mx-auto bg-amber-100 text-amber-600 text-xl flex items-center justify-center rounded-full mb-3">&#128176;</div>
+                        <h4 class="text-sm font-bold text-slate-800 mb-2">Regularització Voluntària</h4>
+                        <p class="text-slate-600 text-xs">En delictes fiscals i de SS, reconèixer i pagar el deute <em>abans</em> de la notificació d'actuacions inspectores per obtenir l'exempció total (arts. 305.4, 307.3).</p>
+                    </div>
+                    <div class="flex-1 rounded-2xl border border-slate-200 p-6 text-center hover:shadow-md transition-all">
+                        <div class="w-12 h-12 mx-auto bg-amber-100 text-amber-600 text-xl flex items-center justify-center rounded-full mb-3">&#129309;</div>
+                        <h4 class="text-sm font-bold text-slate-800 mb-2">Confessió i Col·laboració</h4>
+                        <p class="text-slate-600 text-xs">Aportar proves noves, col·laborar decisivament amb l'autoritat i reparar voluntàriament el dany <em>abans</em> del judici oral (atenuants art. 31 quater).</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <section id="quiz" class="tab-content space-y-8">
@@ -312,6 +451,160 @@
         });
     </script>
     <script src="navbar-helper.js"></script>
+    <script>
+    // Tema 15 — Llindars econòmics (Chart.js)
+    (function () {
+        const labels = [
+            'Seg. Social (Bàsic)',
+            'Frau Subvencions (UE, art. 306)',
+            'Delicte Fiscal (Bàsic)',
+            'Frau Subvencions (Estatal)',
+            'Seg. Social (Agreujat)',
+            'Delicte Comptable (art. 310)',
+            'Delicte Fiscal (Agreujat)'
+        ];
+        const data = [50000, 100000, 120000, 120000, 120000, 240000, 600000];
+        function wrapLabel(label) {
+            if (label.length <= 24) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let cur = '';
+            words.forEach(w => {
+                if ((cur + w).length > 24) { if (cur) lines.push(cur.trim()); cur = w + ' '; }
+                else { cur += w + ' '; }
+            });
+            if (cur) lines.push(cur.trim());
+            return lines;
+        }
+        const canvas = document.getElementById('t15ThresholdChart');
+        if (!canvas) return;
+        new Chart(canvas.getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: labels.map(wrapLabel),
+                datasets: [{
+                    label: 'Llindar (€)',
+                    data: data,
+                    backgroundColor: '#f59e0b',
+                    hoverBackgroundColor: '#d97706',
+                    borderRadius: 4,
+                    maxBarThickness: 28
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#0f172a',
+                        titleFont: { size: 13, weight: 'bold' },
+                        bodyFont: { size: 13 },
+                        padding: 10,
+                        callbacks: {
+                            title: function (items) {
+                                const lbl = items[0].chart.data.labels[items[0].dataIndex];
+                                return Array.isArray(lbl) ? lbl.join(' ') : lbl;
+                            },
+                            label: function (ctx) {
+                                return new Intl.NumberFormat('ca-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(ctx.raw);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: '#e2e8f0' },
+                        ticks: { color: '#64748b', callback: function (v) { return (v / 1000) + 'k €'; } }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#1e293b', font: { weight: '600' } }
+                    }
+                }
+            }
+        });
+    })();
+
+    // Tema 15 — Explorador de penes
+    (function () {
+        const crimes = [
+            {
+                id: 'fiscal',
+                title: 'Delicte Fiscal',
+                articles: 'Arts. 305, 305 bis, 310 bis',
+                penalty: 'Multa del tant al doble (bàsic) o al triplo / fins al séxtuplo (agreujat). Pèrdua de dret a subvencions i ajudes públiques de 3 a 6 anys. Prohibició de contractar amb Administracions Públiques.',
+                thresholds: 'Tipus bàsic: > 120.000 €.<br>Hisenda UE: > 100.000 €.<br>Tipus agreujat (305 bis): > 600.000 €, xarxa organitzada o interposició de persones.',
+                imputation: 'Art. 310 bis: benefici directe o indirecte per a l\'entitat. Autoria per representants legals o per incompliment greu del deure de supervisió interna.',
+                notes: 'Exempció per regularització tributària completa i espontània (art. 305.4) abans de la notificació d\'inspecció. Atenuació si s\'adopten programes de compliance eficaços (art. 31 bis.2).'
+            },
+            {
+                id: 'ss',
+                title: 'Seguretat Social',
+                articles: 'Arts. 307, 307 bis, 310 bis',
+                penalty: 'Multa del tant al séxtuplo de la quantia defraudada o obtinguda indegudament. Pèrdua de dret a beneficis de la SS de 3 a 8 anys. Prohibició de contractar amb Administracions Públiques.',
+                thresholds: 'Tipus bàsic (307.1): > 50.000 €.<br>Tipus agreujat (307 bis): > 120.000 €, xarxa organitzada o persones interposades.',
+                imputation: 'Art. 310 bis: benefici per manca de supervisió adequada o per actes directes dels representants legals de l\'entitat.',
+                notes: 'Regularització espontània i íntegra (art. 307.3) eximeix la responsabilitat penal. Confessió prèvia i col·laboració activa actuen com a atenuants molt qualificats.'
+            },
+            {
+                id: 'subvencions',
+                title: 'Frau de Subvencions',
+                articles: 'Arts. 308, 306 (UE), 310 bis',
+                penalty: 'Multa del tant al séxtuplo de l\'import defraudat. Prohibició de contractar amb el sector públic i pèrdua del dret a subvencions futures.',
+                thresholds: 'Interessos UE (art. 306): > 100.000 €.<br>Subvencions estatals (art. 308): > 120.000 €.<br>Modalitat atenuada: > 10.000 € (pena privativa de llibertat reduïda).',
+                imputation: 'Obtenció falsejant condicions d\'accés o desviació de fons a fins no autoritzats, per defecte de control corporatiu o actes directes dels dirigents.',
+                notes: 'Reintegrament voluntari de la subvenció i els interessos abans de la inspecció eximeix la responsabilitat (art. 308.6). La destinació indeguda s\'atenua si es justifica causa raonable documentada.'
+            },
+            {
+                id: 'comptable',
+                title: 'Delicte Comptable',
+                articles: 'Arts. 310, 310 bis',
+                penalty: 'Multa de 6 mesos a 1 any per a la persona jurídica. Possible pèrdua de drets a ajudes i beneficis fiscals. Sol ser absorbida pel delicte fiscal principal si s\'ha regularitzat.',
+                thresholds: 'Omissions o falsedats en la comptabilitat superiors a 240.000 € per exercici. No requereix dol específic; n\'hi ha prou la consciència de l\'incompliment.',
+                imputation: 'Incompliment deliberat de l\'obligació legal de portar comptabilitat en benefici de l\'entitat o per reduir costos de control intern.',
+                notes: 'Si el delicte fiscal es regularitza correctament, el comptable queda absorbit (concurs de normes, art. 8 CP). Si no hi ha delicte fiscal associat, la responsabilitat comptable subsisteix de manera autònoma.'
+            }
+        ];
+
+        const listEl = document.getElementById('t15CrimeList');
+        const idleEl = document.getElementById('t15Idle');
+        const activeEl = document.getElementById('t15Active');
+        if (!listEl) return;
+
+        crimes.forEach(function (crime) {
+            const btn = document.createElement('button');
+            btn.className = 't15-crime-card w-full text-left p-4 mb-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all';
+            btn.dataset.id = crime.id;
+            btn.innerHTML =
+                '<div class="text-xs font-bold text-slate-400 mb-1 tracking-widest uppercase t15-art-lbl">' + crime.articles.split(',')[0].trim() + '</div>' +
+                '<div class="text-base font-bold text-slate-800 t15-ttl-lbl">' + crime.title + '</div>';
+            btn.addEventListener('click', function () { selectCrime(crime.id, btn); });
+            listEl.appendChild(btn);
+        });
+
+        function selectCrime(id, btn) {
+            document.querySelectorAll('.t15-crime-card').forEach(function (el) {
+                el.classList.remove('t15-active');
+            });
+            btn.classList.add('t15-active');
+            const crime = crimes.find(function (c) { return c.id === id; });
+            if (!crime) return;
+            document.getElementById('t15Art').textContent = crime.articles;
+            document.getElementById('t15Ttl').textContent = crime.title;
+            document.getElementById('t15Pen').innerHTML = crime.penalty;
+            document.getElementById('t15Thr').innerHTML = crime.thresholds;
+            document.getElementById('t15Imp').innerHTML = crime.imputation;
+            document.getElementById('t15Not').innerHTML = crime.notes;
+            idleEl.classList.add('hidden');
+            activeEl.classList.remove('hidden');
+            if (window.innerWidth < 1024) {
+                document.getElementById('t15CrimeDetail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+    })();
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Civil","url":"dret-civil.html"},{"label":"Filiació"}]'>
+    <title>La filiació - Dret Civil (Ampliat)</title>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f7f6;
+        }
+
+        header {
+            background-color: #005b9f;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 5px solid #003f72;
+            margin-top: 12px;
+        }
+
+        nav {
+            background-color: #e9ecef;
+            padding: 15px;
+            position: sticky;
+            top: 74px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #005b9f;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #d0d7de;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #005b9f;
+            border-bottom: 2px solid #005b9f;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: #0073cc;
+            margin-top: 25px;
+        }
+
+        .resum-box {
+            background-color: #eaf4ff;
+            padding: 20px;
+            border-left: 5px solid #005b9f;
+            margin-bottom: 25px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .article-ref {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        .esquema {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        sup {
+            color: #666;
+        }
+
+        .civil-nav {
+            max-width: 1000px;
+            margin: 8px auto 0;
+            background: #ffffff;
+            border: 1px solid #dbe3eb;
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .civil-nav-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #536273;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .civil-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .civil-pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            background: #edf2f7;
+            color: #2d3d4f;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .civil-pill:hover {
+            background: #e2e8f0;
+        }
+
+        .civil-pill.active {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 24px 16px;
+            }
+
+            nav {
+                top: 66px;
+                padding: 12px;
+            }
+
+            nav ul li {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            main {
+                margin: 20px 12px;
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <div id="breadcrumb-container" class="max-w-[1400px] mx-auto px-6 pt-28"></div>
+
+    <div class="civil-nav">
+        <div class="civil-nav-label">Navegació Civil</div>
+        <div class="civil-nav-links">
+            <a href="dret-civil.html" class="civil-pill">Vídeos Civil</a>
+            <a href="dret-civil-text.html" class="civil-pill">Mòduls Civil</a>
+            <a href="dret-civil-familia.html" class="civil-pill">Família</a>
+            <a href="dret-civil-matrimoni-estudis.html" class="civil-pill">Matrimoni</a>
+            <a href="dret-civil-filiacio.html" class="civil-pill active">Filiació</a>
+        </div>
+    </div>
+
+    <header>
+        <h1>La filiació</h1>
+        <p>Estructura ampliada amb legislació: Codi Civil de Catalunya (CCCat) i Codi Civil espanyol (CC)</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#concepte">1. Concepte i Efectes</a></li>
+            <li><a href="#contingut">2. Contingut Bàsic</a></li>
+            <li><a href="#accions">3. Accions de Filiació</a></li>
+            <li><a href="#adopcio">4. Adopció</a></li>
+            <li><a href="#potestat">5. Potestat Parental</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introduccio">
+            <div class="resum-box">
+                <p><strong>Resum General:</strong> La filiació suposa l'establiment d'una relació jurídica entre dues persones, pare o mare i fill, de la qual resulten un conjunt de deures i facultats encaminats a la protecció del darrer. Aquesta relació es pot constituir per naturalesa o per adopció, i el seu contingut (dret als cognoms, aliments i drets successoris) resta sempre igual amb independència del tipus de filiació i del matrimoni dels pares.</p>
+            </div>
+        </section>
+
+        <section id="concepte">
+            <h2>1. Concepte, classes i efectes</h2>
+            <p>La filiació és la relació jurídica entre una persona i els seus progenitors. Tant el legislador català com l'estatal reconeixen principalment dos tipus de filiació que produeixen els mateixos efectes civils: la filiació per naturalesa (que es divideix en matrimonial i no matrimonial) i l'adoptiva.</p>
+
+            <div class="esquema">
+                <strong>Marc legal fonamental:</strong>
+                <ul>
+                    <li><span class="article-ref">Art. 235-1 CCCat</span> i <span class="article-ref">Art. 108 CC</span>: reconeixen la igualtat d'efectes de totes les classes de filiació.</li>
+                    <li><span class="article-ref">Art. 235-8 i 235-13 CCCat</span>: estableixen regles especials per a la filiació derivada de la reproducció assistida, que es basa més en el consentiment que en la biologia.</li>
+                    <li><span class="article-ref">Art. 235-2 CCCat</span>: detalla els efectes principals: potestat parental, cognoms, aliments, drets successoris i responsabilitats parentals.</li>
+                    <li><span class="article-ref">Art. 235-14.1 i 14.2 CCCat</span>: preveu excepcions on la filiació es limita a la mera determinació de l'estat (ex. condemna penal o mala fe), produint només efectes a favor del fill i mantenint l'obligació d'aliments per part del progenitor.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contingut">
+            <h2>2. El contingut bàsic de la filiació</h2>
+            <p>Tots els fills tenen els mateixos drets i deures envers els seus progenitors, en aplicació del principi d'igualtat consagrat a l'article 39.3 de la Constitució Espanyola. Aquest contingut inclou el dret als cognoms (<span class="article-ref">Art. 49.2 LRC</span>, <span class="article-ref">Art. 235-2.3 CCCat</span> i <span class="article-ref">Art. 109 CC</span>), el dret als aliments, i els drets successoris com la legítima (<span class="article-ref">Art. 451-3 CCCat</span>).</p>
+
+            <h3>2.1. Determinació de la maternitat</h3>
+            <p>Es parteix de la certesa pel fet del part: "la filiació resulta del naixement" segons l'<span class="article-ref">Art. 235-3 CCCat</span>. És important destacar que els contractes de gestació per substitució són nuls de ple dret a Espanya (<span class="article-ref">Art. 10 LTRHA</span>).</p>
+
+            <h3>2.2. Determinació de la paternitat matrimonial</h3>
+            <p>La paternitat matrimonial es determina mitjançant presumpcions legals, ja que no pot ser objecte d'una prova biològica directa excepte en judici.</p>
+            <ul>
+                <li><strong>Presumpció de 300 dies:</strong> es presumeix que el marit és el pare si el fill neix després del matrimoni i abans dels 300 dies següents a la separació o dissolució (<span class="article-ref">Art. 235-5 CCCat</span> i <span class="article-ref">Art. 116 CC</span>).</li>
+                <li><strong>Naixement prematur (180 dies):</strong> si neix dins dels primers 180 dies de matrimoni, es considera matrimonial, però el marit pot exercir l'acció de desconeixement en un termini de 6 mesos (<span class="article-ref">Art. 235-6.1 CCCat</span> i <span class="article-ref">Art. 117 CC</span>).</li>
+            </ul>
+
+            <h3>2.3. Determinació de la filiació no matrimonial</h3>
+            <p>Els sistemes principals quan els progenitors no estan casats són:</p>
+            <ul>
+                <li><strong>El reconeixement:</strong> és un acte voluntari i personalíssim regulat a l'<span class="article-ref">Art. 235-9.1.a CCCat</span> i <span class="article-ref">Art. 120 CC</span>. Requereix plena capacitat (<span class="article-ref">Art. 235-11.1 CCCat</span>) o aprovació judicial per a menors. Per reconèixer un fill major d'edat cal el seu consentiment exprés (<span class="article-ref">Art. 235-12.1 CCCat</span> i <span class="article-ref">Art. 123 CC</span>).</li>
+                <li><strong>Presumpcions judicials:</strong> en procés de filiació, s'inverteix la càrrega de la prova si hi ha convivència, relacions sexuals provades o reconeixement tàcit (<span class="article-ref">Art. 235-10 CCCat</span>).</li>
+            </ul>
+
+            <h3>2.4. Filiació per reproducció assistida</h3>
+            <p>Amb l'entrada en vigor del Llibre segon del CCCat, el <strong>consentiment exprés</strong> esdevé el criteri fonamental, amb independència del material genètic utilitzat (<span class="article-ref">Art. 235-8.1 CCCat</span> i <span class="article-ref">Art. 235-13 CCCat</span> per parelles casades i no casades respectivament). S'admet també la reproducció <em>post mortem</em> si hi ha consentiment exprés i s'inicia la tècnica en els 9 mesos següents a la mort (<span class="article-ref">Art. 235-8.2 CCCat</span> i <span class="article-ref">Art. 9 LTRHA</span>).</p>
+        </section>
+
+        <section id="accions">
+            <h2>3. Les accions de filiació</h2>
+            <p>Aquestes accions es basen en la lliure investigació de la paternitat i maternitat (<span class="article-ref">Art. 235-15.2 CCCat</span> i <span class="article-ref">Art. 767.1 LEC</span>). L'autoritat judicial pot adoptar mesures protectores com els aliments durant el procés (<span class="article-ref">Art. 235-17 CCCat</span>).</p>
+
+            <div class="esquema">
+                <strong>1. Accions de reclamació:</strong> pretenen que es dicti sentència determinant la filiació.
+                <ul>
+                    <li><em>Matrimonial:</em> és imprescriptible i poden exercir-la pares o el fill (<span class="article-ref">Art. 235-20.1 CCCat</span> i <span class="article-ref">Art. 132 CC</span>).</li>
+                    <li><em>No matrimonial:</em> el fill pot exercir-la tota la vida (<span class="article-ref">Art. 235-21 CCCat</span>). A Catalunya, els pares també poden exercir-la si se'ls ha denegat el reconeixement (<span class="article-ref">Art. 235-12.2 i 12.3 CCCat</span>).</li>
+                </ul>
+
+                <strong>2. Accions d'impugnació:</strong> pretenen la declaració de no-existència d'una filiació.
+                <ul>
+                    <li><em>Matrimonial:</em> el termini general a Catalunya és de <strong>dos anys</strong> des del coneixement del naixement o descobriment de proves (<span class="article-ref">Art. 235-23.1 i 235-24 CCCat</span>). Al CC espanyol, el termini és d'<strong>un any</strong> (<span class="article-ref">Art. 136 CC</span>).</li>
+                    <li><em>No matrimonial:</em> a Catalunya, el termini d'impugnació és de dos anys per als afectats (<span class="article-ref">Art. 235-26 CCCat</span>).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="adopcio">
+            <h2>4. La filiació adoptiva</h2>
+            <p>L'adopció crea un vincle jurídic basat en la voluntat que, com a regla general, <strong>extingeix els vincles amb la família d'origen</strong> (<span class="article-ref">Art. 235-47.1 CCCat</span>), causant un parentiu equivalent al per naturalesa. L'adopció és <strong>irrevocable</strong> (<span class="article-ref">Art. 235-51 CCCat</span>).</p>
+
+            <h3>Requisits per als subjectes</h3>
+            <ul>
+                <li><strong>L'adoptant:</strong> ha de tenir més de 25 anys, plena capacitat d'obrar i com a mínim 14 anys més que l'adoptat (<span class="article-ref">Art. 235-30.1 CCCat</span>). És permesa l'adopció conjunta per matrimonis o parelles de fet (<span class="article-ref">Art. 235-30.2 CCCat</span>).</li>
+                <li><strong>L'adoptat:</strong> per regla general, només poden ser adoptats menors no emancipats (<span class="article-ref">Art. 235-32 CCCat</span>). Excepcionalment, es permet l'adopció de majors d'edat si hi va haver una situació d'acolliment o convivència prèvia sense interrupció des d'abans dels 14 anys (<span class="article-ref">Art. 235-33 CCCat</span>).</li>
+            </ul>
+        </section>
+
+        <section id="potestat">
+            <h2>5. La potestat parental</h2>
+            <p>La potestat és una funció inexcusable que s'exerceix en benefici i interès dels fills (<span class="article-ref">Art. 236-2 CCCat</span> i <span class="article-ref">Art. 154 CC</span>). Aquesta funció té un doble vessant:</p>
+            <ul>
+                <li><strong>Contingut personal:</strong> vetllar, educar, alimentar i procurar la formació integral.</li>
+                <li><strong>Contingut patrimonial:</strong> representació legal dels fills (<span class="article-ref">Art. 236-18 CCCat</span>) i administració dels seus béns (<span class="article-ref">Art. 236-21 CCCat</span>).</li>
+            </ul>
+
+            <h3>Exercici, desacords i privació</h3>
+            <p>En situacions normals, s'exerceix conjuntament (<span class="article-ref">Art. 236-9 CCCat</span> i <span class="article-ref">Art. 156 CC</span>). En cas de desacord reiterat, l'autoritat judicial decideix a instàncies dels progenitors (<span class="article-ref">Art. 236-13 CCCat</span> i <span class="article-ref">Art. 156.2 CC</span>). Si els progenitors viuen separats, poden acordar com distribuir les funcions o delegar-les en un pla de parentalitat (<span class="article-ref">Art. 236-11 CCCat</span>).</p>
+            <p>Els pares poden ser privats de la titularitat per incompliment greu o reiterat (<span class="article-ref">Art. 236-6 CCCat</span>), com ara abusos, maltractaments o violència masclista. Tot i la privació, subsisteix l'obligació de prestar aliments (<span class="article-ref">Art. 236-6.6 CCCat</span> i <span class="article-ref">Art. 110 CC</span>).</p>
+        </section>
+
+        <section id="faq">
+            <h2>6. Preguntes Freqüents (FAQ)</h2>
+            <div class="esquema">
+
+                <h3><strong>La filiació té efectes diferents si els pares estan casats o no?</strong></h3>
+                <p>No, tots els fills tenen els mateixos drets i deures envers els seus progenitors, independentment de si la filiació és matrimonial, no matrimonial o adoptiva. El contingut bàsic de qualsevol filiació sempre inclou el dret als cognoms, el dret als aliments i els drets successoris.</p>
+
+                <h3><strong>Com es determina la maternitat i què passa amb els "ventres de lloguer"?</strong></h3>
+                <p>La maternitat es determina de forma segura pel fet del part ("la filiació resulta del naixement"). Pel que fa als contractes de gestació per substitució (coneguts com a ventres de lloguer), a Espanya són nuls de ple dret, ja es pagui un preu a canvi o no.</p>
+
+                <h3><strong>Com funciona la presumpció de paternitat en un matrimoni?</strong></h3>
+                <p>La llei presumeix que el marit de la mare és el pare del fill sempre que aquest neixi després d'haver-se contret el matrimoni i abans dels 300 dies següents a la separació, declaració de nul·litat o dissolució del matrimoni.</p>
+
+                <h3><strong>Què passa si en un judici per reclamar la paternitat el demandat es nega a fer-se la prova d'ADN?</strong></h3>
+                <p>En els processos de filiació s'admet investigar lliurement la paternitat utilitzant qualsevol prova, especialment la biològica. Si el demandat es nega a sotmetre's a les proves biològiques, aquesta negativa, sumada a altres indicis presentats, serveix com a indici suficient perquè l'autoritat judicial pugui declarar la paternitat.</p>
+
+                <h3><strong>Quins són els requisits d'edat per poder adoptar?</strong></h3>
+                <p>La persona adoptant ha de tenir més de 25 anys i tenir, com a mínim, 14 anys més que la persona adoptada. Hi ha l'excepció de l'adopció del fill del cònjuge o parella estable, on l'edat mínima pot variar. Per part de l'adoptat, com a regla general ha de ser un menor d'edat no emancipat.</p>
+
+                <h3><strong>L'adopció es pot desfer o revocar si sorgeixen problemes?</strong></h3>
+                <p>No, la regla general és que l'adopció és completament irrevocable un cop dictada la resolució judicial. Només es pot revocar en casos extremadament excepcionals, com per exemple si els progenitors biològics no van intervenir en l'expedient d'adopció per causes que no se'ls podien imputar.</p>
+
+                <h3><strong>És legal utilitzar material genètic de la parella difunta per tenir un fill?</strong></h3>
+                <p>Sí, s'admet la reproducció assistida <em>post mortem</em>, però està subjecta a uns requisits molt estrictes: el difunt ha d'haver atorgat el seu consentiment exprés en vida i la tècnica s'ha d'iniciar en un període màxim de 9 mesos des de la mort (termini que es pot prorrogar fins a 3 mesos més).</p>
+
+                <h3><strong>Et poden treure la potestat parental d'un fill? I si te la treuen, has de seguir pagant la pensió d'aliments?</strong></h3>
+                <p>Sí, un jutge pot privar els progenitors de la titularitat de la potestat parental si hi ha un incompliment greu o reiterat dels seus deures, com en casos d'abusos sexuals, maltractaments o violència masclista i familiar. Ara bé, la privació de la potestat no eximeix mai els progenitors de la seva obligació de prestar aliments i assistir als seus fills.</p>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Aquest material ha estat creat basant-se en el document "La filiació" (PID_00285313). Legislació de referència: CCCat (Codi Civil de Catalunya) i CC (Codi Civil espanyol).</p>
+    </footer>
+
+    <script src="navbar-helper.js"></script>
+</body>
+
+</html>

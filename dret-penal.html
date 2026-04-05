@@ -108,7 +108,7 @@
                         class="text-slate-400">
                         <polygon points="5 3 19 12 5 21 5 3" />
                     </svg>
-                    15 Vídeos Clau
+                    16 Vídeos Clau
                 </div>
             </div>
         </header>
@@ -373,7 +373,44 @@
             </div>
         </div>
 
-        <!-- Bloc 3: Delictes patrimonials -->
+        <!-- Bloc 3: Responsabilitat penal de les persones jurídiques -->
+        <div class="mb-16">
+            <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Responsabilitat penal de les persones jurídiques
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Video -->
+                <a href="https://youtu.be/y3TFGW4iy5o" target="_blank" class="block group">
+                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
+                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
+                            <img src="https://img.youtube.com/vi/y3TFGW4iy5o/hqdefault.jpg"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                                alt="Responsabilitat penal de les persones jurídiques">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-red-400 bg-red-500/10 px-2 py-0.5 rounded">Vídeo</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">RPPJ</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Responsabilitat penal de les persones jurídiques</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bloc 4: Delictes patrimonials -->
         <div class="mb-16">
             <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Delictes Patrimonials
             </h2>
@@ -465,7 +502,7 @@
             </div>
         </div>
 
-        <!-- Bloc 4: Altres Béns Jurídics -->
+        <!-- Bloc 5: Altres Béns Jurídics -->
         <div class="mb-16">
             <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Altres Béns Jurídics </h2>
 
@@ -607,7 +644,7 @@
         const modal = document.getElementById("videoModal");
         const player = document.getElementById("youtubePlayer");
 
-        document.querySelectorAll("a[href*=\"youtube.com/watch\"], a[href*=\"youtube.com/shorts\"]").forEach(link => {
+        document.querySelectorAll("a[href*=\"youtube.com/watch\"], a[href*=\"youtube.com/shorts\"], a[href*=\"youtu.be/\"]").forEach(link => {
             link.addEventListener("click", function(e) {
                 e.preventDefault();
                 let url = this.getAttribute("href");
@@ -617,6 +654,8 @@
                     videoId = new URL(url).searchParams.get("v");
                 } else if (url.includes("/shorts/")) {
                     videoId = url.split("/shorts/")[1].split("?")[0];
+                } else if (url.includes("youtu.be/")) {
+                    videoId = url.split("youtu.be/")[1].split("?")[0];
                 }
 
                 if (videoId) {

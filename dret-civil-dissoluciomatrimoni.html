@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Civil","url":"dret-civil.html"},{"label":"Dissolució Matrimonial"}]'>
+    <title>Mòdul: Ineficàcia i Dissolució Matrimonial | Què diu la Llei?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        .mask-image-gradient {
+            -webkit-mask-image: linear-gradient(to bottom, white, transparent);
+            mask-image: linear-gradient(to bottom, white, transparent);
+        }
+
+        .content-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            box-shadow: 0 10px 30px -10px rgba(239, 68, 68, 0.15);
+            border-color: #ef4444;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative overflow-x-hidden">
+
+    <div id="navbar-container"></div>
+    <div id="breadcrumb-container" class="max-w-[1200px] mx-auto px-6 pt-28"></div>
+
+    <div class="max-w-[1200px] mx-auto px-6 pb-2 relative z-20">
+        <div class="rounded-2xl border border-slate-200 bg-white/90 backdrop-blur p-4">
+            <p class="text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-2">Navegació Civil</p>
+            <div class="flex flex-wrap gap-2 text-sm">
+                <a href="dret-civil.html" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Vídeos Civil</a>
+                <a href="dret-civil-text.html" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Mòduls Civil</a>
+                <a href="dret-civil-familia.html" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Família</a>
+                <a href="dret-civil-matrimoni-estudis.html" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Matrimoni</a>
+                <a href="dret-civil-dissoluciomatrimoni.html" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 font-semibold">Dissolució</a>
+                <a href="dret-civil-filiacio.html" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Filiació</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fons amb patró -->
+    <div class="bg-pattern absolute inset-0 opacity-40 z-0 mask-image-gradient h-[80vh]"></div>
+
+    <div class="absolute top-[-5%] right-[-10%] w-[800px] h-[800px] bg-red-500/10 rounded-full blur-[120px] z-0 pointer-events-none"></div>
+    <div class="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-rose-500/10 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+
+    <div class="max-w-[1200px] mx-auto px-6 pt-32 pb-24 relative z-10">
+
+        <!-- Header -->
+        <header class="mb-16 text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-100 text-red-700 text-sm font-bold tracking-widest uppercase mb-6 border border-red-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                Mòdul Especial
+            </div>
+
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 leading-[1.1]">
+                Ineficàcia i <span class="text-red-500">Dissolució</span> Matrimonial
+            </h1>
+
+            <p class="text-slate-600 text-xl leading-relaxed font-light mb-8">
+                Comprèn els mecanismes jurídics de ruptura i invalidesa matrimonial segons l'ordenament català: des de la nul·litat, la separació, fins al divorci, i els seus efectes sobre el patrimoni i els fills.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-4 text-left">
+                <div class="content-card rounded-2xl p-5">
+                    <h3 class="text-sm font-extrabold uppercase tracking-wide text-red-700 mb-3">Ineficàcia del Matrimoni</h3>
+                    <ul class="text-sm text-slate-700 space-y-2">
+                        <li><strong>Nul·litat:</strong> vici greu dels elements essencials del matrimoni al moment de la celebració.</li>
+                        <li><strong>Acció:</strong> imprescriptible, per a qualsevol persona amb interès legítim.</li>
+                        <li><strong>Matrimoni putatiu:</strong> protecció del cònjuge de bona fe.</li>
+                        <li><strong>Efectes:</strong> dissolució retroactiva del vincle matrimonial.</li>
+                    </ul>
+                </div>
+                <div class="content-card rounded-2xl p-5">
+                    <h3 class="text-sm font-extrabold uppercase tracking-wide text-rose-700 mb-3">Dissolució del Matrimoni</h3>
+                    <ul class="text-sm text-slate-700 space-y-2">
+                        <li><strong>Separació de fet:</strong> interrupció de convivència sense ruptura formal del vincle.</li>
+                        <li><strong>Separació legal:</strong> judicial o davant de notari, manté la qualitat de cònjuge.</li>
+                        <li><strong>Divorci:</strong> dissolució total que permet contraure nou matrimoni.</li>
+                        <li><strong>Requisit:</strong> absència de causa justificada necessària a Catalunya.</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Secció 1: Nul·litat Matrimonial -->
+        <section class="mb-20">
+            <div class="flex flex-col lg:flex-row gap-10 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center shadow-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4v2m0 0v2m0-6h2m-2 0h-2" />
+                            </svg>
+                        </span>
+                        Nul·litat Matrimonial
+                    </h2>
+                    <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed font-light">
+                        <p class="mb-4">
+                            La <strong>nul·litat matrimonial</strong> es produeix quan hi ha defectes greus en els elements essencials del matrimoni en el moment de la seva celebració. A diferència de la separació o divorci, la nul·litat comporta la invalidesa ab initio del vincle.
+                        </p>
+                        <p class="mb-4">
+                            L'acció de nul·litat és <strong>imprescriptible</strong> i pot interposar-se per qualsevol persona que tengui un interès legítim, junt amb la part interessada o fins i tot pels interessos de l'Estat.
+                        </p>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 mb-6 shadow-sm">
+                            <h4 class="font-bold text-slate-800 text-lg mb-3 text-red-600">Causes de Nul·litat</h4>
+                            <ul class="text-sm space-y-2 list-disc pl-5">
+                                <li><strong>Absència de consentiment:</strong> coerció, error esencial sobre la persona o la natura del matrimoni.</li>
+                                <li><strong>Falta de capacitat:</strong> menoritat, incapacitat per causa de discapacitat mental, matrimoni anterior no dissolt.</li>
+                                <li><strong>Impediments dirimants:</strong> parentiu (ascendents/descendents), fraternitat, matrimoni anterior.</li>
+                                <li><strong>Vicis del consentiment no purgables:</strong> error sobre qualitats essencials.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50/50 p-6 rounded-2xl border border-red-100">
+                            <h4 class="font-bold text-slate-800 text-lg mb-2 text-red-600">⚠️  Matrimoni Putatiu</h4>
+                            <p class="text-sm">Quan la nul·litat es declara, el dret català protegeix el <strong>cònjuge de bona fe</strong> (qui desconeixia la causa de nul·litat), permetent que mantengui <strong>els efectes patrimonials ja produïts</strong> pel matrimoni, com si el vincle hagués estat vàlid. Aquesta protecció no s'aplica al cònjuge de mala fe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divisor -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-16"></div>
+
+        <!-- Secció 2: Separació Legal -->
+        <section class="mb-20">
+            <div class="flex flex-col lg:flex-row-reverse gap-10 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center shadow-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                        </span>
+                        Separació de Fet i Legal
+                    </h2>
+                    <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed font-light">
+                        <p class="mb-4">
+                            La <strong>separació de fet</strong> és la interrupció de la convivència conjugal sense que hi hagi dissolució formal del vincle matrimonial. Legalment, els cònjuges conserven la qualitat de casats.
+                        </p>
+                        <p class="mb-4">
+                            La <strong>separació legal</strong> és la decisió judicial o acord davant de notari que <strong>formalitza la ruptura de convivència</strong> sense dissoldre el vincle matrimonial. Permet reorganitzar les relacions personals i econòmiques.
+                        </p>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 mb-6 shadow-sm">
+                            <h4 class="font-bold text-slate-800 text-lg mb-3 text-rose-600">Tipus i Procediments</h4>
+                            <ul class="text-sm space-y-3">
+                                <li><strong>Per acord davant de notari:</strong> procediment ràpid i no contenciós si hi ha acord sobre tots els aspectes (aliments, custòdia, patrimoni).</li>
+                                <li><strong>Judicial contenciosa:</strong> quan hi ha desacord sobre mesures econòmiques, custòdia de fills, ús de habitatge.</li>
+                                <li><strong>Conversió a divorci:</strong> la separació legal pot convertir-se posteriorment en divorci mitjançant una petició simplificada.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-rose-50/50 p-6 rounded-2xl border border-rose-100">
+                            <h4 class="font-bold text-slate-800 text-lg mb-2 text-rose-600">🔄 Reconciliació</h4>
+                            <p class="text-sm">Un element clau de la separació és la <strong>possibilitat de reconciliació</strong>. Els cònjuges poden restablir la convivència i la separació es considera superada. A diferència del divorci, aquest retorn és plenament possible legalment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divisor -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-16"></div>
+
+        <!-- Secció 3: Divorci -->
+        <section class="mb-20">
+            <div class="flex flex-col lg:flex-row gap-10 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center shadow-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                        El Divorci
+                    </h2>
+                    <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed font-light">
+                        <p class="mb-4">
+                            El <strong>divorci</strong> és la <strong>dissolució total del vincle matrimonial</strong> que permet als cònjuges contraure nou matrimoni. A Catalunya, seguint el model de llibertat matrimonial, el divorci <strong>no requereix causa justificada</strong> ni termini mínim.
+                        </p>
+                        <p class="mb-4">
+                            A diferència de la separació, el divorci comporta l'extinció completa del status matrimonial i la liquidació definitiva del règim econòmic matrimonial.
+                        </p>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 mb-6 shadow-sm">
+                            <h4 class="font-bold text-slate-800 text-lg mb-3 text-red-600">Procediments de Divorci</h4>
+                            <ul class="text-sm space-y-3">
+                                <li><strong>Mutual o de mutu acord:</strong> sense necessitat de causa declarada, si acorden tots els extrems (divisió de béns, aliments, custòdia).</li>
+                                <li><strong>Per acord davant de notari:</strong> procediment simplificat quan no hi ha fills menors desemparats.</li>
+                                <li><strong>Contenciós:</strong> quan hi ha desacord sobre les mesures annexes al divorci.</li>
+                                <li><strong>Per demanda unilateral:</strong> un cònjuge pot demanar el divorci sense consentiment de l'altre, tot i que requereix demostració de la ruptura de la convivència o altres elements.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50/50 p-6 rounded-2xl border border-red-100">
+                            <h4 class="font-bold text-slate-800 text-lg mb-2 text-red-600">📋 Documents Clau</h4>
+                            <p class="text-sm mb-3"><strong>Conveni Regulador:</strong> Document que recopila tots els acords sobre aliments, custòdia de fills, ús de l'habitatge familiar, divisió de patrimoni i prestació compensatòria.</p>
+                            <p class="text-sm"><strong>Pla de Parentalitat:</strong> Quan hi ha fills menors, pla que especifica com es distribuirà la guarda, visites, educació i responsabilitats parentals després del divorci.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divisor -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-16"></div>
+
+        <!-- Secció 4: Efectes i Mesures -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-slate-800 mb-12 text-center">Efectes i Mesures de la Ruptura Matrimonial</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Prestació Compensatòria -->
+                <div class="content-card rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </span>
+                        <h3 class="text-xl font-bold text-slate-800">Prestació Compensatòria</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Correcció del <strong>desequilibri econòmic</strong> que la ruptura provoca en un dels cònjuges. S'aplica quan hi ha diferència significativa de patrimoni o ingressos entre els cònjuges, i la ruptura del matrimoni causa un perjudici econòmic evident.
+                    </p>
+                    <ul class="text-sm text-slate-700 space-y-2 list-disc pl-5">
+                        <li>No és aliment, sinó qüestió patrimonial.</li>
+                        <li>Es pot acordar entre les parts o imposar judicialmente.</li>
+                        <li>Pot ser en una quantitat única o en quotes periòdiques.</li>
+                        <li>Es calcula tenint en compte la situació econòmica de cada part pre i post-divorci.</li>
+                    </ul>
+                </div>
+
+                <!-- Aliments (Contingut) -->
+                <div class="content-card rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </span>
+                        <h3 class="text-xl font-bold text-slate-800">Aliments i Custòdia</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Determinació de la <strong>guarda dels fills</strong> i la seva <strong>manutenció econòmica</strong> segons les seves necessitats i la capacitat econòmica dels progenitors.
+                    </p>
+                    <ul class="text-sm text-slate-700 space-y-2 list-disc pl-5">
+                        <li>Custòdia compartida o exclusiva d'acord amb interesse del menor.</li>
+                        <li>Aliments per al manteniment, educació i formació professional.</li>
+                        <li>Assegurança de salut i educació incloses.</li>
+                        <li>Revisió periòdica segons canvi de circumstàncies.</li>
+                        <li>Obligació fins als 21 anys o mentre dure la formació.</li>
+                    </ul>
+                </div>
+
+                <!-- Habitatge Familiar -->
+                <div class="content-card rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h2a1 1 0 001-1v-3a1 1 0 011-1h2a1 1 0 011 1v3a1 1 0 001 1h2a1 1 0 001-1V9m-9 4l7-4" />
+                            </svg>
+                        </span>
+                        <h3 class="text-xl font-bold text-slate-800">Ús de l'Habitatge</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Atribució del dret d'ús de la vivenda familiar, atenent a l'<strong>interès del qui més necessita protecció</strong>, generalment els fills menors o els cònjuges en situació de vulnerabilitat.
+                    </p>
+                    <ul class="text-sm text-slate-700 space-y-2 list-disc pl-5">
+                        <li>Es prioritza el dret dels fills menors a la llar familiar.</li>
+                        <li>Pot ser exclusiu per a un dels cònjuges durant un termini.</li>
+                        <li>Es pot exigir el pagament d'una contraprestació econòmica.</li>
+                        <li>Termini d'ús pot estar limitat o vitalici segons circumstàncies.</li>
+                    </ul>
+                </div>
+
+                <!-- Retractació de Béns -->
+                <div class="content-card rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </span>
+                        <h3 class="text-xl font-bold text-slate-800">Liquidació del Règim Econòmic</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Partició i liqüidació dels béns segons el règim econòmic matrimonial pactat o legal. A Catalunya, per defecte és la separació de béns.
+                    </p>
+                    <ul class="text-sm text-slate-700 space-y-2 list-disc pl-5">
+                        <li>Identificació del patrimoni comú vs. privat.</li>
+                        <li>Divisió equitativa segons l'acord o sentència.</li>
+                        <li>Crèdits compensatoris per contribucions no negociades.</li>
+                        <li>Possibilitat de retractació de béns si hi ha fraude.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-slate-900/50 border-t border-slate-700/50 mt-24 py-12">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-white mb-4">Què diu la Llei?</h3>
+                    <p class="text-slate-400 text-sm">Plataforma digital per dominar el dret de manera eficient.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Assignatures</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="dret-penal.html" class="hover:text-white transition-colors">Dret Penal</a></li>
+                        <li><a href="dret-civil.html" class="hover:text-white transition-colors">Dret Civil</a></li>
+                        <li><a href="dret-mercantil.html" class="hover:text-white transition-colors">Dret Mercantil</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Recursos</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
+                        <li><a href="https://catalunyalegal.vercel.app/" target="_blank" rel="noopener" class="hover:text-white transition-colors">Catalunya Legal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3 text-sm">Contacte</h4>
+                    <p class="text-slate-400 text-sm">Per més informació, visita<br><a href="https://catalunyalegal.vercel.app/" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">catalunyalegal.vercel.app</a></p>
+                </div>
+            </div>
+            <div class="border-t border-slate-700/50 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2026 Què diu la Llei?. Tots els drets reservats.</p>
+                <p>Plataforma educativa de dret</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navbar-helper.js"></script>
+</body>
+
+</html>
