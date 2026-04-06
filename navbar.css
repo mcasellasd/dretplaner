@@ -63,6 +63,32 @@
   height: 24px;
 }
 
+.navbar-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: rgba(59, 130, 246, 0.12);
+  color: #dbeafe;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.navbar-home-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #ffffff;
+}
+
+.navbar-home-btn svg {
+  flex: 0 0 auto;
+}
+
 /* Main Menu */
 .navbar-menu {
   display: flex;
@@ -306,6 +332,10 @@
   .navbar-container {
     flex-wrap: wrap;
     gap: 1rem;
+  }
+
+  .navbar-home-btn {
+    order: 2;
   }
 
   .navbar-menu {
