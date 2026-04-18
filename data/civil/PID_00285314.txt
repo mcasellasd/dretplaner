@@ -1,0 +1,2132 @@
+Estructura i
+dinàmica del
+procés successori
+PID_00285314
+
+
+
+
+Lluís Puig i Ferriol († 2020)
+Revisió a càrrec de
+Marc-Roger Lloveras i Ferrer
+
+
+
+
+Temps mínim de dedicació recomanat: 4 hores
+© FUOC • PID_00285314                                                                             Estructura i dinàmica del procés successori
+
+
+
+
+Lluís Puig i Ferriol († 2020)                      Marc-Roger Lloveras i Ferrer
+
+Catedràtic de Dret Civil de la Uni-               Consultor de la UOC i professor de
+versitat Autònoma de Barcelona i                  Dret Civil a la Universitat Pompeu
+magistrat del Tribunal Superior de                Fabra.
+Justícia de Catalunya.
+
+
+
+
+La revisió d'aquest recurs d'aprenentatge UOC ha estat coordinada
+per la professora: Aura Esther Vilalta Nicuesa
+
+
+
+
+Tercera edició: febrer 2022
+© d’aquesta edició, Fundació Universitat Oberta de Catalunya (FUOC)
+Av. Tibidabo, 39-43, 08035 Barcelona
+Autoria: Lluís Puig i Ferriol, Marc-Roger Lloveras i Ferrer
+Producció: FUOC
+Tots els drets reservats
+
+
+
+
+Cap part d'aquesta publicació, incloent-hi el disseny general i la coberta, no pot ser copiada,
+reproduïda, emmagatzemada o transmesa de cap manera ni per cap mitjà, tant si és elèctric com
+mecànic, òptic, de gravació, de fotocòpia o per altres mètodes, sense l'autorització prèvia
+per escrit del titular dels drets.
+© FUOC • PID_00285314                                                                                                    Estructura i dinàmica del procés successori
+
+
+
+Índex
+
+
+
+
+Introducció..................................................................................................       5
+
+
+Objectius.......................................................................................................    7
+
+
+1.    Organització de la successió per causa de mort a Catalunya.                                                   9
+      1.1.      Necessitat de la institució d’hereu ..............................................                  9
+      1.2.      L’hereu com a successor universal ..............................................                    11
+      1.3.      La unitat del títol successori .......................................................              13
+      1.4.      La perdurabilitat de la condició d’hereu ....................................                       14
+
+
+2.    Successió voluntària i successió legal...........................................                             16
+
+
+3.    Els subjectes implicats en la successió per causa de mort.......                                              17
+      3.1.      El causant de la successió ...........................................................              17
+      3.2.      El successor: distinció entre el successor universal i el
+                particular .....................................................................................    17
+      3.3.      Casos problemàtics de distinció entre hereu i legatari ...............                              19
+                3.3.1.       Institució d’hereu en cosa certa ....................................                  19
+                3.3.2.       Institució d’hereu en usdefruit ......................................                 20
+      3.4.      Capacitat per a succeir ................................................................            20
+                3.4.1.       De les persones físiques .................................................             21
+                3.4.2.       De les persones jurídiques .............................................               22
+
+
+4.    Objecte de la successió per causa de mort...................................                                  24
+
+
+5.    L’obertura de la successió i dret aplicable..................................                                 26
+
+
+6.    La vocació hereditària: títols i efectes de la vocació................                                        27
+
+
+7.    La delació hereditària......................................................................                  29
+      7.1.      Noció i modalitats ......................................................................           29
+      7.2.      Pressupòsits subjectius de la delació (la indignitat i la
+                inhabilitat sucessòries) ................................................................           30
+      7.3.      La delació solidària (el dret d’acréixer) .......................................                   32
+      7.4.      Transmissibilitat de la delació (dret de transmissió) ...................                           35
+
+
+8.    L’herència jacent................................................................................             37
+
+
+Resum............................................................................................................   40
+
+
+Exercicis d'autoavaluació........................................................................                   43
+© FUOC • PID_00285314                                                                                                Estructura i dinàmica del procés successori
+
+
+
+
+Solucionari..................................................................................................   44
+
+
+Abreviatures................................................................................................    45
+
+
+Bibliografia.................................................................................................   46
+© FUOC • PID_00285314                                     5                           Estructura i dinàmica del procés successori
+
+
+
+Introducció
+
+
+
+
+Una relació jurídica pot ésser modificada en els seus elements subjectius i ob-
+jectius. En el primer cas parlem de successió, que de manera sintètica es pot
+definir com la substitució de qualsevol de les persones involucrades en una
+relació jurídica per una altra persona, sense que aquesta substitució impliqui
+l’extinció de la relació jurídica, sinó únicament la modificació en un dels seus
+elements subjectius.
+
+
+D’acord amb aquesta primera accepció hem de dir que la successió es pot ori-
+ginar per actes entre vius o per causa de mort. Aquí ens interessa únicament
+la successió per causa de mort, que pot ésser universal o particular.
+
+
+
+    La finalitat del dret de successions per causa de mort no és altra que la
+    de determinar com s’organitza la transmissió de les relacions jurídiques
+    actives i passives d’una persona que ja ha mort, i que des d’aquest mo-
+    ment es designa com a causant de la successió o de cuius.
+
+
+
+La successió per causa de mort es pot organitzar de maneres diferents, si bé
+a l’hora d’adoptar un criteri determinat el legislador ha de tenir en compte
+l’organització familiar, social i econòmica de la comunitat destinatària de la
+norma, ja que el dret de successions per causa de mort incideix de manera molt
+directa sobre tots aquests aspectes. Des d’una perspectiva molt general podem
+dir que, als països del common law, la successió per causa de mort s’organitza
+d’acord amb el criteri de considerar el patrimoni hereditari com un patrimoni
+en liquidació, que es transmet inicialment a un executor testamentari, nome-
+nat pel mateix causant de la successió o per les autoritats administratives, que
+ha de procedir a la seva liquidació i a la distribució de l’actiu hereditari entre
+els successors.
+
+
+Els ordenaments jurídics d’arrel romana, i entre aquests el català, organitzen
+la successió per causa de mort partint del criteri de la continuïtat, que essen-
+cialment implica col·locar el successor en la mateixa posició jurídica que cor-
+responia al causant. És a dir, es transmeten al successor les mateixes titularitats
+jurídiques que corresponien al causant de la successió. Se li transmeten també
+les mateixes situacions passives en què es trobava el seu causant i succeeix
+igualment en les situacions possessòries.
+
+
+Una característica fonamental del dret successori català és la de conferir als
+particulars una gran llibertat a l’hora de preveure el destí que volen donar al
+seu patrimoni una vegada ocorreguda de la seva mort, que es projecta en un
+doble sentit. En primer lloc, mitjançant l’establiment de la prevalença de la
+successió voluntària sobre la legal, que únicament té lloc quan el causant de
+© FUOC • PID_00285314                                     6                           Estructura i dinàmica del procés successori
+
+
+
+la successió no ha fet ús de la facultat de disposar voluntàriament i de forma
+vàlida del seu patrimoni. En segon lloc, mitjançant l’establiment d’uns límits
+a la llibertat de testar més aviat reduïts, la qual cosa possibilita que el causant
+pugui organitzar la seva successió per causa de mort d’acord amb els interessos
+familiars i patrimonials que concorren en cada cas concret.
+
+
+El trànsit del patrimoni del causant de la successió al seu hereu o hereus cridats
+a succeir en la universalitat d’aquest patrimoni es produeix mitjançant un
+procés complex, que s’estudia en els apartats 5, 6 i 7 d’aquest mòdul.
+© FUOC • PID_00285314                                     7                          Estructura i dinàmica del procés successori
+
+
+
+Objectius
+
+
+
+
+Els objectius que persegueix aquest primer mòdul són essencialment els se-
+güents:
+
+
+
+1. Posar en relleu el significat i l’abast dels principis generals que informen
+     la successió per causa de mort en el dret civil de Catalunya.
+
+
+2. Destacar la importància que té el principi de la llibertat de testar en el dret
+     successori català.
+
+
+3. Precisar els criteris que permeten diferenciar la figura del successor univer-
+     sal o hereu de la del successor particular o legatari.
+
+
+4. Destacar la transcendència jurídica que es pot atribuir a les diferents fases
+     del procés successori, fins arribar a l’adquisició del patrimoni hereditari
+     per part del cridat a succeir.
+© FUOC • PID_00285314                                             9                                     Estructura i dinàmica del procés successori
+
+
+
+1. Organització de la successió per causa de mort a
+   Catalunya
+
+
+
+
+                                                                                                  (1)
+El Dret de successions català s’organitza a partir de quatre principis fonamen-                      Tots els articles citats en aquest
+                                                                                                  mòdul corresponen al Codi civil de
+tals, d’arrel romana, que coneixem com a principis successoris: la necessitat
+                                                                                                  Catalunya (CCCat), excepte que
+d’institució d’hereu, la universalitat de la successió, la unitat del títol i la per-             s’indiqui expressament el contrari.
+
+durabilitat de la condició d’hereu. Aquests principis, tot i que es fonamenten
+en un sistema d’hereu únic que va desapareixent en els nostres dies, informen
+encara el dret de successions, tenen diverses derivacions i, malgrat haver evo-
+lucionat i tenir algunes excepcions importants, que en algun cas els qüestio-
+nen obertament, tant per la seva significació actual com per la seva aplicació,
+                                        1
+encara perviuen en el nostre dret .
+
+
+1.1. Necessitat de la institució d’hereu
+
+
+El dret successori català s’organitza d’acord amb el criteri de la continuïtat,
+que implica col·locar el successor universal o hereu en la mateixa posició ju-
+rídica que corresponia al causant de la successió amb relació a les seves titula-
+ritats actives, passives i possessòries.
+
+
+
+    Això determina que el personatge central entorn del qual s’organitza la
+    successió per causa de mort en el nostre dret és, precisament, el succes-
+    sor o els successors universals, que per consegüent mai no poden man-
+    car en una successió per causa de mort.
+
+
+
+D’aquestes consideracions se’n deriva el següent:
+
+
+•    Si el causant de la successió no ha fet ús de la facultat de disposar de ma-
+     nera voluntària del seu patrimoni, les persones cridades per la llei a substi-
+     tuir-lo com a successores ho són amb el caràcter de successores universals
+     o hereves.
+
+    Article�441-2.�Crides�legals
+
+    “1. En la successió intestada, la llei crida com a hereus del causant els parents per con-
+    sanguinitat i per adopció i el cònjuge vidu o el convivent en parella estable supervivents
+    en els termes, amb els límits i en els ordres que estableix aquest codi, sens perjudici, si
+    escau, de les llegítimes.
+
+    2. A manca de les persones a què fa referència l’apartat 1, succeeix la Generalitat de
+    Catalunya”.
+© FUOC • PID_00285314                                           10                              Estructura i dinàmica del procés successori
+
+
+
+•    Si el causant de la successió ha disposat de manera voluntària del seu pa-
+     trimoni per a després de la mort, el títol en virtut del qual ordena la seva
+     successió ha de contenir necessàriament la institució d’un o més hereus.
+
+    Article 431-18.1. Concepte d’heretament
+
+    “L’heretament o pacte successori d’institució d’hereu confereix a la persona o persones
+    instituïdes la qualitat de successoris universals de l’heretant amb caràcter irrevocable,
+    sens perjudici dels supòsits que regulen els articles 431-13, 431-14 i 431-21”.
+
+    Article�421-2.�Contingut�del�testament
+
+    “En testament, el causant ordena la seva successió mitjançant la institució d’un o més
+    hereus i pot establir llegats i altres disposicions per a després de la seva mort”.
+
+    Article�423-1.1.�Necessitat�d’institució�d’hereu
+
+    “El testament ha de contenir necessàriament institució d’hereu”.
+
+
+La necessitat de la institució d’hereu en qualsevol successió que es regeixi per
+les normes del dret civil de Catalunya, d’acord amb el principi fonamental es-
+mentat que informa el nostre sistema successori, té una tradició molt arrelada,
+com ho posa de manifest la jurisprudència següent:
+
+
+•    La sentència del Tribunal de Cassació de Catalunya de 27 de desembre
+     de 1937, que en el considerant segon precisa que els heretaments pactats
+     en les escriptures de capítols matrimonials constitueixen un acte jurídic
+     especial del nostre dret, que participa de la naturalesa dels actes de darrera
+     voluntat per la necessitat de la institució d’hereu. El considerant tercer
+     de la mateixa sentència precisa que, segons els precedents romans que
+     esmenta, per a la validesa del testament s’exigeix l’existència d’hereu.
+
+
+•    En el mateix sentit, la STSJC 07.01.1993 precisa que encara que el testa-
+     ment hològraf s’hagués atorgat amb observança dels requisits que esta-
+     bleix la llei (que actualment són els de l’article 421-17), mai no podria ésser
+     un testament per la manca d’institució d’hereu que inexcusablement exi-
+     gia l’article 109 de la CDCC. Segons la sentència posterior del mateix Tribu-
+     nal de 03.04.1995, és inacceptable en el dret successori català l’existència
+     d’un testament en què no s’ha instituït hereu. Vegeu, en el mateix sentit,
+     les SSTSJC 23.04.1998, 25.01.2001, 27.05.2002 i 16.09.2002; la primera de
+     les quals precisa que el requisit de la institució d’hereu es compleix amb
+     el nomenament d’un marmessor universal, segons l’article 315.II del CS
+     (pel dret actual art. 429-7.2).
+
+
+El principi fonamental de la institució d’hereu per a la validesa del testament
+no s’exigeix quan la successió per causa de mort s’ha de regir pel dret civil
+comarcal de Tortosa, ja que segons els articles 422-1.3 i 423-1.2 no és neces-
+sària la institució d’hereu en el testament atorgat per una persona subjecta al
+dret de Tortosa. Igualment, també s’exceptua la nul·litat si el testament conté
+nomenament de marmessor universal (art. 422-1.3 i 429-7.2). D’altra banda,
+© FUOC • PID_00285314                                             11                              Estructura i dinàmica del procés successori
+
+
+
+el rigor del principi es matisa amb la interpretació extensiva de la institució
+d’hereu (art. 423-2) i amb la conversió en codicil del testament que sigui ine-
+ficaç per manca d’institució d’hereu (art. 422-6.1).
+
+
+1.2. L’hereu com a successor universal
+
+
+
+    La posició jurídica de l’hereu com un successor universal del causant de
+    la successió és una conseqüència natural del fet de col·locar l’hereu en el
+    mateix lloc que ocupava el causant de la successió abans de la seva mort.
+
+
+    Article 411-1. Universalitat de la successió
+
+    “L’hereu succeeix en tot el dret del seu causant. Consegüentment, adquireix els béns i
+    els drets de l’herència, se subroga en les obligacions del causant que no s’extingeixen
+    per la mort, resta vinculat als actes propis d’aquest i, a més, ha de complir les càrregues
+    hereditàries”.
+
+
+Això vol dir que:
+
+
+•    L’hereu té a favor seu un títol adquisitiu que li atribueix la titularitat del
+     patrimoni hereditari, que reprodueix els mateixos títols adquisitius que
+     tenia el causant de la successió.
+
+
+•    L’hereu també succeeix en les obligacions que afectaven el causant de la
+     successió durant la seva vida, respecte a les quals es produeix la continua-
+     ció de la relació obligatòria en el seu aspecte passiu, en el sentit que l’hereu
+     succeeix o se subroga en la posició de part deutora de la relació obliga-
+     tòria. D’acord amb aquest criteri, la STSJC 01.03.1993 imposa a l’hereu
+     l’obligació que afectava el seu causant de pagar les indemnitzacions que
+     estableix l’article 278 de la CDCC en els casos de dret d’accessió (regulades
+     actualment en el Llibre cinquè del CCCat, art. 542-8 i concordants).
+
+
+•    L’hereu ha de complir també les càrregues hereditàries, que són les situaci-
+     ons jurídiques passives que apareixen com a conseqüència de l’adquisició
+     de l’herència per part del cridat a succeir, respecte a les quals l’hereu no
+     se subroga en el lloc del seu causant, sinó que ha de complir les càrregues
+     (previstes en l’article 461-19) perquè es deriven del procés successori tal
+     com el configura la llei.
+
+
+•    Finalment, el principi de la continuïtat que configura el dret successori
+     català determina que si el cridat accepta l’herència, l’acceptació comporta
+     no solament l’adquisició del patrimoni hereditari, sinó també, i en certa
+     manera, que l’hereu aparegui com un continuador de la personalitat jurí-
+     dica del causant, motiu pel qual no en pot impugnar els actes. En aquest
+     sentit, es precisa que:
+     –    Segons la STSJC 05.02.1990, l’hereu ha de respectar la servitud esta-
+          blerta pel seu causant a favor d’un edifici que s’havia de construir.
+© FUOC • PID_00285314                                       12                         Estructura i dinàmica del procés successori
+
+
+
+     –    L’hereu no ha de respectar les atribucions patrimonials per causa de
+          mort que ha ordenat el causant de la successió, si no s’ajusten a les
+          normes del dret successori català, segons resulta de la STSJC 16.01.1995
+          amb relació a les disposicions que excedeixen del contingut possible
+          de les memòries testamentàries segons l’article 123 del CS (actualment
+          art. 421-21).
+
+
+     –    La STSJC 02.10.1998 estableix, en aquest punt, que l’hereu ha de res-
+          pectar els actes de disposició que ha fet el causant de la successió sobre
+          béns copropietat del causant i del seu fill, si aquest ha esdevingut he-
+          reu del pare que era propietari de la meitat de la finca venuda.
+
+
+     –    Segons la STSJC 28.01.2002, els hereus no estan obligats a respectar els
+          actes contra legem que poden afectar el patrimoni hereditari, si el cau-
+          sant de la successió no els ha ratificat o convalidat; ni han de respec-
+          tar els actes del seu causant que perjudiquen la llegítima individual,
+          segons la STSJC 11.11.2002.
+
+
+     –    La STSJC 16.06.2003 recorda que la vinculació de l’hereu als actes del
+          seu causant es fonamenta en la situació nova que s’origina com a con-
+          seqüència de l’acceptació de l’herència, que obliga l’hereu a respectar
+          els actes del seu causant, però només en la mesura que el causant ma-
+          teix hauria de respectar els seus actes.
+
+
+     –    I finalment la RDGDEJ 29.09.2008 no permet que els hereus puguin
+          configurar com a cens vitalici un cens constituït per la seva causant
+          amb caràcter d’emfitèutic.
+
+
+La posició jurídica de l’hereu com a successor universal del seu causant es dóna
+també quan han estat instituïts de manera simultània una pluralitat de succes-
+sors, que efectivament han esdevingut hereus, ja que en aquest cas cadascun
+dels instituïts succeeix en una quota del patrimoni hereditari. Així apareix la
+figura del cohereu al costat de la de l’hereu.
+
+
+
+    Aquesta configuració jurídica de l’hereu no vol dir que necessàriament
+    ha d’adquirir tots els béns i els drets que es troben en el patrimoni here-
+    ditari, sinó únicament que adquireix tots els béns i els drets que formen
+    part d’aquest patrimoni, excepte els que el causant ha atribuït a títol
+    particular, és a dir, per via de llegat, a altres successors.
+© FUOC • PID_00285314                                             13                              Estructura i dinàmica del procés successori
+
+
+
+1.3. La unitat del títol successori
+
+
+
+    El principi de la universalitat de la institució d’hereu porta com a con-
+    seqüència que la successió per causa de mort s’ha de deferir en virtut
+    d’un títol únic, perquè si l’hereu és el cridat a succeir en el patrimoni
+    del seu causant, l’existència d’un títol successori en el qual s’han insti-
+    tuït un o més hereus, barra la possibilitat que puguin concórrer en una
+    mateixa successió hereus instituïts en un títol successori diferent.
+
+
+
+Segons el dret civil català, els títols en virtut dels quals una persona pot ésser
+cridada a l’herència i, d’aquesta manera, esdevenir hereva són dos títols que es
+deriven de la voluntat del causant de la successió, que s’anomenen testament
+i�heretament, i un tercer títol que es deriva de la llei. Aleshores la llei estableix
+una prelació entre aquests títols donant prevalença a la successió voluntària
+(heretament i testament) sobre la legal (intestada). Així, en primer lloc, preval
+el pacte successori amb institució d’hereu (o heretament), en segon lloc, la suc-
+cessió testada i només en el seu defecte es podrà aplicar la successió intestada.
+
+    Article 411-3. Fonaments de la vocació
+
+    “2. La successió intestada només pot tenir lloc en defecte d’hereu instituït, i és incompa-
+    tible amb l’heretament i amb la successió testada universal.
+
+    3. La successió testada universal només pot tenir lloc en defecte d’heretament”.
+
+
+La prelació de títols s’aplica per a la institució d’hereu, però la llei no exclou
+que es pugui completar el testament amb un codicil on es poden ordenar lle-
+gats o bé que es puguin aplicar solucions de la successió intestada a la successió
+voluntària o fins i tot a la inversa.
+
+
+El principi de la unitat del títol successori és compatible amb la possibilitat que
+en una mateixa successió concorrin successors universals instituïts en qualse-
+vol dels títols esmentats i successors particulars cridats en el mateix títol (art.
+421-2) o en un títol successori diferent. Així doncs, segons el CCCat es poden
+donar els casos següents:
+
+
+•    És possible instituir hereu en testament i que en la mateixa successió con-
+     corrin uns successors a títol particular o legataris nomenats en codicil (art.
+     421-20).
+
+
+•    Que a manca de testament succeeixin els hereus cridats per la llei segons
+     les normes de la successió intestada i que aleshores concorrin a la successió
+     hereus cridats per la via intestada (art. 411-3.2) i successors particulars o
+     legataris nomenats en codicil que han de percebre allò que el causant ha
+     disposat a favor seu a càrrec dels hereus abintestats (art. 421-20.1).
+© FUOC • PID_00285314                                               14                               Estructura i dinàmica del procés successori
+
+
+
+Casos similars de concurrència es produeixen, per exemple, en aplicació de
+l’article 422-6 –en aplicació de la clàusula codicil·lar en determinats supòsits de
+nul·litat del testament– o de l’article 461-11 –quan malgrat repudiar l’herència
+testada s’accepti la intestada–, ja que en tots dos casos poden concorre hereus
+intestats amb legataris.
+
+
+A més, aquesta concurrència també es pot donar si el causant ha instituït hereu
+en pacte successori o heretament, i s’ha reservat uns béns o quantitats per a
+disposar-ne després i efectivament ho hagi fet en un codicil, donació, memòria
+testamentària o en un altre pacte successori (art. 431-22.1).
+
+
+D’altra banda, la unitat del títol determina que si el causant de la successió
+ha disposat únicament d’una quota del seu patrimoni, o també si ha disposat
+de la totalitat del seu patrimoni però una o més quotes resten vacants per no
+haver-les acceptat els cridats a succeir, es produeix l’anomenat acreixement
+forçós, que es denomina així ja que el testador no el pot prohibir i l’hereu no
+el pot repudiar.
+
+    Article 462-1.1. Dret d’acréixer entre cohereus
+
+    “Si hi ha instituïts dos o més hereus en una mateixa herència i per qualsevol causa algun
+    d’ells no arriba a ésser-ho efectivament, la seva quota o part acreix la dels cohereus, encara
+    que el testador ho hagi prohibit, llevat que siguin procedents el dret de transmissió, la
+    substitució vulgar o el dret de representació. El mateix efecte es produeix respecte a la
+    quota hereditària de la qual el testador no ha disposat”.
+
+
+Amb això s’impedeix haver d’obrir una successió intestada parcial per la quota
+o part vacant i es dóna eficàcia al principi romà nemo pro parte testatus pro parte
+intestatus decedere potest.
+
+
+1.4. La perdurabilitat de la condició d’hereu
+
+
+
+    La unitat del títol successori té una vessant temporal, que es tradueix
+    en el fet que si el causant de la successió ha instituït un o més hereus
+    en qualsevol dels títols esmentats i el cridat o els cridats ho accepten,
+    la successió d’aquest causant es regeix sempre per les previsions que es
+    contenen en aquest títol successori i mai no poden arribar a succeir amb
+    posterioritat els hereus cridats en un títol successori diferent.
+
+
+
+Això implica que continuï vigent en el dret successori català el principi romà
+semel heres, semper heres, que comporta la impossibilitat d’instituir hereu so-
+ta condició resolutòria. Aquest fet determinaria que una vegada complerta la
+condició hagués de succeir després de l’hereu testamentari els hereus del tes-
+tador segons les normes de l’abintestat, cosa que no permet l’article 423-12.1,
+que s’intitula “Perdurabilitat de la institució d’hereu”.
+
+    “El qui és hereu ho és sempre i, en conseqüència, es tenen per no formulats en la institució
+    d’hereu la condició resolutòria i els terminis suspensiu i resolutori”.
+© FUOC • PID_00285314                                               15                                Estructura i dinàmica del procés successori
+
+
+
+El precepte també determina:
+
+
+•    La impossibilitat d’instituir hereu sota termini resolutori, que provocaria
+     les mateixes conseqüències una vegada transcorregut el termini que ha-
+     gués fixat el testador.
+
+
+•    La prohibició d’instituir hereu sota termini suspensiu, ja que això im-
+     plicaria que fossin hereus inicialment els cridats segons les normes de
+     l’abintestat i, una vegada arribat el termini fixat pel testador, haguessin de
+     succeir els hereus testamentaris.
+
+
+
+    Una conseqüència d’aquest principi de perdurabilitat de la condició
+    d’hereu és que el dret successori català únicament admet la institució
+    hereditària sota condició suspensiva, ja que s’estableix que si el cridat
+    accepta l’herència una vegada complerta la condició, aquesta accepta-
+    ció té efectes retroactius al temps de la mort del testador (art. 423-12.2).
+
+
+
+No obstant això, l’admissió del fideïcomís, tant condicional com a termini
+(art. 426-1), es pot interpretar com un qüestionament directe a aquest principi.
+
+
+Sobre la no admissió de la condició resolutòria sobre la institució d’hereu però
+sí sobre el llegat, vegeu la STSJC 04.03.2013.
+
+    Lectures recomanades
+
+    Per a una visió crítica dels principis successoris en el dret català, vegeu les obres següents:
+
+    E.� Bosch� Capdevila (2013). “El dret successori català. Llums i ombres”. RJC (núm. 4,
+    pàg. 623-654).
+
+    J.�Ferrer�i�Riba (2009). “Tradició heretada i innovació en el nou Llibre quart del Codi civil
+    de Catalunya”. A: Àrea de Dret civil, Universitat de Girona (coord.). El nou Dret successori
+    del Codi civil de Catalunya. Materials de les Quinzenes Jornades de Dret Català a Tossa (pàg.
+    15-32). Girona: Documenta Universitaria.
+© FUOC • PID_00285314                                             16                Estructura i dinàmica del procés successori
+
+
+
+2. Successió voluntària i successió legal
+
+
+
+
+En termes generals es pot pensar que la possibilitat de determinar la persona
+o les persones que han de succeir un causant concret té el seu fonament en la
+llei. D’acord amb els corrents imperants en els nostres dies, això comportaria
+atribuir l’herència als parents més propers del difunt, al cònjuge supervivent i/
+o a la persona que ha format una parella estable amb el causant de la successió.
+Tanmateix, també es pot organitzar la successió per causa de mort mitjançant
+l’atribució de l’herència a la persona o persones designades pel causant de la
+successió a l’empara del principi d’autonomia privada.
+
+
+
+    El dret successori català organitza la successió per causa de mort sobre
+    la base del criteri d’atorgar prevalença a les disposicions del causant so-
+    bre determinació del successor o successors, en el sentit que el succes-
+    sor designat per la llei segons les regles de la successió intestada és un
+    successor subsidiari, que únicament ve cridat a l’herència quan el cau-
+    sant no ha fet ús de la facultat de nomenar-se un o més successors. Es
+    parla, doncs, de la prevalença de la successió voluntària sobre la legal,
+    que també es una manifestació del principi de llibertat civil.
+
+
+    Article 411-3.2
+
+    “La successió intestada només pot tenir lloc en defecte d’hereu instituït...”
+
+
+La prevalença de la successió voluntària sobre la legal és compatible amb la
+funció social que ha de complir l’herència segons l’article 33.2 de la CE, ja que
+es tracta d’un criteri molt arrelat en el nostre dret. A més, permet al causant
+de la successió adoptar les prevencions escaients en atenció als factors perso-
+nals, familiars i patrimonials que concorren en cada cas concret i que moltes
+vegades també estan d’acord amb els interessos socials o generals. A més, la
+prevalença de la successió voluntària en el dret successori català ha estat un
+factor molt important a l’hora d’organitzar el destí dels patrimonis o empreses
+familiars després de la mort del seu titular, ja que ha evitat moltes vegades
+que el seu repartiment entre els successors possibles comportés la destrucció
+de l’empresa.
+© FUOC • PID_00285314                                      17                            Estructura i dinàmica del procés successori
+
+
+
+3. Els subjectes implicats en la successió per causa de
+   mort
+
+
+
+
+3.1. El causant de la successió
+
+
+
+    El causant de la successió –o de cuius, segons la terminologia romana–
+    és la persona ja morta, amb la conseqüència que únicament poden apa-
+    rèixer com a causants d’una successió les persones naturals o físiques,
+    però no les persones jurídiques, les quals tenen normes específiques, al
+    marge del dret de successions, sobre la seva extinció, liquidació i destí
+    del seu patrimoni romanent (vegeu art. 324-6 per les associacions i art.
+    335-6 per les fundacions).
+
+
+
+3.2. El successor: distinció entre el successor universal i el
+        particular
+
+
+El successor és aquella persona que en substitueix una altra en les seves relaci-
+ons jurídiques. En el dret de successions per causa de mort es distingeix entre
+successor universal o hereu i successor particular o legatari.
+
+
+                                                                                        Lectura recomanada
+    •    El successor�universal�o�hereu és el cridat a succeir en tot el dret del
+         seu causant (en l’universum ius del seu causant, segons la terminolo-         F.�Badosa�Coll (2015). “La
+                                                                                       sucesión por causa de muer-
+         gia romana) o en una quota del seu patrimoni en el cas d’institució           te en el Libro cuarto del Có-
+                                                                                       digo civil de Cataluña. Uni-
+         simultània d’una pluralitat d’hereus.
+                                                                                       versal y particular”. A: Arnau
+                                                                                       Raventós, Lídia; Zahino Ruiz,
+                                                                                       M.ª Luisa (dir.). Cuestiones de
+    •    El successor�particular�o�legatari és el cridat a succeir en béns o en        Derecho sucesorio catalán (pàg.
+         drets singulars, en un conjunt o en una universalitat de coses o en           11-92). Madrid: Marcial Pons.
+
+         una part alíquota de l’actiu hereditari.
+
+
+
+Pel que fa referència a la transcendència d’aquesta distinció, aquí només cal
+esmentar que el llegat és una atribució a títol particular, que implica deduir
+de l’herència els béns o els drets atribuïts al legatari. Per la seva banda, l’hereu
+succeeix en les relacions jurídiques personals i patrimonials del causant que
+siguin transmissibles per causa de mort, es fa càrrec de la defensa del patrimo-
+ni moral i patrimonial del seu causant, assumeix com a propis els deutes del
+difunt –fins i tot comprometent el seu patrimoni personal, excepte si accep-
+ta amb benefici d’inventari– i apareix, finalment, com l’executor natural de
+© FUOC • PID_00285314                                              18                               Estructura i dinàmica del procés successori
+
+
+
+la darrera voluntat del causant de la successió, tret que aquest designi altres
+persones com a executores testamentàries, com és el cas de la designació de
+marmessor.
+
+
+L’existència possible de successors universals i particulars en una mateixa suc-
+cessió planteja el problema de la seva distinció. Segons la tesi subjectiva, la
+distinció s’ha de fer d’acord amb criteris que es deriven de la voluntat del tes-
+tador, amb independència dels béns que hagi atribuït al successor i de la for-
+ma d’atribució. Segons la tesi objectiva, la distinció entre hereu i legatari no
+resulta de la voluntat del testador de voler instituir hereu, sinó del fet de cridar
+l’instituït a la totalitat dels seus béns de manera indeterminada o unitària o en
+una quota del seu patrimoni. El CCCat estableix els criteris següents:
+
+
+•    Implica institució d’hereu la disposició del testador en la qual apareix el
+     nom o qualitat d’hereu, la qual s’interpreta de manera àmplia i amb les
+     matisacions que es fan després amb relació als casos problemàtics que es
+     presenten.
+
+    Article 423-2. Forma d’ordenació de la institució d’hereu
+
+    “Tant la simple utilització pel testador del nom o la qualitat d’hereu com la disposició a
+    títol universal, encara que no s’empri aquella paraula, impliquen institució d’hereu, si és
+    clara la voluntat del testador d’atribuir a l’afavorit la qualitat de successor en tot el seu
+    dret o en una quota del seu patrimoni”.
+
+
+•    Si manca la denominació d’hereu, cal que el causant ordeni a favor seu una
+     disposició a títol universal i, a més a més, que sigui clara la seva voluntat
+     d’atribuir a l’afavorit la condició de successor en tot el seu dret o en una
+     quota del seu patrimoni.
+
+
+•    Si únicament apareix una disposició a títol universal a favor de l’instituït,
+     però manca la voluntat del testador favorable a atribuir-li la condició de
+     successor en tot el seu dret, l’instituït no és hereu, sinó legatari de part
+     alíquota (art. 427-36).
+
+
+Amb referència al problema de la distinció entre hereu i legatari, la STSJC
+07.01.1993 considera que no hi ha institució hereditària en la disposició feta
+per la testadora en la qual no apareix la paraula hereu, ni la designació dels afa-
+vorits com a hereus i es pot deduir dels llegats que ordena emprant l’expressió
+deixo. I segons la STSJC 11.10.1999, l’atribució de la testadora del que va rebre
+del seu marit difunt al nebot atorga a aquest la condició de legatari.
+
+
+La STSJC 06.11.2000 refusa la pretensió de la part recurrent, que entenia que el
+legatari no podia percebre més que l’hereu sobre una finca del cabal hereditari,
+perquè si bé és cert que l’hereu succeeix en l’universum ius del seu causant, la
+universalitat de la successió de l’hereu s’ha d’entendre en sentit qualitatiu i
+© FUOC • PID_00285314                                      19                             Estructura i dinàmica del procés successori
+
+
+
+no quantitatiu. Per la seva banda, la STSJC 05.04.2004 qualifica de llegat -i no
+d’institució hereditària- la disposició ordenada en testament hològraf a favor
+de la filla de la testadora de tots els béns que tenia en un lloc determinat.
+
+
+Pel que fa referència a la distinció entre hereu i legatari quan la successió per
+causa de mort es fonamenta en pacte successori cal fer referència a l’article
+431-18.1, segons el qual el pacte successori d’institució d’hereu o heretament
+confereix a la persona o persones instituïdes la condició de successors univer-
+sals de l’heretant amb caràcter irrevocable, mentre que els pactes successoris
+d’atribució particular sols confereixen a l’afavorit béns concrets i determinats,
+amb aplicació de les normes dels llegats, en allò que siguin compatibles amb
+llur naturalesa irrevocable (art. 431-29 i 431-30.5).
+
+
+3.3. Casos problemàtics de distinció entre hereu i legatari
+
+
+
+3.3.1. Institució d’hereu en cosa certa
+
+
+Si el causant de la successió institueix hereu, però li atribueix únicament una o        Lectura recomanada
+unes coses determinades, es produeix una contracció radical entre l’atribució
+                                                                                        Sobre la institució d’hereu en
+particular i la institució d’un successor a títol universal. En aquest cas, l’article   cosa certa vegeu:
+423-3 ofereix les particularitats següents respecte a la distinció entre hereu i        M.�Pérez�Simeón (2015).
+                                                                                        “Els principis del Dret suc-
+legatari:                                                                               cessori català. Context origi-
+                                                                                        nari i context actual. El cas
+                                                                                        paradigmàtic de l’hereu ins-
+•    Si l’hereu o els hereus instituïts en cosa certa concorren a la successió amb      tituït en cosa certa”. A: Ar-
+     hereus instituïts sense aquesta designació, aquells tenen la condició de           nau Raventós, Lídia; Zahino
+                                                                                        Ruiz, M.ª Luisa (dir.). Cuesti-
+     legataris (apartat 1 del precepte).                                                ones de Derecho sucesorio ca-
+                                                                                        talán (pàg. 95-139). Madrid:
+                                                                                        Marcial Pons.
+•    Si l’hereu únic o tots els hereus instituïts ho són en cosa certa, tenen la
+     condició d’hereus o de cohereus del causant de la successió. Tanmateix,
+     també tenen la condició de prelegataris de la cosa o coses certes, solució
+     que es fonamenta en la necessitat que en aquest cas tingui bel·ligerància
+     el principi de la unitat del títol successori (apartat 2 del precepte).
+
+
+En la STS 24.01.1989 es discuteix sobre la distinció entre hereu i legatari en
+un cas d’institució a favor dels fills del testador, de llegat d’una quantitat de
+diners per parts iguals a favor de tots els fills i llegat d’una casa propietat del
+testador a favor d’un dels fills. I segons la STSJC 07.01.1993, no ens trobem
+davant d’una institució hereditària en cosa certa, sinó davant d’un llegat, si
+únicament s’atribueix a l’afavorit una cosa determinada però manca el nomen
+d’hereu.
+© FUOC • PID_00285314                                         20                             Estructura i dinàmica del procés successori
+
+
+
+3.3.2. Institució d’hereu en usdefruit
+
+
+En el cas d’atribuir-se al successor únicament un dret real limitat sobre els béns
+hereditaris, com és el cas de l’usdefruit, l’instituït té a voltes la condició d’hereu
+i d’altres la de legatari, ja que s’aplica un règim semblant al que s’estableix
+per a la institució d’hereu en cosa certa. L’article 423-5 preveu les solucions
+següents:
+
+
+•    Si l’hereu instituït en l’usdefruit concorre a la successió amb un o més
+     hereus universals, l’instituït en l’usdefruit té la condició de legatari (apartat
+     1 del precepte).
+
+
+•    Si no concorre a la successió amb altres hereus universals, i per tal de man-
+     tenir el principi de la unitat del títol successori segons l’article 411-3.2 i
+     3, l’instituït en l’usdefruit té en aquest cas la condició d’hereu (argument
+     de l’art. 423-5.1).
+
+
+•    Tanmateix, cal recordar que el dret d’usdefruit s’extingeix normalment a
+     la mort de l’usufructuari (art. 561-3.3), que en relació amb el principi de
+     la perdurabilitat de la condició d’hereu, imposa adequar la voluntat del
+     testador a aquest principi. Així, si per a després de la mort de l’instituït
+     hereu en l’usdefruit el testador ha instituït un altre hereu, l’usufructuari es
+     considerat com un hereu fiduciari i l’hereu posterior hereu fideïcomissari
+     condicional (art. 423-5.2).
+
+
+•    I finalment es preveu el cas de no haver instituït el testador un hereu poste-
+     rior o que no arribi a ser l’hereu l’instituït, casos en els quals s’entén or-
+     denat un fideïcomís a favor dels qui serien hereus intestats del testador
+     en el moment d’extingir-se l’usdefruit (art. 423-5.3). El precepte modifica
+     l’article 140, III CS, que per aquest supòsit convertia l’hereu instituït en
+     l’usdefruit en hereu pur i lliure; la solució actual sembla més conforme
+     amb la probable voluntat del testador.
+
+
+
+3.4. Capacitat per a succeir
+
+
+
+    La capacitat per a succeir és una conseqüència de la capacitat jurídica
+    que l’article 211-1 CCCat reconeix a totes les persones sense cap mena
+    de discriminació d’acord també amb l’article 14 CE. Per això, s’estableix
+    un principi general de capacitat per a succeir, que es projecta sobre les
+    persones físiques i sobre les persones jurídiques, que explicita l’article
+    412-1.1 en els termes següents:
+
+
+    “Tenen capacitat per a succeir totes les persones que en el moment de l’obertura de la
+    successió ja hagin nascut o hagin estat concebudes i que sobrevisquin al causant”.
+© FUOC • PID_00285314                                            21                              Estructura i dinàmica del procés successori
+
+
+
+3.4.1. De les persones físiques
+
+
+
+    Per tal que una persona física pugui succeir, es requereix que ja hagi
+    nascut o que hagi estat concebuda al temps de la mort del causant i que
+    sobrevisqui al causant.
+
+
+
+La capacitat per a succeir del concebut origina el problema de determinar si
+el cridat a succeir ja ha estat concebut en el moment de la mort del causant
+de la successió. La solució la trobem en la regulació de la filiació (llibre segon
+del CCCat):
+
+    Article 235-4. Període legal de concepció
+
+    “El període legal de concepció comprèn els primers cent vint dies del període de gestació,
+    que es presumeix d’un màxim de tres-cents dies, llevat que proves concloents demostrin
+    que el període de gestació ha durat més de tres-cents dies”.
+
+
+Les tècniques actuals de fecundació assistida en la seva modalitat post mortem
+plantegen també el problema de la capacitat successòria del fill respecte el
+pare que ja ha mort en el moment de la concepció del fill. La seva manca de
+capacitat successòria s’esmena mitjançant la ficció de considerar que la seva
+concepció s’ha produït al temps de l’obertura de la successió.
+
+    Article 412-1. Persones físiques
+
+    “2. Els fills que neixen en virtut d’una fecundació assistida practicada d’acord amb la
+    llei després de la mort d’un dels progenitors tenen capacitat per a succeir al progenitor
+    premort”.
+
+
+Sobre capacitat successòria d’aquests fills, vegeu també els articles 235-8.2 i
+235-13.2 –que estableixen els requisits per tal que el nascut es tingui per fill
+del marit o de la parella– i, en el mateix sentit, l’article 9.2 i 3 de la Llei estatal
+14/2006, de 26 de maig, sobre tècniques de reproducció humana assistida.
+
+
+•    En canvi, les persones no nascudes ni concebudes al temps de la mort
+     del causant, només tenen capacitat per a succeir a títol particular o de
+     legataris (art. 427-2.), però no per a succeir de manera directa el causant
+     de la successió a títol d’hereus, ja que en el cas de successió hereditària a
+     favor d’un no-concebut, difícilment es pot complir el principi fonamental
+     del dret successori català segons el qual l’hereu és el cridat a continuar les
+     relacions jurídiques que en vida afectaven el causant de la successió. Així
+     resulta també de l’article 423-7.2, amb l’excepció que resulta de l’apartat
+     3 del mateix precepte; i de l’article 431-3 quan la institució hereditària
+     s’ordena a favor de persona no atorgant del pacte.
+© FUOC • PID_00285314                                               22                               Estructura i dinàmica del procés successori
+
+
+
+El cridat a succeir només es pot convertir en hereu o legatari si sobreviu al
+causant de la successió. Per tant, queda clarament sense capacitat en cas de
+premoriència i també en cas de commoriència, ja que el successor no podria
+aparèixer com a continuador de les relacions jurídiques del seu causant.
+
+
+L’article 211-2 (reformat per la Llei 6/2015) estableix la no transmissió de drets
+en cas de commoriència en els següents termes:
+
+    Article 211-2 Commoriència i mort consecutiva derivada d’un mateix
+    esdeveniment
+
+    “1. La crida a una successió o la transmissió de drets a favor d’una persona que depenen
+    del fet que hagi sobreviscut a una altra només tenen lloc si es prova aquesta supervivència.
+    En cas contrari, es considera que s’han mort alhora i no hi ha successió o transmissió de
+    drets entre aquestes persones.
+
+    2. Sens perjudici del que estableix l’apartat 1, es considera que s’han mort alhora quan hi
+    ha unitat de causa o de circumstància que motiven les defuncions i entre ambdues morts
+    han transcorregut menys de setanta-dues hores”.
+
+
+3.4.2. De les persones jurídiques
+
+
+Les persones jurídiques també poden ser successores i, tal com reconeix
+l’article 412-2.1, tenen capacitat successòria les que estiguin constituïdes le-
+galment en el moment de l’obertura de la successió.
+
+
+Igualment, també tenen capacitat per succeir les persones jurídiques que el
+causant ordena crear en la seva disposició per causa de mort, sempre que
+s’arribin a constituir (art. 412-2.2), com és el cas de la possible constitució per
+causa de mort d’una fundació que el causant ordena crear en testament o co-
+dicil (art. 331-3).
+
+    Article 412-2. Persones jurídiques
+
+    “2. Tenen capacitat per a succeir les persones jurídiques que el causant ordena crear en
+    la seva disposició per causa de mort, si s’arriben a constituir. En aquest cas, els efectes de
+    la successió es retrotreuen al moment de l’obertura d’aquesta”.
+
+
+També amb relació a les persones jurídiques, encara que d’una manera més
+restringida, es permet que pugui succeir la persona jurídica que encara no ha
+nascut a la vida del dret al temps de la mort del causant, però que es troba
+en vies de constitució.
+
+
+Sobre la capacitat successòria d’una associació religiosa en fase de constitució
+vegeu la STS de 28.11.1986; i sobre capacitat d’una fundació instituïda hereva
+en testament i constituïda amb posterioritat a l’obertura de la successió vegeu
+la STS de 18.10.2001. Més recentment, la STSJC 6.6.2017 confirma la correcta
+constitució per part de l’Ajuntament de Barcelona d’una fundació que s’havia
+ordenat constituir en testament on se li atorgava un important llegat.
+© FUOC • PID_00285314                                    23                           Estructura i dinàmica del procés successori
+
+
+
+La Generalitat de Catalunya, com a persona jurídica, té capacitat successòria,
+tal com es desprèn de la mateixa regulació del llibre quart –especialment en
+cridar-la a la successió intestada– i com es pressuposa en els articles 11 i 12 bis
+del Decret Legislatiu 1/2002, de 24 de desembre, pel qual s’aprova el text refós
+de la Llei de patrimoni de la Generalitat de Catalunya.
+© FUOC • PID_00285314                                      24                            Estructura i dinàmica del procés successori
+
+
+
+4. Objecte de la successió per causa de mort
+
+
+
+
+    El patrimoni de la persona des del moment de la seva mort es converteix
+    en herència, que és objecte de la successió per causa de mort.
+
+
+
+Segons els principis generals que informen la successió per causa de mort en el
+dret civil català, l’hereu és el cridat a subrogar-se en tots els béns i els drets que
+integraven el patrimoni del causant mentre vivia, però hem d’entendre que
+s’exclouen de la successió els drets de caràcter patrimonial que s’extingeixen
+com a conseqüència de la mort del seu titular, com succeeix per exemple amb
+els drets d’usdefruit, ús i habitació, tal com s’estableix en la seva regulació en
+el llibre cinquè del CCCat (art. 561-3.3, 561-16.2, 562-2 i 562-3).
+
+
+També formen part de l’herència les obligacions que en vida afectaven el cau-
+sant de la successió, sempre que no es tracti d’obligacions personalíssimes, que
+per la seva pròpia naturalesa s’extingeixen com a conseqüència de la mort del
+deutor. Així, per exemple, s’extingeix per mort el contracte d’obra determina-
+da amb una persona d’acord amb les seves qualitats personals (art. 1595 CC)
+o el contracte de mandat (art. 622-33.c) i, en el mateix sentit, l’extinció del
+càrrec de marmessor per la seva mort (art. 429-14). Tampoc no són transmis-
+sibles per herència els encàrrecs de confiança.
+
+
+L’hereu també succeeix en les situacions possessòries en què es trobava el cau-
+sant. A més, si posseeix d’acord amb els requisits que estableix la llei per a
+usucapir, pot continuar la usucapió afegint la seva possessió a la del causant,
+tal com estableix l’article 531-24.3.
+
+
+Pel que fa referència als drets de la persona, la regla general és que resten
+al marge de la successió per causa de mort, ja que no són transmissibles i
+s’extingeixen amb la mort de la persona, com succeeix per exemple amb els
+cognoms que s’adquireixen com a conseqüència de la filiació (art. 235-2.2).
+També per regla general s’exclouen de la successió els drets i les potestats fa-
+miliars, com l’obligació d’aliments (art. 237-13.a) que s’extingeix per la mort
+de l’alimentat però també per la de la persona obligada, tot i que aleshores
+caldrà, si s’escau, seguir l’ordre previst per la llei per a imposar el deure a una
+altra persona.
+
+
+No obstant això, en ocasions els hereus, juntament amb els parents més prò-
+xims del difunt, estan legitimats per a exercir accions de reclamació i impug-
+nació de la filiació, d’acord amb les articles 235-20, 235-21, 235-23, 235-27 i
+235-29.
+© FUOC • PID_00285314                                      25                        Estructura i dinàmica del procés successori
+
+
+
+En el mateix sentit, també queden legitimats per a exercir accions civils de
+protecció del dret a l’honor, la intimitat o la imatge del causant (art. 4, 5 i
+especialment 6 de la Llei Orgànica 1/1982, de 5 de maig). En el cas dels drets
+morals d’autor es produeix una situació similar (vegeu articles 15 i 16 LPI).
+
+
+Amb relació a l’objecte de la successió per causa de mort és interessant com-
+pletar les indicacions anteriors amb els punts següents:
+
+
+•    Si una persona fa una oferta contractual i mor abans que l’oferta hagi estat
+     acceptada per l’altra part contractant, es qüestiona la transmissibilitat als
+     hereus de l’oferent de l’oferta de contracte. La tesi negativa apareix a la
+     STS 23.03.1998 (comentada per V. Guilarte a CCJC, 1988, núm. 16, pàg.
+     251 i seg.).
+
+
+•    Pel que fa als arrendaments urbans, la LAU preveu que la mort de
+     l’arrendatari genera el dret a la subrogació en el contracte a favor de les
+     persones esmentades en l’article 16 pel que fa a l’arrendament d’habitatge
+     i també, en el cas de l’art. 33, per l’ús diferent a habitatge.
+
+
+•    Sobre la transmissió per causa de mort dels drets de l’arrendatari en el con-
+     tracte d’arrendament de finques rústiques, vegeu l’article 623-23 i concor-
+     dants del llibre sisè del CCCat.
+
+
+•    Finalment, cal tenir en compte que la mort de la persona pot generar altres
+     drets a favor de determinades persones –cònjuge, parella estable, descen-
+     dents o altres parents o fins i tot tercers, que no formen part de la seva
+     successió per causa de mort, tot i que s’hi puguin relacionar o en ocasions
+     puguin ser tingudes en compte–. És el cas, per exemple, de la liquidació
+     del règim econòmic del matrimoni, de les compravendes amb pacte de
+     supervivència, de les pensions de viudetat o fins i tot de les assegurances
+     de vida o de les indemnitzacions derivades d’accidents.
+© FUOC • PID_00285314                                             26                                Estructura i dinàmica del procés successori
+
+
+
+5. L’obertura de la successió i dret aplicable
+
+
+
+
+La mort de la persona assenyala l’obertura de la successió, ja que determina
+que el seu patrimoni resti mancat d’un titular actual. Per tal de suplir aquesta
+mancança comença el procés successori, que porta a la determinació del nou
+titular que succeeix en el patrimoni del difunt.
+
+    Article 411-2.1. Obertura de la successió
+
+    “La successió s’obre en el moment de la mort del causant, al lloc on ha tingut el darrer
+    domicili”.
+
+
+
+    En els ordenaments jurídics moderns, l’única causa que determina
+    l’obertura de la successió és la mort de la persona física; si bé cal precisar
+    que també produeix l’obertura de la successió la declaració judicial de
+    mort (art. 196 CC).
+
+
+
+La determinació del moment de la mort resulta normalment de la inscripció
+d’aquest fet en els llibres del Registre Civil (art. 198 CC i 62 LRC).
+
+
+Dret�aplicable�a�la�successió
+
+
+Pel que fa al dret aplicable, cal destacar que es determina en funció del veïnatge                 Lectura recomanada
+civil del causant en el moment de la seva mort, segons explicita l’article 9.8
+                                                                                                  Sobre l’aplicació i els canvis
+CC. Vegeu, no obstant això, les prevencions que estableix el mateix article                       en el criteri del veïnatge civil
+9.8 i la norma sobre la validesa dels testaments atorgats d’acord amb un dret                     vegeu:
+                                                                                                  A.�Font�Segura (ed.) (2011).
+diferent del que hagi de regir la successió (art. 11 CC).                                         L’aplicació del dret civil català
+                                                                                                  en el marc plurilegislatiu espa-
+                                                                                                  nyol i europeu. Barcelona: Ate-
+En aquesta matèria s’ha de destacar el Reglament UE 650/2012, relatiu a la                        lier.
+competència, la llei aplicable i altres matèries (DOCE L 201/107, 27.07.2012)
+que substitueix amb caràcter general, en l’àmbit europeu i sempre que hi hagi
+un element d’internacionalitat, el tradicional criteri de la nacionalitat o del
+veïnatge, pel de la residència habitual del causant en el moment de la seva
+mort per a la determinació tant de la competència judicial (art. 4) com del dret
+aplicable a la successió (art. 21), tot i que es permet també que el causant hagi
+elegit la seva llei nacional (art. 22).
+
+    Lectures recomanades
+
+    M.�E.�Ginebra�Molins (2015). “El Reglamento (UE) 650/2012 y la determinación de la
+    ley aplicable a la sucesión”. A: Arnau Raventós, Lídia; Zahino Ruiz, M.ª Luisa (dirs.). Cu-
+    estiones de Derecho sucesorio catalán (pàg. 141-172). Madrid: Marcial Pons.
+© FUOC • PID_00285314                                            27                              Estructura i dinàmica del procés successori
+
+
+
+6. La vocació hereditària: títols i efectes de la vocació
+
+
+
+
+    Entenem per vocació hereditària el fonament jurídic que dóna dret a
+    succeir el causant, ja que comporta una crida a l’herència a favor del
+    successor. En el dret civil català, el títol successori pot tenir el seu origen
+    en la voluntat del causant i, en el seu defecte, en la llei.
+
+
+    Article 411-3.1. Fonaments de la vocació
+
+    “Els fonaments de la vocació successòria són l’heretament, el testament i el que estableix
+    la llei”.
+
+
+La vocació hereditària pot tenir el seu origen en un negoci jurídic bilateral
+que s’ha convingut entre el causant i el successor o successors, que atribueix a
+aquests la condició d’hereu de manera vinculant. Aquest negoci jurídic que co-
+neixem com a pacte successori rep, quan conté institució d’hereu, la denomi-
+nació d’heretament�o�pacte�successori�d’institució�d’hereu (art. 431-18.1).
+
+
+El causant també pot disposar de la seva herència mitjançant un negoci jurídic
+unilateral que procedeix directament de la seva voluntat, sense que el vinculi
+en vida, que únicament dóna un dret ferm a succeir una vegada ocorreguda
+la mort del causant. Aquest fonament de la vocació hereditària rep el nom de
+testament (art. 421-2).
+
+
+A manca d’heretament o de testament, el títol que dóna dret a succeir és la
+llei, que davant el silenci del causant a l’hora de determinar el destí del seu
+patrimoni, l’atribueix als seus parents, al cònjuge o convient supervivent o, en
+darrer terme, a la Generalitat de Catalunya (art. 441-2). Aquest tipus de vocació
+hereditària que es fonamenta en la llei s’anomena successió�intestada. Com
+es veurà més endavant, la crida no és conjunta i es fa seguint l’ordre i els límits
+fixats per la llei.
+
+
+La prevalença de la successió voluntària sobre la legal o intestada en el dret ci-
+vil català determina que si una persona ve cridada simultàniament a l’herència
+per títols diferents, el cridat pot, segons l’article 461-11, que s’intitula “Plura-
+litat d’ordre de crides”:
+
+
+•    Repudiar l’herència testamentària i acceptar després la intestada, ja que
+     aquesta té lloc quan manca la voluntària. En aquest supòsit, manca la
+     voluntària perquè el cridat ha refusat ésser hereu testamentari. Però, en
+     aquest cas, l’hereu que succeeix per la via de l’abintestat ha de complir
+     les disposicions ordenades pel testador amb una finalitat molt concreta,
+     com és la d’evitar que per aquesta via el cridat pugui burlar el compliment
+© FUOC • PID_00285314                                     28                          Estructura i dinàmica del procés successori
+
+
+
+     de les disposicions ordenades pel causant en el seu testament a càrrec de
+     l’hereu i a favor d’altres persones (apartat 1 del precepte).
+
+
+•    Si el cridat a l’herència ignora que ha estat instituït hereu en testament
+     i davant d’aquesta ignorància repudia la vocació intestada subsidiària,
+     la llei considera que aquesta repudiació permet encara al cridat acceptar
+     l’herència per la via de la vocació testamentària, atès que aquesta té una
+     consideració prevalent (apartat 2 del precepte). Es pot produir un supòsit
+     similar per la repudiació d’una herència testamentària per part de qui resul-
+     tava cridat en un heretament preventiu anterior (vegeu STSJC 12.07.2001).
+
+
+•    Un altre supòsit a considerar es produeix quan una persona és cridada en
+     un mateix títol successori a parts diferents del cabal hereditari en clàusules
+     separades. Els supòsits són els següents:
+     i) si el cridat com a hereu en diferents quotes hereditàries n’accepta una
+     d’elles, s’entén que accepta també les restants quotes que li siguin deferides
+     amb posterioritat (art. 461-2.2), perquè així ho exigeix el principi de la
+     universalitat del títol d’hereu, segons els articles 411-1 i 411-3.2.
+     ii) si una persona és cridada a la mateixa herència a títol d’hereu i de lega-
+     tari, l’article 427-16.6 estableix l’autonomia d’ambdós títols, ja que segons
+     el precepte pot acceptar l’herència i repudiar el llegat, i inversament;
+     i iii) quan una persona és afavorida amb una pluralitat de llegats en la
+     mateixa herència, pot acceptar-ne un i repudiar-ne l’altre, encara que es-
+     tiguin ordenats en la mateixa clàusula, llevat que el llegat repudiat sigui
+     onerós o que el causant hagi disposat una altra cosa (art. 427-16.4).
+© FUOC • PID_00285314                                             29                              Estructura i dinàmica del procés successori
+
+
+
+7. La delació hereditària
+
+
+
+
+7.1. Noció i modalitats
+
+
+
+    La delació hereditària es produeix quan el cridat o els cridats a
+    l’herència, ja sigui per vocació voluntària o intestada, poden de manera
+    immediata manifestar eficaçment la seva voluntat d’acceptar o repudiar
+    l’herència a la qual són cridats.
+
+
+
+Així com la vocació hereditària opera de manera simultània a favor de tots els
+cridats a succeir per voluntat del testador o per la llei, la delació pot operar en
+un moment posterior a la vocació i també successivament, ja que si es frustra
+una delació preferent es reprodueix a favor d’altres successors.
+
+    Article 411-4. Moment de la delació
+
+    “1. La successió es defereix en el moment de la mort del causant.
+
+    2. No obstant el que estableix l’apartat 1, en la institució sotmesa a condició suspensiva,
+    l’herència es defereix en el moment en què es compleix la condició”.
+
+
+Es poden donar els supòsits següents:
+
+
+•    Vocació� amb� delació� immediata: esdevé quan la delació a favor d’un
+     o més successors es produeix al temps de la vocació. És el supòsit més
+     habitual.
+
+
+•    Vocació� amb� delació� diferida: solament esdevé eficaç una vegada s’ha
+     complert la condició suspensiva imposada pel causant a la institució
+     d’hereu, quan el testador ha instituït hereu una persona concebuda però
+     no nascuda al temps de l’obertura de la successió, quan ha instituït hereu
+     el fill que ha de néixer d’una fecundació assistida post mortem o quan ha
+     instituït hereva una persona jurídica que encara no s’ha constituït al temps
+     de l’obertura de la successió.
+
+
+•    Vocació�amb�delació�successiva: es produeix quan es frustra la delació a
+     favor del cridat en un lloc preferent, la qual cosa determina que es reiteri
+     la delació a favor dels cridats com a successors intestats per la llei per no
+     haver esdevingut hereus els cridats en lloc preferent segons les normes de
+     la successió intestada, per no haver arribat a succeir l’instituït en lloc pre-
+     ferent pel testador o per haver-se extingit la titularitat del primer instituït
+     en cas d’una institució successiva d’hereu.
+© FUOC • PID_00285314                                              30                               Estructura i dinàmica del procés successori
+
+
+
+Un efecte fonamental de la delació hereditària és la possibilitat que té el cridat
+d’acceptar o de repudiar l’herència de manera immediata des del moment en
+què es produeix la delació a favor seu, sia immediata, diferida o successiva (en
+aquest sentit es pot veure la STSJC 24.04.2003).
+
+
+7.2. Pressupòsits subjectius de la delació (la indignitat i la
+       inhabilitat sucessòries)
+
+
+
+    Si la delació es produeix a favor d’una persona que ha observat una
+    conducta greument incorrecta envers el causant de la successió, la llei
+    estableix per via de sanció civil la possibilitat d’al·legar la indignitat
+    successòria, que comporta la seva exclusió com a successor.
+
+
+
+Les causes que determinen la indignitat successòria en el nostre dret són les
+que apareixen a l’article 412-3, que són d’interpretació restrictiva, atès que
+es tracta de normes sancionadores (en aquest sentit es pot veure la STSJC
+14.02.2005).
+
+
+Cal posar de manifest de totes maneres que el CCCat amplia les causes
+d’indignitat successòria que establia el dret anterior, ja que segons l’apartat II
+del preàmbul del seu llibre quart:
+
+    “En matèria de capacitat successòria, cal destacar la norma que redefineix i amplia les
+    causes d’indignitat, en particular estenent-la als qui cometen delictes de lesions greus,
+    contra la llibertat, de tortures, contra la integritat moral –incloent-hi els delictes de vi-
+    olència familiar i de gènere– o contra la llibertat o la indemnitat sexuals, sempre que
+    en siguin víctimes el causant o altres persones del seu nucli familiar. També s’amplia el
+    supòsit d’indignitat per causa d’impagament de prestacions econòmiques imposades en
+    processos matrimonials, que en el llibre quart comprèn els casos de comissió de delictes
+    contra els drets i deures familiars, incloent-hi per tant casos de trencament de deures de
+    custòdia, substracció de menors o altres formes d’abandonament de família diferents de
+    l’impagament de pensions al cònjuge, l’excònjuge o els fills”.
+
+
+Segons el dret actual, són causes d’indignitat successòria:
+
+    Article 412-3. Indignitat successòria
+
+    “Són indignes de succeir:
+
+    a) Els qui han estat condemnats per sentència ferma dictada en judici penal per haver
+    matat o haver intentat matar dolosament el causant, el seu cònjuge, la persona amb qui
+    convivia en parella estable o algun descendent o ascendent del causant.
+
+    b) El qui ha estat condemnat per sentència ferma dictada en judici penal per haver comès
+    dolosament delictes de lesions greus, contra la llibertat, de tortures, contra la integritat
+    moral o contra la llibertat i la indemnitat sexual, si la persona agreujada és el causant,
+    el seu cònjuge, la persona amb qui convivia en parella estable o algun descendent o
+    ascendent del causant.
+
+    c) El qui ha estat condemnat per sentència ferma dictada en judici penal per haver ca-
+    lumniat el causant, si l’ha acusat d’un delicte per al qual la llei estableix una pena de
+    presó no inferior a tres anys.
+
+    d) El qui ha estat condemnat per sentència ferma dictada en judici penal per haver prestat
+    fals testimoni contra el causant, si li ha imputat un delicte pel qual la llei estableix una
+    pena de presó no inferior a tres anys.
+© FUOC • PID_00285314                                             31                              Estructura i dinàmica del procés successori
+
+
+    e) El qui ha estat condemnat per sentència ferma dictada en judici penal per haver comès
+    un delicte contra els drets i deures familiars, en la successió de la persona agreujada, o
+    d’un representant legal d’aquesta.
+
+    f) Els pares que han estat privats o suspesos de la potestat respecte al fill causant de la
+    successió, per una causa que els sigui imputable.
+
+    g) El qui ha induït el causant de manera maliciosa a atorgar, revocar o modificar un
+    testament, un pacte successori o qualsevol altra disposició per causa de mort del causant
+    o li ha impedit de fer-ho, i també el qui, coneixent aquests fets, se n’ha aprofitat.
+
+    h) El qui ha destruït, amagat o alterat el testament o una altra disposició per causa de
+    mort del causant”.
+
+
+En el cas resolt per la STSJC 08.04.2010 s’aplica la indignitat per inducció mali-
+ciosa per a atorgar o per impedir revocar un testament i, a més, es declara la
+nul·litat del testament per intimidació. En aquest cas, a més, es considera que
+no cal una condemna penal –seguint la literalitat de l’apartat g–, ja que els fets
+es poden provar per deducció d’actes coetanis, anteriors o posteriors.
+
+
+Les causes d’indignitat successòria operen a instàncies de les persones imme-
+diatament afavorides per la successió pel cas que sigui declarada la indignitat
+(art. 412-6.2), que poden demanar-la en el període de quatre anys des que
+coneixen o poden conèixer raonablement la causa d’indignitat i, en tot cas,
+una vegada transcorreguts quatre anys des que la persona indigne de succeir
+es troba en possessió dels béns hereditaris (art. 412-7).
+
+
+Les causes d’indignitat successòria resten sense efecte, segons l'article 412-4.1,
+si el causant de la successió va atorgar la disposició a favor de l’indigne conei-
+xent la causa d’indignitat, es va reconciliar amb l’indigne per actes indubta-
+bles o el va perdonar en escriptura pública i respecte a les disposicions fetes
+en pacte successori per la caducitat de la facultat de revocar en els termes es-
+tablerts per l'art. 431-13. L'art. 412-4-2 afegeix que la reconciliació i el perdó
+són irrevocables.
+
+
+Si es declara la indignitat successòria, la declaració d’indignitat es retrotrau al
+moment de la delació (art. 412-8.2), amb la conseqüència de conferir efectivi-
+tat a les crides successives o de provocar l’obertura de la successió intestada en
+un altre cas. Si la declaració d’indignitat successòria és anterior a l’acceptació
+de l’herència per part de l’indigne, esdevé ineficaç l’acceptació per manca
+del pressupòsit subjectiu de la delació; si la declaració d’indignitat és posteri-
+or a l’acceptació de l’herència per part de l’indigne, cal establir la liquidació
+d’aquesta situació possessòria d’acord amb els criteris que informen la posses-
+sió de mala fe (art. 412-8.1).
+
+
+I pel que fa referència a l’abast personal de la indignitat successòria, recordem
+que s’ha qualificat de sanció civil, amb la conseqüència, doncs, que té un abast
+personal. Per això estableix l’article 412-8.3 que la declaració d’indignitat és
+personalíssima i no afecta els fills o descendents de l’indigne que siguin cridats
+a la successió. Si els fills o descendents de l’indigne són menors o incapacitats,
+© FUOC • PID_00285314                                               32                               Estructura i dinàmica del procés successori
+
+
+
+l’administració dels béns hereditaris correspon en aquests casos a les persones
+que esmenta l’article 461-24, tenint però present que el declarat indigne en
+quedarà exclòs.
+
+
+D’altra banda, el CCCat introdueix també la inhabilitat�successòria. La nor-
+ma comporta una prohibició relativa per a succeir o bé que la disposició només
+es pugui realitzar en testament obert notarial com a forma que tracta d’impedir
+la captació de voluntat (apartat 2).
+
+    Article 412-5. Inhabilitat successòria
+
+    “Són inhàbils per a succeir:
+
+    a) El notari que autoritza l’instrument successori, el seu cònjuge, la persona amb qui
+    conviu en parella estable i els parents del notari dins del quart grau de consanguinitat
+    i el segon d’afinitat.
+
+    b) Els testimonis, els facultatius, els experts i els intèrprets que intervinguin en
+    l’atorgament de l’instrument successori, i també la persona que escriu el testament tancat
+    a prec del testador.
+
+    c) El religiós que ha assistit el testador durant la seva darrera malaltia, i també l’orde, la
+    comunitat, la institució o la confessió religiosa a què aquell pertany.
+
+    d) El tutor, abans de l’aprovació dels comptes definitius de la tutela, llevat que sigui
+    ascendent, descendent, cònjuge o germà del causant.
+
+    2. Les persones físiques o jurídiques i els cuidadors que en depenen que hagin prestat
+    serveis assistencials, residencials o de naturalesa anàloga al causant, en virtut d’una rela-
+    ció contractual, només poden ésser afavorits en la successió d’aquest si és ordenada en
+    testament notarial obert o en pacte successori.
+
+    3. La inhabilitat successòria no impedeix ésser nomenat àrbitre, marmessor particular o
+    comptador partidor”.
+
+
+Sobre la inhabilitat és interessant la STS 08.04.2016, en la qual es confirma
+la validesa del testament obert atorgat per un testador que fou ingressat en
+una residència gestionada per una congregació religiosa i es diferencia aquest
+supòsit (apartat 2) del concepte d’assistència religiosa (apartat c) que no resulta
+aplicable.
+
+
+7.3. La delació solidària (el dret d’acréixer)
+
+
+
+    La delació solidària es produeix quan una pluralitat de successors vénen
+    cridats de manera simultània a succeir. Com que cap d’ells no pot ad-
+    quirir la totalitat de l’herència sinó únicament una quota hereditària, si
+    qualsevol dels cridats no arriba a succeir, la seva quota acreix els altres
+    cohereus en virtut de la figura que s’anomena dret�d’acréixer.
+© FUOC • PID_00285314                                              33                                 Estructura i dinàmica del procés successori
+
+
+
+D’acord amb la normativa actual, convé precisar que la delació solidària que                         Lectura recomanada
+caracteritza el dret d’acréixer determina que existeix una delació única a
+                                                                                                    S’hi mostra especialment crí-
+l’herència, amb la conseqüència que si aquesta delació única es frustra en rela-                    tic:
+ció amb un o més cridats a succeir, el cohereu que accepta la quota d’herència                      E.�Bosch�Capdevila (2013).
+                                                                                                    “El dret successori català.
+que li correspon, adquireix directament la quota que acreix a favor seu, per-                       Llums i ombres”. A: RJC
+què segons l’article 461-2.1 l’acceptació de l’herència no pot ésser parcial i, per                 (núm. 4, pàg. 641).
+
+tant, no es permet que s’accepti per separat ni tampoc repudiar-la.
+
+
+Per altra banda, el causant de la successió no pot prohibir el dret d’acréixer,
+com estableix de manera taxativa l’article 462-1.1, perquè la prohibició seria
+contrària al principi de la unitat del títol successori segons l’article 411-3.2.
+Amb això, tot i que ara la llei no ho esmenti expressament, se segueix produint
+un increment forçós, que podem qualificar com a acreixement forçós, tot i
+que la llei tampoc ho esmenta expressament.
+
+
+Val a dir, però, que el causant pot haver impedit la seva efectivitat establint
+solucions alternatives que hi seran preferents, com per exemple la substitució
+vulgar.
+
+
+L’actuació del dret d’acréixer entre els cohereus pressuposa, d’acord amb
+l’article 462-1.1, la concurrència dels requisits següents:
+
+
+•    Crida d’una pluralitat d’hereus a la totalitat o a una quota de l’herència
+     de manera conjunta.
+
+
+•    Manca d’efectivitat d’una o d’alguna d’aquestes crides conjuntes per qual-
+     sevol causa, ja sigui per premoriència de l’instituït, per la seva indignitat
+     successòria o per haver repudiat la seva quota hereditària, com també pel
+     cas de no haver disposat el testador d’una quota de la seva herència, se-
+     gons el mateix precepte, ja que la solució contrària determinaria la con-
+     currència d’hereus testamentaris i intestats en una mateixa successió, amb
+     contravenció de l’article 411-3.2.
+
+
+A més, el dret d’acréixer es configura com una solució defectiva, és a dir, que
+només s’aplica en defecte de la possible aplicació d’una substitució vulgar que
+hagi estat ordenada pel causant, de l’aplicació del dret de transmissió a favor
+dels hereus de qui hagi mort sense manifestar la seva voluntat d’acceptar o
+repudiar la quota hereditària deferida a favor seu (art. 461-13.1) o de l’aplicació
+del dret de representació, propi de la successió intestada (art. 441-7).
+
+    Article 462-1. Dret d’acréixer entre cohereus
+
+    “1. Si hi ha instituïts dos o més hereus en una mateixa herència i per qualsevol causa
+    algun d’ells no arriba a ésser-ho efectivament, la seva quota o part acreix la dels cohereus,
+    encara que el testador ho hagi prohibit, llevat que siguin procedents el dret de transmis-
+    sió, la substitució vulgar o el dret de representació. El mateix efecte es produeix respecte
+    a la quota hereditària de la qual el testador no ha disposat”.
+© FUOC • PID_00285314                                     34                           Estructura i dinàmica del procés successori
+
+
+
+Efectes fonamentals del dret d’acréixer són:
+
+
+a) l’increment de les quotes hereditàries dels altres cridats a succeir que efecti-
+vament esdevenen hereus, increment que es produeix en proporció a les res-
+pectives quotes hereditàries (art. 462-2.2);
+
+
+b) l’increment successori es produeix amb caràcter preferent a favor dels co-
+hereus instituïts en una mateixa quota o part de l’herència i només en defecte
+d’aquests acreix a la porció dels altres cohereus (art. 462-1.2);
+
+
+c) l’hereu o els cohereus afavorits pel dret d’acréixer adquireixen la quota he-
+reditària amb subsistència de les condicions, els modes, els llegats, les substi-
+tucions i les altres càrregues imposades pel causant al cridat a la quota vacant,
+encara que hagin estat imposades determinadament a càrrec d’ell, sempre que
+no siguin personalíssimes (art. 462-2.2);
+
+
+d) les persones que esdevenen hereves de la quota vacant per dret de transmis-
+sió o per substitució vulgar o per fideïcomís i els cessionaris de l’herència es
+beneficien, respectivament, del dret eventual d’acréixer de llur causant, hereu
+anterior o transmitent, llevat que el causant hagi disposat una altra cosa (art.
+462-2.4); i
+
+
+e) els efectes del dret d’acréixer es retrotreuen al moment de la delació a favor
+dels hereus (art. 462-2.3), que normalment serà el de la mort del causant o en
+el moment d'incomplir-se la condició suspensiva imposada al cohereu.
+
+
+El dret d’acréixer opera també entre els legataris però només quan estiguin
+cridats conjuntament a un mateix llegat, amb uns efectes semblants als que es
+preveuen pel dret d’acréixer entre cohereus, segons resulta de l’article 462-3.
+
+
+Pels casos de successió intestada cal tenir present que segons l’article 441-6.2
+si algun o alguns dels cridats per la llei a succeir no arriba a esdevenir hereu, la
+quota hereditària que els hauria correspost acreix als altres parents del mateix
+grau (art. 441-6.2). Però segons la proposició darrera del mateix precepte no
+opera el dret d’acréixer a favor dels altres parents quan s’aplica el dret de repre-
+sentació successòria, que segons l’article 441-7.1 suposa que els descendents
+d’una persona premorta, declarada absent o indigna siguin cridats a ocupar el
+seu lloc en la successió intestada.
+
+
+D’altra banda, cal tenir en compte que el dret d’acréixer no s’aplica entre le-
+gitimaris, segons resulta de l’article 451-25.3.
+© FUOC • PID_00285314                                     35                         Estructura i dinàmica del procés successori
+
+
+
+7.4. Transmissibilitat de la delació (dret de transmissió)
+
+
+
+    El problema de la transmissibilitat de la delació equival a plantejar-se el
+    destí del patrimoni hereditari en cas que el cridat a succeir mori sense
+    haver exercitat la facultat que a favor seu confereix la delació heredi-
+    tària, és a dir, la d’haver acceptat o repudiat l’herència a la qual venia
+    cridat.
+
+
+
+Els ordenaments jurídics que com el català exigeixen el requisit de l’acceptació
+per tal que el cridat a succeir es converteixi en hereu, admeten la transmissi-
+bilitat de la delació si es donen els requisits que estableix l’article 461-13:
+
+
+•    Que s’hagi produït una delació hereditària efectiva o immediata a favor
+     del cridat a succeir.
+
+
+•    Que el cridat mori abans d’haver manifestat la seva voluntat d’acceptar o
+     de repudiar.
+
+
+Convé precisar que la delació ha de ser efectiva, cosa que implica que ja s’ha
+obert la successió a conseqüència de la mort del causant i que el cridat ha
+mort posteriorment, tenint capacitat successòria –és a dir, ha sobreviscut al
+causant–, però sense haver-se manifestat sobre la seva acceptació. En aquesta
+situació, la delació, que ja s’ha integrat en el patrimoni del cridat, es transmet
+en la seva pròpia successió als seus hereus.
+
+
+En els supòsits de dret de transmissió, l’hereu del cridat que no va arribar a
+acceptar ni repudiar pot acceptar l’herència del seu causant i acceptar o bé
+repudiar la primera herència a la qual aquest venia cridat, però no pot acceptar
+aquesta herència i repudiar la del seu causant, ja que és en aquesta on se li
+transmet la delació (art. 461-13.2).
+
+
+D’altra banda, el fet que en el dret de transmissió entrin en joc dues herències,
+la del primer causant i la del cridat que va morir sense haver manifestat la seva
+voluntat d’acceptar o de repudiar i que el beneficiat amb el dret de transmissió
+pugui esdevenir hereu de totes dues herències, planteja el problema de si el
+beneficiat amb el dret de transmissió ha de tenir els requisits de capacitat que
+exigeix la llei amb relació al primer causant de la successió i al transmitent o
+si és suficient que reuneixi els requisits de capacitat que estableix la llei per
+a succeir aquest darrer. L’article 412-8.3, proposició darrera, soluciona aquest
+dubte en el sentit que la indignitat del transmissari respecte al causant deter-
+mina la ineficàcia del dret de transmissió.
+
+
+Com s’ha vist anteriorment, el dret de transmissió té preferència sobre
+l’acreixement. En aquest sentit, ja ho estableix l’article 462-1.1 i la solució es
+reforça amb la idea que el dret de transmissió s’aplica “sempre” (art. 461-13.1).
+© FUOC • PID_00285314                                    36                           Estructura i dinàmica del procés successori
+
+
+
+Això implica també la preferència del dret de transmissió sobre la successió in-
+testada (RDGDEJ 11.07.2007 i 04.07.2011) i sobre la substitució vulgar (RDG-
+DEJ 25.11.2005 i 31.05.2010).
+
+
+D’altra banda, s’ha plantejat el dubte de si al causant el pot excloure l’aplicació
+del dret de transmissió, cosa que sembla no ser possible donat el sentit impe-
+ratiu general que estableix l’article 461-13.1. No obstant això, doctrinalment
+s’admet que la substitució vulgar pugui incloure expressament el supòsit de
+la transmissió i, d’altra banda, la RDGDEJ 25.11.2005, tot i donar preferència
+al dret de transmissió, apunta la possibilitat d’establir una solució alternativa
+com una substitució fideïcomissària o preventiva de residu que pot produir
+aquest efecte. La RDGDEJ 18.09.2014 aclareix, però, que la preferència segueix
+existint en el cas que, tot i haver-se previst una substitució preventiva de resi-
+du, aquesta resulti no ser aplicable.
+
+
+Finalment, cal tenir present que el dret de transmissió és aplicable tant en la
+successió voluntària, especialment per testament, però també tot i una confi-
+guració especial en cas de pactes successoris (art. 431-24) com en la successió
+intestada (art. 441-6.3). La transmissió també és possible en els llegats (art.
+427-17) i pot tenir aplicació en el fideïcomís (art. 426-5). Igualment, és aplica-
+ble sobre la llegítima (art. 451-2.3), tot i que no en el cas de la llegítima dels
+progenitors (art. 451-25.2).
+© FUOC • PID_00285314                                     37                           Estructura i dinàmica del procés successori
+
+
+
+8. L’herència jacent
+
+
+
+
+    El fet que el dret successori català exigeix el requisit de l’acceptació per
+    tal que el cridat a l’herència esdevingui hereu (art. 411-5) pot originar
+    que una vegada s’ha produït l’obertura de la successió com a conse-
+    qüència de la mort del causant, el cridat no pugui encara acceptar-la
+    per manca d’una delació immediata a favor seu. Pot succeir també que,
+    podent ja acceptar-la en aquell moment, no hagi manifestat encara la
+    seva voluntat en aquest sentit, la qual cosa origina la situació transitò-
+    ria d’herència mancada d’un titular actual, que s’anomena herència�ja-
+    cent.
+
+
+
+Pel que fa referència a la seva configuració jurídica la STSJC 05.10.2005 preci-
+sa que es tracta d’un patrimoni sense titular actual, com a conseqüència de
+la mort del seu titular, que l’ordenament jurídic manté en suspens, amb la
+finalitat de protegir el seu contingut i la seva coherència interna, impedir la
+disgregació dels seus elements patrimonials i mantenir-lo inalterat fins al mo-
+ment en què es produeix l’acceptació per part del cridat a succeir. També és
+interessant la STSJC 31.07.2014, en la qual l’herència jacent és demandada i es
+considera que els hereus cridats que no han acceptat no en són representants
+ni poden ser condemnats solidàriament amb l’herència jacent.
+
+
+La situació d’herència jacent determina la suspensió del còmput del termini de
+prescripció de les pretensions entre les persones cridades a heretar i l’herència
+jacent mentre no sigui acceptada, segons preveu l’article 121-17. Del precepte,
+en resulta també que la situació d’herència jacent no determina la suspensió
+de les pretensions entre la mateixa herència i les terceres persones afectades
+pel procés successori, com poden ser els creditors hereditaris, com resulta dels
+articles 6.1 i 4 i 798 LEC.
+
+
+Per tal de vetllar pels interessos d’herència mentre es troba en la situació jacent,
+l’article 411.9 estableix uns supòsits d’administració del patrimoni hereditari
+a càrrec de les persones següents:
+
+
+•    La persona designada pel testador amb aquesta finalitat o quan el mateix
+     testador nomena marmessors universals, segons l’article 429-8.1.
+
+
+•    L’hereu cridat, segons l’article 411-9.1.
+© FUOC • PID_00285314                                               38                                  Estructura i dinàmica del procés successori
+
+
+    Article 411-9.1. Herència jacent
+
+    “Quan l’herència està jacent, els hereus cridats només poden fer actes de conservació,
+    defensa i administració ordinària de l’herència, incloent-hi la presa de possessió dels béns
+    i l’exercici d’accions possessòries. Si els cridats a l’herència són diversos, estan legitimats
+    individualment per a fer actes necessaris de conservació i defensa dels béns, però per als
+    actes d’administració ordinària s’aplica el que l’article 552-7 estableix respecte a aquest
+    tipus d’actes”.
+
+
+•    L’administrador nomenat pels organismes jurisdiccionals a instàncies de
+     qualsevol hereu cridat, segons l’article 411-9.3, d’acord amb les prevenci-
+     ons dels articles 797 i següents de la LEC.
+
+
+En el cas resolt per la STSJC 31.01.2011 es manté la situació de jacència, ja que
+la mera possessió de l’herència per part del cridat no en determina l’acceptació
+tàcita i menys encara quan, amb anterioritat a la mort del causant, el cridat
+ja tenia aquesta possessió.
+
+
+En els casos d’administració de l’herència jacent per part dels cridats a succeir                     Vegeu també
+en qualitat d’hereus es presenta el problema de diferenciar els actes de gestió
+                                                                                                       L’acceptació tàcita de
+del patrimoni hereditari dels actes que segons l’article 461-5 impliquen accep-                        l’herència es tracta en el mò-
+tació tàcita de l’herència quan, ja que si realment escau atribuir-los aquesta                         dul “Adquisició de l’herència”
+                                                                                                       d’aquesta assignatura.
+qualificació, això suposarà que ja s’ha extingit la situació d’herència jacent.
+En aquest punt l’article 411-9.2 precisa que els actes de gestió del patrimoni
+hereditari per part dels cridats a succeir només comporten acceptació tàcita
+de l’herència quan amb la realització d’aquests actes es prengui el títol o la
+qualitat d’hereu.
+
+
+D’acord amb l’article 411-9.4, quan hi hagi diversos cridats a l’herència, la
+situació de jacència s’extingeix amb l’acceptació d’un d’ells. A més, mentre no
+l’acceptin la totalitat de cridats (o no es frustrin la resta de crides) correspon al
+cridat que ja ha acceptat l’administració ordinària de l’herència, i en cas que
+hagin acceptat diversos cridats s’apliquen entre ells les normes de la comunitat
+hereditària. Aquests mateixos hereus poden ja, sota la seva responsabilitat,
+pagar els deutes de l’herència i les càrregues hereditàries, satisfer les llegítimes
+i complir els llegats.
+
+
+Amb aquesta norma, el CCCat estableix un criteri que corregeix la solució
+donada per la STSJC 9.10.2000, que, davant la manca de norma en el CS, havia
+considerat que la situació de jacència es mantenia fins que no acceptaven o es
+frustrava la crida en relació amb tots els cridats. Amb això, a més, s’impedeix
+una certa situació de bloqueig que es podia produir en aquestes situacions i
+s’incentiva la manifestació del cridat sobre la delació, sense haver-la de forçar
+mitjançant la interpel·lació notarial al cridat, que preveu l’article 461-12.
+
+
+Així doncs, l’acceptació de l’herència per part del cridat a succeir determina
+que s’extingeixi la situació d’herència jacent i que es procedeixi a la liquidació
+de l’administració amb aplicació dels articles 429-6.2 i 429-13.5 i, en el seu
+cas, dels articles 797 i segs. LEC.
+© FUOC • PID_00285314                                    39                           Estructura i dinàmica del procés successori
+
+
+
+Pel que fa referència a l’actuació de l’administrador de l’herència jacent,
+l’article 411-9.1 li atribueix les facultats de realitzar actes de conservació, de-
+fensa i administració ordinària de l’herència, precepte que s’ha de relacionar
+amb els articles 797 i seg. de la LEC.
+
+
+Sobre el concepte d’actes de conservació i administració, vegeu la STSJC
+24.04.2003. En el cas de la STSJC 04.02.1999, es planteja el problema de si
+es pot parlar d’herència jacent quan el representant legal de la filla instituïda
+hereva estableix un contracte d’arrendament sobre una finca que era l’únic bé
+que formava part del cabal hereditari.
+
+
+En el cas de la STS 17.06.1963 es discuteix si en el supòsit d’exercici per un dels
+cohereus d’una acció declarativa i reivindicatòria d’una finca que es considera
+que era propietat del causant de la successió, ens trobem davant d’una situació
+d’herència jacent o davant d’una situació de comunitat hereditària, en la qual
+el cohereu exercita les accions esmentades en benefici de la comunitat, la qual
+cosa pressuposa que l’herència ja no es troba en situació jacent.
+© FUOC • PID_00285314                                     40                          Estructura i dinàmica del procés successori
+
+
+
+Resum
+
+
+
+
+La successió per causa de mort en el dret civil de Catalunya s’organitza segons
+els principis següents:
+
+
+•    En qualsevol successió per causa de mort hi ha d’haver sempre un o més
+     successors�universals�o�hereus, que són els cridats a continuar les rela-
+     cions jurídiques actives i passives transmissibles, normalment de caràcter
+     patrimonial però a vegades també de caràcter personal o familiar, així com
+     les situacions possessòries que corresponien al causant de la successió.
+
+
+•    La successió universal a Catalunya s’ha de regir per un títol�únic, ja sigui
+     el que es deriva de la voluntat del causant expressada en testament o en
+     heretament o, en el seu defecte, en la llei. En aquest darrer cas, crida com a
+     successors universals del causant els seus parents més pròxims, el cònjuge
+     o la parella estable supervivents si n’hi ha o, en defecte de tots ells, la
+     Generalitat de Catalunya.
+
+
+•    El principi de la universalitat de la successió de l’hereu té també un com-
+     ponent�temporal, en el sentit que si inicialment la successió es regeix per
+     heretament, per testament o per la llei, això comporta la impossibilitat que
+     després puguin esdevenir hereus els cridats en virtut d’un títol successori
+     diferent.
+
+
+•    La distinció entre successor universal o hereu i successor particular o le-
+     gatari s’estableix en el dret successori català sobre la base de la voluntat
+     del�causant. Si aquesta voluntat no és prou explícita, la institució d’hereu
+     exigeix, a més d’una voluntat implícita, que s’ordeni una disposició a títol
+     universal.
+
+
+•    Gaudeixen de capacitat�per�a�succeir les persones físiques i les jurídiques
+     que ja existeixen al temps de l’obertura de la successió per la mort del cau-
+     sant o que, almenys, ja han estat concebudes o es troben en període de
+     constitució en aquest moment i que sobrevisquin al causant de la succes-
+     sió.
+
+
+•    Entenem per vocació�hereditària el títol o fonament jurídic de la succes-
+     sió que dóna un dret actual o eventual a succeir a tots els possibles cridats
+     a l’herència. Entenem per delació�hereditària el fet que determinats suc-
+     cessors amb vocació hereditària poden manifestar ja immediatament la
+     seva voluntat d’acceptar o de repudiar l’herència.
+© FUOC • PID_00285314                                   41                         Estructura i dinàmica del procés successori
+
+
+
+•    Si per manca d’acceptació per part del cridat el patrimoni hereditari res-
+     ta temporalment sense titular, s’origina la situació d’herència�jacent i la
+     procedència d’establir una administració del cabal hereditari.
+© FUOC • PID_00285314                                                43                              Estructura i dinàmica del procés successori
+
+
+
+Exercicis d'autoavaluació
+1. Pot prohibir el testador el dret d’acréixer entre els cohereus?
+
+2. Si el causant de la successió disposa voluntàriament en el seu testament només de la meitat
+de l’herència, hem d’entendre que, d’acord amb la seva voluntat, l’altra meitat s’ha de deferir
+als seus hereus abintestats?
+
+3. Produeix els mateixos efectes la institució d’una persona com a cohereva en la tercera part
+de l’herència que ordenar un llegat a favor del successor d’una tercera part de l’herència?
+
+4. És eficaç la institució directa d’hereu a favor del primer nét del testador si en el moment
+de la seva mort no hi ha cap nét ni hi ha constància que cap nét hagi estat concebut?
+
+5. Són una mateixa institució la delació hereditària diferida i la delació hereditària successiva?
+
+6. És el mateix la incapacitat per a succeir i la indignitat successòria?
+
+7. Per què el beneficiat amb un dret de transmissió no pot repudiar l’herència del transmitent
+i acceptar l’herència del causant del seu transmitent?
+© FUOC • PID_00285314                                                 44                                Estructura i dinàmica del procés successori
+
+
+
+Solucionari
+
+1. No, perquè si manca un substitut la quota d’herència vacant es deferiria als seus hereus
+intestats, en contra del que prescriu l’article 411-3.2. D’altra banda, l’article. 462-1 fa aplicable
+l’acreixement “encara que el testador ho hagi prohibit”.
+
+2. No, perquè implicaria contrariar el principi de la incompatibilitat de la successió testa-
+mentària i la intestada segons l’article 411-3.2.
+
+3. No, perquè en el primer cas l’instituït és cridat a succeir en la tercera part de l’actiu i del
+passiu hereditari, mentre que el legatari de la tercera part de l’herència succeeix únicament
+en la tercera part de l’actiu hereditari líquid.
+
+4. No, perquè en aquest cas el cridat a succeir no pot aparèixer com a continuador de les
+relacions jurídiques del seu causant ni és segur que arribi a existir en el futur.
+
+5. No, perquè la delació diferida és única, amb la particularitat que es produeix en un moment
+posterior a l’obertura de la successió. Per la seva banda, la delació successiva no és única sinó
+plural, ja que es produeix inicialment i si es frustra la delació inicial, es reprodueix després
+a favor dels successors cridats en ordre successiu.
+
+6. Són institucions diferents, ja que en els casos d’incapacitat no es pot succeir cap causant,
+mentre que la indignitat pressuposa la capacitat per a succeir, però l’exclusió de l’indigne
+d’una herència concreta per haver observat una conducta greument incorrecta envers el cau-
+sant de la successió.
+
+7. Perquè si es repudia l’herència del transmitent, es perd la facultat que aquest tenia de poder
+acceptar o repudiar l’herència del primer causant.
+© FUOC • PID_00285314                                             45                       Estructura i dinàmica del procés successori
+
+
+
+Abreviatures
+ADC      Anuario de Derecho Civil.
+
+CC     Codi civil espanyol.
+
+CCCat      Codi civil de Catalunya.
+
+CCJC     Cuadernos Civitas de Jurisprudencia Civil.
+
+CDCC      Compilació del dret civil de Catalunya.
+
+CE    Constitució espanyola.
+
+CS Codi de successions per causa de mort en el dret civil de Catalunya, aprovat per Llei
+40/1991, de 30 de desembre.
+
+LEC     Llei d’enjudiciament civil.
+
+LAU     Llei d'arrendaments urbans.
+
+RDGDEJ       Resolució de la Direcció General de Dret i Entitats Jurídiques.
+
+RJ Aranzadi       repertori de jurisprudència Aranzadi.
+
+RJC     Revista Jurídica de Catalunya.
+
+STS     sentència del Tribunal Suprem.
+
+STSJC     sentència del Tribunal Superior de Justícia de Catalunya.
+© FUOC • PID_00285314                                                    46                                  Estructura i dinàmica del procés successori
+
+
+
+Bibliografia
+Bibliografia bàsica
+
+Àrea de Dret Civil, Universitat de Girona (coord.) (2009). El nou Dret successori del
+Codi civil de Catalunya. Materials de les Quinzenes Jornades de Dret Català a Tossa. Girona:
+Documenta Universitàia.
+
+Arnau Raventós, L.; Zahino Ruiz, M.ª L. (dir.) (2015). Cuestiones de Derecho sucesorio
+catalán. Principios, legítima y pactos sucesorios. Madrid: Marcial Pons.
+
+Arnau Raventós, L; Ginebra Molins, Ma. E; Tarabal Bosch, J. (2020). Dret de succes-
+sions. Teoria i casos (2a. ed.). Barcelona: Atelier.
+
+Egea i Fernández, J.; Ferrer i Riba, J. (dir.); Alascio i Carrasco, L. (coord.) (2009).
+Comentari al Llibre quart del Codi civil de Catalunya, relatiu a les successions (vol. I i II). Barcelona:
+Atelier.
+
+Garrido Melero, M. (2009). Derecho de sucesiones. Un estudio de los problemas sucesorios a
+través del Código civil y del Código de sucesiones por causa de muerte en Cataluña (II t., 2a. ed.).
+Madrid - Barcelona: Marcial Pons.
+
+Gete-Alonso Calera, M.ª C. (dir.); Solé Resina, J. (coord.) (2011). Tratado de derecho de
+sucesiones: Código civil y normativa civil autonómica: Aragón, Baleares, Cataluña, Galicia, Navar-
+ra, País Vasco. Cizur Menor, Navarra: Thomson Civitas.
+
+Puig i Ferriol, L.; Roca i Trias, E. (2009). Institucions del Dret civil de Catalunya, vol III.
+Dret de successions (7a. ed.). València: Tirant lo Blanch.
+
+Pozo Carrascosa, P.; Vaquer Aloy, A.; Bosch Capdevila, E. (2017). Derecho civil de
+Cataluña. Derecho de sucesiones (3a. ed.). Madrid: Marcial Pons.
+
+Bibliografia complementària
+
+a) Sobre els principi successoris
+
+Arenas García, R. (2015). “El Reglament 650/2012”. RCDP (núm. 2, pàg. 11-65).
+
+Bosch Capdevila, E. (2013). “El dret successori català. Llums i ombres”. RJC (núm. 4, pàg.
+623-654).
+
+Ferrer i Riba, J. (2009). “Tradició heretada i innovació en el nou Llibre quart del Codi civil
+de Catalunya” (pàg. 15-32). A: Àrea de Dret Civil, Universitat de Girona (coord.). El nou Dret
+successori del Codi civil de Catalunya. Materials de les Quinzenes Jornades de Dret Català a Tossa.
+Girona: Documenta Universitaria.
+
+Martí i Miralles, J. (1925-1985). Principis del Dret successori aplicats a fórmules d’usdefruit
+vidual i d’herència vitalícia. Barcelona: Generalitat de Catalunya, Departament de Justí-
+cia (col·lecció de Textos Jurídics Catalans). Disponible a: http://www.parlament.cat/docu-
+ment/cataleg/48130.pdf
+
+Pérez Simeón, M. (2015). “Els principis del Dret successori català. Context originari i con-
+text actual. El cas paradigmàtic de l’hereu instituït en cosa certa”. A: Arnau Raventós, Lídia;
+Zahino Ruiz, M.ª Luisa (dir.). Cuestiones de Derecho sucesorio catalán (pàg. 95-139). Madrid:
+Marcial Pons.
+
+Puig i Ferriol, L.. “Els principis successoris catalans: present i futur” (pàg. 39-59). A: Mate-
+rials III Jornades de Dret Català a Tossa. La reforma de la compilació: el sistema successori. Tossa
+de Mar: Càtedra de Dret Civil Català Duran i Bas.
+
+b) Per a la resta de temes
+
+Albaladejo García, M. (1975). “La delación solidaria”. RJC (pàg. 449).
+
+Albaladejo García, M. (1978). “Sucesor universal o heredero, y sucesor particular o lega-
+tario”. Revista de Derecho Privado (pàg. 737 i seg.).
+
+Amat Llari, E. (2004). “El derecho de representación sucesoria en el ordenamiento catalán”.
+A: Libro homenaje al profesor Manuel Albaladejo García (tom 1, pàg. 195 i seg.). Múrcia: Servicio
+de Publicaciones de la Universidad de Murcia.
+© FUOC • PID_00285314                                               47                                Estructura i dinàmica del procés successori
+
+
+Badosa Coll, F. (2015). “La sucesión por causa de muerte en el Libro cuarto del Código civil
+de Cataluña. Universal y particular”. A: Lídia Arnau Raventós; Zahino Ruiz, M.ª Luisa (dir.).
+Cuestiones de Derecho sucesorio catalán (pàg. 11-92). Madrid: Marcial Pons.
+
+Bosch Capdevila, E. (2002). L’acreixement en el Dret successori català. Barcelona: Gene-
+ralitat de Catalunya, Departament de Justícia.
+
+Bosch Capdevila, E. (2006). El principio Nemo pro parte tes tatus pro parte intestatus de-
+cedere potest. Evolución y significado. Madrid.
+
+Carpi Martín, R. (2018). "Actos de administración de la herencia yacente por los "here-
+deros llamados": un análisis del art. 411-9 del Código Civil Catalán". InDret: Revista para el
+Análisis del Derecho, 1 (2018), pàg. 1-55.
+
+García García, J. M. (1996). La sucesión por derecho de transmisión. Madrid: Civitas.
+
+Ginebra Molins, M. E. (2015). “El Reglamento (UE) 650/2012 y la determinación de la ley
+aplicable a la sucesión”. A: Arnau Raventós, Lídia; Zahino Ruiz, M.ª Luisa (dir.). Cuestiones de
+Derecho sucesorio catalán (pàg. 141-172). Madrid: Marcial Pons.
+
+Ginebra Molins, E.; Mateo Borges, J. (2002). “Sobre la computación del ius delationis en
+los supuestos de transmisión de la herencia”. BCERC (núm. 102, pàg. 35 i seg.).
+
+Jordano Fraga, F. (1990). La sucesión en el ius transmissionis. Madrid: Editorial Civitas, pàg.
+323 i seg.
+
+Larrondo Lizárraga, J. (2001). “Cuestiones fundamentales de la herencia sin heredero”.
+BCERC (núm. 97, pàg. 475 i seg.).
+
+Marsal Guillamet, J. (1994). “La vinculació de l’hereu als ‘actes propis’ del causant envers
+els béns de l’hereu (art. 1.1 i 35.4t del CS)” (pàg. 321). Setenes Jornades de Dret Català a Tossa:
+el nou dret successori de Catalunya. Barcelona: PPU.
+
+Marsal Guillamet, J. (1998). “La falta de acreditación de la aceptación tácita de la herencia
+conlleva a efectos registrales la prevalencia del derecho de transmisión”. CCJC (núm. 48, pàg.
+937 i seg.).
+
+Mata de Antonio, J. (2003). “Problemas prácticos en torno a la capacidad sucesoria del
+concepturus”. Revista de Derecho Privado (pàg. 658 i seg.).
+
+Mena-Bernal Escobar, M. J. (1995). La indignidad para suceder. València: Tirant lo Blanch.
+
+Navas Navarro, S. (1991). “Comentari a la STSJC de 7 de febrer de 1991”. Revista La Llei
+de Catalunya i Balears (pàg. 281 i seg.).
+
+Pérez Simeón, M. (1999). “Incompatibilidad entre las sucesiones universales testamentaria
+e intestada en el Codi de successions de Cataluña”. La Notaria (núm. 10, pàg. 25 i seg.).
+
+Pérez Simeón, M. (2008). “La prelació entre el dret de representació i l’acreixement en la
+successió testamentària”. InDret.
+
+Pérez Simeón, M. “Els principis del Dret successori català. Context originari i context ac-
+tual. El cas paradigmàtic de l’hereu instituït en cosa certa”. A: Cuestiones de Derecho sucesorio
+catalán (pàg. 95-139).
+
+Roca Sastre, R. (1981). Estudios sobre sucesiones. Madrid: Instituto de España.
+
+Salvador Coderch, P. (1985). “El título de heredero” (pàg. 91). Discurs de contestació llegit
+a la cerimònia d’investidura de Doctor Honoris Causa de J. B. Vallet de Goytisolo. Bellaterra.
+
+Torrelles Torea, E. (2002). “La constitución mortis causa de una fundación (en torno a
+la herencia deferida a una fundación en proceso de formación)”. Revista de Derecho Privado
+(pàg. 275).
+
+Torrelles Torea, E. (1989). “Comentari a la STS 24.01.1989”. CCJC (núm. 20, pàg. 379 i
+seg.).
+
+Les sentències del TSJC o del TS es publiquen regularment en el web del Consejo General
+del Poder Judicial.
+
+Les sentències del TSJC dels anys 1994 a 2002 estan recollides i sistematitzades a L. Puig i Fer-
+riol (1994-1998). Jurisprudència civil del Tribunal Superior de Justícia de Catalunya: 1989-1992,
+© FUOC • PID_00285314                                             48                              Estructura i dinàmica del procés successori
+
+
+1993,1994, 1995, 1996, 1997, 1998 i 1999 (8 t.) i 2000, 2001 i 2002 [CD-ROM]. Barcelona:
+Generalitat de Catalunya, Departament de Justícia.
+
+Les Resolucions de la Direcció General de Dret i Entitats Jurídiques es publiquen al DOGC i
+també es poden consultar en el web del Departament de Justícia: http://justicia.gencat.cat/
+ca/ambits/dret_civil_catala/recursos_governatius
+
+Les sentències del Tribunal de Cassació de Catalunya es poden veure en el web de la Societat
+Catalana d’Estudis Jurídics, filial de l’Institut d’Estudis Catalans: http://blogs.iec.cat/scej
+

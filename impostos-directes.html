@@ -43,8 +43,35 @@ PALETA DE COLORS TRIA: "Vibrant Tech/Neon" (#4361EE, #F72585, #4CC9F0, #7209B7, 
             }
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="brutal.css">
 </head>
 <body class="text-gray-800 font-sans antialiased">
+    <header class="topbar">
+      <div class="topbar-row">
+        <a href="index.html" class="tb-cell tb-brand">
+          <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+        </a>
+        <div class="tb-cell tb-grow" style="justify-content:flex-end;">
+          <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines · 2026</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="dret-penal.html">Penal</a>
+          <a href="dret-civil.html">Civil</a>
+          <a href="dret-administratiu.html">Administratiu</a>
+          <a href="dret-financer.html">Financer</a>
+          <a href="dret-mercantil.html">Mercantil</a>
+        </nav>
+      </div>
+    </header>
+    <nav class="crumbs">
+      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="dret-financer.html">Dret Financer</a><span class="sep">/</span>
+      <span class="here">Impostos Directes</span>
+    </nav>
 
     <nav class="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -392,11 +419,38 @@ PALETA DE COLORS TRIA: "Vibrant Tech/Neon" (#4361EE, #F72585, #4CC9F0, #7209B7, 
         </section>
 
     </main>
-
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <p class="text-sm">Nota: Les dades i compatibilitats han de ser verificades cada exercici fiscal a causa dels continus canvis legislatius. Aquesta infografia té un propòsit informatiu basat en la guia de despeses proporcionada.</p>
+    <footer class="site-foot">
+      <div class="site-foot-inner">
+        <div class="ff-cell">
+          <h4>Sobre el projecte</h4>
+          <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
+          <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i vídeos del Dret espanyol i català.</p>
         </div>
+        <div class="ff-cell">
+          <h4>Matèries</h4>
+          <ul>
+            <li><a href="dret-penal.html">Penal</a></li>
+            <li><a href="dret-civil.html">Civil</a></li>
+            <li><a href="dret-administratiu.html">Administratiu</a></li>
+            <li><a href="dret-constitucional.html">Constitucional</a></li>
+            <li><a href="dret-processal.html">Processal</a></li>
+            <li><a href="dret-financer.html">Financer</a></li>
+            <li><a href="dret-mercantil.html">Mercantil</a></li>
+          </ul>
+        </div>
+        <div class="ff-cell">
+          <h4>Eines</h4>
+          <ul>
+            <li><a href="visuals.html">Cerca visuals</a></li>
+            <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
+            <li><a href="historia-dret.html">Fonaments</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-foot-bottom">
+        <span>Tipografia: Space Grotesk · Instrument Serif · JetBrains Mono</span>
+        <span>© MMXXVI · Dret Visual</span>
+      </div>
     </footer>
 
     <script>

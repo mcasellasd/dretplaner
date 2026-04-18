@@ -7,7 +7,6 @@
     <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Constitucional"}]'>
     <title>Constitució i Dret | Què diu la Llei?</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="navbar.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
         rel="stylesheet">
@@ -206,6 +205,10 @@
             }
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="brutal.css">
 </head>
 
 <body class="bg-slate-50 text-slate-900 leading-relaxed relative">
@@ -229,9 +232,30 @@
         </div>
     </div>
 
-    <div id="navbar-container"></div>
-    <div id="breadcrumb-container" class="max-w-7xl mx-auto px-6 pt-24"></div>
 
+    <header class="topbar">
+      <div class="topbar-row">
+        <a href="index.html" class="tb-cell tb-brand">
+          <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+        </a>
+        <div class="tb-cell tb-grow" style="justify-content:flex-end;">
+          <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines · 2026</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="dret-penal.html">Penal</a>
+          <a href="dret-civil.html">Civil</a>
+          <a href="dret-administratiu.html">Administratiu</a>
+          <a href="dret-financer.html">Financer</a>
+          <a href="dret-mercantil.html">Mercantil</a>
+        </nav>
+      </div>
+    </header>
+    <nav class="crumbs">
+      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="#">Dret</a><span class="sep">/</span>
+      <span class="here">Dret Constitucional</span>
+    </nav>
     <!-- Header Section -->
     <header class="legal-gradient text-white py-16 px-6 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
@@ -650,42 +674,40 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="relative z-10 bg-slate-900/50 border-t border-slate-700/50 mt-24 py-12">
-        <div class="max-w-[1400px] mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="font-bold text-white mb-4">Què diu la Llei?</h3>
-                    <p class="text-slate-400 text-sm">Plataforma digital per dominar el dret de manera eficient.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-3 text-sm">Assignatures</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="dret-penal.html" class="hover:text-white transition-colors">Dret Penal</a></li>
-                        <li><a href="dret-civil.html" class="hover:text-white transition-colors">Dret Civil</a></li>
-                        <li><a href="dret-mercantil.html" class="hover:text-white transition-colors">Dret Mercantil</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-3 text-sm">Recursos</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
-                        <li><a href="https://catalunyalegal.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Catalunya Legal</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-3 text-sm">Contacte</h4>
-                    <p class="text-slate-400 text-sm">Per més informació, visita<br><a href="https://catalunyalegal.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">catalunyalegal.vercel.app</a></p>
-                </div>
-            </div>
-            <div class="border-t border-slate-700/50 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-                <p>&copy; 2026 Què diu la Llei?. Tots els drets reservats.</p>
-                <p>Plataforma educativa de dret</p>
-            </div>
+    <footer class="site-foot">
+      <div class="site-foot-inner">
+        <div class="ff-cell">
+          <h4>Sobre el projecte</h4>
+          <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
+          <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i vídeos del Dret espanyol i català.</p>
         </div>
+        <div class="ff-cell">
+          <h4>Matèries</h4>
+          <ul>
+            <li><a href="dret-penal.html">Penal</a></li>
+            <li><a href="dret-civil.html">Civil</a></li>
+            <li><a href="dret-administratiu.html">Administratiu</a></li>
+            <li><a href="dret-constitucional.html">Constitucional</a></li>
+            <li><a href="dret-processal.html">Processal</a></li>
+            <li><a href="dret-financer.html">Financer</a></li>
+            <li><a href="dret-mercantil.html">Mercantil</a></li>
+          </ul>
+        </div>
+        <div class="ff-cell">
+          <h4>Eines</h4>
+          <ul>
+            <li><a href="visuals.html">Cerca visuals</a></li>
+            <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
+            <li><a href="historia-dret.html">Fonaments</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-foot-bottom">
+        <span>Tipografia: Space Grotesk · Instrument Serif · JetBrains Mono</span>
+        <span>© MMXXVI · Dret Visual</span>
+      </div>
     </footer>
 
-    <script src="navbar-helper.js"></script>
 </body>
 
 </html>

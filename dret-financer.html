@@ -1,576 +1,175 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Fiscalitat","url":"#"},{"label":"Dret Financer i Tributari"}]'>
-    <title>Dret Financer i Tributari | Què diu la Llei?</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="navbar.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f8fafc;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-
-        .module-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .module-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-            border-color: #cbd5e1;
-        }
-
-        .bg-pattern {
-            background-image: radial-gradient(#94a3b8 1px, transparent 1px);
-            background-size: 28px 28px;
-        }
-
-        .mask-image-gradient {
-            -webkit-mask-image: linear-gradient(to bottom, white, transparent);
-            mask-image: linear-gradient(to bottom, white, transparent);
-        }
-
-        /* Reveal animation */
-        .reveal {
-            animation: revealFade 0.6s ease-out backwards;
-        }
-
-        @keyframes revealFade {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .delay-100 {
-            animation-delay: 100ms;
-        }
-
-        .delay-200 {
-            animation-delay: 200ms;
-        }
-
-        .delay-300 {
-            animation-delay: 300ms;
-        }
-
-        .delay-400 {
-            animation-delay: 400ms;
-        }
-
-        .video-card {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-            border-color: #3b82f6;
-            /* blue-500 */
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
-        }
-
-        .video-card:hover .play-button {
-            transform: scale(1.1);
-            background-color: #3b82f6;
-            color: white;
-            border-color: transparent;
-        }
-
-        .play-button {
-            transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #1e293b;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Fiscalitat","url":"#"},{"label":"Dret Financer i Tributari"}]'>
+<title>Dret Financer i Tributari | Dret Visual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brutal.css">
+<style>
+.page{max-width:1440px;margin:0 auto;}
+.hub-section{border-top:2px solid var(--ink);}
+.hub-section-head{padding:28px 32px 20px;display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--ink);}
+.hub-section-head h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2.5vw,32px);letter-spacing:-.025em;margin:0;text-transform:uppercase;}
+.hub-section-head .note{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.hub-grid{display:grid;border-left:1px solid var(--ink);}
+.hub-grid.cols-5{grid-template-columns:repeat(5,1fr);}
+.hub-grid.cols-4{grid-template-columns:repeat(4,1fr);}
+.hub-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+.hub-card{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:32px 28px;display:flex;flex-direction:column;gap:8px;transition:background .15s,color .15s;color:var(--ink);text-decoration:none;min-height:220px;}
+.hub-card:not(.disabled):hover{background:var(--ink);color:var(--paper);}
+.hub-card:not(.disabled):hover .card-num,.hub-card:not(.disabled):hover .card-sub,.hub-card:not(.disabled):hover p{opacity:.7;}
+.hub-card:not(.disabled):hover .cta{opacity:1;border-top-color:var(--paper);}
+.hub-card.disabled{opacity:.4;cursor:default;}
+.card-num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.5;}
+.card-sub{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;color:var(--accent);}
+.hub-card h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,20px);line-height:1.2;letter-spacing:-.02em;margin:8px 0 0;flex:1;}
+.hub-card p{font-size:13px;line-height:1.55;opacity:.65;margin:0;}
+.cta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:auto;padding-top:14px;border-top:1px solid var(--ink);opacity:.5;}
+.pendent-chip{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--ink);padding:3px 8px;display:inline-block;align-self:flex-start;}
+.hub-note{border-top:2px solid var(--ink);display:grid;grid-template-columns:1fr 2fr;}
+.hub-note-left{background:var(--ink);color:var(--paper);padding:40px 36px;display:flex;flex-direction:column;gap:12px;}
+.hub-note-left h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2.5vw,30px);letter-spacing:-.025em;margin:0;text-transform:uppercase;}
+.hub-note-left .num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;}
+.hub-note-right{background:var(--paper-2);padding:40px 36px;}
+.hub-note-right p{font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;line-height:1.6;color:var(--ink);margin:0;}
+@media(max-width:1100px){.hub-grid.cols-5{grid-template-columns:repeat(3,1fr);}.hub-grid.cols-4{grid-template-columns:repeat(2,1fr);}.hub-note{grid-template-columns:1fr;}}
+@media(max-width:768px){.hub-grid.cols-5,.hub-grid.cols-4,.hub-grid.cols-3{grid-template-columns:repeat(2,1fr);}.hub-section-head{padding:20px 20px 14px;}.hub-card{padding:22px 18px;}}
+@media(max-width:480px){.hub-grid.cols-5,.hub-grid.cols-4,.hub-grid.cols-3{grid-template-columns:1fr;}.hub-card{border-right:none;}}
+</style>
 </head>
-
-<body class="bg-slate-50 text-slate-800 min-h-screen relative overflow-x-hidden">
-
-    <div id="navbar-container"></div>
-    <div id="breadcrumb-container" class="max-w-[1400px] mx-auto px-6 pt-28"></div>
-
-    <!-- Fons amb patró -->
-    <div class="bg-pattern absolute inset-0 opacity-[0.15] z-0 mask-image-gradient h-[80vh]"></div>
-
-    <div class="max-w-[1400px] mx-auto px-6 pt-32 pb-24 relative z-10">
-
-        <!-- Hero Section Exclusiva -->
-        <div
-            class="mb-20 flex flex-col lg:flex-row gap-12 items-start lg:items-center justify-between bg-white p-12 rounded-[2.5rem] border border-slate-200/60 shadow-xl shadow-slate-200/50 reveal delay-100">
-            <div class="max-w-3xl">
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-50 text-blue-700 text-sm font-bold tracking-widest uppercase mb-6 border border-blue-100/50">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2v20" />
-                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                    </svg>
-                    Branca de Dret Públic
-                </div>
-                <h1
-                    class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight text-slate-900 leading-[1.1]">
-                    Dret Financer<br><span class="text-slate-400">i Tributari</span>
-                </h1>
-                <p class="text-slate-500 text-xl leading-relaxed max-w-2xl font-light">
-                    Regula de manera sistemàtica l'establiment i l'aplicació dels tributs
-                    <span class="font-semibold text-slate-800">(Dret Tributari)</span>, així com l'obtenció, gestió i
-                    utilització dels ingressos públics <span class="font-semibold text-slate-800">(Dret
-                        Pressupostari)</span>.
-                </p>
-            </div>
-
-            <div class="flex-shrink-0 grid grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 w-full lg:w-auto">
-                <div
-                    class="bg-gradient-to-br from-slate-50 to-white p-6 rounded-3xl border border-slate-100 flex flex-col justify-center shadow-sm">
-                    <div class="text-5xl font-black text-blue-600 mb-2">4</div>
-                    <div class="text-sm font-bold text-slate-400 uppercase tracking-widest leading-tight">
-                        Mòduls<br>Principals</div>
-                </div>
-                <div
-                    class="bg-gradient-to-br from-slate-50 to-white p-6 rounded-3xl border border-slate-100 flex flex-col justify-center shadow-sm">
-                    <div class="text-5xl font-black text-emerald-500 mb-2">15+</div>
-                    <div class="text-sm font-bold text-slate-400 uppercase tracking-widest leading-tight">
-                        Conceptes<br>Clau</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Títol de Secció -->
-        <div class="flex items-center gap-4 mb-10 mt-24 reveal delay-200">
-            <div
-                class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center shadow-lg shadow-slate-900/20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                    <line x1="16" x2="16" y1="2" y2="6" />
-                    <line x1="8" x2="8" y1="2" y2="6" />
-                    <line x1="3" x2="21" y1="10" y2="10" />
-                    <path d="m9 16 2 2 4-4" />
-                </svg>
-            </div>
-            <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-                Distribuïdor de Continguts
-            </h3>
-        </div>
-
-        <!-- Graella de mòduls exactes com a index de matèria -->
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-            <!-- 1. Fiscalitat Directa (ACTIU) -->
-            <a href="fiscalitat-directa.html"
-                class="module-card group block bg-white border border-slate-200/80 p-10 rounded-[2.5rem] relative overflow-hidden reveal delay-200">
-                <div
-                    class="absolute -right-10 -top-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl group-hover:bg-blue-100 transition-colors">
-                </div>
-                <div class="relative z-10">
-                    <div class="flex justify-between items-start mb-8">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
-                                <path
-                                    d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
-                                <path d="m2 16 6 6" />
-                                <circle cx="16" cy="9" r="2.9" />
-                                <circle cx="6" cy="5" r="3" />
-                            </svg>
-                        </div>
-                        <span
-                            class="bg-blue-50 text-blue-700 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full border border-blue-100 shadow-sm">
-                            Disponible
-                        </span>
-                    </div>
-                    <h4 class="text-2xl font-bold mb-4 text-slate-900 group-hover:text-blue-600 transition-colors">La
-                        Fiscalitat Directa</h4>
-                    <p class="text-base text-slate-500 mb-8 leading-relaxed font-light">
-                        Anàlisi visual interactiu de l'IRPF, IS, Impost sobre el Patrimoni, Successions i Donacions i
-                        Renda de No Residents.
-                    </p>
-                    <div
-                        class="mt-auto border-t border-slate-100 pt-6 flex items-center text-blue-600 text-base font-bold uppercase tracking-wider group-hover:gap-3 transition-all">
-                        Obrir Manual <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                            stroke-linejoin="round" class="ml-1">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 2. Fiscalitat Indirecta (BLOQUEJAT) -->
-            <div
-                class="module-card bg-white border border-slate-200/60 p-10 rounded-[2.5rem] relative overflow-hidden reveal delay-300">
-                <div
-                    class="absolute inset-0 bg-slate-50/60 backdrop-blur-[2px] z-20 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
-                    <div
-                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-slate-400 mb-3 shadow-sm border border-slate-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg>
-                    </div>
-                    <span
-                        class="bg-white text-slate-800 px-5 py-2.5 rounded-full font-bold shadow-lg text-sm border border-slate-200 tracking-wide">En
-                        construcció</span>
-                </div>
-                <div class="relative z-10 opacity-60 grayscale-[30%]">
-                    <div class="flex items-start mb-8">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center border border-orange-200/50">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                                <path d="M3 6h18" />
-                                <path d="M16 10a4 4 0 0 1-8 0" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h4 class="text-2xl font-bold mb-4 text-slate-800">La Fiscalitat Indirecta</h4>
-                    <p class="text-base text-slate-500 mb-8 leading-relaxed font-light">
-                        Impost sobre el Valor Afegit (IVA), Impost sobre Transmissions Patrimonials i Actes Jurídics
-                        Documentats (ITP i AJD).
-                    </p>
-                    <div
-                        class="mt-auto border-t border-slate-100 pt-6 text-slate-400 text-sm font-bold uppercase tracking-widest flex items-center gap-2">
-                        Pendent <div class="w-2 h-2 rounded-full bg-slate-300"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Procediments Tributaris (BLOQUEJAT) -->
-            <div
-                class="module-card bg-white border border-slate-200/60 p-10 rounded-[2.5rem] relative overflow-hidden reveal delay-400">
-                <div
-                    class="absolute inset-0 bg-slate-50/60 backdrop-blur-[2px] z-20 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
-                    <div
-                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-slate-400 mb-3 shadow-sm border border-slate-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg>
-                    </div>
-                    <span
-                        class="bg-white text-slate-800 px-5 py-2.5 rounded-full font-bold shadow-lg text-sm border border-slate-200 tracking-wide">En
-                        construcció</span>
-                </div>
-                <div class="relative z-10 opacity-60 grayscale-[30%]">
-                    <div class="flex items-start mb-8">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center border border-indigo-200/50">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <path d="M14 2v6h6" />
-                                <path d="M16 13H8" />
-                                <path d="M16 17H8" />
-                                <path d="M10 9H8" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h4 class="text-2xl font-bold mb-4 text-slate-800">Procediments Tributaris</h4>
-                    <p class="text-base text-slate-500 mb-8 leading-relaxed font-light">
-                        Llei General Tributària: Aplicació dels tributs, gestió, inspecció, recaptació i el règim
-                        d'infraccions i sancions.
-                    </p>
-                    <div
-                        class="mt-auto border-t border-slate-100 pt-6 text-slate-400 text-sm font-bold uppercase tracking-widest flex items-center gap-2">
-                        Pendent <div class="w-2 h-2 rounded-full bg-slate-300"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Dret Pressupostari (BLOQUEJAT) -->
-            <div
-                class="module-card bg-white border border-slate-200/60 p-10 rounded-[2.5rem] relative overflow-hidden reveal delay-400">
-                <div
-                    class="absolute inset-0 bg-slate-50/60 backdrop-blur-[2px] z-20 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
-                    <div
-                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-slate-400 mb-3 shadow-sm border border-slate-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg>
-                    </div>
-                    <span
-                        class="bg-white text-slate-800 px-5 py-2.5 rounded-full font-bold shadow-lg text-sm border border-slate-200 tracking-wide">En
-                        construcció</span>
-                </div>
-                <div class="relative z-10 opacity-60 grayscale-[30%]">
-                    <div class="flex items-start mb-8">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center border border-rose-200/50">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h4 class="text-2xl font-bold mb-4 text-slate-800">Dret Pressupostari</h4>
-                    <p class="text-base text-slate-500 mb-8 leading-relaxed font-light">
-                        Estudi del cicle pressupostari, elaboració, aprovació, execució i control de la despesa de les
-                        Administracions Públiques.
-                    </p>
-                    <div
-                        class="mt-auto border-t border-slate-100 pt-6 text-slate-400 text-sm font-bold uppercase tracking-widest flex items-center gap-2">
-                        Pendent <div class="w-2 h-2 rounded-full bg-slate-300"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+<body class="grid-bg">
+<header class="topbar">
+  <div class="topbar-row">
+    <a href="index.html" class="tb-cell tb-brand">
+      <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+    </a>
+    <div class="tb-cell tb-grow" style="justify-content:flex-end;">
+      <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines &middot; 2026</span>
     </div>
-
-    <!-- Script per a funcionalitat del Chatbot RAG -->
-    <script>
-        function toggleChat() {
-            const chatbot = document.getElementById('chatbot');
-            if (chatbot.classList.contains('translate-y-[120%]')) {
-                chatbot.classList.remove('translate-y-[120%]', 'opacity-0', 'pointer-events-none');
-                chatbot.classList.add('translate-y-0', 'opacity-100');
-            } else {
-                chatbot.classList.add('translate-y-[120%]', 'opacity-0', 'pointer-events-none');
-                chatbot.classList.remove('translate-y-0', 'opacity-100');
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('chat-form').addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const input = document.getElementById('chat-input');
-                const message = input.value.trim();
-                if (!message) return;
-
-                const messagesDiv = document.getElementById('chat-messages');
-
-                messagesDiv.innerHTML += `
-            <div class="flex justify-end mb-4">
-                <div class="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-sm w-[85%] text-sm">
-                    <p>${message}</p>
-                </div>
-            </div>`;
-                input.value = '';
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-
-                const loadingId = 'loading-' + Date.now();
-                messagesDiv.innerHTML += `
-            <div id="${loadingId}" class="flex justify-start mb-4">
-                <div class="bg-slate-700 text-slate-400 p-3 rounded-2xl rounded-tl-sm text-sm border border-slate-600 flex items-center gap-2">
-                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce"></div>
-                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
-                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
-                </div>
-            </div>`;
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-
-                try {
-                    const response = await fetch('/api/chat', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message })
-                    });
-
-                    const data = await response.json();
-                    document.getElementById(loadingId).remove();
-
-                    const formattedReply = data.reply.replace(/\n/g, '<br/>');
-                    let sourceHTML = '';
-                    if (data.sources && data.sources.length > 0) {
-                        sourceHTML = `
-                    <div class="mt-3 text-xs text-slate-400 border-t border-slate-600 pt-2 flex items-center gap-1">
-                        <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        Font: ${data.sources.join(', ')}
-                    </div>`;
-                    }
-
-                    messagesDiv.innerHTML += `
-                <div class="flex justify-start mb-4">
-                    <div class="bg-slate-700 text-slate-200 p-3 rounded-2xl rounded-tl-sm w-[90%] text-sm border border-slate-600">
-                        <div class="prose prose-invert prose-sm">${formattedReply}</div>
-                        ${sourceHTML}
-                    </div>
-                </div>`;
-                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-                } catch (e) {
-                    if (document.getElementById(loadingId)) {
-                        document.getElementById(loadingId).remove();
-                    }
-                    messagesDiv.innerHTML += `
-                <div class="flex justify-start mb-4">
-                    <div class="bg-red-900/50 text-red-200 p-3 rounded-2xl rounded-tl-sm w-[85%] text-sm border border-red-700/50">
-                        <p>Error connectant amb l'assistent. Assegura't que el servidor local està executant-se correctament.</p>
-                    </div>
-                </div>`;
-                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-                }
-            });
-        });
-    </script>
-
-    <!-- Chatbot Widget UI -->
-    <div id="chatbot"
-        class="fixed bottom-6 right-6 z-50 transition-all duration-300 transform translate-y-[120%] opacity-0 pointer-events-none">
-        <div class="glass-card w-80 md:w-96 rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-700/50 bg-slate-900/95"
-            style="height: 500px;">
-            <div
-                class="px-5 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 flex justify-between items-center text-white">
-                <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
-                    <h3 class="font-bold flex-1">Prof. Dret Tributari</h3>
-                </div>
-                <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm bg-slate-800/80">
-                <div class="flex justify-start mb-4">
-                    <div
-                        class="bg-slate-700 text-slate-200 p-3 rounded-2xl rounded-tl-sm w-[85%] border border-slate-600">
-                        <p>Hola! Sóc l'assistent docent virtual de la Facultat de Dret. He incrustat literalment i
-                            vectorial les Lleis de l'Impost de Societats, IRPF i Successions. Quina llei o article vols
-                            estudiar a fons avui?</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-4 bg-slate-800 border-t border-slate-700">
-                <form id="chat-form" class="flex gap-2">
-                    <input type="text" id="chat-input"
-                        class="flex-1 bg-slate-900 text-white rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 border border-slate-700"
-                        placeholder="Pregunta sobre la legislació..." autocomplete="off">
-                    <button type="submit"
-                        class="bg-blue-600 hover:bg-blue-500 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path
-                                d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                        </svg>
-                    </button>
-                </form>
-            </div>
-        </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dret-penal.html">Penal</a>
+      <a href="dret-civil.html">Civil</a>
+      <a href="dret-administratiu.html">Administratiu</a>
+      <a href="dret-financer.html" class="active">Financer</a>
+      <a href="dret-mercantil.html">Mercantil</a>
+    </nav>
+  </div>
+</header>
+<nav class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="#">Fiscalitat</a><span class="sep">/</span><span class="here">Dret Financer i Tributari</span></nav>
+<div class="page">
+<section class="hero" style="--branch:var(--b-financer);">
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="sq"></span>Assignatura &middot; Dret Financer i Tributari</div>
+    <h1>Dret <span class="em" style="color:var(--b-financer)">Financer</span></h1>
+    <p class="lede">Regula l'establiment i l'aplicaci&oacute; dels tributs (Dret Tribut&agrave;ri) i la gesti&oacute; dels ingressos p&uacute;blics (Dret Pressupostari).</p>
+  </div>
+  <div class="hero-meta"><div class="cell"><b>4</b>M&ograve;duls</div><div class="cell"><b>15+</b>Conceptes clau</div><div class="cell"><b>LGT</b>Llei General</div><div class="cell"><b>2026</b>Actualitzat</div></div>
+</section>
+  <section class="hub-section">
+    <div class="hub-section-head">
+      <h2>M&ograve;duls i <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">Continguts</span></h2>
+      <span class="note">4 blocs &middot; 1 disponible</span>
     </div>
-
-    <!-- Toggle Butó -->
-    <button onclick="toggleChat()" id="chat-toggle-btn"
-        class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full p-4 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-        </svg>
-    </button>
-    <!-- Video Modal -->
-    <div id="videoModal"
-        class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-        <div class="relative w-full max-w-5xl aspect-video mx-4">
-            <button onclick="closeVideo()"
-                class="absolute -top-12 right-0 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 6 6 18" />
-                    <path d="m6 6 12 12" />
-                </svg>
-            </button>
-            <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-                <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
+    <div class="hub-grid cols-4">
+    <a href="fiscalitat-directa.html" class="hub-card">
+      <div class="card-num">M&ograve;dul 1</div>
+      <div class="card-sub">Fiscalitat Directa</div>
+      <h3>La Fiscalitat Directa</h3>
+      <p>An&agrave;lisi visual interactiu de l'IRPF, IS, Impost sobre el Patrimoni, Successions i Donacions i Renda de No Residents.</p>
+      <div class="cta">Obrir Manual &rarr;</div>
+    </a>
+    <div class="hub-card disabled">
+      <div class="card-num">M&ograve;dul 2</div>
+      <div class="card-sub">IVA &middot; ITP &middot; AJD</div>
+      <h3>La Fiscalitat Indirecta</h3>
+      <p>Impost sobre el Valor Afegit (IVA), Impost sobre Transmissions Patrimonials i Actes Jur&iacute;dics Documentats (ITP i AJD).</p>
+      <div class="pendent-chip">Pendent</div>
     </div>
-
-    <script>
-        const modal = document.getElementById("videoModal");
-        const player = document.getElementById("youtubePlayer");
-
-        document.querySelectorAll("a[href*='youtube.com/watch'], a[href*='youtube.com/shorts']").forEach(link => {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                let url = this.getAttribute("href");
-                let videoId = "";
-
-                if (url.includes("watch?v=")) {
-                    videoId = new URL(url).searchParams.get("v");
-                } else if (url.includes("/shorts/")) {
-                    videoId = url.split("/shorts/")[1].split("?")[0];
-                }
-
-                if (videoId) {
-                    player.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-                    modal.classList.remove("hidden");
-                    setTimeout(() => {
-                        modal.classList.remove("opacity-0");
-                        modal.classList.add("flex");
-                    }, 10);
-                }
-            });
-        });
-
-        function closeVideo() {
-            modal.classList.add("opacity-0");
-            setTimeout(() => {
-                modal.classList.add("hidden");
-                modal.classList.remove("flex");
-                player.src = "";
-            }, 300);
-        }
-
-        modal.addEventListener("click", function (e) {
-            if (e.target === modal) {
-                closeVideo();
-            }
-        });
-
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-                closeVideo();
-            }
-        });
-    </script>
-
-    <script src="navbar-helper.js"></script>
+    <div class="hub-card disabled">
+      <div class="card-num">M&ograve;dul 3</div>
+      <div class="card-sub">LGT</div>
+      <h3>Procediments Tribut&agrave;ris</h3>
+      <p>Llei General Tribut&agrave;ria: aplicaci&oacute; dels tributs, gesti&oacute;, inspecci&oacute;, recaptaci&oacute; i r&egrave;gim d'infraccions i sancions.</p>
+      <div class="pendent-chip">Pendent</div>
+    </div>
+    <div class="hub-card disabled">
+      <div class="card-num">M&ograve;dul 4</div>
+      <div class="card-sub">Cicle Pressupostari</div>
+      <h3>Dret Pressupostari</h3>
+      <p>Estudi del cicle pressupostari, elaboraci&oacute;, aprovaci&oacute;, execuci&oacute; i control de la despesa de les Administracions P&uacute;bliques.</p>
+      <div class="pendent-chip">Pendent</div>
+    </div>
+    </div>
+  </section>
+  <div class="hub-note">
+    <div class="hub-note-left">
+      <div class="num">Estat del contingut</div>
+      <h3>Disponible ara</h3>
+    </div>
+    <div class="hub-note-right">
+      <p>La Fiscalitat Directa ja és disponible amb anàlisi visual completa de l'IRPF, IS, Impost sobre el Patrimoni i l'ISD. Els mòduls de Fiscalitat Indirecta, Procediments Tributaris i Dret Pressupostari s'estan construint i s'habilitaran progressivament.</p>
+    </div>
+  </div>
+  <section class="hub-section">
+    <div class="hub-section-head">
+      <h2>Eines <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">fiscals</span></h2>
+      <span class="note">Calculadores i recursos</span>
+    </div>
+    <div class="hub-grid cols-3">
+    <a href="irpf-calculator.html" class="hub-card">
+      <div class="card-num">Eina</div>
+      <div class="card-sub">IRPF</div>
+      <h3>Calculadora IRPF</h3>
+      <p>Calcula la quota &iacute;ntegra i la tarifa progressiva de l'IRPF de forma interactiva.</p>
+      <div class="cta">Obrir calculadora &rarr;</div>
+    </a>
+    <a href="dret-financer-videos.html" class="hub-card">
+      <div class="card-num">Recursos</div>
+      <div class="card-sub">V&iacute;deos</div>
+      <h3>V&iacute;deos de Dret Financer</h3>
+      <p>Material audiovisual complementari per consolidar els conceptes tribut&agrave;ris.</p>
+      <div class="cta">Veure v&iacute;deos &rarr;</div>
+    </a>
+    </div>
+  </section>
+</div>
+<footer class="site-foot">
+  <div class="site-foot-inner">
+    <div class="ff-cell">
+      <h4>Sobre el projecte</h4>
+      <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
+      <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i vídeos del Dret espanyol i català.</p>
+    </div>
+    <div class="ff-cell">
+      <h4>Matèries</h4>
+      <ul>
+        <li><a href="dret-penal.html">Penal</a></li>
+        <li><a href="dret-civil.html">Civil</a></li>
+        <li><a href="dret-administratiu.html">Administratiu</a></li>
+        <li><a href="dret-constitucional.html">Constitucional</a></li>
+        <li><a href="dret-processal.html">Processal</a></li>
+        <li><a href="dret-financer.html">Financer</a></li>
+        <li><a href="dret-mercantil.html">Mercantil</a></li>
+      </ul>
+    </div>
+    <div class="ff-cell">
+      <h4>Eines</h4>
+      <ul>
+        <li><a href="visuals.html">Cerca visuals</a></li>
+        <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
+        <li><a href="historia-dret.html">Fonaments</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot-bottom">
+    <span>Tipografia: Space Grotesk &middot; Instrument Serif &middot; JetBrains Mono</span>
+    <span>&copy; MMXXVI &middot; Dret Visual</span>
+  </div>
+</footer>
 </body>
-
 </html>

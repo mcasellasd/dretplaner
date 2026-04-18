@@ -1,366 +1,769 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Penal Econòmic","url":"dret-penal-economic.html"},{"label":"Tema 3"}]'>
-    <title>Resum Pedagogic | Responsabilitat individual i cataleg de delictes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="navbar.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 3 · Responsabilitat individual i catàleg | Dret Visual</title>
+<meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Penal Econòmic","url":"dret-penal-economic.html"},{"label":"Tema 3"}]'>
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brutal.css">
 
-        .tab-content {
-            display: none;
-        }
+<style>
+  .page{ max-width:1440px; margin:0 auto; position:relative; z-index:2; }
 
-        .tab-content.active {
-            display: block;
-        }
+  /* ============ TEMA HERO ============ */
+  .tema-hero{
+    display:grid; grid-template-columns: 180px 1fr;
+    border-bottom:2px solid var(--ink);
+  }
+  .tema-hero .stripe{
+    background:var(--b-penal);
+    border-right:1px solid var(--ink);
+    position:relative;
+    display:flex; align-items:flex-end;
+    padding:32px 24px;
+  }
+  .tema-hero .stripe .stripe-num{
+    font-family:'Instrument Serif', serif;
+    font-style:italic; font-weight:400;
+    font-size:clamp(120px, 16vw, 240px);
+    line-height:.78;
+    color:var(--paper);
+    letter-spacing:-.05em;
+  }
+  .tema-hero .stripe .stripe-tag{
+    position:absolute; top:24px; left:24px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--paper); opacity:.85;
+  }
+  .tema-hero .body{
+    padding:40px 40px 32px;
+  }
+  .tema-hero .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted);
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    margin-bottom:20px;
+  }
+  .tema-hero .eyebrow .sq{ width:10px; height:10px; background:var(--b-penal); display:inline-block; }
+  .tema-hero .eyebrow .sep{ color:var(--ink); }
+  .tema-hero h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:clamp(44px, 6.2vw, 84px);
+    line-height:.95; letter-spacing:-.035em;
+    margin:0 0 14px;
+  }
+  .tema-hero h1 .it{
+    font-family:'Instrument Serif', serif;
+    font-style:italic; font-weight:400;
+  }
+  .tema-hero .lede{
+    font-family:'Instrument Serif', serif;
+    font-size:clamp(20px, 1.8vw, 26px);
+    line-height:1.35; max-width:64ch;
+    color:var(--ink-soft); margin:0;
+  }
+  .tema-hero .meta-row{
+    margin-top:28px;
+    display:flex; gap:0; flex-wrap:wrap;
+    border:1.5px solid var(--ink);
+    max-width:max-content;
+  }
+  .tema-hero .meta-row .m{
+    padding:10px 16px; border-right:1.5px solid var(--ink);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  }
+  .tema-hero .meta-row .m:last-child{ border-right:none; }
+  .tema-hero .meta-row .m.filled{ background:var(--ink); color:var(--paper); font-weight:700; }
 
-        .law-card {
-            transition: transform 0.2s;
-        }
+  .tema-nav{
+    margin-top:28px;
+    display:flex; gap:12px; flex-wrap:wrap;
+  }
 
-        .law-card:hover {
-            transform: translateY(-4px);
-        }
+  /* ============ LAYOUT: SIDEBAR + CONTENT ============ */
+  .tema-layout{
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    border-bottom:2px solid var(--ink);
+  }
+  .tema-toc{
+    position:sticky; top:92px; align-self:start;
+    padding:32px 24px;
+    border-right:1px solid var(--ink);
+    max-height:calc(100vh - 92px);
+    overflow-y:auto;
+    background:var(--paper);
+  }
+  .tema-toc .toc-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:16px;
+  }
+  .tema-toc ol{ list-style:none; margin:0; padding:0; counter-reset:sec; }
+  .tema-toc ol li{ margin-bottom:10px; }
+  .tema-toc ol li a{
+    display:grid;
+    grid-template-columns: 36px 1fr;
+    gap:10px; align-items:baseline;
+    padding:6px 0;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:14px; font-weight:500;
+    border-bottom:1px dashed transparent;
+    transition: color .15s;
+  }
+  .tema-toc ol li a:hover{ color:var(--accent); }
+  .tema-toc ol li a.active{ color:var(--accent); }
+  .tema-toc ol li a.active .sn{ color:var(--accent); }
+  .tema-toc .sn{
+    font-family:'Instrument Serif', serif;
+    font-style:italic; font-size:18px;
+    color:var(--muted);
+  }
+  .tema-toc .tt{ line-height:1.25; }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
+  /* ============ CONTENT ============ */
+  .tema-content{
+    padding:48px 56px 72px;
+    max-width:880px;
+  }
+  .section{
+    padding-top:40px;
+    margin-top:40px;
+    border-top:2px solid var(--ink);
+    scroll-margin-top:88px;
+  }
+  .section:first-child{ padding-top:0; margin-top:0; border-top:none; }
 
-        .no-scrollbar {
-            -ms-overflow-style: none;
-        }
-    </style>
+  .section-n{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--muted);
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:16px;
+  }
+  .section-n .bullet{ width:14px; height:14px; background:var(--b-penal); display:inline-block; }
+  .section-n .num{
+    font-family:'Instrument Serif', serif;
+    font-style:italic; font-size:24px;
+    color:var(--ink); letter-spacing:-.02em;
+    text-transform:none;
+  }
+
+  .section h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(36px, 4.2vw, 56px);
+    line-height:1; letter-spacing:-.03em;
+    margin:0 0 24px;
+  }
+  .section h2 .it{ font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; }
+
+  .section h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:22px; letter-spacing:-.015em;
+    margin:32px 0 14px;
+  }
+
+  .section p.lead{
+    font-family:'Instrument Serif', serif;
+    font-size:22px; line-height:1.4;
+    color:var(--ink-soft);
+    margin:0 0 22px;
+  }
+  .section p{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16px; line-height:1.6;
+    color:var(--ink-soft);
+    margin:0 0 16px;
+  }
+
+  /* ============ ARTICLE QUOTE BLOCK ============ */
+  .art-quote{
+    margin:24px 0;
+    border:2px solid var(--ink);
+    background:var(--ink); color:var(--paper);
+    padding:28px 32px 24px;
+    position:relative;
+  }
+  .art-quote .art-label{
+    position:absolute; top:-12px; left:20px;
+    background:var(--paper); color:var(--ink);
+    border:2px solid var(--ink);
+    padding:2px 10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    font-weight:700;
+  }
+  .art-quote .qt{
+    font-family:'Instrument Serif', serif; font-style:italic;
+    font-size:20px; line-height:1.4;
+    color:var(--paper);
+  }
+  .art-quote .src{
+    margin-top:12px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    color:#9a9a90;
+  }
+
+  /* ============ REQUISITS ============ */
+  .req-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    gap:0;
+    border:1.5px solid var(--ink);
+    margin:24px 0;
+  }
+  .req-grid .req{
+    padding:20px;
+    border-right:1px solid var(--ink);
+  }
+  .req-grid .req:last-child{ border-right:none; }
+  .req-grid .req .rn{
+    font-family:'Instrument Serif', serif;
+    font-style:italic; font-size:36px;
+    color:var(--accent); line-height:1;
+    margin-bottom:8px;
+  }
+  .req-grid .req h4{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:15px;
+    margin:0 0 6px; letter-spacing:-.01em;
+  }
+  .req-grid .req p{
+    font-size:13px; line-height:1.45;
+    color:var(--muted); margin:0;
+  }
+
+  /* ============ ACTORS / DUAL CARDS ============ */
+  .dual{
+    display:grid; grid-template-columns:1fr 1fr;
+    border:1.5px solid var(--ink);
+    margin:24px 0;
+  }
+  .dual .d{
+    padding:24px;
+    border-right:1px solid var(--ink);
+  }
+  .dual .d:last-child{ border-right:none; }
+  .dual .d .dicon{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--accent); font-weight:700;
+    margin-bottom:10px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .dual .d .dicon .sq{ width:10px; height:10px; background:var(--accent); }
+  .dual .d h4{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:20px;
+    margin:0 0 8px; letter-spacing:-.015em;
+  }
+  .dual .d p{ font-size:14px; line-height:1.5; margin:0; color:var(--ink-soft); }
+
+  /* ============ TABLE ============ */
+  .table-wrap{
+    border:1.5px solid var(--ink);
+    margin:24px 0;
+    overflow-x:auto;
+  }
+  table.cat{
+    width:100%; border-collapse:collapse;
+    font-family:'Space Grotesk', sans-serif;
+  }
+  table.cat thead{
+    background:var(--ink); color:var(--paper);
+  }
+  table.cat thead th{
+    padding:12px 14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    text-align:left; font-weight:700;
+    border-right:1px solid #2a2a2a;
+  }
+  table.cat thead th:last-child{ border-right:none; }
+  table.cat tbody tr{ border-top:1px solid var(--ink); }
+  table.cat tbody tr:nth-child(odd){ background:var(--paper); }
+  table.cat tbody tr:nth-child(even){ background:var(--paper-2); }
+  table.cat tbody tr:hover{ background:oklch(0.92 0.04 60); }
+  table.cat td{
+    padding:12px 14px;
+    border-right:1px solid rgba(10,10,10,.15);
+    font-size:13px; line-height:1.4;
+    vertical-align:top;
+  }
+  table.cat td:last-child{ border-right:none; }
+  table.cat td.d-name{
+    font-weight:700;
+    font-family:'Space Grotesk', sans-serif;
+    min-width:180px;
+  }
+  table.cat td.d-art{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:.04em;
+    white-space:nowrap;
+  }
+
+  /* ============ QUIZ ============ */
+  .quiz-q{
+    border:1.5px solid var(--ink);
+    padding:22px 24px 20px;
+    margin:16px 0;
+    background:var(--paper-2);
+  }
+  .quiz-q .qn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:6px;
+  }
+  .quiz-q .qt{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:17px; line-height:1.35;
+    margin:0 0 14px; letter-spacing:-.01em;
+  }
+  .quiz-q .opts{ display:grid; gap:8px; }
+  .quiz-q .opts button{
+    all:unset; cursor:pointer;
+    padding:12px 14px;
+    border:1.5px solid var(--ink); background:var(--paper);
+    font-family:'Space Grotesk', sans-serif;
+    font-size:14px; line-height:1.35;
+    transition: background .15s;
+    display:flex; align-items:center; gap:10px;
+  }
+  .quiz-q .opts button::before{
+    content:''; width:10px; height:10px; border:1.5px solid var(--ink); display:inline-block; flex-shrink:0;
+  }
+  .quiz-q .opts button:hover{ background:var(--paper-3); }
+  .quiz-q .opts button.correct{
+    background:var(--ok); color:var(--paper); border-color:var(--ok);
+  }
+  .quiz-q .opts button.correct::before{ background:var(--paper); border-color:var(--paper); }
+  .quiz-q .opts button.wrong{
+    background:var(--accent); color:var(--paper); border-color:var(--accent);
+  }
+  .quiz-q .opts button.wrong::before{ background:var(--paper); border-color:var(--paper); }
+  .quiz-q .opts button[disabled]{ cursor:default; }
+
+  /* ============ PREV/NEXT ============ */
+  .tema-prevnext{
+    display:grid; grid-template-columns:1fr 1fr;
+    border-top:2px solid var(--ink);
+    margin-top:0;
+  }
+  .tema-prevnext a{
+    padding:28px 32px;
+    display:block;
+    border-right:1px solid var(--ink);
+    transition:background .15s;
+  }
+  .tema-prevnext a:last-child{ border-right:none; text-align:right; }
+  .tema-prevnext a:hover{ background:var(--paper-2); }
+  .tema-prevnext .lbl{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:6px;
+  }
+  .tema-prevnext .ttl{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:24px; letter-spacing:-.02em;
+  }
+  .tema-prevnext .ttl .it{ font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; }
+
+  @media (max-width: 1024px){
+    .tema-hero{ grid-template-columns:120px 1fr; }
+    .tema-hero .stripe .stripe-num{ font-size:96px; }
+    .tema-layout{ grid-template-columns:1fr; }
+    .tema-toc{
+      position:relative; top:0;
+      border-right:none; border-bottom:1px solid var(--ink);
+      max-height:none;
+    }
+    .tema-content{ padding:32px 24px 56px; }
+    .req-grid{ grid-template-columns:1fr; }
+    .req-grid .req{ border-right:none; border-bottom:1px solid var(--ink); }
+    .req-grid .req:last-child{ border-bottom:none; }
+    .dual{ grid-template-columns:1fr; }
+    .dual .d{ border-right:none; border-bottom:1px solid var(--ink); }
+    .dual .d:last-child{ border-bottom:none; }
+    .tema-prevnext{ grid-template-columns:1fr; }
+    .tema-prevnext a{ border-right:none; border-bottom:1px solid var(--ink); text-align:left !important; }
+  }
+</style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 leading-relaxed">
+<body class="grid-bg">
 
-    <div id="navbar-container"></div>
-    <div id="breadcrumb-container" class="max-w-6xl mx-auto px-6 pt-24"></div>
-
-    <header class="bg-indigo-900 text-white py-12 px-6 shadow-lg">
-        <div class="max-w-6xl mx-auto">
-            <h1 class="text-4xl font-bold mb-4">Tema 3 i Annex: Responsabilitat i Cataleg</h1>
-            <p class="text-indigo-200 text-xl max-w-2xl">Guia interactiva sobre la imputacio individual i el llistat tancat de delictes corporatius.</p>
-            <div class="mt-8 flex flex-wrap gap-4">
-                <a href="dret-penal-economic.html" class="inline-flex items-center gap-2 bg-white text-indigo-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-indigo-100 transition">← Tornar al Hub</a>
-                <span class="bg-indigo-700 px-3 py-1 rounded-full text-sm font-semibold tracking-wide uppercase">Art. 31 i 31 bis CP</span>
-                <a href="dret-penal-economic-tema4.html" class="bg-white text-indigo-900 px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase hover:bg-indigo-100 transition">Anar al Tema 4 (RPPJ)</a>
-            </div>
-        </div>
-    </header>
-
-    <nav class="sticky top-20 bg-white border-b border-slate-200 z-40">
-        <div class="max-w-6xl mx-auto flex overflow-x-auto no-scrollbar" id="tabNav">
-            <button data-tab="introduccio" class="tab-btn px-6 py-4 font-semibold text-indigo-600 border-b-2 border-indigo-600 whitespace-nowrap">Introduccio</button>
-            <button data-tab="art11" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Omissio (Art. 11)</button>
-            <button data-tab="art31" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Representant (Art. 31)</button>
-            <button data-tab="delegacio" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Delegacio</button>
-            <button data-tab="cataleg" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Cataleg de delictes</button>
-            <button data-tab="quiz" class="tab-btn px-6 py-4 font-semibold text-slate-500 hover:text-indigo-600 border-b-2 border-transparent whitespace-nowrap">Quiz</button>
-        </div>
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="topbar-row">
+    <a href="index.html" class="tb-cell tb-brand">
+      <span class="dot"></span>DRET <span class="serif" style="font-style:italic;font-weight:400;">visual</span> <span class="serif" style="font-style:italic;color:var(--accent);">&amp;</span> CATALÀ
+    </a>
+    <div class="tb-cell tb-grow mono" style="justify-content:flex-end;">
+      Tema 03 · Responsabilitat individual · Art. 11 i 31 CP
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dret-penal-economic.html" class="active">Penal Econ.</a>
+      <a href="dret-civil.html">Civil</a>
+      <a href="visuals.html">Visuals</a>
     </nav>
+  </div>
+</header>
 
-    <main class="max-w-6xl mx-auto p-6 my-8">
+<!-- ================= BREADCRUMB ================= -->
+<nav class="crumbs">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="#">Dret</a>
+  <span class="sep">/</span>
+  <a href="dret-penal-economic.html">Dret Penal Econòmic</a>
+  <span class="sep">/</span>
+  <span class="here">Tema 03</span>
+</nav>
 
-        <section id="introduccio" class="tab-content active space-y-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-2xl font-bold text-indigo-900 mb-4">Fonament de la responsabilitat individual</h2>
-                <p class="text-lg text-slate-700 mb-6">
-                    L'empresa no es una jungla d'irresponsabilitat. El dret penal persegueix la conducta humana que hi ha al darrere de les decisions corporatives. Segons la doctrina, el repte es determinar qui es l'autor quan les decisions estan fragmentades.
-                </p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 law-card">
-                        <h3 class="font-bold text-indigo-800 mb-2"><i class="fas fa-users-cog mr-2"></i> L'administrador</h3>
-                        <p class="text-sm">Respon per les seves accions directes i per l'incompliment del seu deure de vigilancia (omissio impropia).</p>
-                    </div>
-                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 law-card">
-                        <h3 class="font-bold text-indigo-800 mb-2"><i class="fas fa-user-tie mr-2"></i> El representant</h3>
-                        <p class="text-sm">Gracies a l'art. 31 CP, pot ser castigat en delictes especials encara que personalment no reuneixi la condicio tipica.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<main class="page">
 
-        <section id="art11" class="tab-content space-y-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-2xl font-bold text-indigo-900 mb-6 underline decoration-indigo-300">L'omissio impropia (art. 11 CP)</h2>
-                <div class="mb-8 bg-slate-900 text-slate-300 p-6 rounded-lg font-mono text-sm leading-relaxed shadow-inner">
-                    Els delictes que consisteixin en la produccio d'un resultat nomes s'entendran comesos per omissio quan la no evitacio d'aquest, en infringir un especial deure juridic de l'autor, equivalgui, segons el sentit del text de la llei, a la seva causacio.
-                </div>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
-                        <span class="font-bold text-indigo-700 block mb-1">1. Delicte de resultat</span>
-                        <p class="text-xs">Cal una lesio material efectiva (mort, dany patrimonial, etc.).</p>
-                    </div>
-                    <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
-                        <span class="font-bold text-indigo-700 block mb-1">2. Posicio de garant</span>
-                        <p class="text-xs">Deure de proteccio derivat de la llei, contracte o ingerencia.</p>
-                    </div>
-                    <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
-                        <span class="font-bold text-indigo-700 block mb-1">3. Equivalencia</span>
-                        <p class="text-xs">L'omissio ha de tenir el mateix desvalor social que l'accio.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- ================= HERO ================= -->
+<section class="tema-hero">
+  <div class="stripe">
+    <span class="stripe-tag">Tema</span>
+    <div class="stripe-num">03</div>
+  </div>
+  <div class="body">
+    <div class="eyebrow">
+      <span class="sq"></span>
+      Dret Penal Econòmic
+      <span class="sep">·</span>
+      Responsabilitat individual
+      <span class="sep">·</span>
+      Art. 11 i 31 CP
+    </div>
+    <h1>Responsabilitat <span class="it">individual</span><br>&amp; catàleg de delictes.</h1>
+    <p class="lede">
+      Guia pedagògica sobre la imputació individual i el llistat tancat de delictes corporatius —
+      qui respon personalment quan el delicte s'ha comès des de dins d'una empresa.
+    </p>
 
-        <section id="cataleg" class="tab-content space-y-8">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <h2 class="text-2xl font-bold text-indigo-900 mb-4">Cataleg tancat de delictes corporatius</h2>
-                <p class="text-sm text-slate-500 mb-6 italic">Llista de delictes on la persona juridica pot ser responsable penalment (art. 31 bis).</p>
+    <div class="meta-row">
+      <div class="m filled">Temps · 25 min</div>
+      <div class="m">5 seccions</div>
+      <div class="m">17 delictes al catàleg</div>
+      <div class="m">2 preguntes quiz</div>
+    </div>
 
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-slate-200 border">
-                        <thead class="bg-indigo-900 text-white">
-                            <tr>
-                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider border-r">Delicte / categoria</th>
-                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider border-r">Art. CP</th>
-                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider border-r">Be juridic protegit</th>
-                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider border-r">Subjecte responsabilitat</th>
-                                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider">Conducta tipica</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-slate-200 text-xs">
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Trafic d'organs</td>
-                                <td class="px-4 py-3 border-r">156 bis</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Salut publica / Integritat)</td>
-                                <td class="px-4 py-3 border-r">Representants, admins. o empleats</td>
-                                <td class="px-4 py-3">Promoure o facilitar trasplantaments il legals.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Assetjament laboral</td>
-                                <td class="px-4 py-3 border-r">173.1</td>
-                                <td class="px-4 py-3 border-r">Individual (Integritat moral)</td>
-                                <td class="px-4 py-3 border-r">Representants, admins. o empleats</td>
-                                <td class="px-4 py-3">Actes hostils o humiliants reiterats i greus a la feina.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Tracta d'essers humans</td>
-                                <td class="px-4 py-3 border-r">177 bis</td>
-                                <td class="px-4 py-3 border-r">Dignitat humana / Llibertat</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Captacio o trasllat de persones per a explotacio.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Assetjament sexual</td>
-                                <td class="px-4 py-3 border-r">184.5</td>
-                                <td class="px-4 py-3 border-r">Individual (Llibertat sexual)</td>
-                                <td class="px-4 py-3 border-r">Representants, admins. o empleats</td>
-                                <td class="px-4 py-3">Sol licitud de favors sexuals prevalent-se de superioritat.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Delictes informatics / Intimitat</td>
-                                <td class="px-4 py-3 border-r">197 quinquies</td>
-                                <td class="px-4 py-3 border-r">Individual (Intimitat / Privacitat)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Acces no autoritzat a dades, interceptacio o descobriment de secrets.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Estafes</td>
-                                <td class="px-4 py-3 border-r">251 bis</td>
-                                <td class="px-4 py-3 border-r">Individual (Patrimoni)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Us d'engany bastant per produir un acte de disposicio perjudicial.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Frustracio de l'execucio</td>
-                                <td class="px-4 py-3 border-r">258 ter</td>
-                                <td class="px-4 py-3 border-r">Dret de credit / Patrimoni</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Actes d'alcament de bens per eludir pagaments.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Insolvencies punibles</td>
-                                <td class="px-4 py-3 border-r">261 bis</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Ordre socioeconomic)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Causar o agreujar la insolvencia mitjancant conductes irregulars.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Danys informatics</td>
-                                <td class="px-4 py-3 border-r">264 quater</td>
-                                <td class="px-4 py-3 border-r">Integritat i disponibilitat de dades</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Esborrar, danyar o alterar dades o sistemes aliens.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Propietat int. i industrial</td>
-                                <td class="px-4 py-3 border-r">288</td>
-                                <td class="px-4 py-3 border-r">Drets d'explotacio economica</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Reproduccio, plagi o us de signes distintius sense permis.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Blanqueig de capitals</td>
-                                <td class="px-4 py-3 border-r">302</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Ordre socioeconomic)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Convertir bens coneixent el seu origen delictiu per ocultar-lo.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Financament de partits</td>
-                                <td class="px-4 py-3 border-r">304 bis</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Transparencia democratica)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Lliurar donacions incomplint limits o prohibicions legals.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Delictes fiscals i S.S.</td>
-                                <td class="px-4 py-3 border-r">310 bis</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Patrimoni public)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Defraudar eludint pagament de tributs o quotes.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Medi ambient</td>
-                                <td class="px-4 py-3 border-r">328</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Equilibri natural)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Abocaments o emissions que danyin l'aire, sol o aigues.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Salut publica (drogues)</td>
-                                <td class="px-4 py-3 border-r">369 bis</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Salut publica)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Cultiu, elaboracio o trafic de substancies estupefaents.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Suborn (cohecho)</td>
-                                <td class="px-4 py-3 border-r">427 bis</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Administracio publica)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Oferir dadiva a funcionari per acte contrari als deures.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold bg-slate-50 border-r">Terrorisme</td>
-                                <td class="px-4 py-3 border-r">580 bis</td>
-                                <td class="px-4 py-3 border-r">Supraindividual (Seguretat nacional)</td>
-                                <td class="px-4 py-3 border-r">Representants o empleats</td>
-                                <td class="px-4 py-3">Subministrament de fons per a fins terroristes.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+    <div class="tema-nav">
+      <a href="dret-penal-economic.html" class="btn">← Hub del bloc</a>
+      <a href="dret-penal-economic-tema4.html" class="btn filled">Tema 04 — RPPJ <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
 
-        <section id="quiz" class="tab-content space-y-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-2xl font-bold text-indigo-900 mb-6 text-center">Autoavaluacio rapida</h2>
-                <div id="quiz-container" class="max-w-3xl mx-auto space-y-6">
-                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
-                        <p class="font-bold mb-4">1. Quin es l'objectiu de la clausula d'actuar en nom d'altre (art. 31)?</p>
-                        <div class="grid gap-3">
-                            <button onclick="checkAnswer(false, this)" class="text-left p-4 bg-white border rounded-lg hover:border-indigo-500 transition shadow-sm">Atribuir la responsabilitat civil a l'empresa.</button>
-                            <button onclick="checkAnswer(true, this)" class="text-left p-4 bg-white border rounded-lg hover:border-indigo-500 transition shadow-sm">Evitar la impunitat del representant en delictes especials.</button>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
-                        <p class="font-bold mb-4">2. Quin es el be juridic protegit en el delicte de blanqueig de capitals?</p>
-                        <div class="grid gap-3">
-                            <button onclick="checkAnswer(true, this)" class="text-left p-4 bg-white border rounded-lg hover:border-indigo-500 transition shadow-sm">L'ordre socioeconomic i la salut publica.</button>
-                            <button onclick="checkAnswer(false, this)" class="text-left p-4 bg-white border rounded-lg hover:border-indigo-500 transition shadow-sm">La llibertat de moviments de capital.</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- ================= LAYOUT ================= -->
+<div class="tema-layout">
 
-        <section id="art31" class="tab-content space-y-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-2xl font-bold text-indigo-900 mb-4">El representant (art. 31 CP)</h2>
-                <p>Mecanisme de suplecio de tipicitat: permet castigar qui actua materialment encara que no tingui la condicio personal de l'obligat (exemple: deutor tributari).</p>
-            </div>
-        </section>
+  <!-- TOC -->
+  <aside class="tema-toc" id="toc">
+    <div class="toc-label">§ Sumari</div>
+    <ol>
+      <li><a href="#s1" class="active"><span class="sn">§1</span><span class="tt">Fonament de la responsabilitat individual</span></a></li>
+      <li><a href="#s2"><span class="sn">§2</span><span class="tt">L'omissió impròpia (Art. 11 CP)</span></a></li>
+      <li><a href="#s3"><span class="sn">§3</span><span class="tt">El representant (Art. 31 CP)</span></a></li>
+      <li><a href="#s4"><span class="sn">§4</span><span class="tt">Delegació i garantia</span></a></li>
+      <li><a href="#s5"><span class="sn">§5</span><span class="tt">Catàleg tancat de delictes</span></a></li>
+      <li><a href="#s6"><span class="sn">§6</span><span class="tt">Autoavaluació</span></a></li>
+    </ol>
+  </aside>
 
-        <section id="delegacio" class="tab-content space-y-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-2xl font-bold text-indigo-900 mb-4">Delegacio i garantia</h2>
-                <p>La delegacio es eficac si es real: capacitat, mitjans i control. Si es defectuosa, l'administrador continua essent garant del risc.</p>
-            </div>
-        </section>
+  <!-- CONTENT -->
+  <article class="tema-content">
 
-    </main>
+    <!-- §1 -->
+    <section class="section" id="s1">
+      <div class="section-n"><span class="bullet"></span><span class="num">§1</span> Fonament</div>
+      <h2>Fonament de la<br>responsabilitat <span class="it">individual</span>.</h2>
+      <p class="lead">
+        L'empresa no és una jungla d'irresponsabilitat. El dret penal persegueix la
+        conducta humana que hi ha al darrere de les decisions corporatives.
+      </p>
+      <p>
+        Segons la doctrina, el repte és determinar <em>qui</em> és l'autor
+        quan les decisions estan fragmentades entre diversos nivells jeràrquics,
+        departaments, comitès i delegats.
+      </p>
 
-    <section class="max-w-6xl mx-auto px-6 pb-6">
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-            <span class="text-sm text-slate-600 font-medium">Navegacio entre temes de Dret Penal Economic</span>
-            <div class="flex flex-wrap gap-2">
-                <a href="dret-penal-economic.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 bg-slate-100 hover:bg-slate-200 text-sm font-semibold transition-colors">Distribuidora</a>
-                <a href="dret-penal-economic-tema4.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100 text-sm font-semibold transition-colors">Tema 4 - RPPJ →</a>
-                <a href="#introduccio" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100 text-sm font-semibold transition-colors">Inici Tema 3</a>
-            </div>
+      <div class="dual">
+        <div class="d">
+          <div class="dicon"><span class="sq"></span>L'administrador</div>
+          <h4>Respon per l'omissió de vigilància</h4>
+          <p>Respon per les seves accions directes i per l'incompliment del seu deure de vigilància (omissió impròpia del Art. 11 CP).</p>
         </div>
+        <div class="d">
+          <div class="dicon"><span class="sq"></span>El representant</div>
+          <h4>Respon per actuar en nom d'altre</h4>
+          <p>Gràcies a l'Art. 31 CP, pot ser castigat en delictes especials encara que personalment no reuneixi la condició típica (p. ex. no sigui deutor tributari).</p>
+        </div>
+      </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6 mt-12">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-sm">
-                <p class="text-white font-bold mb-2">Manual de Dret Penal Economic</p>
-                <p>Lascurain, Dopico, Nieto i De la Mata (Dykinson 2024)</p>
-            </div>
-            <div class="text-right text-xs">
-                <p>&copy; 2026 - Recurs educatiu interactiu</p>
-                <p>Actualitzat segons LO 10/2022</p>
-            </div>
+    <!-- §2 -->
+    <section class="section" id="s2">
+      <div class="section-n"><span class="bullet"></span><span class="num">§2</span> Art. 11 CP</div>
+      <h2>L'omissió <span class="it">impròpia</span>.</h2>
+      <p>
+        L'omissió impròpia permet imputar a qui ha omès evitar el resultat
+        malgrat trobar-se en posició de garant. És la via natural per imputar
+        l'administrador que ha permès que un delicte es cometi dins l'empresa.
+      </p>
+
+      <div class="art-quote">
+        <div class="art-label">Art. 11 CP</div>
+        <div class="qt">
+          "Els delictes que consisteixin en la producció d'un resultat només s'entendran comesos per omissió
+          quan la no evitació d'aquest, en infringir un especial deure jurídic de l'autor, equivalgui,
+          segons el sentit del text de la llei, a la seva causació."
         </div>
-    </footer>
+        <div class="src">Codi Penal espanyol · Part General · Títol I</div>
+      </div>
 
-    <script>
-        function showTab(tabId, clickedButton) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach((c) => c.classList.remove('active'));
+      <h3>Requisits d'aplicació</h3>
+      <div class="req-grid">
+        <div class="req">
+          <div class="rn">1</div>
+          <h4>Delicte de resultat</h4>
+          <p>Cal una lesió material efectiva (mort, dany patrimonial, lesió, etc.).</p>
+        </div>
+        <div class="req">
+          <div class="rn">2</div>
+          <h4>Posició de garant</h4>
+          <p>Deure de protecció derivat de la llei, contracte o ingerència.</p>
+        </div>
+        <div class="req">
+          <div class="rn">3</div>
+          <h4>Equivalència</h4>
+          <p>L'omissió ha de tenir el mateix desvalor social que l'acció activa.</p>
+        </div>
+      </div>
+    </section>
 
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach((b) => {
-                b.classList.remove('text-indigo-600', 'border-indigo-600');
-                b.classList.add('text-slate-500', 'border-transparent');
-            });
+    <!-- §3 -->
+    <section class="section" id="s3">
+      <div class="section-n"><span class="bullet"></span><span class="num">§3</span> Art. 31 CP</div>
+      <h2>El <span class="it">representant</span>.</h2>
+      <p class="lead">
+        Mecanisme de suplència de tipicitat: permet castigar qui actua materialment
+        encara que no tingui la condició personal de l'obligat.
+      </p>
+      <p>
+        Exemple clàssic: el delicte fiscal exigeix que l'autor sigui <em>deutor tributari</em>.
+        Si l'administrador d'una societat defrauda en nom d'aquesta, personalment no és
+        deutor — però l'Art. 31 CP permet traslladar-li la condició i castigar-lo
+        com si ho fos.
+      </p>
 
-            const section = document.getElementById(tabId);
-            if (section) {
-                section.classList.add('active');
-            }
+      <div class="art-quote">
+        <div class="art-label">Art. 31 CP</div>
+        <div class="qt">
+          "Qui actuï com a administrador de fet o de dret d'una persona jurídica, o en nom o representació
+          legal o voluntària d'un altre, respondrà personalment, encara que no concorrin en ell les condicions,
+          qualitats o relacions que la corresponent figura del delicte requereixi per poder ser subjecte actiu
+          del mateix, si aquestes circumstàncies es donen en l'entitat o persona en nom de la qual actuï."
+        </div>
+        <div class="src">Codi Penal espanyol · Clàusula d'actuació en nom d'altre</div>
+      </div>
+    </section>
 
-            clickedButton.classList.remove('text-slate-500', 'border-transparent');
-            clickedButton.classList.add('text-indigo-600', 'border-indigo-600');
+    <!-- §4 -->
+    <section class="section" id="s4">
+      <div class="section-n"><span class="bullet"></span><span class="num">§4</span> Delegació</div>
+      <h2>Delegació <span class="it">&amp;</span> garantia.</h2>
+      <p>
+        La delegació és <b>eficaç</b> si és real: cal traslladar <em>capacitat</em>, <em>mitjans</em>
+        i <em>control</em> al delegat. Si la delegació és defectuosa — per manca de recursos,
+        formació o supervisió — l'administrador continua essent garant del risc i respon
+        per omissió impròpia.
+      </p>
+      <div class="req-grid">
+        <div class="req">
+          <div class="rn">A</div>
+          <h4>Capacitat</h4>
+          <p>El delegat té coneixement tècnic i formació per assumir el deure.</p>
+        </div>
+        <div class="req">
+          <div class="rn">B</div>
+          <h4>Mitjans</h4>
+          <p>Recursos suficients — humans, pressupostaris, tècnics — per executar-lo.</p>
+        </div>
+        <div class="req">
+          <div class="rn">C</div>
+          <h4>Control</h4>
+          <p>Supervisió residual del delegant: revisions periòdiques, reporting.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- §5 -->
+    <section class="section" id="s5">
+      <div class="section-n"><span class="bullet"></span><span class="num">§5</span> Art. 31 bis</div>
+      <h2>Catàleg <span class="it">tancat</span> de delictes.</h2>
+      <p>
+        Llista de delictes on la persona jurídica pot ser responsable penalment
+        (Art. 31 bis CP). És un <em>numerus clausus</em>: fora d'aquest llistat,
+        l'empresa no respon penalment — només els seus individus.
+      </p>
+
+      <div class="table-wrap">
+        <table class="cat">
+          <thead>
+            <tr>
+              <th>Delicte / categoria</th>
+              <th>Art. CP</th>
+              <th>Bé jurídic protegit</th>
+              <th>Subjecte</th>
+              <th>Conducta típica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="d-name">Tràfic d'òrgans</td><td class="d-art">156 bis</td><td>Salut pública / Integritat</td><td>Repr., admin. o empleats</td><td>Promoure o facilitar trasplantaments il·legals.</td></tr>
+            <tr><td class="d-name">Assetjament laboral</td><td class="d-art">173.1</td><td>Integritat moral</td><td>Repr., admin. o empleats</td><td>Actes hostils o humiliants reiterats i greus a la feina.</td></tr>
+            <tr><td class="d-name">Tracta d'éssers humans</td><td class="d-art">177 bis</td><td>Dignitat / Llibertat</td><td>Repr. o empleats</td><td>Captació o trasllat de persones per a explotació.</td></tr>
+            <tr><td class="d-name">Assetjament sexual</td><td class="d-art">184.5</td><td>Llibertat sexual</td><td>Repr., admin. o empleats</td><td>Sol·licitud de favors prevalent-se de superioritat.</td></tr>
+            <tr><td class="d-name">Delictes informàtics</td><td class="d-art">197 quinquies</td><td>Intimitat / Privacitat</td><td>Repr. o empleats</td><td>Accés no autoritzat a dades o descobriment de secrets.</td></tr>
+            <tr><td class="d-name">Estafes</td><td class="d-art">251 bis</td><td>Patrimoni</td><td>Repr. o empleats</td><td>Ús d'engany bastant per produir acte de disposició perjudicial.</td></tr>
+            <tr><td class="d-name">Frustració de l'execució</td><td class="d-art">258 ter</td><td>Dret de crèdit</td><td>Repr. o empleats</td><td>Actes d'alçament de béns per eludir pagaments.</td></tr>
+            <tr><td class="d-name">Insolvències punibles</td><td class="d-art">261 bis</td><td>Ordre socioeconòmic</td><td>Repr. o empleats</td><td>Causar o agreujar la insolvència mitjançant conductes irregulars.</td></tr>
+            <tr><td class="d-name">Danys informàtics</td><td class="d-art">264 quater</td><td>Integritat de dades</td><td>Repr. o empleats</td><td>Esborrar, danyar o alterar dades o sistemes aliens.</td></tr>
+            <tr><td class="d-name">Prop. intel·lectual i ind.</td><td class="d-art">288</td><td>Drets d'explotació econòmica</td><td>Repr. o empleats</td><td>Reproducció, plagi o ús de signes distintius sense permís.</td></tr>
+            <tr><td class="d-name">Blanqueig de capitals</td><td class="d-art">302</td><td>Ordre socioeconòmic</td><td>Repr. o empleats</td><td>Convertir béns coneixent el seu origen delictiu per ocultar-lo.</td></tr>
+            <tr><td class="d-name">Finançament de partits</td><td class="d-art">304 bis</td><td>Transparència democràtica</td><td>Repr. o empleats</td><td>Lliurar donacions incomplint límits o prohibicions legals.</td></tr>
+            <tr><td class="d-name">Delictes fiscals i S.S.</td><td class="d-art">310 bis</td><td>Patrimoni públic</td><td>Repr. o empleats</td><td>Defraudar eludint pagament de tributs o quotes.</td></tr>
+            <tr><td class="d-name">Medi ambient</td><td class="d-art">328</td><td>Equilibri natural</td><td>Repr. o empleats</td><td>Abocaments o emissions que danyin aire, sòl o aigües.</td></tr>
+            <tr><td class="d-name">Salut pública (drogues)</td><td class="d-art">369 bis</td><td>Salut pública</td><td>Repr. o empleats</td><td>Cultiu, elaboració o tràfic de substàncies estupefaents.</td></tr>
+            <tr><td class="d-name">Suborn (cohecho)</td><td class="d-art">427 bis</td><td>Administració pública</td><td>Repr. o empleats</td><td>Oferir dàdiva a funcionari per acte contrari als deures.</td></tr>
+            <tr><td class="d-name">Terrorisme</td><td class="d-art">580 bis</td><td>Seguretat nacional</td><td>Repr. o empleats</td><td>Subministrament de fons per a fins terroristes.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- §6 Quiz -->
+    <section class="section" id="s6">
+      <div class="section-n"><span class="bullet"></span><span class="num">§6</span> Quiz</div>
+      <h2>Autoavaluació <span class="it">ràpida</span>.</h2>
+      <p>Dues preguntes per comprovar la comprensió dels conceptes clau.</p>
+
+      <div class="quiz-q">
+        <div class="qn">Pregunta 01 · Art. 31 CP</div>
+        <div class="qt">Quin és l'objectiu de la clàusula d'actuar en nom d'altre (Art. 31)?</div>
+        <div class="opts">
+          <button data-correct="false">Atribuir la responsabilitat civil a l'empresa.</button>
+          <button data-correct="true">Evitar la impunitat del representant en delictes especials.</button>
+          <button data-correct="false">Fer respondre l'empresa penalment per qualsevol delicte.</button>
+        </div>
+      </div>
+
+      <div class="quiz-q">
+        <div class="qn">Pregunta 02 · Blanqueig</div>
+        <div class="qt">Quin és el bé jurídic protegit en el delicte de blanqueig de capitals?</div>
+        <div class="opts">
+          <button data-correct="true">L'ordre socioeconòmic.</button>
+          <button data-correct="false">La llibertat de moviments de capital.</button>
+          <button data-correct="false">La propietat privada individual.</button>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<!-- ================= PREV/NEXT ================= -->
+<nav class="tema-prevnext">
+  <a href="dret-penal-economic.html">
+    <div class="lbl">← Tornar</div>
+    <div class="ttl">Hub del bloc <span class="it">Penal Econòmic</span></div>
+  </a>
+  <a href="dret-penal-economic-tema4.html">
+    <div class="lbl">Següent · Tema 04 →</div>
+    <div class="ttl">RPPJ — <span class="it">persona jurídica</span></div>
+  </a>
+</nav>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-foot">
+  <div class="site-foot-inner">
+    <div class="ff-cell">
+      <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em> en <em>català</em></div>
+      <p style="margin:14px 0 0;color:#a8a8a0;max-width:44ch;font-size:14px;line-height:1.5;">
+        Mapes, esquemes, plantilles i vídeos per aprendre Dret amb precisió
+        i estètica editorial.
+      </p>
+    </div>
+    <div class="ff-cell">
+      <h4>Bloc Penal Econòmic</h4>
+      <ul>
+        <li><a href="dret-penal-economic.html">Hub · tots els temes</a></li>
+        <li><a href="dret-penal-economic-tema3.html">Tema 03 · Responsabilitat</a></li>
+        <li><a href="dret-penal-economic-tema4.html">Tema 04 · RPPJ</a></li>
+        <li><a href="dret-penal-economic-tema14.html">Tema 14 · Blanqueig</a></li>
+        <li><a href="dret-penal-economic-tema15.html">Tema 15 · Hisenda</a></li>
+      </ul>
+    </div>
+    <div class="ff-cell">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="visuals.html#penal">Visuals penal</a></li>
+        <li><a href="dret-financer-videos.html">Vídeos</a></li>
+        <li><a href="historia-dret.html">Història del Dret</a></li>
+        <li><a href="index.html">Tornar a l'inici</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot-bottom">
+    <span>© 2026 · Dret Visual · Manual de referència: Lascurain · Dopico · Nieto · De la Mata (Dykinson 2024)</span>
+    <span>Actualitzat · LO 10/2022</span>
+  </div>
+</footer>
+
+<script>
+  // Quiz handling
+  document.querySelectorAll('.quiz-q').forEach(q => {
+    q.querySelectorAll('.opts button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const correct = btn.dataset.correct === 'true';
+        const buttons = q.querySelectorAll('.opts button');
+        buttons.forEach(b => { b.disabled = true; });
+        btn.classList.add(correct ? 'correct' : 'wrong');
+        if (!correct) {
+          // reveal the right one
+          q.querySelectorAll('.opts button[data-correct="true"]').forEach(b => b.classList.add('correct'));
         }
+      });
+    });
+  });
 
-        function checkAnswer(isCorrect, element) {
-            const parent = element.parentElement;
-            const buttons = parent.querySelectorAll('button');
-            buttons.forEach((b) => {
-                b.disabled = true;
-            });
+  // TOC active state on scroll
+  const sections = document.querySelectorAll('.section[id]');
+  const tocLinks = document.querySelectorAll('#toc a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-20% 0px -65% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
 
-            if (isCorrect) {
-                element.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-800');
-                element.innerHTML += ' <i class="fas fa-check-circle ml-2"></i> Correcte';
-            } else {
-                element.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
-                element.innerHTML += ' <i class="fas fa-times-circle ml-2"></i> Incorrecte';
-            }
-        }
-
-        document.querySelectorAll('.tab-btn').forEach((button) => {
-            button.addEventListener('click', () => {
-                showTab(button.dataset.tab, button);
-            });
-        });
-    </script>
-    <script src="navbar-helper.js"></script>
 </body>
-
 </html>

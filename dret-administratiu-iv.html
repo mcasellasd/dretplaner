@@ -6,7 +6,6 @@
     <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Administratiu","url":"dret-administratiu.html"},{"label":"Mòdul IV"}]'>
     <title>Dret Administratiu IV | Responsabilitat Patrimonial de l'Administració</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
@@ -14,10 +13,35 @@
         .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
         section { scroll-margin-top: 96px; }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="brutal.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <div id="navbar-container"></div>
-    <div id="breadcrumb-container" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24"></div>
+    <header class="topbar">
+      <div class="topbar-row">
+        <a href="index.html" class="tb-cell tb-brand">
+          <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+        </a>
+        <div class="tb-cell tb-grow" style="justify-content:flex-end;">
+          <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines · 2026</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="dret-penal.html">Penal</a>
+          <a href="dret-civil.html">Civil</a>
+          <a href="dret-administratiu.html">Administratiu</a>
+          <a href="dret-financer.html">Financer</a>
+          <a href="dret-mercantil.html">Mercantil</a>
+        </nav>
+      </div>
+    </header>
+    <nav class="crumbs">
+      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="dret-administratiu.html">Dret Administratiu</a><span class="sep">/</span>
+      <span class="here">Mòdul IV</span>
+    </nav>
 
     <!-- Navegació -->
     <nav class="sticky top-20 w-full bg-white/90 backdrop-blur-md shadow-sm z-40 border-b border-slate-200">
@@ -262,19 +286,38 @@
         </section>
 
     </main>
-
-    <footer class="bg-gray-900 text-white py-12 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400 text-sm mb-4">Recurs basat en el temari de María Luisa Roca Fernández-Castanys (FUOC, 2019)</p>
-            <div class="flex justify-center space-x-6 text-2xl">
-                <span class="hover:text-blue-400 cursor-pointer">⚖️</span>
-                <span class="hover:text-blue-400 cursor-pointer">🏛️</span>
-                <span class="hover:text-blue-400 cursor-pointer">📜</span>
-            </div>
-            <p class="mt-8 text-xs opacity-50 uppercase tracking-widest">Guia d'Estudi Interactiva</p>
+    <footer class="site-foot">
+      <div class="site-foot-inner">
+        <div class="ff-cell">
+          <h4>Sobre el projecte</h4>
+          <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
+          <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i vídeos del Dret espanyol i català.</p>
         </div>
+        <div class="ff-cell">
+          <h4>Matèries</h4>
+          <ul>
+            <li><a href="dret-penal.html">Penal</a></li>
+            <li><a href="dret-civil.html">Civil</a></li>
+            <li><a href="dret-administratiu.html">Administratiu</a></li>
+            <li><a href="dret-constitucional.html">Constitucional</a></li>
+            <li><a href="dret-processal.html">Processal</a></li>
+            <li><a href="dret-financer.html">Financer</a></li>
+            <li><a href="dret-mercantil.html">Mercantil</a></li>
+          </ul>
+        </div>
+        <div class="ff-cell">
+          <h4>Eines</h4>
+          <ul>
+            <li><a href="visuals.html">Cerca visuals</a></li>
+            <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
+            <li><a href="historia-dret.html">Fonaments</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-foot-bottom">
+        <span>Tipografia: Space Grotesk · Instrument Serif · JetBrains Mono</span>
+        <span>© MMXXVI · Dret Visual</span>
+      </div>
     </footer>
-
-    <script src="navbar-helper.js"></script>
 </body>
 </html>

@@ -1,222 +1,476 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="breadcrumbs"
-    content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Penal Econòmic"}]'>
-  <title>Dret Penal Econòmic | Selecció de temes</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="navbar.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dret Penal Econòmic — Selecció de temes | Dret Visual</title>
+<meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Penal Econòmic"}]'>
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background:
-        radial-gradient(900px 480px at 5% -10%, rgba(99, 102, 241, 0.15), transparent 58%),
-        radial-gradient(800px 440px at 95% 8%, rgba(245, 158, 11, 0.12), transparent 58%),
-        linear-gradient(180deg, #f8fafc, #eef2ff 45%, #f8fafc 100%);
-      color: #0f172a;
-      min-height: 100vh;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brutal.css">
 
-    .glass {
-      background: rgba(255, 255, 255, 0.78);
-      -webkit-backdrop-filter: blur(9px);
-      backdrop-filter: blur(9px);
-      border: 1px solid rgba(148, 163, 184, 0.2);
-    }
+<style>
+  /* ================= HUB-SPECIFIC ================= */
+  .page{ max-width:1440px; margin:0 auto; position:relative; z-index:2; }
 
-    .module-card {
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
+  .hub-hero{ padding:56px 0 48px; }
+  .hub-hero h1{ font-size:clamp(72px, 11vw, 180px); }
 
-    .module-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 38px -25px rgba(15, 23, 42, 0.45);
-    }
+  /* side-by-side hero: title + index of themes */
+  .hub-hero-grid{
+    display:grid; grid-template-columns: 1.4fr 1fr;
+    border-top:1px solid var(--ink);
+    margin-top:36px;
+  }
+  .hub-hero-left{ padding:28px 32px; border-right:1px solid var(--ink); }
+  .hub-hero-right{ padding:28px 32px; }
+  .hub-hero-left .lede{
+    font-family:'Instrument Serif', serif;
+    font-size:clamp(22px, 2.2vw, 30px);
+    line-height:1.3; margin:0; color:var(--ink-soft);
+  }
+  .hub-hero-left .lede .amp{ color:var(--accent); font-style:italic; }
+  .hub-hero-right .idx-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:14px;
+  }
+  .hub-hero-right ol{
+    margin:0; padding:0; list-style:none;
+    counter-reset: idx;
+  }
+  .hub-hero-right li{
+    display:flex; align-items:baseline; gap:14px;
+    padding:10px 0;
+    border-bottom:1px dashed rgba(10,10,10,.25);
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16px; font-weight:500;
+  }
+  .hub-hero-right li:last-child{ border-bottom:none; }
+  .hub-hero-right li .n{
+    font-family:'Instrument Serif', serif;
+    font-style:italic; font-size:22px;
+    color:var(--accent); min-width:44px;
+  }
+  .hub-hero-right li .t{ flex:1; }
+  .hub-hero-right li .ref{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted);
+  }
 
-    .card-t3 {
-      border: 1px solid #c7d2fe;
-    }
+  /* ================= TEMES GRID ================= */
+  .section-head{
+    padding:48px 32px 24px;
+    display:flex; align-items:flex-end; justify-content:space-between; gap:24px;
+    border-top:2px solid var(--ink);
+  }
+  .section-head h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:clamp(32px, 4vw, 56px);
+    font-weight:700; letter-spacing:-.03em;
+    margin:0;
+  }
+  .section-head h2 .em{ font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; }
+  .section-head .meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted);
+    text-align:right; padding-bottom:10px;
+  }
 
-    .card-t3:hover {
-      border-color: #818cf8;
-    }
+  .temes-grid{
+    display:grid; grid-template-columns: 1fr 1fr;
+    border-top:1px solid var(--ink);
+  }
+  .tema-card{
+    position:relative;
+    padding:32px 32px 28px;
+    border-right:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    background:var(--paper);
+    display:flex; flex-direction:column;
+    min-height:360px;
+    transition: background .2s;
+    cursor:pointer;
+  }
+  .tema-card:nth-child(2n){ border-right:none; }
+  .tema-card:hover{ background:var(--paper-2); }
+  .tema-card:hover .tema-num{ color:var(--accent); }
 
-    .card-t4 {
-      border: 1px solid #fde68a;
-    }
+  .tema-card-head{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:24px;
+  }
+  .tema-num{
+    font-family:'Instrument Serif', serif;
+    font-style:italic; font-weight:400;
+    font-size:120px; line-height:.85;
+    color:var(--ink); opacity:.9;
+    letter-spacing:-.04em;
+    transition:color .2s;
+  }
+  .tema-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:6px 12px; border:1.5px solid var(--ink);
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    background:var(--paper);
+  }
+  .tema-badge .sw{ width:10px; height:10px; display:inline-block; border:1px solid var(--ink); }
 
-    .card-t4:hover {
-      border-color: #f59e0b;
-    }
+  .tema-card h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:32px; line-height:1;
+    letter-spacing:-.025em;
+    margin:0 0 6px;
+  }
+  .tema-card h3 .it{
+    font-family:'Instrument Serif', serif;
+    font-style:italic; font-weight:400;
+  }
+  .tema-card .sub{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:18px;
+  }
+  .tema-card .desc{
+    font-family:'Instrument Serif', serif;
+    font-size:19px; line-height:1.35;
+    color:var(--ink-soft);
+    margin:0 0 20px;
+    max-width:48ch;
+  }
+  .tema-card ul.bullets{
+    list-style:none; margin:0 0 24px; padding:0;
+    border-top:1px solid var(--ink);
+  }
+  .tema-card ul.bullets li{
+    display:grid; grid-template-columns:90px 1fr;
+    gap:14px; align-items:baseline;
+    padding:8px 0;
+    border-bottom:1px dashed rgba(10,10,10,.22);
+    font-size:13px;
+  }
+  .tema-card ul.bullets li:last-child{ border-bottom:none; }
+  .tema-card ul.bullets .ref{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .tema-card ul.bullets .txt{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:500;
+  }
+  .tema-card .card-cta{
+    margin-top:auto;
+    display:flex; gap:0;
+    border:1.5px solid var(--ink);
+  }
+  .tema-card .card-cta a{
+    flex:1;
+    padding:12px 14px;
+    border-right:1.5px solid var(--ink);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    font-weight:700;
+    display:flex; align-items:center; justify-content:space-between;
+    transition:background .15s;
+  }
+  .tema-card .card-cta a:last-child{ border-right:none; }
+  .tema-card .card-cta a:hover{ background:var(--ink); color:var(--paper); }
+  .tema-card .card-cta a.primary{ background:var(--ink); color:var(--paper); }
+  .tema-card .card-cta a.primary:hover{ background:var(--accent); }
+  .tema-card .card-cta .arr{ font-family:'Instrument Serif', serif; font-style:italic; font-size:16px; }
 
-    .card-t14 {
-      border: 1px solid #a7f3d0;
-    }
+  /* little tint strip on each card — uses CSS var set inline */
+  .tema-card::before{
+    content:''; position:absolute;
+    top:0; left:0; right:0; height:6px;
+    background:var(--tema-tint, var(--accent));
+  }
 
-    .card-t14:hover {
-      border-color: #10b981;
-    }
+  /* ================= NOTE BLOCK ================= */
+  .hub-note{
+    border-top:2px solid var(--ink);
+    display:grid; grid-template-columns: 1fr 2fr;
+  }
+  .hub-note .l{
+    padding:40px 32px;
+    border-right:1px solid var(--ink);
+    background:var(--ink); color:var(--paper);
+  }
+  .hub-note .l .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+    color:#8a8a82; margin-bottom:10px;
+  }
+  .hub-note .l h4{
+    font-family:'Instrument Serif', serif; font-style:italic;
+    font-weight:400; font-size:34px; line-height:1.05;
+    margin:0;
+  }
+  .hub-note .r{
+    padding:40px 32px;
+    font-family:'Instrument Serif', serif;
+    font-size:20px; line-height:1.4;
+    color:var(--ink-soft);
+  }
+  .hub-note .r .amp{ color:var(--accent); font-style:italic; }
 
-    .card-t15 {
-      border: 1px solid #fdba74;
-    }
-
-    .card-t15:hover {
-      border-color: #f97316;
-    }
-  </style>
+  @media (max-width: 900px){
+    .hub-hero-grid{ grid-template-columns:1fr; }
+    .hub-hero-left{ border-right:none; border-bottom:1px solid var(--ink); }
+    .temes-grid{ grid-template-columns:1fr; }
+    .tema-card{ border-right:none; }
+    .hub-note{ grid-template-columns:1fr; }
+    .hub-note .l{ border-right:none; border-bottom:1px solid var(--ink); }
+  }
+</style>
 </head>
 
-<body>
-  <div id="navbar-container"></div>
-  <div id="breadcrumb-container" class="max-w-6xl mx-auto px-6 pt-24"></div>
+<body class="grid-bg">
 
-  <header class="max-w-6xl mx-auto px-6 pt-8 pb-6">
-    <div class="glass rounded-3xl p-8 md:p-10">
-      <span
-        class="inline-block px-4 py-1 mb-4 rounded-full text-xs font-bold tracking-widest uppercase bg-indigo-100 text-indigo-700 border border-indigo-200">Itinerari Dret Penal Econòmic</span>
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">Pàgina distribuïdora de temes</h1>
-      <p class="mt-3 text-slate-600 text-lg max-w-3xl">Selecciona el tema que vols estudiar. Aquest espai centralitza l'accés als temes 3, 4, 14 i 15 de Dret Penal Economic.</p>
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="topbar-row">
+    <a href="index.html" class="tb-cell tb-brand">
+      <span class="dot"></span>DRET <span class="serif" style="font-style:italic;font-weight:400;">visual</span> <span class="serif" style="font-style:italic;color:var(--accent);">&amp;</span> CATALÀ
+    </a>
+    <div class="tb-cell tb-grow mono" style="justify-content:flex-end;">
+      Repositori d'eines · Actualitzat · LO 10/2022
     </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-6 pb-16">
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <!-- Tema 3 -->
-      <article class="module-card card-t3 bg-white rounded-3xl p-7 shadow-sm">
-        <div class="flex items-center justify-between gap-4 mb-4">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-indigo-700 bg-indigo-100 border border-indigo-200 px-3 py-1 rounded-full">Tema 3</span>
-          <span class="text-xs text-slate-500 font-semibold">Responsabilitat individual</span>
-        </div>
-        <div class="text-4xl mb-4 text-indigo-300">
-          <i class="fa-solid fa-user-shield"></i>
-        </div>
-        <h2 class="text-2xl font-bold text-slate-900 mb-3">Responsabilitat Individual i Catàleg</h2>
-        <p class="text-slate-600 mb-6">Imputació individual, comissió per omissió (Art. 11), actuació en nom d'altre (Art. 31), delegació de funcions i catàleg tancat de delictes corporatius.</p>
-        <ul class="text-sm text-slate-500 mb-6 space-y-1">
-          <li>· Art. 11 CP — Comissió per omissió</li>
-          <li>· Art. 31 CP — Actuació en nom d'altre</li>
-          <li>· Delegació i cadena de comandament</li>
-          <li>· Catàleg de 17 delictes (Art. 31 bis)</li>
-        </ul>
-        <a href="dret-penal-economic-tema3.html"
-          class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 text-white font-bold px-5 py-3 hover:bg-indigo-700 transition-colors">
-          Estudiar Tema 3
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </a>
-      </article>
-
-      <!-- Tema 4 -->
-      <article class="module-card card-t4 bg-white rounded-3xl p-7 shadow-sm">
-        <div class="flex items-center justify-between gap-4 mb-4">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-amber-700 bg-amber-100 border border-amber-200 px-3 py-1 rounded-full">Tema 4</span>
-          <span class="text-xs text-slate-500 font-semibold">Responsabilitat corporativa</span>
-        </div>
-        <div class="text-4xl mb-4 text-amber-300">
-          <i class="fa-solid fa-building"></i>
-        </div>
-        <h2 class="text-2xl font-bold text-slate-900 mb-3">RPPJ — Responsabilitat Penal de la Persona Jurídica</h2>
-        <p class="text-slate-600 mb-6">Fonaments dogmàtics, principi d'autonomia (Art. 31 ter), via A i via B d'imputació, requisits del compliance i catàleg de delictes imputables a empreses.</p>
-        <ul class="text-sm text-slate-500 mb-6 space-y-1">
-          <li>· Art. 31 bis — Vies A i B d'imputació</li>
-          <li>· Art. 31 ter — Principi d'autonomia</li>
-          <li>· Art. 31 quinquies — Subjectes exclosos</li>
-          <li>· Compliance i òrgan de control</li>
-        </ul>
-        <a href="dret-penal-economic-tema4.html"
-          class="inline-flex items-center gap-2 rounded-xl bg-amber-500 text-white font-bold px-5 py-3 hover:bg-amber-600 transition-colors">
-          Estudiar Tema 4
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </a>
-      </article>
-
-      <!-- Tema 14 -->
-      <article class="module-card card-t14 bg-white rounded-3xl p-7 shadow-sm">
-        <div class="flex items-center justify-between gap-4 mb-4">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-100 border border-emerald-200 px-3 py-1 rounded-full">Tema 14</span>
-          <span class="text-xs text-slate-500 font-semibold">Blanqueig de capitals</span>
-        </div>
-        <div class="text-4xl mb-4 text-emerald-300">
-          <i class="fa-solid fa-money-bill-transfer"></i>
-        </div>
-        <h2 class="text-2xl font-bold text-slate-900 mb-3">Blanqueig de Capitals</h2>
-        <p class="text-slate-600 mb-6">Concepte, estructura tipica, element subjectiu, penes i decomis. Inclou diferencia amb receptacio i encobriment.</p>
-        <ul class="text-sm text-slate-500 mb-6 space-y-1">
-          <li>· Art. 301 CP — Tipus basic</li>
-          <li>· Art. 302 CP — Responsabilitat de persona juridica</li>
-          <li>· Dolo, imprudencia i prova indiciaria</li>
-          <li>· Decomis i funcio politico-criminal</li>
-        </ul>
-        <a href="dret-penal-economic-tema14.html"
-          class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 text-white font-bold px-5 py-3 hover:bg-emerald-700 transition-colors">
-          Estudiar Tema 14
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </a>
-      </article>
-
-      <!-- Tema 15 -->
-      <article class="module-card card-t15 bg-white rounded-3xl p-7 shadow-sm">
-        <div class="flex items-center justify-between gap-4 mb-4">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-700 bg-orange-100 border border-orange-200 px-3 py-1 rounded-full">Tema 15</span>
-          <span class="text-xs text-slate-500 font-semibold">Hisenda i Seg. Social</span>
-        </div>
-        <div class="text-4xl mb-4 text-orange-300">
-          <i class="fa-solid fa-landmark"></i>
-        </div>
-        <h2 class="text-2xl font-bold text-slate-900 mb-3">Hisenda Publica i Seguretat Social</h2>
-        <p class="text-slate-600 mb-6">Tipus fiscals i de cotitzacions, frau de subvencions, regularitzacio i responsabilitat penal de persona juridica.</p>
-        <ul class="text-sm text-slate-500 mb-6 space-y-1">
-          <li>· Art. 305 i 305 bis — Delicte fiscal</li>
-          <li>· Art. 307 i 307 ter — Seguretat Social</li>
-          <li>· Art. 308 — Fraus de subvencions</li>
-          <li>· Art. 310 bis — RPPJ en ambit fiscal</li>
-        </ul>
-        <a href="dret-penal-economic-tema15.html"
-          class="inline-flex items-center gap-2 rounded-xl bg-orange-500 text-white font-bold px-5 py-3 hover:bg-orange-600 transition-colors">
-          Estudiar Tema 15
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </a>
-      </article>
-
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#" class="active">Penal Econ.</a>
+      <a href="dret-civil.html">Civil</a>
+      <a href="visuals.html">Visuals</a>
+    </nav>
+  </div>
+  <div class="topbar-row">
+    <div class="tb-cell mono">Branca</div>
+    <div class="tb-cell mono" style="flex:1;">
+      <span style="display:inline-block;width:10px;height:10px;background:var(--b-penalec);border:1px solid var(--ink);margin-right:8px;"></span>
+      Dret Penal Econòmic
     </div>
+    <div class="tb-cell mono">4 temes</div>
+    <div class="tb-cell mono">Manual: Lascurain · Dopico · Nieto · De la Mata (Dykinson 2024)</div>
+  </div>
+</header>
 
-    <section class="mt-8 glass rounded-2xl p-6">
-      <h3 class="text-lg font-bold text-slate-900 mb-2">Com utilitzar aquesta distribuïdora</h3>
-      <p class="text-slate-600">Els temes 3 i 4 expliquen la responsabilitat individual i corporativa. Els temes 14 i 15 amplien el bloc amb blanqueig de capitals i delictes contra la Hisenda Publica i la Seguretat Social.</p>
-    </section>
-  </main>
+<!-- ================= BREADCRUMB ================= -->
+<nav class="crumbs">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="#">Dret</a>
+  <span class="sep">/</span>
+  <span class="here">Dret Penal Econòmic</span>
+</nav>
 
-  <footer class="border-t border-slate-200 bg-white/60">
-    <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-slate-500 flex flex-col md:flex-row md:justify-between gap-2">
-      <p>2026 · Dret Penal Econòmic · Pàgina distribuïdora</p>
-      <p>Tema 3 · Tema 4 · Tema 14 · Tema 15</p>
+<main class="page" style="position:relative;z-index:2;">
+
+<!-- ================= HERO ================= -->
+<section class="hub-hero">
+  <div class="hero-inner">
+    <div class="kicker" style="margin-bottom:18px;">
+      <span style="display:inline-block;width:10px;height:10px;background:var(--b-penalec);margin-right:10px;vertical-align:middle;"></span>
+      Itinerari · Dret Penal Econòmic
     </div>
-  </footer>
+    <h1>
+      Responsabilitat<br>
+      <span class="em">penal</span> <span class="amp">&amp;</span> empresa.
+    </h1>
+  </div>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <script src="navbar-helper.js"></script>
+  <div class="hub-hero-grid">
+    <div class="hub-hero-left">
+      <p class="lede">
+        Quatre temes connectats que expliquen <em>qui</em> respon, <em>quan</em> respon
+        <span class="amp">&amp;</span> <em>com</em> s'imputa un delicte dins d'una organització —
+        de la conducta individual al catàleg tancat de delictes corporatius, passant per
+        la RPPJ, el blanqueig i els delictes contra Hisenda.
+      </p>
+    </div>
+    <div class="hub-hero-right">
+      <div class="idx-label">Índex de temes</div>
+      <ol>
+        <li><span class="n">03</span><span class="t">Responsabilitat individual i catàleg</span><span class="ref">Art. 11 · 31</span></li>
+        <li><span class="n">04</span><span class="t">RPPJ — Persona jurídica</span><span class="ref">Art. 31 bis · ter · quinquies</span></li>
+        <li><span class="n">14</span><span class="t">Blanqueig de capitals</span><span class="ref">Art. 301 · 302</span></li>
+        <li><span class="n">15</span><span class="t">Hisenda Pública i Seg. Social</span><span class="ref">Art. 305 · 307 · 308 · 310 bis</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEMES GRID ================= -->
+<div class="section-head">
+  <h2>Selecciona <span class="em">un tema.</span></h2>
+  <div class="meta">04 / 04 disponibles · Scroll ↓</div>
+</div>
+
+<section class="temes-grid">
+
+  <!-- Tema 3 -->
+  <article class="tema-card" style="--tema-tint: var(--b-penal);">
+    <div class="tema-card-head">
+      <div>
+        <span class="tema-badge"><span class="sw" style="background:var(--b-penal);"></span>Tema 03</span>
+      </div>
+      <div class="tema-num">03</div>
+    </div>
+    <h3>Responsabilitat <span class="it">individual</span><br>&amp; catàleg</h3>
+    <div class="sub">Imputació personal · Art. 11 · 31 CP</div>
+    <p class="desc">
+      Imputació individual, comissió per omissió, actuació en nom d'altre,
+      delegació de funcions i catàleg tancat de 17 delictes corporatius.
+    </p>
+    <ul class="bullets">
+      <li><span class="ref">Art. 11 CP</span><span class="txt">Comissió per omissió</span></li>
+      <li><span class="ref">Art. 31 CP</span><span class="txt">Actuació en nom d'altre</span></li>
+      <li><span class="ref">Delegació</span><span class="txt">Cadena de comandament</span></li>
+      <li><span class="ref">Art. 31 bis</span><span class="txt">Catàleg de 17 delictes</span></li>
+    </ul>
+    <div class="card-cta">
+      <a href="dret-penal-economic-tema3.html" class="primary">Estudiar Tema 03 <span class="arr">→</span></a>
+      <a href="visuals.html#penal">Visuals</a>
+    </div>
+  </article>
+
+  <!-- Tema 4 -->
+  <article class="tema-card" style="--tema-tint: var(--b-mercantil);">
+    <div class="tema-card-head">
+      <div>
+        <span class="tema-badge"><span class="sw" style="background:var(--b-mercantil);"></span>Tema 04</span>
+      </div>
+      <div class="tema-num">04</div>
+    </div>
+    <h3>RPPJ — <span class="it">persona</span><br>jurídica</h3>
+    <div class="sub">Responsabilitat corporativa · Art. 31 bis</div>
+    <p class="desc">
+      Fonaments dogmàtics, principi d'autonomia, vies A i B d'imputació,
+      requisits del compliance i catàleg de delictes imputables a empreses.
+    </p>
+    <ul class="bullets">
+      <li><span class="ref">Art. 31 bis</span><span class="txt">Vies A i B d'imputació</span></li>
+      <li><span class="ref">Art. 31 ter</span><span class="txt">Principi d'autonomia</span></li>
+      <li><span class="ref">Art. 31 quinq.</span><span class="txt">Subjectes exclosos</span></li>
+      <li><span class="ref">Compliance</span><span class="txt">Òrgan de control</span></li>
+    </ul>
+    <div class="card-cta">
+      <a href="dret-penal-economic-tema4.html" class="primary">Estudiar Tema 04 <span class="arr">→</span></a>
+      <a href="visuals.html#penal">Visuals</a>
+    </div>
+  </article>
+
+  <!-- Tema 14 -->
+  <article class="tema-card" style="--tema-tint: var(--b-administ);">
+    <div class="tema-card-head">
+      <div>
+        <span class="tema-badge"><span class="sw" style="background:var(--b-administ);"></span>Tema 14</span>
+      </div>
+      <div class="tema-num">14</div>
+    </div>
+    <h3>Blanqueig <span class="it">de</span><br>capitals</h3>
+    <div class="sub">Ordre socioeconòmic · Art. 301-302</div>
+    <p class="desc">
+      Concepte, estructura típica, element subjectiu, penes i decomís.
+      Inclou diferència amb receptació i encobriment.
+    </p>
+    <ul class="bullets">
+      <li><span class="ref">Art. 301 CP</span><span class="txt">Tipus bàsic</span></li>
+      <li><span class="ref">Art. 302 CP</span><span class="txt">RPPJ del blanqueig</span></li>
+      <li><span class="ref">Dol / imprud.</span><span class="txt">Prova indiciària</span></li>
+      <li><span class="ref">Decomís</span><span class="txt">Funció politico-criminal</span></li>
+    </ul>
+    <div class="card-cta">
+      <a href="dret-penal-economic-tema14.html" class="primary">Estudiar Tema 14 <span class="arr">→</span></a>
+      <a href="visuals.html#penal">Visuals</a>
+    </div>
+  </article>
+
+  <!-- Tema 15 -->
+  <article class="tema-card" style="--tema-tint: var(--b-penalec);">
+    <div class="tema-card-head">
+      <div>
+        <span class="tema-badge"><span class="sw" style="background:var(--b-penalec);"></span>Tema 15</span>
+      </div>
+      <div class="tema-num">15</div>
+    </div>
+    <h3>Hisenda <span class="it">&amp;</span><br>Seg. Social</h3>
+    <div class="sub">Delictes fiscals · Art. 305 i seg.</div>
+    <p class="desc">
+      Tipus fiscals i de cotitzacions, frau de subvencions,
+      regularització i responsabilitat penal de persona jurídica.
+    </p>
+    <ul class="bullets">
+      <li><span class="ref">Art. 305 / 305 bis</span><span class="txt">Delicte fiscal</span></li>
+      <li><span class="ref">Art. 307 / 307 ter</span><span class="txt">Seguretat Social</span></li>
+      <li><span class="ref">Art. 308</span><span class="txt">Frau de subvencions</span></li>
+      <li><span class="ref">Art. 310 bis</span><span class="txt">RPPJ àmbit fiscal</span></li>
+    </ul>
+    <div class="card-cta">
+      <a href="dret-penal-economic-tema15.html" class="primary">Estudiar Tema 15 <span class="arr">→</span></a>
+      <a href="visuals.html#penal">Visuals</a>
+    </div>
+  </article>
+
+</section>
+
+<!-- ================= NOTE ================= -->
+<aside class="hub-note">
+  <div class="l">
+    <div class="label">Com navegar l'itinerari</div>
+    <h4>De l'individu<br>a l'empresa.</h4>
+  </div>
+  <div class="r">
+    Els temes <b>03</b> i <b>04</b> expliquen la responsabilitat individual i corporativa —
+    la base dogmàtica. Els temes <b>14</b> i <b>15</b> amplien el bloc amb blanqueig de capitals
+    <span class="amp">&amp;</span> delictes contra la Hisenda Pública i la Seguretat Social.
+    Cada tema combina articles, catàlegs, exemples pràctics i autoavaluació.
+  </div>
+</aside>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-foot">
+  <div class="site-foot-inner">
+    <div class="ff-cell">
+      <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em> en <em>català</em></div>
+      <p style="margin:14px 0 0;color:#a8a8a0;max-width:44ch;font-size:14px;line-height:1.5;">
+        Mapes, esquemes, plantilles i vídeos per aprendre Dret amb precisió
+        i estètica editorial.
+      </p>
+    </div>
+    <div class="ff-cell">
+      <h4>Branques</h4>
+      <ul>
+        <li><a href="dret-penal.html">Dret Penal</a></li>
+        <li><a href="dret-penal-economic.html">Dret Penal Econòmic</a></li>
+        <li><a href="dret-civil.html">Dret Civil</a></li>
+        <li><a href="dret-financer.html">Dret Financer</a></li>
+      </ul>
+    </div>
+    <div class="ff-cell">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="visuals.html">Visuals</a></li>
+        <li><a href="dret-financer-videos.html">Vídeos</a></li>
+        <li><a href="historia-dret.html">Història del Dret</a></li>
+        <li><a href="index.html">Tornar a l'inici</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot-bottom">
+    <span>© 2026 · Dret Visual · Recurs educatiu</span>
+    <span>Actualitzat segons LO 10/2022</span>
+  </div>
+</footer>
+
 </body>
-
 </html>

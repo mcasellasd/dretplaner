@@ -8,7 +8,6 @@
     <title>Tema 15 | Hisenda publica i Seguretat Social</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="navbar.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
@@ -51,12 +50,36 @@
         .t15-chart-container { height: 300px; }
         .t15-explorer-container { min-height: 480px; }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="brutal.css">
 </head>
 
 <body class="bg-slate-50 text-slate-900 leading-relaxed">
-
-    <div id="navbar-container"></div>
-    <div id="breadcrumb-container" class="max-w-6xl mx-auto px-6 pt-24"></div>
+    <header class="topbar">
+      <div class="topbar-row">
+        <a href="index.html" class="tb-cell tb-brand">
+          <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+        </a>
+        <div class="tb-cell tb-grow" style="justify-content:flex-end;">
+          <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines · 2026</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="dret-penal.html">Penal</a>
+          <a href="dret-civil.html">Civil</a>
+          <a href="dret-administratiu.html">Administratiu</a>
+          <a href="dret-financer.html">Financer</a>
+          <a href="dret-mercantil.html">Mercantil</a>
+        </nav>
+      </div>
+    </header>
+    <nav class="crumbs">
+      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="dret-penal-economic.html">Penal Econòmic</a><span class="sep">/</span>
+      <span class="here">Tema 15</span>
+    </nav>
 
     <header class="gradient-dark text-white py-16 px-6 shadow-2xl">
         <div class="max-w-6xl mx-auto">
@@ -383,28 +406,38 @@
             </div>
         </div>
     </section>
-
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6 mt-20">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
-            <div class="max-w-xs">
-                <h5 class="text-white font-bold mb-4">Bibliografia Tema 15</h5>
-                <p class="text-xs italic leading-relaxed">De la Mata Barranco: Delitos contra la Hacienda Publica y la Seguridad Social, en Derecho Penal Economico y de la Empresa, Dykinson, 2024.</p>
-            </div>
-            <div class="flex gap-6">
-                <div class="text-center">
-                    <div class="text-white font-extrabold text-2xl">305</div>
-                    <div class="text-[10px] uppercase tracking-widest">Hisenda</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-white font-extrabold text-2xl">307</div>
-                    <div class="text-[10px] uppercase tracking-widest">Seg. Social</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-white font-extrabold text-2xl">308</div>
-                    <div class="text-[10px] uppercase tracking-widest">Subvencions</div>
-                </div>
-            </div>
+    <footer class="site-foot">
+      <div class="site-foot-inner">
+        <div class="ff-cell">
+          <h4>Sobre el projecte</h4>
+          <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
+          <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i vídeos del Dret espanyol i català.</p>
         </div>
+        <div class="ff-cell">
+          <h4>Matèries</h4>
+          <ul>
+            <li><a href="dret-penal.html">Penal</a></li>
+            <li><a href="dret-civil.html">Civil</a></li>
+            <li><a href="dret-administratiu.html">Administratiu</a></li>
+            <li><a href="dret-constitucional.html">Constitucional</a></li>
+            <li><a href="dret-processal.html">Processal</a></li>
+            <li><a href="dret-financer.html">Financer</a></li>
+            <li><a href="dret-mercantil.html">Mercantil</a></li>
+          </ul>
+        </div>
+        <div class="ff-cell">
+          <h4>Eines</h4>
+          <ul>
+            <li><a href="visuals.html">Cerca visuals</a></li>
+            <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
+            <li><a href="historia-dret.html">Fonaments</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-foot-bottom">
+        <span>Tipografia: Space Grotesk · Instrument Serif · JetBrains Mono</span>
+        <span>© MMXXVI · Dret Visual</span>
+      </div>
     </footer>
 
     <script>
@@ -450,7 +483,6 @@
             });
         });
     </script>
-    <script src="navbar-helper.js"></script>
     <script>
     // Tema 15 — Llindars econòmics (Chart.js)
     (function () {

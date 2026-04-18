@@ -1,500 +1,183 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Mercantil"}]'>
-    <title>Dret Mercantil | Què diu la Llei?</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="navbar.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-        }
-
-        .video-card {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background: #1e293b;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(245, 158, 11, 0.5);
-            /* amber-500 */
-            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.3);
-        }
-
-        .video-card:hover .play-button {
-            transform: scale(1.1);
-            background-color: #f59e0b;
-            /* amber-500 */
-            color: white;
-        }
-
-        .play-button {
-            transition: all 0.3s ease;
-        }
-
-        .section-header {
-            position: relative;
-            padding-left: 1rem;
-            border-left: 4px solid #f59e0b;
-            /* amber-500 */
-            margin-bottom: 2rem;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Mercantil"}]'>
+<title>Dret Mercantil | Dret Visual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brutal.css">
+<style>
+.page{max-width:1440px;margin:0 auto;}
+.vid-section{border-top:2px solid var(--ink);}
+.vid-section-head{padding:28px 32px 20px;display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--ink);}
+.vid-section-head h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(22px,3vw,36px);letter-spacing:-.025em;margin:0;text-transform:uppercase;}
+.vid-section-head .count{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.vid-grid{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--ink);}
+.vid-card{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;flex-direction:column;transition:background .15s;cursor:pointer;text-decoration:none;color:var(--ink);}
+.vid-card:hover{background:var(--paper-2);}
+.vid-card .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--ink);}
+.vid-card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+.vid-card:hover .thumb img{transform:scale(1.04);}
+.vid-card .thumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,10,10,.3);transition:background .15s;}
+.vid-card:hover .thumb .play{background:rgba(10,10,10,.55);}
+.vid-card .body{padding:16px 18px 20px;flex:1;}
+.vid-card .body .tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.vid-card .body h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;line-height:1.25;letter-spacing:-.015em;margin:0;}
+@media(max-width:900px){.vid-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.vid-grid{grid-template-columns:1fr;}.vid-section-head{padding:20px 20px 14px;}.vid-card .body{padding:12px 14px 16px;}}
+</style>
 </head>
-
-<body class="min-h-screen relative overflow-x-hidden">
-
-    <!-- Global Navbar Container -->
-    <div id="navbar-container"></div>
-
-    <!-- Breadcrumb Container -->
-    <div id="breadcrumb-container" class="max-w-[1400px] mx-auto px-6 pt-24 pb-4"></div>
-        </a>
+<body class="grid-bg">
+<header class="topbar">
+  <div class="topbar-row">
+    <a href="index.html" class="tb-cell tb-brand">
+      <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+    </a>
+    <div class="tb-cell tb-grow" style="justify-content:flex-end;">
+      <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines &middot; 2026</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dret-penal.html">Penal</a>
+      <a href="dret-civil.html">Civil</a>
+      <a href="dret-administratiu.html">Administratiu</a>
+      <a href="dret-financer.html">Financer</a>
+      <a href="dret-mercantil.html" class="active">Mercantil</a>
     </nav>
+  </div>
+</header>
+<nav class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="#">Dret</a><span class="sep">/</span><span class="here">Dret Mercantil</span></nav>
+<div class="page">
+<section class="hero" style="--branch:var(--b-mercantil);">
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="sq"></span>Assignatura &middot; Dret Mercantil</div>
+    <h1>Dret <span class="em" style="color:var(--b-mercantil)">Mercantil</span></h1>
+    <p class="lede">El dret dels empresaris i dels mercats. Compr&egrave;n la contractaci&oacute; mercantil, la protecci&oacute; del consumidor, la propietat industrial i els t&iacute;tols valor.</p>
+  </div>
+  <div class="hero-meta"><div class="cell"><b>9</b>V&iacute;deos</div><div class="cell"><b>3</b>Seccions</div><div class="cell"><b>CCo</b>Codi de Comer&ccedil;</div><div class="cell"><b>2026</b>Actualitzat</div></div>
+</section>
 
-    <div
-        class="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-amber-600/10 rounded-full blur-[120px] z-0 pointer-events-none">
+<main>
+  <section class="vid-section">
+    <div class="vid-section-head">
+      <h2>Fonaments del <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">Dret Mercantil</span></h2>
+      <span class="count">4 v&iacute;deos</span>
     </div>
-
-    <div class="max-w-[1400px] mx-auto px-6 pt-32 pb-24 relative z-10">
-
-        <header class="mb-20">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 text-sm font-bold tracking-widest uppercase mb-6 border border-amber-500/20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 3h18v18H3z" />
-                    <path d="M12 8v8" />
-                    <path d="M8 12h8" />
-                </svg>
-                Assignatura
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-white leading-[1.1]">
-                Dret <span class="text-amber-500">Mercantil</span>
-            </h1>
-            <p class="text-slate-400 text-xl leading-relaxed max-w-3xl font-light">
-                Propietat industrial, títols valor i el funcionament competitiu i jurídic del mercat. Comprèn
-                els mecanismes legals de les empreses i consumidors.
-            </p>
-
-            <div class="flex gap-4 mt-8">
-                <div
-                    class="flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full text-slate-300 text-sm border border-slate-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="text-slate-400">
-                        <polygon points="5 3 19 12 5 21 5 3" />
-                    </svg>
-                    9 Vídeos Clau
-                </div>
-            </div>
-        </header>
-
-        <!-- Bloc 1: Fonaments del Dret Mercantil -->
-        <div class="mb-16">
-            <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Fonaments del Dret Mercantil
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Video 1 -->
-                <a href="https://www.youtube.com/watch?v=1-naVGf5oa4" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/1-naVGf5oa4/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Què és Dret Mercantil">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Introducció</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Què és el Dret Mercantil</h3>
-                    </div>
-                </a>
-
-                <!-- Video 2 -->
-                <a href="https://www.youtube.com/watch?v=10nuCbERYPE" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/10nuCbERYPE/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Estructura Jurídica">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Mercat</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">L'estructura jurídica del mercat</h3>
-                    </div>
-                </a>
-
-                <!-- Video 3 -->
-                <a href="https://www.youtube.com/watch?v=ToIB9tw5j80" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/ToIB9tw5j80/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Competència">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">La competència lliure i lleial</h3>
-                    </div>
-                </a>
-
-                <!-- Video 4 -->
-                <a href="https://www.youtube.com/watch?v=Sc22kjTNQ6w" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/Sc22kjTNQ6w/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Propietat Industrial">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Protecció</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">La Propietat Industrial</h3>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Bloc 2: Contractació Mercantil i Consumidors -->
-        <div class="mb-16">
-            <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Contractació Mercantil i
-                Consumidors
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-                <!-- Video -->
-                <a href="https://www.youtube.com/watch?v=QHQj_oMj0lA" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/QHQj_oMj0lA/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Acceptació Informal">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Contractes</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">L'acceptació informal. L'ok com a
-                            requisit de validesa</h3>
-                    </div>
-                </a>
-
-                <!-- Video -->
-                <a href="https://www.youtube.com/watch?v=Ki4yxK2NDIU" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/Ki4yxK2NDIU/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Consumidor">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Consum</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">El Consumidor en el Dret Mercantil 1
-                        </h3>
-                    </div>
-                </a>
-
-                <!-- Video -->
-                <a href="https://www.youtube.com/watch?v=H_4Z3v6a_rA" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/H_4Z3v6a_rA/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Clàusules">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Clàusules Abusives</h3>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Bloc 3: Títols Valor i Noves Tecnologies -->
-        <div class="mb-16">
-            <h2 class="section-header text-3xl font-bold text-white tracking-tight"> Títols Valor i Noves Tecnologies
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-                <!-- Video -->
-                <a href="https://www.youtube.com/watch?v=LcJbEM0oaCo" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/LcJbEM0oaCo/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Lletra canvi">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Títols
-                                Valor</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">La Lletra de Canvi</h3>
-                    </div>
-                </a>
-
-                <!-- Video -->
-                <a href="https://www.youtube.com/watch?v=OdfZ5Gjkklg" target="_blank" class="block group">
-                    <div class="video-card rounded-2xl p-4 cursor-pointer group h-full">
-                        <div class="aspect-video bg-slate-800 rounded-xl mb-4 relative overflow-hidden">
-                            <img src="https://img.youtube.com/vi/OdfZ5Gjkklg/hqdefault.jpg"
-                                class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                                alt="Codi">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
-                            </div>
-                            <div
-                                class="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mb-2">
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Vídeo</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 line-clamp-2">Del Paper al Codi</h3>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-
+    <div class="vid-grid">
+      <a href="https://www.youtube.com/watch?v=1-naVGf5oa4" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/1-naVGf5oa4/hqdefault.jpg" alt="Qu&egrave; &eacute;s el Dret Mercantil" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo &middot; Fonaments</div><h3>Qu&egrave; &eacute;s el Dret Mercantil</h3></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=10nuCbERYPE" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/10nuCbERYPE/hqdefault.jpg" alt="L'estructura jur&iacute;dica del mercat" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo</div><h3>L'estructura jur&iacute;dica del mercat</h3></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=ToIB9tw5j80" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/ToIB9tw5j80/hqdefault.jpg" alt="La compet&egrave;ncia lliure i lleial" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo &middot; Compet&egrave;ncia</div><h3>La compet&egrave;ncia lliure i lleial</h3></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=Sc22kjTNQ6w" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/Sc22kjTNQ6w/hqdefault.jpg" alt="La Propietat Industrial" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo &middot; Protecci&oacute;</div><h3>La Propietat Industrial</h3></div>
+      </a>
     </div>
-
-    <!-- Footer -->
-    <footer class="relative z-10 bg-slate-900/50 border-t border-slate-700/50 mt-24 py-12">
-        <div class="max-w-[1400px] mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="font-bold text-white mb-4">Què diu la Llei?</h3>
-                    <p class="text-slate-400 text-sm">Plataforma digital per dominar el dret de manera eficient.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-3 text-sm">Assignatures</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="dret-penal.html" class="hover:text-white transition-colors">Dret Penal</a></li>
-                        <li><a href="dret-civil.html" class="hover:text-white transition-colors">Dret Civil</a></li>
-                        <li><a href="dret-mercantil.html" class="hover:text-white transition-colors">Dret Mercantil</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-3 text-sm">Recursos</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
-                        <li><a href="https://catalunyalegal.vercel.app/" target="_blank" class="hover:text-white transition-colors">Catalunya Legal</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-3 text-sm">Contacte</h4>
-                    <p class="text-slate-400 text-sm">Per més informació, visita<br><a href="https://catalunyalegal.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300">catalunyalegal.vercel.app</a></p>
-                </div>
-            </div>
-            <div class="border-t border-slate-700/50 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-                <p>&copy; 2026 Què diu la Llei?. Tots els drets reservats.</p>
-                <p>Plataforma educativa de dret</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Video Modal -->
-    <div id="videoModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-        <div class="relative w-full max-w-5xl aspect-video mx-4">
-            <button onclick="closeVideo()" class="absolute -top-12 right-0 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
-                </svg>
-            </button>
-            <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-                <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
+  </section>
+  <section class="vid-section">
+    <div class="vid-section-head">
+      <h2>Contractaci&oacute; Mercantil i <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">Consumidors</span></h2>
+      <span class="count">3 v&iacute;deos</span>
     </div>
-
-    <script>
-        const modal = document.getElementById("videoModal");
-        const player = document.getElementById("youtubePlayer");
-
-        document.querySelectorAll("a[href*=\"youtube.com/watch\"], a[href*=\"youtube.com/shorts\"]").forEach(link => {
-            link.addEventListener("click", function(e) {
-                e.preventDefault();
-                let url = this.getAttribute("href");
-                let videoId = "";
-                
-                if (url.includes("watch?v=")) {
-                    videoId = new URL(url).searchParams.get("v");
-                } else if (url.includes("/shorts/")) {
-                    videoId = url.split("/shorts/")[1].split("?")[0];
-                }
-
-                if (videoId) {
-                    player.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-                    modal.classList.remove("hidden");
-                    setTimeout(() => {
-                        modal.classList.remove("opacity-0");
-                        modal.classList.add("flex");
-                    }, 10);
-                }
-            });
-        });
-
-        function closeVideo() {
-            modal.classList.add("opacity-0");
-            setTimeout(() => {
-                modal.classList.add("hidden");
-                modal.classList.remove("flex");
-                player.src = "";
-            }, 300);
-        }
-
-        modal.addEventListener("click", function(e) {
-            if (e.target === modal) {
-                closeVideo();
-            }
-        });
-        
-        document.addEventListener("keydown", function(e) {
-            if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-                closeVideo();
-            }
-        });
-    </script>
-    <!-- Global Navigation Helper -->
-    <script src="navbar-helper.js"></script>
+    <div class="vid-grid">
+      <a href="https://www.youtube.com/watch?v=QHQj_oMj0lA" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/QHQj_oMj0lA/hqdefault.jpg" alt="L'acceptaci&oacute; informal. L'ok com a requisit de validesa" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo &middot; Contractes</div><h3>L'acceptaci&oacute; informal. L'ok com a requisit de validesa</h3></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=Ki4yxK2NDIU" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/Ki4yxK2NDIU/hqdefault.jpg" alt="El Consumidor en el Dret Mercantil 1" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo &middot; Consum</div><h3>El Consumidor en el Dret Mercantil 1</h3></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=H_4Z3v6a_rA" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/H_4Z3v6a_rA/hqdefault.jpg" alt="Cl&agrave;usules Abusives" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo</div><h3>Cl&agrave;usules Abusives</h3></div>
+      </a>
+    </div>
+  </section>
+  <section class="vid-section">
+    <div class="vid-section-head">
+      <h2>T&iacute;tols Valor i <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">Noves Tecnologies</span></h2>
+      <span class="count">2 v&iacute;deos</span>
+    </div>
+    <div class="vid-grid">
+      <a href="https://www.youtube.com/watch?v=LcJbEM0oaCo" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/LcJbEM0oaCo/hqdefault.jpg" alt="La Lletra de Canvi" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo &middot; T&iacute;tols Valor</div><h3>La Lletra de Canvi</h3></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=OdfZ5Gjkklg" target="_blank" class="vid-card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/OdfZ5Gjkklg/hqdefault.jpg" alt="Del Paper al Codi" loading="lazy"><div class="play"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="body"><div class="tag">V&iacute;deo</div><h3>Del Paper al Codi</h3></div>
+      </a>
+    </div>
+  </section>
+</main>
+</div>
+<footer class="site-foot">
+  <div class="site-foot-inner">
+    <div class="ff-cell">
+      <h4>Sobre el projecte</h4>
+      <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
+      <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i vídeos del Dret espanyol i català.</p>
+    </div>
+    <div class="ff-cell">
+      <h4>Matèries</h4>
+      <ul>
+        <li><a href="dret-penal.html">Penal</a></li>
+        <li><a href="dret-civil.html">Civil</a></li>
+        <li><a href="dret-administratiu.html">Administratiu</a></li>
+        <li><a href="dret-constitucional.html">Constitucional</a></li>
+        <li><a href="dret-processal.html">Processal</a></li>
+        <li><a href="dret-financer.html">Financer</a></li>
+        <li><a href="dret-mercantil.html">Mercantil</a></li>
+      </ul>
+    </div>
+    <div class="ff-cell">
+      <h4>Eines</h4>
+      <ul>
+        <li><a href="visuals.html">Cerca visuals</a></li>
+        <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
+        <li><a href="historia-dret.html">Fonaments</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot-bottom">
+    <span>Tipografia: Space Grotesk &middot; Instrument Serif &middot; JetBrains Mono</span>
+    <span>&copy; MMXXVI &middot; Dret Visual</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var m=document.createElement('div');
+  m.id='_vm';
+  m.style.cssText='display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.92);align-items:center;justify-content:center;';
+  m.innerHTML='<div style="position:relative;width:90%;max-width:960px;aspect-ratio:16/9;"><button id="_vc" style="position:absolute;top:-44px;right:0;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:8px 14px;cursor:pointer;font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;">TANCAR &#x2715;</button><iframe id="_yt" style="width:100%;height:100%;border:none;" allowfullscreen allow="autoplay; encrypted-media"></iframe></div>';
+  document.body.appendChild(m);
+  function close(){m.style.display='none';document.getElementById('_yt').src='';}
+  document.getElementById('_vc').addEventListener('click',close);
+  m.addEventListener('click',function(e){if(e.target===m)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.querySelectorAll('a[href*="youtube.com"],a[href*="youtu.be"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var url=a.href,id='';
+      if(url.indexOf('watch?v=')>-1)id=new URL(url).searchParams.get('v');
+      else if(url.indexOf('/shorts/')>-1)id=url.split('/shorts/')[1].split('?')[0];
+      else if(url.indexOf('youtu.be/')>-1)id=url.split('youtu.be/')[1].split('?')[0];
+      if(id){document.getElementById('_yt').src='https://www.youtube.com/embed/'+id+'?autoplay=1';m.style.display='flex';}
+    });
+  });
+})();
+</script>
 </body>
-
-
 </html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="breadcrumbs"
+        content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Administratiu","url":"dret-administratiu.html"},{"label":"Contractació Pública"}]'>
+    <title>03.526 - Dret Administratiu II: Contractació Pública (GES i PID)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --ink: #1f2937;
+            --muted: #475569;
+            --brand: #0f5b8d;
+            --brand-strong: #003366;
+            --brand-soft: #eff6ff;
+            --line: #dbeafe;
+            --panel: rgba(255, 255, 255, 0.86);
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            min-height: 100vh;
+            background:
+                radial-gradient(860px 420px at 10% -5%, rgba(14, 165, 233, 0.18), transparent 55%),
+                radial-gradient(900px 420px at 100% 0%, rgba(59, 130, 246, 0.14), transparent 52%),
+                linear-gradient(180deg, #f8fbff, #eef5ff 42%, #f8fafc 100%);
+        }
+
+        .hero-shell,
+        .content-shell,
+        .summary-shell {
+            background: var(--panel);
+            border: 1px solid rgba(191, 219, 254, 0.7);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 24px 50px -34px rgba(15, 23, 42, 0.34);
+        }
+
+        .content-shell h2 {
+            color: var(--brand);
+            margin-top: 2.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.45rem;
+            border-bottom: 1px solid var(--line);
+            font-size: 1.55rem;
+            font-weight: 800;
+        }
+
+        .content-shell h3 {
+            color: #0369a1;
+            margin-top: 1.6rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .content-shell p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            color: var(--ink);
+        }
+
+        .content-shell ul,
+        .content-shell ol {
+            margin-bottom: 1rem;
+            padding-left: 1.35rem;
+            color: var(--ink);
+        }
+
+        .content-shell li {
+            margin-bottom: 0.55rem;
+        }
+
+        .destacat {
+            background: linear-gradient(135deg, #f4f8ff, #eef6ff);
+            border-left: 4px solid var(--brand);
+            padding: 1rem 1rem 1rem 1.1rem;
+            margin: 1.1rem 0 1.3rem;
+            border-radius: 0.9rem;
+        }
+
+        .mini-card {
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.7rem 0.9rem;
+            border-radius: 0.85rem;
+            color: #0f172a;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .toc-link:hover {
+            background: #e0f2fe;
+            transform: translateX(2px);
+        }
+
+        section {
+            scroll-margin-top: 110px;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="brutal.css">
+</head>
+
+<body>
+    <header class="topbar">
+      <div class="topbar-row">
+        <a href="index.html" class="tb-cell tb-brand">
+          <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+        </a>
+        <div class="tb-cell tb-grow" style="justify-content:flex-end;">
+          <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines · 2026</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="dret-penal.html">Penal</a>
+          <a href="dret-civil.html">Civil</a>
+          <a href="dret-administratiu.html">Administratiu</a>
+          <a href="dret-financer.html">Financer</a>
+          <a href="dret-mercantil.html">Mercantil</a>
+        </nav>
+      </div>
+    </header>
+    <nav class="crumbs">
+      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="dret-administratiu.html">Dret Administratiu</a><span class="sep">/</span>
+      <span class="here">Contractació Pública</span>
+    </nav>
+
+    <header class="max-w-6xl mx-auto px-6 pt-8 pb-6">
+        <div class="hero-shell rounded-[2rem] p-8 md:p-10">
+            <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+                <div class="max-w-3xl">
+                    <span
+                        class="inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-xs font-extrabold uppercase tracking-[0.22em] text-sky-800">03.526 · Dret Administratiu II</span>
+                    <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">Contractació Pública</h1>
+                    <p class="mt-4 text-lg text-slate-600">Integració ampliada de la GES 4 i del mòdul didàctic PID sobre contractació pública de la UOC, amb visió de conjunt sobre règim jurídic, tipologies contractuals i garanties.</p>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2 lg:w-[26rem]">
+                    <div class="mini-card">
+                        <div class="text-xs font-bold uppercase tracking-wide text-sky-700">Eix material</div>
+                        <p class="mt-2 text-sm text-slate-600">LCSP, principis europeus, procediments i prerrogatives de l'Administració.</p>
+                    </div>
+                    <div class="mini-card">
+                        <div class="text-xs font-bold uppercase tracking-wide text-sky-700">Focus pràctic</div>
+                        <p class="mt-2 text-sm text-slate-600">Tipus de contracte, risc operacional, adjudicació i recurs especial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-16">
+        <div class="grid gap-8 lg:grid-cols-[18rem_minmax(0,1fr)]">
+            <aside class="summary-shell rounded-[1.5rem] p-5 lg:sticky lg:top-28 lg:self-start">
+                <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-sky-700">Mapa del tema</p>
+                <nav class="mt-4 space-y-1">
+                    <a class="toc-link" href="#origen">1. Origen i naturalesa</a>
+                    <a class="toc-link" href="#marc">2. Marc normatiu i principis</a>
+                    <a class="toc-link" href="#ambit">3. Àmbit d'aplicació</a>
+                    <a class="toc-link" href="#tipologia">4. Tipologia de contractes</a>
+                    <a class="toc-link" href="#cicle">5. Cicle contractual</a>
+                    <a class="toc-link" href="#prerrogatives">6. Modificació i extinció</a>
+                    <a class="toc-link" href="#jurisdiccio">7. Jurisdicció i recurs</a>
+                </nav>
+            </aside>
+
+            <article class="content-shell rounded-[2rem] p-7 md:p-10">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Continguts ampliats GES i PID</p>
+
+                <section id="origen">
+                    <h2>1. Origen, Evolució i Naturalesa Jurídica</h2>
+                    <div class="destacat">
+                        <p><strong>El contracte administratiu:</strong> inicialment, l'Administració contractava sota el dret civil, però l'evolució històrica va fer palès que la finalitat de l'Administració no és el lucre, sinó l'interès general. El cas clàssic francès de la <em>Compagnie Générale d'Éclairage de Bordeaux</em> (1916) va evidenciar que, davant de pujades imprevistes de costos, calia garantir la prestació del servei públic mitjançant el <strong>manteniment de l'equilibri financer</strong>.</p>
+                    </div>
+                    <p>A diferència dels contractes civils, basats en la igualtat de les parts, els contractes administratius incorporen <strong>clàusules exorbitants</strong>. Aquestes prerrogatives permeten a l'Administració interpretar unilateralment el contracte o modificar-lo mitjançant el <em>ius variandi</em> per satisfer l'interès públic, sempre sota uns límits i amb la corresponent compensació econòmica.</p>
+                    <p>Per delimitar què és un contracte administratiu i què és privat, la jurisprudència espanyola, a partir del cas de l'<em>Hotel Andalucía Palace</em>, va formular la <strong>teoria dels actes separables</strong>: fins i tot en els contractes privats de l'Administració, la fase de preparació i adjudicació es regeix pel dret administratiu, mentre que els seus efectes i extinció se sotmeten al dret privat civil.</p>
+                </section>
+
+                <section id="marc">
+                    <h2>2. Marc Normatiu i Principis Generals</h2>
+                    <p>La vigent <strong>Llei 9/2017, de Contractes del Sector Públic (LCSP)</strong>, transposa les directives europees, com la 2014/24/UE, amb l'objectiu principal d'obrir el mercat a la lliure competència a escala europea. L'actuació contractual es regeix per principis fonamentals:</p>
+                    <ul>
+                        <li><strong>Igualtat i no discriminació:</strong> prohibeix la discriminació per raó de nacionalitat i garanteix el mateix tracte a tots els licitadors.</li>
+                        <li><strong>Transparència:</strong> combat la corrupció i es materialitza mitjançant el Registre de Contractes del Sector Públic.</li>
+                        <li><strong>Concurrència:</strong> exigeix procediments competitius basats en criteris objectius per obtenir la millor relació qualitat-preu.</li>
+                        <li><strong>Publicitat:</strong> els procediments s'han d'anunciar a través del <strong>perfil del contractant</strong>, la Plataforma de Contractació del Sector Públic o els diaris oficials corresponents.</li>
+                        <li><strong>Confidencialitat:</strong> protegeix secrets tècnics i comercials dels licitadors.</li>
+                    </ul>
+                </section>
+
+                <section id="ambit">
+                    <h2>3. Àmbit d'Aplicació de la LCSP</h2>
+                    <h3>3.1. Àmbit Subjectiu</h3>
+                    <p>Per evitar que les entitats fugissin del dret públic, la legislació europea va imposar el concepte de <em>poder adjudicador</em>. La LCSP divideix el sector públic en tres graus d'intensitat:</p>
+                    <ol>
+                        <li><strong>Administració pública en sentit estricte:</strong> Estat, comunitats autònomes, entitats locals, Seguretat Social, universitats públiques i certs organismes autònoms. Són els únics subjectes que poden celebrar <em>contractes administratius</em> i se'ls aplica la LCSP amb màxima intensitat.</li>
+                        <li><strong>Poders adjudicadors no administració:</strong> entitats amb personalitat jurídica creades per satisfer necessitats d'interès general no mercantils, finançades o controlades majoritàriament pel sector públic. Celebren contractes privats i contractes subjectes a regulació harmonitzada.</li>
+                        <li><strong>Resta del sector públic:</strong> societats mercantils o entitats públiques empresarials que es financen al mercat. La llei se'ls aplica amb una intensitat menor.</li>
+                    </ol>
+                    <p>La llei també contempla els <strong>encàrrecs a mitjans propis personificats</strong> o <em>in-house providing</em>: adjudicacions directes a un ens instrumental sobre el qual l'Administració exerceix un control anàleg, sempre que aquest ens dediqui el 80% de la seva activitat a l'Administració matriu i tingui capital íntegrament públic.</p>
+
+                    <h3>3.2. Àmbit Objectiu i Categories de Contractes</h3>
+                    <p>La LCSP distingeix tres categories generals segons el règim jurídic:</p>
+                    <ul>
+                        <li><strong>Contractes administratius:</strong> només els subscriu l'Administració pública. Inclouen contractes típics, com obres, serveis i subministraments, i atípics. La LCSP regula tota la seva vida jurídica.</li>
+                        <li><strong>Contractes privats:</strong> són els de l'Administració que no tenen caràcter administratiu i tots els que subscriu la resta d'ens del sector públic. L'adjudicació segueix la LCSP, però els efectes i l'extinció es regeixen pel dret privat.</li>
+                        <li><strong>Contractes subjectes a regulació harmonitzada (SARA):</strong> són contractes d'obres, serveis o subministraments celebrats per poders adjudicadors que assoleixen determinats llindars econòmics i que s'han de publicar obligatòriament al DOUE.</li>
+                    </ul>
+                </section>
+
+                <section id="tipologia">
+                    <h2>4. Tipologia dels Contractes Típics</h2>
+                    <p>Dins dels contractes administratius, la LCSP estableix modalitats específiques:</p>
+                    <ul>
+                        <li><strong>Contracte d'obra:</strong> transformació física d'un immoble o d'enginyeria civil. Requereix projecte previ i l'adjudicatari assumeix la responsabilitat de l'execució, excepte en casos de força major.</li>
+                        <li><strong>Concessió d'obres:</strong> el concessionari executa l'obra i rep com a contraprestació el dret a explotar-la. El punt clau és la <strong>transferència del risc operacional</strong>. El termini màxim és de 40 anys.</li>
+                        <li><strong>Concessió de serveis:</strong> substitueix l'antiga gestió de serveis públics. La contraprestació és el dret a explotar el servei i el concessionari assumeix també el risc operacional.</li>
+                        <li><strong>Subministrament:</strong> adquisició o arrendament, amb opció de compra o sense, de béns mobles.</li>
+                        <li><strong>Serveis:</strong> prestacions de fer que no substitueixen personal funcionari i que tenen per objecte una activitat diferent d'una obra. Amb caràcter general, la durada màxima és de 5 anys.</li>
+                    </ul>
+                </section>
+
+                <section id="cicle">
+                    <h2>5. El Cicle Contractual i l'Adjudicació</h2>
+                    <p>El procediment contractual consta de diverses fases: preparació, selecció del contractista, adjudicació, formalització, execució i extinció. L'expedient ha de justificar sempre la necessitat del contracte i la suficiència del procediment triat.</p>
+
+                    <h3>Procediments de Selecció</h3>
+                    <ul>
+                        <li><strong>Obert:</strong> qualsevol empresari pot presentar oferta i no hi ha negociació.</li>
+                        <li><strong>Restringit:</strong> només participen els candidats prèviament seleccionats i convidats. Tampoc no hi ha negociació.</li>
+                        <li><strong>Negociat:</strong> s'admet per causes específiques, com projectes innovadors o irregularitats prèvies, i permet negociar condicions tècniques i econòmiques.</li>
+                        <li><strong>Diàleg competitiu:</strong> pensat per a contractes complexos. L'Administració dialoga amb candidats seleccionats per trobar solucions i després rep ofertes finals.</li>
+                        <li><strong>Associació per a la innovació:</strong> procediment específic per desenvolupar i adquirir productes o serveis innovadors inexistents al mercat.</li>
+                        <li><strong>Adjudicació directa o contracte menor:</strong> per encàrrecs de quantia reduïda, amb aprovació de la despesa i factura, dins dels límits legals vigents.</li>
+                    </ul>
+
+                    <h3>Criteris i Garanties</h3>
+                    <p>L'adjudicació es basa en la millor relació qualitat-preu i pot integrar <strong>consideracions mediambientals i socials</strong>, com la inserció laboral o la reducció d'emissions. Per acreditar la solvència, en alguns casos s'exigeix la <strong>classificació del contractista</strong>.</p>
+                    <p>També poden exigir-se garanties: una <strong>garantia provisional</strong>, habitualment fins al 3%, per assegurar la serietat de l'oferta, i una <strong>garantia definitiva</strong>, generalment del 5% ampliable, per cobrir incompliments o defectes d'execució.</p>
+                </section>
+
+                <section id="prerrogatives">
+                    <h2>6. Prerrogatives, Modificació i Extinció</h2>
+                    <p>En els contractes administratius, l'Administració conserva el privilegi d'interpretar, modificar, suspendre i extingir el contracte. Les <strong>modificacions</strong> derivades del <em>ius variandi</em>, justificades per raons d'interès públic, són obligatòries per al contractista si no excedeixen, amb caràcter general, del 20% del preu inicial, i exigeixen restaurar l'equilibri econòmic del contracte quan sigui necessari.</p>
+                    <p>L'extinció normal es produeix pel compliment, però també es pot resoldre el contracte per força major, incompliment d'obligacions essencials o, en el cas de les concessions, per la facultat de rescat per part de l'Administració.</p>
+                </section>
+
+                <section id="jurisdiccio">
+                    <h2>7. Jurisdicció i Recurs Especial</h2>
+                    <p>D'acord amb la <em>teoria dels actes separables</em>, la <strong>jurisdicció contenciosa administrativa</strong> coneix de tots els contractes administratius i també de la preparació i adjudicació dels contractes privats. La <strong>jurisdicció civil</strong> només coneix dels efectes i de l'extinció dels contractes privats.</p>
+                    <p>La normativa europea va introduir el <strong>recurs especial en matèria de contractació</strong>, una via d'impugnació administrativa independent, ràpida i garantista dirigida a anuncis, plecs o adjudicacions de contractes SARA i d'altres contractes d'import rellevant. Aquest recurs és resolt per òrgans independents, com el Tribunal Administratiu Central de Recursos Contractuals o el Tribunal Català de Contractes del Sector Públic.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+    <footer class="site-foot">
+      <div class="site-foot-inner">
+        <div class="ff-cell">
+          <h4>Sobre el projecte</h4>
+          <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
+          <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i vídeos del Dret espanyol i català.</p>
+        </div>
+        <div class="ff-cell">
+          <h4>Matèries</h4>
+          <ul>
+            <li><a href="dret-penal.html">Penal</a></li>
+            <li><a href="dret-civil.html">Civil</a></li>
+            <li><a href="dret-administratiu.html">Administratiu</a></li>
+            <li><a href="dret-constitucional.html">Constitucional</a></li>
+            <li><a href="dret-processal.html">Processal</a></li>
+            <li><a href="dret-financer.html">Financer</a></li>
+            <li><a href="dret-mercantil.html">Mercantil</a></li>
+          </ul>
+        </div>
+        <div class="ff-cell">
+          <h4>Eines</h4>
+          <ul>
+            <li><a href="visuals.html">Cerca visuals</a></li>
+            <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
+            <li><a href="historia-dret.html">Fonaments</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-foot-bottom">
+        <span>Tipografia: Space Grotesk · Instrument Serif · JetBrains Mono</span>
+        <span>© MMXXVI · Dret Visual</span>
+      </div>
+    </footer>
+</body>
+
+</html>
