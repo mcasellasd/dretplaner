@@ -1,306 +1,434 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret","url":"#"},{"label":"Dret Civil","url":"dret-civil.html"},{"label":"Dret Successori"}]'>
-    <title>Mòdul: Dret Successori | Què diu la Llei?</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="breadcrumbs" content='[{"label":"Home","url":"index.html"},{"label":"Dret Civil","url":"dret-civil.html"},{"label":"Dret Successori"}]'>
+<title>Dret Successori · Mòdul Civil | Dret Visual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brutal.css">
+<style>
+.page{max-width:1440px;margin:0 auto;}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fffdf7;
-            color: #1f2937;
-        }
+/* TEMA HERO */
+.tema-hero{display:grid;grid-template-columns:180px 1fr;border-bottom:2px solid var(--ink);}
+.tema-hero .stripe{background:var(--b-civil);border-right:1px solid var(--ink);position:relative;display:flex;align-items:flex-end;padding:32px 24px;}
+.tema-hero .stripe .stripe-num{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(80px,12vw,200px);line-height:.78;color:var(--paper);letter-spacing:-.05em;}
+.tema-hero .stripe .stripe-tag{position:absolute;top:24px;left:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:.85;}
+.tema-hero .body{padding:40px 40px 32px;}
+.tema-hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+.tema-hero .eyebrow .sq{width:10px;height:10px;background:var(--b-civil);display:inline-block;}
+.tema-hero h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,5.5vw,80px);line-height:.95;letter-spacing:-.035em;margin:0 0 14px;}
+.tema-hero h1 .it{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;}
+.tema-hero .lede{font-family:'Instrument Serif',serif;font-size:clamp(18px,1.6vw,24px);line-height:1.35;max-width:64ch;color:var(--ink-soft);margin:0;}
+.meta-row{margin-top:28px;display:flex;gap:0;flex-wrap:wrap;border:1.5px solid var(--ink);max-width:max-content;}
+.meta-row .m{padding:10px 16px;border-right:1.5px solid var(--ink);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
+.meta-row .m:last-child{border-right:none;}
+.meta-row .m.filled{background:var(--ink);color:var(--paper);font-weight:700;}
+.tema-nav{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;}
 
-        .bg-pattern {
-            background-image: radial-gradient(#e5dcc8 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
+/* LAYOUT */
+.tema-layout{display:grid;grid-template-columns:260px 1fr;border-bottom:2px solid var(--ink);}
+.tema-toc{position:sticky;top:92px;align-self:start;padding:32px 24px;border-right:1px solid var(--ink);max-height:calc(100vh - 92px);overflow-y:auto;background:var(--paper);}
+.tema-toc .toc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.tema-toc ol{list-style:none;margin:0;padding:0;}
+.tema-toc ol li{margin-bottom:10px;}
+.tema-toc ol li a{display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:baseline;padding:6px 0;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:500;border-bottom:1px dashed transparent;transition:color .15s;text-decoration:none;color:var(--ink);}
+.tema-toc ol li a:hover,.tema-toc ol li a.active{color:var(--b-civil);}
+.tema-toc .sn{font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:var(--muted);}
+.tema-toc .tt{line-height:1.25;}
 
-        .mask-image-gradient {
-            -webkit-mask-image: linear-gradient(to bottom, white, transparent);
-            mask-image: linear-gradient(to bottom, white, transparent);
-        }
+/* CONTENT */
+.tema-content{padding:48px 56px 72px;max-width:880px;}
+.section{padding-top:40px;margin-top:40px;border-top:2px solid var(--ink);scroll-margin-top:88px;}
+.section:first-child{padding-top:0;margin-top:0;border-top:none;}
+.section-n{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.section-n .bullet{width:14px;height:14px;background:var(--b-civil);display:inline-block;}
+.section-n .num{font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;color:var(--ink);letter-spacing:-.02em;text-transform:none;}
+.section h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(32px,3.8vw,52px);line-height:1;letter-spacing:-.03em;margin:0 0 24px;}
+.section h2 .it{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;}
+.section h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.015em;margin:32px 0 14px;}
+.section p.lead{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.4;color:var(--ink-soft);margin:0 0 22px;}
+.section p{font-family:'Space Grotesk',sans-serif;font-size:16px;line-height:1.6;color:var(--ink-soft);margin:0 0 16px;}
 
-        .content-card {
-            background: #ffffff;
-            border: 1px solid #ece7dd;
-            transition: all 0.25s ease;
-        }
+/* ART QUOTE */
+.art-quote{margin:24px 0;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:28px 32px 24px;position:relative;}
+.art-quote .art-label{position:absolute;top:-12px;left:20px;background:var(--paper);color:var(--ink);border:2px solid var(--ink);padding:2px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;}
+.art-quote .qt{font-family:'Instrument Serif',serif;font-style:italic;font-size:20px;line-height:1.4;color:var(--paper);}
+.art-quote .src{margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9a9a90;}
 
-        .content-card:hover {
-            border-color: #d97706;
-            box-shadow: 0 14px 36px -16px rgba(180, 83, 9, 0.35);
-        }
+/* CALL-OUT */
+.callout{border-left:4px solid var(--b-civil);background:var(--paper-2);padding:18px 20px;margin:24px 0;}
+.callout .cl-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--b-civil);font-weight:700;margin-bottom:8px;}
+.callout p{font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.5;margin:0;color:var(--ink);}
 
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, #d6d3d1, transparent);
-        }
+/* GRID CARDS */
+.req-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1.5px solid var(--ink);margin:24px 0;}
+.req-grid .req{padding:20px;border-right:1px solid var(--ink);}
+.req-grid .req:last-child{border-right:none;}
+.req-grid .req .rn{font-family:'Instrument Serif',serif;font-style:italic;font-size:36px;color:var(--b-civil);line-height:1;margin-bottom:8px;}
+.req-grid .req h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;margin:0 0 6px;letter-spacing:-.01em;}
+.req-grid .req p{font-size:13px;line-height:1.45;color:var(--muted);margin:0;}
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+/* DUAL */
+.dual{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink);margin:24px 0;}
+.dual .d{padding:24px;border-right:1px solid var(--ink);}
+.dual .d:last-child{border-right:none;}
+.dual .d .dicon{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--b-civil);font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.dual .d .dicon .sq{width:10px;height:10px;background:var(--b-civil);}
+.dual .d h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;margin:0 0 8px;letter-spacing:-.015em;}
+.dual .d p{font-size:14px;line-height:1.5;margin:0;color:var(--ink-soft);}
 
-        ::-webkit-scrollbar-track {
-            background: #f5f5f4;
-        }
+/* TABLE */
+.table-wrap{border:1.5px solid var(--ink);margin:24px 0;overflow-x:auto;}
+table.cat{width:100%;border-collapse:collapse;font-family:'Space Grotesk',sans-serif;}
+table.cat thead{background:var(--ink);color:var(--paper);}
+table.cat thead th{padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;text-align:left;font-weight:700;border-right:1px solid #2a2a2a;}
+table.cat thead th:last-child{border-right:none;}
+table.cat tbody tr{border-top:1px solid var(--ink);}
+table.cat tbody tr:nth-child(odd){background:var(--paper);}
+table.cat tbody tr:nth-child(even){background:var(--paper-2);}
+table.cat td{padding:12px 14px;border-right:1px solid rgba(10,10,10,.15);font-size:13px;line-height:1.4;vertical-align:top;}
+table.cat td:last-child{border-right:none;}
+table.cat td strong{font-family:'Space Grotesk',sans-serif;}
 
-        ::-webkit-scrollbar-thumb {
-            background: #d6d3d1;
-            border-radius: 4px;
-        }
+/* PREVNEXT */
+.tema-prevnext{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);}
+.tema-prevnext a{padding:28px 32px;display:block;border-right:1px solid var(--ink);transition:background .15s;text-decoration:none;color:var(--ink);}
+.tema-prevnext a:last-child{border-right:none;text-align:right;}
+.tema-prevnext a:hover{background:var(--paper-2);}
+.tema-prevnext .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.tema-prevnext .ttl{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em;}
+.tema-prevnext .ttl .it{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;}
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a8a29e;
-        }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="brutal.css">
+@media(max-width:1024px){
+  .tema-hero{grid-template-columns:100px 1fr;}
+  .tema-hero .stripe .stripe-num{font-size:72px;}
+  .tema-layout{grid-template-columns:1fr;}
+  .tema-toc{position:relative;top:0;border-right:none;border-bottom:1px solid var(--ink);max-height:none;}
+  .tema-content{padding:32px 24px 56px;}
+  .req-grid{grid-template-columns:1fr;}
+  .req-grid .req{border-right:none;border-bottom:1px solid var(--ink);}
+  .req-grid .req:last-child{border-bottom:none;}
+  .dual{grid-template-columns:1fr;}
+  .dual .d{border-right:none;border-bottom:1px solid var(--ink);}
+  .dual .d:last-child{border-bottom:none;}
+  .tema-prevnext{grid-template-columns:1fr;}
+  .tema-prevnext a{border-right:none;border-bottom:1px solid var(--ink);text-align:left !important;}
+}
+</style>
 </head>
+<body class="grid-bg">
 
-<body class="min-h-screen relative overflow-x-hidden">
-    <header class="topbar">
-      <div class="topbar-row">
-        <a href="index.html" class="tb-cell tb-brand">
-          <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
-        </a>
-        <div class="tb-cell tb-grow" style="justify-content:flex-end;">
-          <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines · 2026</span>
-        </div>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="dret-penal.html">Penal</a>
-          <a href="dret-civil-videos.html">Civil</a>
-          <a href="dret-administratiu-videos.html">Administratiu</a>
-          <a href="dret-financer-videos.html">Financer</a>
-          <a href="dret-mercantil.html">Mercantil</a>
-        </nav>
-      </div>
-    </header>
-    <nav class="crumbs">
-      <a href="index.html">Home</a><span class="sep">/</span>
-      <a href="dret-civil.html">Dret Civil</a><span class="sep">/</span>
-      <span class="here">Dret Successori</span>
+<header class="topbar">
+  <div class="topbar-row">
+    <a href="index.html" class="tb-cell tb-brand">
+      <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+    </a>
+    <div class="tb-cell tb-grow" style="justify-content:flex-end;">
+      <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Civil IV &middot; Dret Successori</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dret-penal.html">Penal</a>
+      <a href="dret-civil-videos.html" class="active">Civil</a>
+      <a href="dret-administratiu-videos.html">Administratiu</a>
+      <a href="dret-financer-videos.html">Financer</a>
+      <a href="dret-mercantil.html">Mercantil</a>
     </nav>
+  </div>
+</header>
+<nav class="crumbs">
+  <a href="index.html">Home</a><span class="sep">/</span>
+  <a href="dret-civil.html">Dret Civil</a><span class="sep">/</span>
+  <span class="here">Dret Successori</span>
+</nav>
 
-    <div class="max-w-[1200px] mx-auto px-6 pb-2 relative z-20">
-        <div class="rounded-2xl border border-stone-200 bg-white/90 backdrop-blur p-4">
-            <p class="text-[11px] uppercase tracking-wider text-stone-500 font-bold mb-2">Navegació Civil</p>
-            <div class="flex flex-wrap gap-2 text-sm">
-                <a href="dret-civil.html" class="px-3 py-1.5 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-colors">Vídeos Civil</a>
-                <a href="dret-civil.html" class="px-3 py-1.5 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-colors">Mòduls Civil</a>
-                <a href="dret-civil-familia.html" class="px-3 py-1.5 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-colors">Família</a>
-                <a href="dret-civil-matrimoni-estudis.html" class="px-3 py-1.5 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-colors">Matrimoni</a>
-                <a href="dret-civil-filiacio.html" class="px-3 py-1.5 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-colors">Filiació</a>
-                <a href="dret-civil-successori.html" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-700 font-semibold">Successori</a>
-            </div>
-        </div>
+<main class="page">
+
+<!-- HERO -->
+<section class="tema-hero">
+  <div class="stripe">
+    <span class="stripe-tag">M&ograve;dul V</span>
+    <div class="stripe-num">IV</div>
+  </div>
+  <div class="body">
+    <div class="eyebrow">
+      <span class="sq"></span>
+      Dret Civil &middot; CCCat
+      <span style="color:var(--ink);">&middot;</span>
+      Llibre IV
+      <span style="color:var(--ink);">&middot;</span>
+      Successions
     </div>
-
-    <div class="bg-pattern absolute inset-0 opacity-40 z-0 mask-image-gradient h-[100vh]"></div>
-
-    <div class="absolute top-[-6%] right-[-10%] w-[760px] h-[760px] bg-amber-400/15 rounded-full blur-[120px] z-0 pointer-events-none"></div>
-    <div class="absolute bottom-[12%] left-[-10%] w-[600px] h-[600px] bg-orange-300/15 rounded-full blur-[110px] z-0 pointer-events-none"></div>
-
-    <div class="max-w-[1200px] mx-auto px-6 pt-32 pb-24 relative z-10">
-
-        <header class="mb-16 text-center max-w-4xl mx-auto">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 text-sm font-bold tracking-widest uppercase mb-6 border border-amber-200">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 19.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2.5Z" />
-                    <path d="M14 2v6h6" />
-                    <path d="M8 13h8" />
-                    <path d="M8 17h5" />
-                </svg>
-                Mòdul Civil
-            </div>
-
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-stone-900 leading-[1.1]">
-                Dret <span class="text-amber-600">Successori</span>
-            </h1>
-
-            <p class="text-stone-600 text-xl leading-relaxed font-light mb-8">
-                Síntesi pràctica del règim de successions al CCCat: testament, capacitat, ineficàcia,
-                institució d'hereu, llegats, pactes successoris i execució de la voluntat del causant.
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-4 text-left">
-                <div class="content-card rounded-2xl p-5">
-                    <h3 class="text-sm font-extrabold uppercase tracking-wide text-amber-700 mb-3">Claus del mòdul</h3>
-                    <ul class="text-sm text-stone-700 space-y-2">
-                        <li><strong>Principi rector:</strong> preval la successió voluntària sobre la intestada.</li>
-                        <li><strong>Títols successoris:</strong> testament i pacte successori (amb règim diferenciat).</li>
-                        <li><strong>Control judicial:</strong> nul·litat, caducitat i convalidació en supòsits taxats.</li>
-                        <li><strong>Finalitat:</strong> garantir la darrera voluntat amb seguretat jurídica.</li>
-                    </ul>
-                </div>
-                <div class="content-card rounded-2xl p-5">
-                    <h3 class="text-sm font-extrabold uppercase tracking-wide text-orange-700 mb-3">Objectius d'aprenentatge</h3>
-                    <ul class="text-sm text-stone-700 space-y-2">
-                        <li><strong>Interpretar:</strong> articles clau del llibre quart del CCCat.</li>
-                        <li><strong>Distingir:</strong> testament, codicil i memòria testamentària.</li>
-                        <li><strong>Aplicar:</strong> favor testamenti, revocació i substitucions.</li>
-                        <li><strong>Resoldre casos:</strong> capacitat, preterició, marmessoria i llegats.</li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-stone-800 mb-6">1. Teoria general del testament</h2>
-            <div class="content-card rounded-2xl p-7">
-                <p class="text-stone-700 leading-relaxed mb-4">
-                    El testament és un acte <strong>unilateral, personalíssim, formal i revocable</strong>.
-                    Té funció normativa perquè ordena la successió mortis causa i vincula jurídicament els
-                    successors dins dels límits legals.
-                </p>
-                <p class="text-stone-700 leading-relaxed mb-4">
-                    La voluntat testamentària ha de ser imperativa: els precs morals poden orientar,
-                    però no substitueixen disposicions jurídiques vàlides.
-                </p>
-                <div class="bg-amber-50 border border-amber-100 rounded-xl p-4 text-sm text-stone-700">
-                    <strong class="text-amber-800">Focus pràctic:</strong> el principi de
-                    <strong>favor testamenti</strong> tendeix a conservar la validesa del testament quan els
-                    defectes no afecten elements essencials.
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider my-14"></div>
-
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-stone-800 mb-6">2. Capacitat i formes testamentàries</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <article class="content-card rounded-2xl p-6">
-                    <h3 class="text-xl font-bold text-stone-900 mb-3">Capacitat per testar</h3>
-                    <ul class="space-y-2 text-stone-700 text-sm leading-relaxed">
-                        <li><strong>Regla general:</strong> capacitat natural en el moment de l'atorgament.</li>
-                        <li><strong>Incapacitats bàsiques:</strong> menors de 14 anys i manca de discerniment.</li>
-                        <li><strong>Notari:</strong> aprecia la capacitat i pot requerir suport facultatiu.</li>
-                        <li><strong>Litigi:</strong> qui al·lega manca de capacitat assumeix la càrrega de prova.</li>
-                    </ul>
-                </article>
-                <article class="content-card rounded-2xl p-6">
-                    <h3 class="text-xl font-bold text-stone-900 mb-3">Formes admeses</h3>
-                    <ul class="space-y-2 text-stone-700 text-sm leading-relaxed">
-                        <li><strong>Testament notarial obert:</strong> canal ordinari més segur.</li>
-                        <li><strong>Testament notarial tancat:</strong> amb confidencialitat del contingut.</li>
-                        <li><strong>Testament hològraf:</strong> manuscrit, datat i signat, amb adveració posterior.</li>
-                        <li><strong>Altres instruments:</strong> codicil i memòries dins límits legals.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <div class="section-divider my-14"></div>
-
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-stone-800 mb-6">3. Ineficàcia, revocació i interpretació</h2>
-            <div class="content-card rounded-2xl p-7">
-                <div class="grid md:grid-cols-3 gap-4 text-sm">
-                    <div class="rounded-xl border border-stone-200 bg-stone-50 p-4">
-                        <h3 class="font-bold text-stone-900 mb-2">Nul·litat</h3>
-                        <p class="text-stone-700">S'origina per defectes estructurals: manca de capacitat, defectes formals essencials, vicis del consentiment o absència d'institució d'hereu en supòsits exigits.</p>
-                    </div>
-                    <div class="rounded-xl border border-stone-200 bg-stone-50 p-4">
-                        <h3 class="font-bold text-stone-900 mb-2">Revocació</h3>
-                        <p class="text-stone-700">La regla és que preval el darrer testament vàlid. Pot ser expressa o tàcita per incompatibilitat amb disposicions posteriors.</p>
-                    </div>
-                    <div class="rounded-xl border border-stone-200 bg-stone-50 p-4">
-                        <h3 class="font-bold text-stone-900 mb-2">Interpretació</h3>
-                        <p class="text-stone-700">S'ha de cercar la voluntat real del testador segons paraules, context i usos, evitant lectures purament literals quan contradiguin el sentit global.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider my-14"></div>
-
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-stone-800 mb-6">4. Institució d'hereu, llegats i pactes successoris</h2>
-            <div class="grid lg:grid-cols-3 gap-6">
-                <article class="content-card rounded-2xl p-6">
-                    <h3 class="text-lg font-bold text-stone-900 mb-2">Institució d'hereu</h3>
-                    <p class="text-sm text-stone-700 leading-relaxed">
-                        Eix de la successió catalana: l'hereu ocupa la posició jurídica global del causant,
-                        amb possibles modalitats com substitució vulgar, fideïcomissària o designació per fiduciari.
-                    </p>
-                </article>
-                <article class="content-card rounded-2xl p-6">
-                    <h3 class="text-lg font-bold text-stone-900 mb-2">Llegats</h3>
-                    <p class="text-sm text-stone-700 leading-relaxed">
-                        Permeten atribucions singulars sense alterar la successió universal. Requereixen
-                        coordinació amb la legítima, càrregues hereditàries i regles d'execució.
-                    </p>
-                </article>
-                <article class="content-card rounded-2xl p-6">
-                    <h3 class="text-lg font-bold text-stone-900 mb-2">Pactes successoris</h3>
-                    <p class="text-sm text-stone-700 leading-relaxed">
-                        Instrument de planificació amb caràcter paccionat i major estabilitat que el testament.
-                        Molt útil en planificació familiar i empresarial, però amb exigències formals estrictes.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <div class="section-divider my-14"></div>
-
-        <section class="mb-10">
-            <h2 class="text-3xl font-bold text-stone-800 mb-6">5. Execució de la voluntat: marmessor</h2>
-            <div class="content-card rounded-2xl p-7">
-                <p class="text-stone-700 leading-relaxed mb-4">
-                    El marmessor és la figura de confiança encarregada de materialitzar les disposicions
-                    successòries. Pot ser universal o particular, i les seves facultats depenen del títol i de les
-                    instruccions del causant.
-                </p>
-                <ul class="list-disc pl-5 text-sm text-stone-700 space-y-2">
-                    <li>Acceptació i renúncia voluntàries, amb règim de substitució si escau.</li>
-                    <li>Funcions d'inventari, administració i, en alguns casos, realització de béns.</li>
-                    <li>Obligació final de retre comptes i respondre per actuació negligent o dolosa.</li>
-                </ul>
-            </div>
-        </section>
+    <h1>Dret <span class="it">Successori</span></h1>
+    <p class="lede">Heretat, testament, leg&iacute;tima, successi&oacute; intestada i pactes successoris al Codi Civil de Catalunya.</p>
+    <div class="meta-row">
+      <div class="m filled">5 seccions</div>
+      <div class="m">CCCat Ll. IV</div>
+      <div class="m">Favor testamenti</div>
+      <div class="m">2026</div>
     </div>
-    <footer class="site-foot">
-      <div class="site-foot-inner">
-        <div class="ff-cell">
-          <h4>Sobre el projecte</h4>
-          <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
-          <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i vídeos del Dret espanyol i català.</p>
+    <div class="tema-nav">
+      <a href="dret-civil.html" class="btn">&larr; Hub Civil</a>
+      <a href="dret-civil-filiacio.html" class="btn">&larr; Filiaci&oacute;</a>
+    </div>
+  </div>
+</section>
+
+<!-- LAYOUT -->
+<div class="tema-layout">
+
+  <!-- TOC -->
+  <aside class="tema-toc" id="toc">
+    <div class="toc-label">&sect; Sumari</div>
+    <ol>
+      <li><a href="#s1" class="active"><span class="sn">&sect;1</span><span class="tt">Teoria general del testament</span></a></li>
+      <li><a href="#s2"><span class="sn">&sect;2</span><span class="tt">Capacitat i formes</span></a></li>
+      <li><a href="#s3"><span class="sn">&sect;3</span><span class="tt">Inefic&agrave;cia, revocaci&oacute; i interpretaci&oacute;</span></a></li>
+      <li><a href="#s4"><span class="sn">&sect;4</span><span class="tt">Hereu, llegats i pactes successoris</span></a></li>
+      <li><a href="#s5"><span class="sn">&sect;5</span><span class="tt">Execuci&oacute;: el marmessor</span></a></li>
+    </ol>
+  </aside>
+
+  <!-- CONTENT -->
+  <article class="tema-content">
+
+    <!-- §1 -->
+    <section class="section" id="s1">
+      <div class="section-n"><span class="bullet"></span><span class="num">&sect;1</span> Teoria general</div>
+      <h2>El <span class="it">testament</span> com a acte jur&iacute;dic.</h2>
+      <p class="lead">Un acte unilateral, personal&iacute;ssim, formal i revocable que ordena la successi&oacute; mortis causa i vincula jur&iacute;dicament els successors.</p>
+      <p>La voluntat testament&agrave;ria ha de ser <strong>imperativa</strong>: els precs morals poden orientar, per&ograve; no substitueixen disposicions jur&iacute;diques v&agrave;lides. El testador exerceix una potestat normativa sobre el seu patrimoni futur, dins dels l&iacute;mits legals.</p>
+
+      <div class="callout">
+        <div class="cl-label">Principi rector</div>
+        <p><strong>Favor testamenti:</strong> el dret tendeix a conservar la validesa del testament quan els defectes no afecten elements essencials. La interpretaci&oacute; ha de cercar la voluntat real del testador.</p>
+      </div>
+
+      <div class="art-quote">
+        <div class="art-label">CCCat art. 421-1</div>
+        <div class="qt">"La successi&oacute; testada &eacute;s la que es deferi per la voluntat del causant manifestada en testament."</div>
+        <div class="src">Codi Civil de Catalunya &middot; Llibre IV &middot; De les successions</div>
+      </div>
+
+      <h3>Caracter&iacute;stiques essencials</h3>
+      <div class="req-grid">
+        <div class="req">
+          <div class="rn">1</div>
+          <h4>Unilateral</h4>
+          <p>Acte de l'autonomia de la voluntat del testador. No requereix acceptaci&oacute; del beneficiari per a la seva perfeci&oacute;.</p>
         </div>
-        <div class="ff-cell">
-          <h4>Matèries</h4>
-          <ul>
-            <li><a href="dret-penal.html">Penal</a></li>
-            <li><a href="dret-civil.html">Civil</a></li>
-            <li><a href="dret-administratiu.html">Administratiu</a></li>
-            <li><a href="dret-constitucional.html">Constitucional</a></li>
-            <li><a href="dret-processal.html">Processal</a></li>
-            <li><a href="dret-financer.html">Financer</a></li>
-            <li><a href="dret-mercantil.html">Mercantil</a></li>
-          </ul>
+        <div class="req">
+          <div class="rn">2</div>
+          <h4>Personal&iacute;ssim</h4>
+          <p>Indelegable. No pot atorgar-se per represent&agrave;cia ni pot fer-se de man&uacute; aliena, llevat del cas del testament notarial tancat.</p>
         </div>
-        <div class="ff-cell">
-          <h4>Eines</h4>
-          <ul>
-            <li><a href="visuals.html">Cerca visuals</a></li>
-            <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
-            <li><a href="historia-dret.html">Fonaments</a></li>
-          </ul>
+        <div class="req">
+          <div class="rn">3</div>
+          <h4>Revocable</h4>
+          <p>El testador pot revocar en qualsevol moment mentre tingui capacitat. El principi &eacute;s que preval sempre el darrer testament v&agrave;lid.</p>
         </div>
       </div>
-      <div class="site-foot-bottom">
-        <span>Tipografia: Space Grotesk · Instrument Serif · JetBrains Mono</span>
-        <span>© MMXXVI · Dret Visual</span>
+    </section>
+
+    <!-- §2 -->
+    <section class="section" id="s2">
+      <div class="section-n"><span class="bullet"></span><span class="num">&sect;2</span> Capacitat i formes</div>
+      <h2>Capacitat per testar i <span class="it">formes admeses.</span></h2>
+      <p class="lead">La capacitat natural en el moment de l'atorgament &eacute;s la regla general. El notari en fa l'apreciaci&oacute; i pot demanar suport facultatiu.</p>
+
+      <div class="dual">
+        <div class="d">
+          <div class="dicon"><span class="sq"></span>Capacitat</div>
+          <h4>Qui pot testar</h4>
+          <p>Regla general: majors de 14 anys amb capacitat natural. Son incapacitats absoluts els menors de 14 anys i les persones sense discerniment. Qui al&middot;lega manca de capacitat assumeix la c&agrave;rrega de prova.</p>
+        </div>
+        <div class="d">
+          <div class="dicon"><span class="sq"></span>Formes</div>
+          <h4>Tipus de testament</h4>
+          <p><strong>Notarial obert:</strong> canal ordinari m&eacute;s segur.<br><strong>Notarial tancat:</strong> confidencialitat del contingut.<br><strong>Hol&ograve;graf:</strong> manuscrit, datat i signat, amb advera&ccedil;i&oacute; posterior judicial.<br><strong>Altres:</strong> codicil i mem&ograve;ries, dins l&iacute;mits legals.</p>
+        </div>
       </div>
-    </footer>
+
+      <div class="callout">
+        <div class="cl-label">Instruments complementaris</div>
+        <p>El <strong>codicil</strong> completa o modifica el testament sense alterar la instituci&oacute; d'hereu. La <strong>mem&ograve;ria testament&agrave;ria</strong> concreta disposicions de menor import&agrave;ncia previstes al testament principal.</p>
+      </div>
+    </section>
+
+    <!-- §3 -->
+    <section class="section" id="s3">
+      <div class="section-n"><span class="bullet"></span><span class="num">&sect;3</span> Inefic&agrave;cia</div>
+      <h2>Inefic&agrave;cia, revocaci&oacute; i <span class="it">interpretaci&oacute;.</span></h2>
+      <p class="lead">El testament pot ser inv&agrave;lid, revocat o necessitar interpretaci&oacute;. El dret catal&agrave; prioritza la conservaci&oacute; de la voluntat del causant.</p>
+
+      <div class="table-wrap">
+        <table class="cat">
+          <thead>
+            <tr>
+              <th>Tipus d'inefic&agrave;cia</th>
+              <th>Causa</th>
+              <th>Efecte</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nul&middot;litat</strong></td>
+              <td>Defectes estructurals: manca de capacitat, defectes formals essencials, vicis del consentiment</td>
+              <td>Testament inv&agrave;lid des de l'origen. Obre la successi&oacute; intestada si no hi ha testament anterior v&agrave;lid.</td>
+            </tr>
+            <tr>
+              <td><strong>Caducitat</strong></td>
+              <td>Testament hol&ograve;graf no adverat en el termini; testaments en situaci&oacute; de perill no ratificats</td>
+              <td>Perd efic&agrave;cia per transcurs del temps o per no-formalitzaci&oacute;.</td>
+            </tr>
+            <tr>
+              <td><strong>Revocaci&oacute; expressa</strong></td>
+              <td>El testador atorga nou testament declarant la revocaci&oacute;</td>
+              <td>El testament anterior queda sense efecte en la mesura indicada.</td>
+            </tr>
+            <tr>
+              <td><strong>Revocaci&oacute; t&agrave;cita</strong></td>
+              <td>Incompatibilitat de disposicions amb el testament posterior</td>
+              <td>Prevaldr&agrave; el darrer testament en tot all&ograve; que sigui incompatible.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Interpretaci&oacute; del testament</h3>
+      <p>S'ha de cercar la <strong>voluntat real del testador</strong> segons paraules, context i usos, evitant lectures purament literals quan contradiguin el sentit global. El principi <em>favor testamenti</em> s'aplica tant a la validesa com a la interpretaci&oacute;.</p>
+    </section>
+
+    <!-- §4 -->
+    <section class="section" id="s4">
+      <div class="section-n"><span class="bullet"></span><span class="num">&sect;4</span> Hereu, llegats i pactes</div>
+      <h2>Instituci&oacute; d'hereu, <span class="it">llegats</span> i pactes successoris.</h2>
+      <p class="lead">L'hereu &eacute;s l'eix de la successi&oacute; catalana: ocupa la posici&oacute; jur&iacute;dica global del causant. Llegats i pactes en complementen l'estructura.</p>
+
+      <div class="art-quote">
+        <div class="art-label">CCCat art. 423-1</div>
+        <div class="qt">"La instituci&oacute; d'hereu &eacute;s la designaci&oacute; que fa el causant d'una o diverses persones perqu&egrave; el succee&iuml;xin a t&iacute;tol universal."</div>
+        <div class="src">Codi Civil de Catalunya &middot; Llibre IV &middot; De la instituci&oacute; d'hereu</div>
+      </div>
+
+      <div class="req-grid">
+        <div class="req">
+          <div class="rn">A</div>
+          <h4>Instituci&oacute; d'hereu</h4>
+          <p>Successi&oacute; universal. Pot ser pura, modal o condicional. Admesos substituci&oacute; vulgar, fideïcomiss&agrave;ria o designaci&oacute; per fiduciari.</p>
+        </div>
+        <div class="req">
+          <div class="rn">B</div>
+          <h4>Llegats</h4>
+          <p>Atribucions singulars sense alterar la successi&oacute; universal. Cal coordinar-los amb la leg&iacute;tima, les c&agrave;rregues heredit&agrave;ries i les regles d'execuci&oacute;.</p>
+        </div>
+        <div class="req">
+          <div class="rn">C</div>
+          <h4>Pactes successoris</h4>
+          <p>Car&agrave;cter paccionat. Major estabilitat que el testament. Molt &uacute;til en planificaci&oacute; familiar i empresarial, per&ograve; amb exig&egrave;ncies formals estrictes.</p>
+        </div>
+      </div>
+
+      <h3>La leg&iacute;tima al CCCat</h3>
+      <p>A Catalunya la leg&iacute;tima &eacute;s un <strong>cr&egrave;dit contra l'heretat</strong>, no una quota en els b&eacute;ns. Els legitimaris (descendents, i en defecte d'aquests, els progenitors) no s'integren for&ccedil;osament a la successi&oacute;: nomes es pot exigir el pagament del seu valor en diner o en b&eacute;ns heredit&aris.</p>
+
+      <div class="callout">
+        <div class="cl-label">Diferència clau vs. Dret comú</div>
+        <p>A diferència del Codi Civil espanyol, al CCCat el legitimari <strong>no és hereu forçós</strong>. La legítima és purament obligacional: un dret de crèdit per un quart de l'haber hereditari líquid.</p>
+      </div>
+    </section>
+
+    <!-- §5 -->
+    <section class="section" id="s5">
+      <div class="section-n"><span class="bullet"></span><span class="num">&sect;5</span> Marmessor</div>
+      <h2>Execuci&oacute; de la voluntat: <span class="it">el marmessor.</span></h2>
+      <p class="lead">El marmessor &eacute;s la figura de confian&ccedil;a encarregada de materialitzar les disposicions succession&agrave;ries amb plena responsabilitat jur&iacute;dica.</p>
+
+      <div class="dual">
+        <div class="d">
+          <div class="dicon"><span class="sq"></span>Tipus</div>
+          <h4>Classes de marmessoria</h4>
+          <p><strong>Universal:</strong> facultats generals sobre tota l'execuci&oacute;.<br><strong>Particular:</strong> limitada a disposicions concretes (p. ex. llegats, donacions per causa de mort).<br>Les facultats depenen del t&iacute;tol i de les instruccions del causant.</p>
+        </div>
+        <div class="d">
+          <div class="dicon"><span class="sq"></span>Obligacions</div>
+          <h4>Funcions i responsabilitat</h4>
+          <p>Acceptaci&oacute; voluntari&agrave;. Obligaci&oacute; d'inventari, administraci&oacute; i, en alguns casos, realitzaci&oacute; de b&eacute;ns.<br><strong>Rendici&oacute; de comptes</strong> final obligat&ograve;ria.<br>Respon per actuaci&oacute; negligent o dolosa.</p>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<!-- PREV/NEXT -->
+<div class="tema-prevnext">
+  <a href="dret-civil-filiacio.html">
+    <div class="lbl">&larr; Anterior</div>
+    <div class="ttl">M&ograve;dul IV &middot; <span class="it">Filiaci&oacute;</span></div>
+  </a>
+  <a href="dret-civil.html">
+    <div class="lbl">Hub Civil &rarr;</div>
+    <div class="ttl"><span class="it">Tots els m&ograve;duls</span></div>
+  </a>
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="site-foot-inner">
+    <div class="ff-cell">
+      <h4>Sobre el projecte</h4>
+      <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
+      <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i v&iacute;deos del Dret espanyol i catal&agrave;.</p>
+    </div>
+    <div class="ff-cell">
+      <h4>Mat&egrave;ries</h4>
+      <ul>
+        <li><a href="dret-penal.html">Penal</a></li>
+        <li><a href="dret-civil.html">Civil</a></li>
+        <li><a href="dret-administratiu.html">Administratiu</a></li>
+        <li><a href="dret-constitucional.html">Constitucional</a></li>
+        <li><a href="dret-processal.html">Processal</a></li>
+        <li><a href="dret-financer.html">Financer</a></li>
+        <li><a href="dret-mercantil.html">Mercantil</a></li>
+      </ul>
+    </div>
+    <div class="ff-cell">
+      <h4>Eines</h4>
+      <ul>
+        <li><a href="visuals.html">Cerca visuals</a></li>
+        <li><a href="irpf-calculator.html">Calculadora IRPF</a></li>
+        <li><a href="historia-dret.html">Fonaments</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot-bottom">
+    <span>Tipografia: Space Grotesk &middot; Instrument Serif &middot; JetBrains Mono</span>
+    <span>&copy; MMXXVI &middot; Dret Visual</span>
+  </div>
+</footer>
+
+<script>
+// TOC active tracking
+(function(){
+  var links=document.querySelectorAll('.tema-toc a');
+  var sections=document.querySelectorAll('.section[id]');
+  function onScroll(){
+    var top=window.scrollY+100;
+    var cur='';
+    sections.forEach(function(s){if(s.offsetTop<=top)cur=s.id;});
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')=='#'+cur);
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
 </body>
-
 </html>
