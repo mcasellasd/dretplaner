@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""Genera dret-civil.html com a hub distribuidora de mòduls (estil administratiu)."""
+
+HTML = '''<!DOCTYPE html>
 <html lang="ca">
 <head>
 <meta charset="UTF-8">
@@ -13,8 +16,8 @@
 .page{max-width:1440px;margin:0 auto;}
 .hub-section{border-top:2px solid var(--ink);}
 .hub-section-head{padding:28px 32px 20px;display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--ink);}
-.hub-section-head h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2.5vw,32px);letter-spacing:-.025em;margin:0;text-transform:uppercase;}
-.hub-section-head .note{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.hub-section-head h2{font-family:\'Space Grotesk\',sans-serif;font-weight:700;font-size:clamp(20px,2.5vw,32px);letter-spacing:-.025em;margin:0;text-transform:uppercase;}
+.hub-section-head .note{font-family:\'JetBrains Mono\',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
 .hub-grid{display:grid;border-left:1px solid var(--ink);}
 .hub-grid.cols-4{grid-template-columns:repeat(4,1fr);}
 .hub-grid.cols-3{grid-template-columns:repeat(3,1fr);}
@@ -23,17 +26,17 @@
 .hub-card:not(.disabled):hover .card-num,.hub-card:not(.disabled):hover .card-sub,.hub-card:not(.disabled):hover p{opacity:.7;}
 .hub-card:not(.disabled):hover .cta{opacity:1;border-top-color:var(--paper);}
 .hub-card.disabled{opacity:.4;cursor:default;}
-.card-num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.5;}
-.card-sub{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;color:var(--b-civil);}
-.hub-card h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,20px);line-height:1.2;letter-spacing:-.02em;margin:8px 0 0;flex:1;}
+.card-num{font-family:\'JetBrains Mono\',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.5;}
+.card-sub{font-family:\'JetBrains Mono\',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;color:var(--b-civil);}
+.hub-card h3{font-family:\'Space Grotesk\',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,20px);line-height:1.2;letter-spacing:-.02em;margin:8px 0 0;flex:1;}
 .hub-card p{font-size:13px;line-height:1.55;opacity:.65;margin:0;}
-.cta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:auto;padding-top:14px;border-top:1px solid var(--ink);opacity:.5;}
+.cta{font-family:\'JetBrains Mono\',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:auto;padding-top:14px;border-top:1px solid var(--ink);opacity:.5;}
 .hub-note{border-top:2px solid var(--ink);display:grid;grid-template-columns:1fr 2fr;}
 .hub-note-left{background:var(--ink);color:var(--paper);padding:40px 36px;display:flex;flex-direction:column;gap:12px;}
-.hub-note-left h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2.5vw,30px);letter-spacing:-.025em;margin:0;text-transform:uppercase;}
-.hub-note-left .num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;}
+.hub-note-left h3{font-family:\'Space Grotesk\',sans-serif;font-weight:700;font-size:clamp(20px,2.5vw,30px);letter-spacing:-.025em;margin:0;text-transform:uppercase;}
+.hub-note-left .num{font-family:\'JetBrains Mono\',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;}
 .hub-note-right{background:var(--paper-2);padding:40px 36px;}
-.hub-note-right p{font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;line-height:1.6;color:var(--ink);margin:0;}
+.hub-note-right p{font-family:\'Instrument Serif\',serif;font-style:italic;font-size:18px;line-height:1.6;color:var(--ink);margin:0;}
 @media(max-width:1100px){.hub-grid.cols-4{grid-template-columns:repeat(2,1fr);}.hub-note{grid-template-columns:1fr;}}
 @media(max-width:768px){.hub-grid.cols-4,.hub-grid.cols-3{grid-template-columns:repeat(2,1fr);}.hub-section-head{padding:20px 20px 14px;}.hub-card{padding:22px 18px;}}
 @media(max-width:480px){.hub-grid.cols-4,.hub-grid.cols-3{grid-template-columns:1fr;}.hub-card{border-right:none;}}
@@ -43,10 +46,10 @@
 <header class="topbar">
   <div class="topbar-row">
     <a href="index.html" class="tb-cell tb-brand">
-      <span class="dot"></span>DRET <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">visual</em>
+      <span class="dot"></span>DRET <em style="font-family:\'Instrument Serif\',serif;font-style:italic;font-weight:400;">visual</em>
     </a>
     <div class="tb-cell tb-grow" style="justify-content:flex-end;">
-      <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d'eines &middot; 2026</span>
+      <span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Repositori d\'eines &middot; 2026</span>
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
@@ -71,7 +74,7 @@
 
   <section class="hub-section">
     <div class="hub-section-head">
-      <h2>M&ograve;duls i <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">Continguts</span></h2>
+      <h2>M&ograve;duls i <span style="font-family:\'Instrument Serif\',serif;font-style:italic;font-weight:400;">Continguts</span></h2>
       <span class="note">5 blocs tem&agrave;tics</span>
     </div>
     <div class="hub-grid cols-4">
@@ -152,7 +155,7 @@
     <div class="ff-cell">
       <h4>Sobre el projecte</h4>
       <div class="ff-brand">Dret <span class="amp">&amp;</span> <em>visual</em></div>
-      <p style="margin:14px 0 0;color:#a8a8a0;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d'apunts, esquemes i v&iacute;deos del Dret espanyol i catal&agrave;.</p>
+      <p style="margin:14px 0 0;color:#a8a8a0;font-family:\'Instrument Serif\',serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.5;">Una biblioteca lliure d\'apunts, esquemes i v&iacute;deos del Dret espanyol i catal&agrave;.</p>
     </div>
     <div class="ff-cell">
       <h4>Mat&egrave;ries</h4>
@@ -181,4 +184,8 @@
   </div>
 </footer>
 </body>
-</html>
+</html>'''
+
+with open('dret-civil.html', 'w', encoding='utf-8') as f:
+    f.write(HTML)
+print('OK dret-civil.html')
